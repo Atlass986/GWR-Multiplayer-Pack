@@ -1,0 +1,274 @@
+add_namespace = FRA_belgium_puppet_offer
+add_namespace = FRA_netherlands_puppet_offer
+add_namespace = FRA_luxemburg_puppet_offer
+add_namespace = FRA_benelux_puppet_offer_accept
+
+country_event = {
+	id = FRA_benelux_puppet_offer_accept.1
+	title = FRA_belgium_puppet_offer.accept.t
+	desc = FRA_belgium_puppet_offer.accept.d
+	picture = GFX_report_event_iww_demonstration
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FRA_belgium_puppet_demand.1.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+country_event = {
+	id = FRA_belgium_puppet_offer.3
+	title = FRA_belgium_puppet_offer.accept.t1
+	desc = FRA_belgium_puppet_offer.accept.d1
+	picture = GFX_report_event_soldiers_in_france
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FRA_belgium_puppet_demand.1.a1
+		ai_chance = {
+			base = 100
+		}
+		FRA = {
+			create_wargoal = {
+				type = annex_everything
+				target = BEL
+			}
+		}
+	}
+}
+country_event = {
+	id = FRA_netherlands_puppet_offer.3
+	title = FRA_netherlands_puppet_offer.accept.t1
+	desc = FRA_netherlands_puppet_offer.accept.d1
+	picture = GFX_report_event_soldiers_in_france
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FRA_netherlands_puppet_demand.1.a1
+		ai_chance = {
+			base = 100
+		}
+		FRA = {
+			create_wargoal = {
+				type = annex_everything
+				target = HOL
+			}
+		}
+	}
+}
+country_event = {
+	id = FRA_luxemburg_puppet_offer.3
+	title = FRA_luxemburg_puppet_offer.accept.t1
+	desc = FRA_luxemburg_puppet_offer.accept.d1
+	picture = GFX_report_event_soldiers_in_france
+
+	is_triggered_only = yes
+
+	option = { 
+		name = FRA_luxemburg_puppet_demand.1.a1
+		ai_chance = {
+			base = 100
+		}
+		FRA = {
+			create_wargoal = {
+				type = annex_everything
+				target = LUX
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+country_event = {
+	id = FRA_belgium_puppet_offer.1
+	title = FRA_belgium_puppet_offer.1.t
+	desc = FRA_belgium_puppet_offer.1.d
+	picture = GFX_France_Demand
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = FRA_benelux_puppet_offer.1.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		FRA = {
+			puppet = ROOT
+		}
+		FRA = {
+			country_event = {
+				id = FRA_benelux_puppet_offer_accept.1
+				days = 1
+			}
+		}
+	}
+
+	option = { # Refuse
+		name = FRA_benelux_puppet_offer.1.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value < 0
+				}
+			}
+		}
+		FRA = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = refused_puppet_offer
+			}
+		}
+		FRA = {
+			country_event = {
+				id = FRA_belgium_puppet_offer.3
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = FRA_netherlands_puppet_offer.1
+	title = FRA_netherlands_puppet_offer.1.t
+	desc = FRA_netherlands_puppet_offer.1.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = FRA_benelux_puppet_offer.1.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		FRA = {
+			puppet = ROOT
+		}
+		FRA = {
+			country_event = {
+				id = FRA_benelux_puppet_offer_accept.1
+				days = 1
+			}
+		}
+	}
+
+	option = { # Refuse
+		name = FRA_benelux_puppet_offer.1.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value < 0
+				}
+			}
+		}
+		FRA = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = refused_puppet_offer
+			}
+		}
+		FRA = {
+			country_event = {
+				id = FRA_netherlands_puppet_offer.3
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = FRA_luxemburg_puppet_offer.1
+	title = FRA_luxemburg_puppet_offer.1.t
+	desc = FRA_luxemburg_puppet_offer.1.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = FRA_benelux_puppet_offer.1.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		FRA = {
+			puppet = ROOT
+		}
+		FRA = {
+			country_event = {
+				id = FRA_benelux_puppet_offer_accept.1
+				days = 1
+			}
+		}
+	}
+
+	option = { # Refuse
+		name = FRA_benelux_puppet_offer.1.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value < 0
+				}
+			}
+		}
+		FRA = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = refused_puppet_offer
+			}
+		}
+		FRA = {
+			country_event = {
+				id = FRA_luxemburg_puppet_offer.3
+				days = 1
+			}
+		}
+	}
+}

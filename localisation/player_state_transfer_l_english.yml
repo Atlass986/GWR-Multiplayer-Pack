@@ -1,0 +1,25 @@
+﻿l_english:
+ Mark:"Mark"
+ PLAYER_STATE_MARK_FOR_TRANSFER:0 "§HSelect state§!\nMarks selected state\n"
+ ST_STATE_UNMARK_FOR_TRANSFER:0 "§HUnselect state§!\nUnmarks selected state\n"
+ mark_state_yes:0 "\n  §Mark!§!"
+ mark_state_no:0 "\n  §RMarked!§!"
+
+ CLEAR_ALL_MARKINGS:0 "All marks will be deleted\n\n"
+ CLEAR_ALL_MARKINGS_DELAYED:0 ""
+
+ TRANSFER_STATES:0 "Transfer states"
+
+ TRANSFER_STATES_DELAYED:0 ""
+ TRANSFER_REGIONS_BUTTON_TITLE:"Transfer states"
+ TRANSFER_REGIONS_DIPLO_ACTION_TT:"Transfer states to country §Y[?sending_to.GetNameWithFlag]§!."
+ CANCEL_PLAYER_TRANSFER_DELAYED:""
+ CANCEL_PLAYER_TRANSFER:"Close"
+ PINGTOOL:0 "§HAI Reenabler§!\nMark, then click (WiP)\n\n"
+ PINGTOOL_DELAYED:0 ""
+ transfer_states_on:0 "Host Tool: £trigger_no"
+ transfer_states_off:0 "Host Tool: £trigger_yes"
+
+  
+ player_mark_status_marked:0   "     Unmark state "
+ player_mark_status_unmarked:0 "      Mark state  "

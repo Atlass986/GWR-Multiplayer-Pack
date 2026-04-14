@@ -1,0 +1,26 @@
+GWR = {
+    male = {
+        names = {
+            Atlas
+            Host
+            Noname
+            Keisot
+            Negan
+            Cucumber
+            Limon
+            L1GH7N1NG
+        }
+    }
+    female = {
+        names = {
+            Woman
+        }
+    }
+    surnames = {
+        Gejmer
+		Tabelkowiec
+    }
+    callsigns = {
+        "Bydlak"
+    }
+}

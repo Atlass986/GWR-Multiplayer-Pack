@@ -1,0 +1,141 @@
+set_country_cost = {
+    if = {
+        limit = { is_super_major = yes is_ai = no }
+        set_variable = { country_cost = 4 }
+    } else_if = {
+        limit = { is_major_country = yes is_ai = no }
+        set_variable = { country_cost = 3 }
+    } else_if = {
+        limit = { is_regional = yes is_ai = no }
+        set_variable = { country_cost = 2 }
+    } else_if = {
+        limit = { is_minor = yes is_ai = no }
+        set_variable = { country_cost = 1 }
+    } else_if = {
+        limit = { is_mini = yes is_ai = no}
+        set_variable = { country_cost = 0.5 }
+    } else = {
+        set_variable = { country_cost = 0 }
+    }
+
+    # if = {
+    #     limit = { AND = { tag = POL is_poland_major = yes } }
+    #     set_variable = { country_cost = 3 }
+    # }
+    # else_if = {
+    #     limit = { AND = { tag = POL is_poland_super_major = yes } }
+    #     set_variable = { country_cost = 4 }
+    # }
+}
+
+set_faction_limit = {
+
+    if = {
+        limit = { date < 1937.1.1 }
+        set_variable = { faction_limit = 5 }
+    }
+    else_if = {
+        limit = { date < 1938.1.1 }
+        set_variable = { faction_limit = 6 }
+    }
+    else_if = {
+        limit = { date < 1939.1.1 }
+        set_variable = { faction_limit = 8 }
+    }
+    else_if = {
+        limit = { date < 1940.1.1 }
+        set_variable = { faction_limit = 10 }
+    }
+    else_if = {
+        limit = { date < 1941.1.1 }
+        set_variable = { faction_limit = 11 }
+    }
+    else_if = {
+        limit = { date < 1942.1.1 }
+        set_variable = { faction_limit = 13 }
+    }
+    else_if = {
+        limit = { date < 1943.1.1 }
+        set_variable = { faction_limit = 15 }
+    }
+    else = {
+        set_variable = { faction_limit = 18 }
+    }
+}
+
+
+# set_faction_points = {
+#     ROOT = {
+#         set_variable = { faction_points = ROOT.country_cost }
+#     }
+#     every_other_country = {
+#         limit = {
+#             is_in_faction_with = ROOT
+#         }
+#         THIS = {add_political_power = -1000}
+#         add_to_variable = {
+#             ROOT.faction_points = THIS.country_cost
+#         }
+        
+        
+#     }
+    
+# }
+
+# set_faction_points = {
+
+#     set_variable = { faction_points = country_cost }
+
+#     every_country = {
+#         limit = {
+#             is_in_faction_with = ROOT
+#             NOT = { tag = ROOT }
+#         }
+
+#         add_to_variable = {
+#             faction_points = country_cost
+#         }
+#     }
+#     every_country = {
+#         limit = {
+#             is_in_faction_with = ROOT
+#             NOT = { tag = ROOT }
+#         }
+#         set_variable = {faction_points = ROOT.faction_points}
+#     }
+# }
+
+set_faction_points = {
+    every_country = {
+        limit = {
+            is_in_faction_with = ROOT
+        }
+        set_variable = { faction_points = 0 }
+    }
+    ROOT = {
+        set_variable = { faction_points = country_cost }
+        
+        every_other_country = {
+            limit = {is_in_faction_with = ROOT is_ai = no}
+            ROOT = {
+                add_to_variable = {
+                    faction_points = PREV.country_cost
+                }
+            }
+        }
+    }
+
+    
+
+    every_country = {
+        limit = {
+            is_in_faction_with = ROOT
+        }
+        THIS = {
+            set_variable = {
+                faction_points = ROOT.faction_points
+            }
+        }
+    }
+    
+}

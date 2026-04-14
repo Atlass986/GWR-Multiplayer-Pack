@@ -1,0 +1,269 @@
+scripted_diplomatic_actions = {
+	#PAY FACTORIES
+ 	pay_civ_factory = {
+		visible = { THIS = { NOT = { has_war_with = ROOT } } }
+		selectable = {  
+			ROOT = {
+				is_subject = no
+				any_owned_state = { is_controlled_by = PREV industrial_complex > 0}
+			}
+			THIS = {
+				any_owned_state = { 
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+					}
+				}
+
+			}
+		}
+
+		requires_acceptance = no
+		cost = 5
+		command_power = 0
+
+		show_acceptance_on_action_button = no
+
+		icon = 4 
+
+		on_sent_effect = {}
+
+		complete_effect = {
+			ROOT = {	
+				random_owned_controlled_state = { limit = { industrial_complex > 0 } remove_building = { type = industrial_complex level = 1 } }
+			}
+			THIS = {	
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+						}
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				
+			}
+			log = "Civ Factory: [?ROOT.GetName] -> [?THIS.GetName]"
+		}
+
+		reject_effect = {}
+
+		send_description = pay_civ_factory_send_text
+
+		receive_description =pay_civ_get_message
+
+		accept_title =pay_civ_get_title
+
+		accept_description =pay_civ_get_message
+
+		reject_title =pay_civ_get_title
+
+		reject_description =pay_civ_get_message
+
+		ai_acceptance = {
+			condition = { base = 0 }
+		}
+
+		ai_desire = { base = -1	}
+	}
+	pay_dockyard = {
+		visible = {  THIS = { NOT = { has_war_with = ROOT } } }
+		selectable = { 
+			ROOT = {
+				is_subject = no
+				any_owned_state = { is_controlled_by = PREV dockyard > 0}
+			}
+			THIS = {
+				any_owned_state = { 
+					is_coastal = yes
+					free_building_slots = {
+						building = dockyard
+						size > 0
+					}
+				}
+			}
+		}
+
+		requires_acceptance = no
+		cost = 5
+		command_power = 0
+
+		show_acceptance_on_action_button = no
+
+		icon = 4 
+
+		on_sent_effect = {}
+
+		complete_effect = {
+			ROOT = {	
+				random_owned_controlled_state = { limit = { dockyard > 0 } remove_building = { type = dockyard level = 1 } }
+			}
+			THIS = {	
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 0
+						}
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				
+			}
+			# add_offsite_building = { type = dockyard level = 1 }
+			log = "Dockyard: [?ROOT.GetName] -> [?THIS.GetName]"
+		}
+
+		reject_effect = {}
+
+		send_description = pay_dockyard_send_text
+
+		receive_description =pay_dock_get_message
+
+		accept_title =pay_dock_get_title
+
+		accept_description =pay_dock_get_message
+
+		reject_title =pay_dock_get_title
+
+		reject_description =pay_dock_get_message
+
+		ai_acceptance = {
+		condition = { base = 0 }
+		}
+
+		ai_desire = { base = -1	}
+	}
+	pay_mil_factory = {
+		visible = { THIS = { NOT = { has_war_with = ROOT } } }
+		selectable = { 
+			ROOT = {
+				is_subject = no
+				any_owned_state = { is_controlled_by = PREV arms_factory > 0 }
+			}
+			THIS = {
+				any_owned_state = { 
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+					}
+				}
+
+			}
+		}
+
+
+		requires_acceptance = no
+		cost = 5 
+		command_power = 0
+
+		show_acceptance_on_action_button = no
+
+		icon = 4 
+
+		on_sent_effect = {}
+
+		complete_effect = {
+			ROOT = {	
+				random_owned_controlled_state = { limit = { arms_factory > 0 } remove_building = { type = arms_factory level = 1 } }
+			}
+			THIS = {	
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+						}
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				
+			}
+			log = "Military Factory: [?ROOT.GetName] -> [?THIS.GetName]"
+		}
+
+		reject_effect = {}
+
+		send_description = pay_mil_factory_send_text
+
+		receive_description =pay_mil_get_message
+
+		accept_title =pay_mil_get_title
+
+		accept_description =pay_mil_get_message
+
+		reject_title =pay_mil_get_title
+
+		reject_description =pay_mil_get_message
+
+		ai_acceptance = {
+		condition = { base = 0 }
+		}
+
+		ai_desire = { base = -1	}
+	}
+	#PUPPETING ACTIONS
+	# become_puppet = {
+	# 	icon = 1
+	# 	allowed = {	
+	# 		always = yes
+	# 	}
+	# 	visible = {		
+	# 		always = yes
+	# 	}
+	# 	selectable = {
+	# 		NOT = { ROOT = { has_war = yes } }
+	# 		NOT = { THIS = { has_war = yes } }
+	# 		NOT = { ROOT = { is_puppet = yes } }
+	# 		NOT = { THIS = { is_puppet = yes } }
+	# 		NOT = { ROOT = { is_ai = yes } }
+	# 	}
+	# 	can_be_accepted = {
+	# 		always = yes
+	# 	}
+	# 	can_be_sent = {
+	# 		always = yes
+	# 	}
+		
+	# 	send_description = BECOME_PUPPET_LOC
+	# 	accept_title = BECOME_PUPPET_TITLE
+	# 	accept_description = BECOME_PUPPET_DESC
+
+	# 	requires_acceptance = yes
+
+	# 	on_sent_effect = {
+				
+	# 	}
+	# 	complete_effect = {
+	# 		ROOT = {
+	# 			set_variable = {target = PREV}
+	# 			every_subject_country = {
+	# 				ROOT = {
+	# 					set_variable = {puppet = PREV}
+	# 				}
+	# 				ROOT = {
+	# 					var:target = { 
+	# 						puppet = ROOT.puppet 
+	# 					}
+	# 				}
+	# 			}
+	# 		}
+	# 		THIS = { puppet = ROOT }
+	# 	}
+		
+	# }
+}

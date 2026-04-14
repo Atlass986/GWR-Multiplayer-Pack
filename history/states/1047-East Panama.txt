@@ -1,0 +1,27 @@
+state={
+	id=1047
+	name="STATE_1047"
+	provinces={
+		7630 10482 
+	}
+	state_category = town
+	history={
+		owner = COL
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1 
+			air_base = 1
+			7630 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = COL
+		victory_points = {
+			7630 1
+		}
+
+	}
+	manpower=256983
+	buildings_max_level_factor=1
+	local_supplies=0
+}

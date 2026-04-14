@@ -1,0 +1,25 @@
+ideas = {
+	country = {
+		research_revalue = {
+			picture = generic_research_bonus
+			research_bonus = {
+				# industry = -0.025
+				# armor = 0.075
+				# artillery = 0.15
+				# support_tech = 0.30
+				# electronics = 0.05
+				# # naval_minesweeping = 0.5
+				# # naval_air = 0.5
+				# # naval_armor = 0.65
+				# # naval_artillery = 0.45
+				# naval_equipment = 0.667
+				# air_equipment = 0.15
+				# nuclear = 1.5
+				# cat_fortification = -0.334	
+				# # naval_minelaying = 0.25
+			}
+			
+			
+		}
+	}
+}

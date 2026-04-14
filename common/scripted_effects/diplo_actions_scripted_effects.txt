@@ -1,0 +1,4 @@
+clear_generated_messages_cache = {
+	clear_array = written_type_of_message_array
+	clear_variable = show_write_message_menu
+}

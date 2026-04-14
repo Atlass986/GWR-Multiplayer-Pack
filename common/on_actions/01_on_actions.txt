@@ -1,0 +1,61 @@
+on_actions = {
+
+    on_startup = {
+        effect = {
+            every_country = {
+                THIS = {every_other_country = {
+                    limit = { OR = {is_guaranteed_by = PREV has_guaranteed = PREV } }
+                    diplomatic_relation = {
+						country = THIS
+						relation = guarantee
+						active = no
+					}
+					diplomatic_relation = {
+						country = PREV
+						relation = guarantee
+						active = no
+					}
+                }
+            }}
+        }
+    }
+
+}
+# 	on_release_as_free = {
+# 		effect = {
+# 			if = {
+# 				limit = { is_ai = no}
+# 				root = {
+# 					add_ideas = research_revalue
+# 				}
+# 			}
+			
+# 		}
+# 	}
+# 	on_release_as_puppet = {
+# 		effect = {
+# 			if = {
+# 				limit = { is_ai = no}
+# 				root = {
+# 					add_ideas = research_revalue
+# 				}
+# 			}
+			
+# 		}
+# 	}
+# 	on_monthly = {
+# 		effect = {
+# 			every_country = {
+# 				if = {
+# 					limit = {is_ai = no not = {has_idea = research_revalue}}
+# 					add_ideas = research_revalue
+# 				}
+# 				else_if = {
+# 					limit = { is_ai = yes has_idea = research_revalue }
+# 					remove_ideas = research_revalue
+# 				}
+# 			}
+# 		}
+# 	}
+
+# }

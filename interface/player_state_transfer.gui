@@ -1,0 +1,85 @@
+guiTypes = {
+	containerWindowType = {
+		name = "main_window"
+		position = {x=1200 y=100}
+		size = { width=650 height=600}
+		
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background"
+		spriteType = "GFX_diplo_action_imp_relations_bg"
+		}
+		
+		
+		instantTextboxType = {
+			name = "state_owner_name"
+			position = {x=163 y=30}
+			font = "hoi_24header"
+			text = "[THIS.owner.GetNameWithFlag]"
+			maxWidth = 200
+			maxHeight = 23
+			format = centre
+		}
+		
+		containerWindowType = {
+		name = "transfer_regions_window"
+		position = {x=100 y=100}
+		size = { width=600 height=300}
+		
+		fade_time = 300
+		fade_type = linear
+		background = {
+			name = "Background"
+			spriteType = "GFX_BPT_areadef_conf_bg"
+		}
+
+		instantTextboxType = {
+			name = "state_title"
+			position = {x=-30 y=6}
+			font = "hoi_24header"
+			text = "[This.GetName]"
+			maxWidth = 200
+			maxHeight = 23
+			format = centre
+		}
+		buttonType = {
+			name = "player_toogle_state_mark" 
+			position = {x=100 y=35}
+			text = "Mark"
+			font = "hoi_24header"
+			spriteType = "GFX_sort_button_100x29"
+			pdx_tooltip = "PLAYER_STATE_MARK_FOR_TRANSFER"
+		}
+		buttonType = {
+			name = "player_clear_all_markings" 
+			position = {x=240 y=30}
+			spriteType = "GFX_global_alert_icons"
+            		frame = 38
+			pdx_tooltip = "CLEAR_ALL_MARKINGS"
+			pdx_tooltip_delayed = "CLEAR_ALL_MARKINGS_DELAYED"
+			scale = .85
+		}
+		buttonType = {
+			name = "player_award_states" 
+			position = {x=290 y=30}	
+			spriteType = "GFX_global_diplorequest_icons"
+            		frame = 13
+			scale = 0.85
+			pdx_tooltip = "TRANSFER_STATES"
+			pdx_tooltip_delayed = "TRANSFER_STATES_DELAYED"
+		}
+		buttonType = {
+			name = "cancel_player_transfer" 
+			position = {x=20 y=30}
+			pdx_tooltip = "CANCEL_PLAYER_TRANSFER"
+			pdx_tooltip_delayed = "CANCEL_PLAYER_TRANSFER_DELAYED"
+			spriteType = "GFX_global_alert_icons"
+            		frame = 43
+			scale = .85
+		}
+	}
+	}
+}

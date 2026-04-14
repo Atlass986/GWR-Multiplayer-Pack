@@ -1,0 +1,33 @@
+state={
+	id=703
+	name="STATE_703"
+	manpower=458
+	state_category = megalopolis
+	history= {
+		owner = GWR
+		buildings = {
+			radar_station = 6
+			gwr_radar1 = 6
+			gwr_radar2 = 6
+			gwr_radar3 = 6
+			gwr_radar4 = 6
+			gwr_radar5 = 6
+			gwr_radar6 = 6
+			infrastructure = 5
+			industrial_complex = 10
+			13013 = {
+				naval_base = 1
+			}
+		}
+		# strategic_state_location = {
+		# 	favorable_approach = 13013
+		# }
+		add_core_of = GWR
+	}
+	
+	provinces={
+		13013 
+	}
+
+	local_supplies=0.0 
+}

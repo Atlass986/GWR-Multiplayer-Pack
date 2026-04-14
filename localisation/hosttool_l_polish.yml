@@ -1,0 +1,77 @@
+﻿l_polish:
+ 
+ ST_STATE_MARK_FOR_TRANSFER:0 "§HZaznacz region§!\nOznacza wybrany region\n"
+ ST_STATE_UNMARK_FOR_TRANSFER:0 "§HOdznacz region§!\nOdznacza wybrany region\n"
+ mark_state_yes:0 "\n  §Oznacz!§!"
+ mark_state_no:0 "\n  §RZaznaczony!§!"
+ 
+ OBSERVER:0 "§HObserwator§!\nZmienia tryb gracza na tryb obserwatora\n\n"
+ OBSERVER_DELAYED:0 ""
+ WHITEPEACE:0 "§HBiały pokój§!\nKraj podpisze biały pokój z KAŻDYM wrogiem\n\n"
+ WHITEPEACE_DELAYED:0 ""
+  
+ CLEAR_ALL_MARKINGS:0 "§HWyczyść zaznaczenia§!\nWszystkie zaznaczenia zostaną usunięte\n\n"
+ CLEAR_ALL_MARKINGS_DELAYED:0 ""
+
+ TRANSFER_STATES:0 "§HPrzekaż regiony§!\nPrzekaż zaznaczone regiony dla wybranego kraju (Regiony, Kraj)\n\n"
+ TRANSFER_STATES_DELAYED:0 ""
+ 
+ ADD_CORES:0 "§HDodaj region narodowy§!\nDodaje regiony narodowe dla zaznaczonych regionów dla wybranego kraju (Regiony, Kraj)\n\n"
+ ADD_CORES_DELAYED:0 ""
+
+
+ GIVE_WAR_GOAL:0 "Daj cel wojenny (Region, Kraj)"
+ GIVE_WAR_GOAL_DELAYED:0 ""
+ DECLARE_WAR:0 "Wypowiedz wojnę (Region, Kraj)"
+ DECLARE_WAR_DELAYED:0 ""
+ UNPUPPET_COUNTRY:0 "Odmarionetkuj państwo"
+ UNPUPPET_COUNTRY_DELAYED:0 ""
+ SET_FLAGS:0 "Ustaw flagi"
+ SET_FLAGS_DELAYED:0 ""
+ 
+ ANNEX_COUNTRY:0 "§HAnektuj§!\nWybrany kraj zaanektuje właściciela wybranego regionu (Regiony, Kraj)\n\n"
+ ANNEX_COUNTRY_DELAYED:0 ""
+ 
+ PUPPET_COUNTRY:0 "§HZmarionetkuj§!\nWybrany kraj zdobędzie marionetkę z właściciela zaznaczonego regionu (Regiony, Kraj)\n\n"
+ PUPPET_COUNTRY_DELAYED:0 ""
+ 
+ ADD_CHEAT:0 "§HOszustwo§!\nWykona wybrane oszustwo dla właściciela zaznaczonego regionu\n\n"
+ ADD_CHEAT_DELAYED:0 ""
+
+ PINGTOOL:0 "§HAI Reenabler§!\nMark, then click (WiP)\n\n"
+ PINGTOOL_DELAYED:0 ""
+
+ CIVADD:0 "§HDodaj 1 Fabrykę cywilną§!\nDodaj 1 fabrykę cywilną do zaznaczonego regionu.\n\n"
+ CIVADD_DELAYED:0 ""
+
+ CIVREMOVE:0 "§HUsuń 1 Fabrykę cywilną§!\nUsuń 1 fabrykę cywilną z zaznaczonego regionu.\n\n"
+ CIVREMOVE_DELAYED:0 ""
+
+ ADDPP:0 "§HDodaj 50 PP§!\nDodaj 50PP posiadaczowi zaznaczonego regionu.\n\n"
+ 
+ ST_TOOLTIP_on:0 "§HWłącz'Host Tool'§!"
+ ST_TOOLTIP_off:0 "§HWyłącz 'Host Tool'§!"
+transfer_states_on:0 "Host Tool: £trigger_no"
+transfer_states_off:0 "Host Tool: £trigger_yes"
+
+ CHEAT_SELECT:0   "Wybierz oszustwo"
+ CHEAT1:0   "Dodaj 1 Off-Mil"
+ CHEAT2:0   "Usuń 1 Off-Mil"
+ CHEAT3:0   "Dodaj 1 Off-Civ"
+ CHEAT4:0   "Usuń 1 Off-Civ"
+ CHEAT5:0   "Dodaj 50 PP"
+ CHEAT6:0   "Dodaj 50 XP Armii"
+ CHEAT7:0   "Dodaj 50 XP Marynarki"
+ CHEAT8:0   "Dodaj 50 XP Lotnictwa"
+ CHEAT9:0   "Dodaj 10k Ludzi"
+ CHEAT10:0   "Usuń 10k Ludzi"
+ CHEAT11:0   "Ustaw jako Kraj Neutralny"
+ CHEAT12:0   "Usuń neutralność kraju"
+
+  
+ mark_status_marked:0   "     Odznacz region "
+ mark_status_unmarked:0 "      Zaznacz region  "
+ 
+ hosthelp.2.t:0 "Help with hosttool"
+ hosthelp.2.d:0 "The hosttool system is made for hosts to have an easier time with their games and not waste time on hotjoins, and for games not to be over if Germany researches something wrong with its bonuses, etc. The hosttool has a few functionalities: \n\n 1. Changing borders \nThe hosttool can annex countries, transfer states and add cores. To annex a country, mark one of its states, then click on the country you want to annex it to and click the annex button. To transfer states/add cores, mark the state and then click on the recieving country and click transfer states/add cores. \n\n2. Adding tech bonuses.\n To do so, click on the target country, click on the bonus you want to add to it and click the 'Cheat' button with the research icon.\n\n3. Sending players to observer. \nTo do so, click on the country the player is playing and click the Observe button. \n\n4. Whitepeace countries. \nTo whitepeace a country, click on the target country, and click the Whitepeace button."
+ hosthelp.2.a:0 "Thank you host, very cool!"

@@ -1,0 +1,24 @@
+guiTypes = {
+	containerWindowType = {
+		name = "country_points_window"
+
+		position = { x = 1200 y = 10 }
+		size = { width = 200 height = 40 }
+
+		# moveable = no
+
+		instantTextBoxType = {
+			name = "country_points_text"
+			position = { x = 0 y = 0 }
+			font = "hoi_16mbs"
+			text = "Country Points: [?country_cost]"
+		}
+
+		instantTextBoxType = {
+			name = "faction_points_text"
+			position = { x = 150 y = 0 }
+			font = "hoi_16mbs"
+			text = "Faction Points: [?faction_points]/[?faction_limit]"
+		}
+	}
+}

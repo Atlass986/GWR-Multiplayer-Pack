@@ -1,0 +1,28 @@
+on_actions = {
+
+    on_startup = {
+        effect = {
+            every_country = {
+                THIS = { set_country_cost = yes }
+                THIS = { set_faction_limit = yes }
+                if = {
+                    limit = { THIS = {is_faction_leader = yes} }
+                    THIS = { set_faction_points = yes }
+                }
+            }
+        }
+    }
+
+    on_monthly = {
+        effect = {
+            every_country = {
+                ROOT = { set_country_cost = yes set_faction_limit = yes }
+                if = {
+                    limit = { ROOT = {AND = {is_in_faction = yes }} }
+                    THIS = { set_faction_points = yes }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,66 @@
+﻿l_polish:
+  PAY_CIV_FACTORY_TITLE:0 "Wyślij 1 fabrykę cywilną"
+  PAY_CIV_FACTORY_ACTION_DESC:0 "Wyślij 1 fabrykę cywilną do tego państwa"
+  pay_civ_factory_send_text:0 "Czy napewno chcesz wysłać 1 fabrykę cywilną do tegu państwa?"
+  pay_civ_get_message:0 "Dostaliśmy 1 fabrykę cywilną"
+  pay_civ_get_title:0 "Otrzymano 1 fabrykę cywilną"
+
+  PAY_DOCKYARD_TITLE:0 "Wyślij 1 stocznię"
+  PAY_DOCKYARD_ACTION_DESC:0 "Wyślij 1 stocznię do tego państwa"
+  pay_dockyard_send_text:0 "Czy napewno chcesz wysłać 1 stocznię do tegu państwa"
+  pay_dock_get_message:0 "Dostaliśmy 1 stocznię"
+  pay_dock_get_title:0 "Otrzymano stocznię"
+
+  PAY_MIL_FACTORY_TITLE:0 "Wyślij 1 fabrykę wojskową"
+  PAY_MIL_FACTORY_ACTION_DESC:0 "Wyślij 1 fabrykę wojskową do tego państwa"
+  pay_mil_factory_send_text:0 "Czy napewno chcesz wysłać 1 fabrykę wojskową do tegu państwa?"
+  pay_mil_get_message:0 "Dostaliśmy 1 fabrykę wojskową"
+  pay_mil_get_title:0 "Otrzymano 1 fabrykę wojskową"
+
+  BECOME_PUPPET_LOC:0 "Czy napewno chcesz stać się ich marionetką?"
+  BECOME_PUPPET_TITLE:0 "Stań się marionetką"
+  BECOME_PUPPET_DESC:0 "Stań się marionetką tego państwa"
+  BECOME_PUPPET_ACTION_DESC:0 "Jeśli zaakceptują staniesz się ich marionetką!"
+  PUPPET_COUNTRY_LOC:0 "Czy napewno chcesz zagrozić temu państwu, żeby stało się Twoją marionetką?"
+  PUPPET_COUNTRY_TITLE:0 "Wymuś rząd marionetkowy"
+  PUPPET_COUNTRY_DESC:0 "Wymuszono na tym państwie rząd marionetkowy"
+  PUPPET_COUNTRY_ACTION_DESC:0 "Jeśli zaakceptują staną się Twoją marionetką!"
+
+  a:0 "a"
+  a:0 "a"
+  a:0 "a"
+  a:0 "a"
+
+   OPEN_LETTER_WRITTING_DIPLO_ACTIONS_TT: "§GClick§! aby pokazać inne rodzaje dyplomacji."
+ 
+ WRITE_LETTER_DIPLO_ACTION_TITLE: "Wyślij wiadomość"
+ WRITE_LETTER_DIPLO_ACTION_TT: "Wyślij dyplomatyczną wiadomość krajowi §Y[This.GetNameWithFlag]§!. [This.GetSendmessageConditionsTooltip]"
+ 
+ WRITE_LETTER_POPUP_SENDER_TITLE: "Wiadomość"
+ WRITE_LETTER_POPUP_SENDER_SHORT_DESC: "Wyślij dyplomatyczną wiadomość krajowi §Y[?selected_country_to_message.GetNameWithFlag]§!."
+
+ WRITE_LETTER_POPUP_SENDER_ENTRY: "§H[This.GetMessageTypedText]§!"
+ 
+ SEND_INSULT_BUTTON_TT: "§Y[This.GetNameWithFlag]§! wysyła wiadomość do §Y[?selected_country_to_message.GetNameWithFlag]§!."
+ 
+ WRITE_LETTER_POPUP_RECEIVER_TITLE: "Dyplomatyczna wiadomość"
+ WRITE_LETTER_POPUP_RECEIVER_SHORT_DESC: "Otrzymaliśmy wiadomość od kraju §Y[This.GetNameWithFlag]§!"
+ WRITE_LETTER_POPUP_RECEIVER_ENTRY: "§H[This.GetReceivedInsultEntry]§!"
+ WRITE_LETTER_POPUP_RECEIVER_ENTRY: "§H[This.GetMessageTypedReceivedText]§!"
+ WRITE_LETTER_TUTORIAL: "Wciśnij lewym przyciskiem myszy na zębatkę i zacznij pisać. Żeby wyczyścić całość kilknij na zębatkę prawym myszy. Dostępne znaki wyświetlają się po najechaniu na zębatkę."
+ 
+ RECEIVED_LETTER_OK_BUTTON_TT: "§Y[This.GetNameWithFlag]§! Wysłał nam wiadomość."
+ 
+ WRITE_LETTER_BACK: "Odpowiedz"
+ WRITE_LETTER_BACK_TT: "Odpowiedz krajowi. [This.GetSendmessageConditionsTooltip]"
+ 
+ WRITE_LETTER_BUTTON_TT: "§GClick§!, aby napisać wiadomość. \n§GRight-click§!, aby usunąć całość."
+ WRITE_LETTER_BUTTON_TT_DELAYED: "§RMaksymalna liczba znaków to 1000.§!\n§HTylko litery od A do Z, liczby i niektóre znaki specjalne.§! \nMożesz tylko pisać i usunąć ostatnie znaki za pomocą £DEL£. \n\nMożesz użyć następujących znaków specjalnych, ich zapis znajduje się w nawiasach zaraz po nich: \n§YMinus§! (§G-§!) \n§YSpacja§! (§Gspace bar§!) \n§YPrzecinek§! (§G,§!) \n§YZnak zapytania§! (§GCtrl + Q§!) \n§YApostrof§! (§GShift + ^§!) \n§YKropka§! (§G.§!) \n§YCudzysłów§! (§GShift + 2§!) \n§YWykrzyknik§! (§GShift + 1§!) \n§YOtwarty okrągły nawias§! (§GShift + 8§!) \n§YZamknięty okrągły nawias§! (§GShift + 9§!)"
+ 
+ HAS_WRITTEN_LETTER: "The typed message has at least §Y1§! character"
+ 
+ string_cannot_send_letter_because_no_or_too_short_letter: "\n\n§RWiadomość musi zawierać minimum §Y3§! Znaków.§W"
+
+ string_quotation_mark: "\""
+ 
+ LETTER_MESSAGE: "Wysłano wiadomość" 

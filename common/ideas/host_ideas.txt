@@ -1,0 +1,28 @@
+ideas = {
+	country = {
+    	GWR_host_boost = {
+        	picture = generic_intelligence
+        	allowed = { always = yes }
+
+        	modifier = {
+            	intel_network_gain = 2
+            	navy_intel_factor = 20
+            	airforce_intel_factor = 20
+            	civilian_intel_factor = 20
+				army_intel_factor = 20
+				army_intel_to_others = -200
+            	navy_intel_to_others = -200
+            	airforce_intel_to_others = -200
+            	civilian_intel_to_others = -200
+				operative_slot = 10
+				operative_death_on_capture_chance = 1
+				intelligence_agency_defense = 10
+				enemy_justify_war_goal_time = 20
+				# detection_chance_from_radar_factor = 100.0   # 100x wykrycie → praktycznie globalny zasięg
+				# radar_range = 999   # pseudo‑stat, jeśli masz custom define (opcjonalnie)
+				# radar_intel_effect = 200  # bardzo duży intel z radarów
+				# air_detection_chance = 0.99  # bliskie 100% wykrycie
+			}
+    	}
+	}
+}

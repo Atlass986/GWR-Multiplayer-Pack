@@ -1,0 +1,26 @@
+on_actions = {
+	on_startup = {
+		effect = {		
+			every_country = {
+				limit = {
+					NOT = {is_ai = yes}
+				}
+				set_country_flag = player
+				set_variable = { player_marked_states = 0 }
+			}
+		}
+	}
+	on_monthly = {
+		effect = {		
+			every_country = {
+				limit = {
+					NOT = {is_ai = yes}
+					NOT = {has_country_flag = player}
+				}
+				set_country_flag = player
+				set_variable = { player_marked_states = 0 }
+			}
+		}
+	}
+}
+

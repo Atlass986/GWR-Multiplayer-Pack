@@ -1,0 +1,51 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				add_ideas = always_volunteers
+
+			}
+			
+		}
+	}
+	on_release_as_free = {
+		effect = {
+			if = {
+				limit = { is_ai = no}
+				root = {
+					add_ideas = always_volunteers
+				}
+			}
+			
+		}
+	}
+	on_release_as_puppet = {
+		effect = {
+			if = {
+				limit = { is_ai = no}
+				root = {
+					add_ideas = always_volunteers
+				}
+			}
+			
+		}
+	}
+	on_monthly = {
+		effect = {
+			every_country = {
+				if = {
+					limit = {is_ai = no not = {has_idea = always_volunteers}}
+					add_ideas = always_volunteers
+				}
+				else_if = {
+					limit = { is_ai = yes has_idea = always_volunteers }
+					remove_ideas = always_volunteers
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,283 @@
+guiTypes = {
+	containerWindowType = {
+    	name = "state_interactions_transfer_tool_gui"
+	}
+	containerWindowType = {
+		name = "state_interaction_menu_container"
+
+		buttonType = {
+			name = "state_interaction_menu_button"
+
+			position = { x = 17 y = 13 }
+
+			scale = 0.88
+
+			quadTextureSprite = "GFX_SI_state_menu_button"
+
+			pdx_tooltip = "SI_stateview_button"
+
+			shortcut = "ctrl+shift+s"
+		}
+	}
+	containerWindowType = {
+		name = "state_interaction_container"
+		
+		position = { x = -500 y = -36 }
+
+		size = { width = 467 height = 50 }
+
+		show_position = { x = 3 y = -36 }
+
+		show_animation_type = decelerated
+
+		hide_animation_type = accelerated
+
+		animation_time = 250
+
+		background = {
+			name = "Background"
+
+			spriteType = "GFX_SI_state_menu4"
+		}
+
+		buttonType = {
+			name = "interaction_debug_button"
+
+			# size = { width = 34 height = 34 }
+
+			scale = 0.9
+
+			position = { x = 12 y = 10 }
+
+			spriteType = "GFX_debug_gfx_strip"
+			
+			# shortcut = "ctrl+shift+q"
+
+			pdx_tooltip = "SI_interaction_debug_button"
+		}
+
+		buttonType = {
+			name = "state_menu_demand_state_button"
+
+			# size = { width = 34 height = 34 }
+
+			position = { x = 127 y = 8 }
+
+			quadTextureSprite = "GFX_state_buttons_strip"
+			frame = 2
+
+			# shortcut = "ctrl+shift+q"
+
+			pdx_tooltip = "SI_state_demand_button"
+		}
+		buttonType = {
+			name = "state_menu_demand_vsl_button"
+
+			# size = { width = 34 height = 34 }
+
+			position = { x = 172 y = 8 }
+
+			quadTextureSprite = "GFX_state_buttons_strip"
+			frame = 3
+
+			# shortcut = "ctrl+shift+w"
+
+			pdx_tooltip = "SI_state_vsl_button"
+		}
+		# buttonType = {
+		# 	name = "state_menu_demand_int_button"
+
+		# 	size = { width = 34 height = 34 }
+
+		# 	position = { x = 13 y = 8 }
+
+		# 	quadTextureSprite = "GFX_state_buttons_strip"
+		# 	frame = 1
+
+		# 	pdx_tooltip = "SI_state_int_button"
+		# }
+		buttonType = {
+			name = "state_menu_claim_state_button"
+
+			# size = { width = 34 height = 34 }
+
+			position = { x = 217 y = 8 }
+
+			quadTextureSprite = "GFX_state_buttons_strip"
+			frame = 4
+
+			# shortcut = "ctrl+shift+e"
+
+			pdx_tooltip = "SI_state_claim_button"
+		}
+		# buttonType = {
+		# 	name = "state_menu_core_state_button"
+
+		# 	size = { width = 34 height = 34 }
+
+		# 	position = { x = 262 y = 8 }
+
+		# 	quadTextureSprite = "GFX_state_buttons_strip"
+		# 	frame = 5
+
+		# 	# shortcut = "ctrl+shift+r"
+
+		# 	pdx_tooltip = "SI_state_core_button"
+		# }
+		buttonType = {
+			name = "state_menu_move_capital_button"
+
+			# size = { width = 34 height = 34 }
+
+			position = { x = 262 y = 8 }
+
+			quadTextureSprite = "GFX_state_buttons_strip"
+			frame = 6
+
+			# shortcut = "ctrl+shift+t"
+
+			pdx_tooltip = "SI_state_move_cap_button"
+		}
+
+		buttonType = {
+			name = "state_menu_transfer_menu_button"
+
+			# size = { width = 34 height = 34 }
+
+			position = { x = 424 y = 9 }
+
+			quadTextureSprite = "GFX_SI_state_transfer_button"
+
+			shortcut = "ctrl+shift+t"
+
+			scale = 1
+
+			pdx_tooltip = "SI_state_transfer_menu_button"
+		}
+
+
+		
+	}
+	containerWindowType = {
+		name = "state_interactions_state_transfer_container"
+
+		position = { x = 0 y = 316 }
+
+		size = { width = 350 height = 80 }
+
+		fade_time = 250
+
+		fade_type = linear
+
+		moveable = yes
+
+		background = {
+			name = "Background"
+			spriteType = "GFX_BPT_areadef_conf_bg"
+		}
+
+		instantTextBoxType = {
+			name = "state_transfer_state_name"
+
+			position = { x = 16 y = 6 }
+
+			maxWidth = 320
+
+			font = "hoi_20bs"
+
+			text = "SI_state_transfer_title"
+		}
+
+		buttonType = {
+			name = "state_transfer_mark_button"
+
+			position = { x = 10 y = 36 }
+			
+			quadTextureSprite = "GFX_sort_button_140x29"
+
+			frame = 1
+
+			font = "hoi_18mbs"
+
+			text = "SI_state_mark_button"
+
+			shortcut = "ctrl+z"
+
+			pdx_tooltip = "SI_transfer_mark_state_tt"
+		}
+		buttonType = {
+			name = "state_transfer_unmark_button"
+
+			position = { x = 10 y = 36 }
+			
+			quadTextureSprite = "GFX_sort_button_140x29"
+
+			frame = 2
+
+			font = "hoi_18mbs"
+
+			text = "SI_state_unmark_button"
+
+			shortcut = "ctrl+z"
+
+			pdx_tooltip = "SI_transfer_unmark_state_tt"
+		}
+
+		# buttonType = {
+		# 	name = "state_transfer_mark_all_button"
+
+		# 	position = { x = 165 y = 32 }
+
+		# 	spriteType = "GFX_SI_state_transfer_select_all_button"
+
+		# 	font = "hoi_18mbs"
+
+		# 	shortcut = "ctrl+a"
+
+		# 	pdx_tooltip = "SI_transfer_mark_all_tt"
+		# }
+
+		buttonType = {
+			name = "state_transfer_unmark_all_button"
+
+			position = { x = 165 y = 32 }
+
+			spriteType = "GFX_SI_state_transfer_deselect_all_button"
+
+			font = "hoi_18mbs"
+
+			shortcut = "ctrl+x"
+
+			pdx_tooltip = "SI_transfer_unmark_all_tt"
+		}
+
+		# buttonType = {
+		# 	name = "state_transfer_core_button"
+
+		# 	position = { x = 255 y = 32 }
+
+		# 	spriteType = "GFX_SI_state_transfer_core_button"
+
+		# 	font = "hoi_18mbs"
+
+		# 	shortcut = "ctrl+c"
+
+		# 	pdx_tooltip = "SI_transfer_core_tt"
+		# }
+
+		buttonType = {
+			name = "state_transfer_transfer_button"
+
+			position = { x = 210 y = 32 }
+
+			spriteType = "GFX_SI_state_transfer_transfer_button"
+
+			font = "hoi_18mbs"
+
+			shortcut = "ctrl+t"
+
+			pdx_tooltip = "SI_transfer_state_tt"
+		}
+	}
+
+}

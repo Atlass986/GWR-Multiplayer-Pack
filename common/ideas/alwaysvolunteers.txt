@@ -1,0 +1,16 @@
+ideas = {
+	country = {
+		always_volunteers = {
+			picture = HUN_secret_rearmament
+			modifier = {
+				send_volunteer_divisions_required = -1
+				send_volunteers_tension = -2.00
+				send_volunteer_size = 1
+			}
+			rule = {
+				can_send_volunteers = yes
+			}
+			
+		}
+	}
+}

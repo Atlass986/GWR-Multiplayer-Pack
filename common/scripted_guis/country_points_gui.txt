@@ -1,0 +1,35 @@
+scripted_gui = {
+    country_points_display = {
+        window_name = "country_points_window"  
+        context_type = player_context       
+        visible = { 
+            # NOT = {
+            #     has_game_rule = {
+            #         rule = FACTION_POINTS_SYSTEM
+            #         option = DISABLE_FACTION_POINTS
+            #     }
+            # }
+        }
+
+        triggers = {
+            faction_points_text_visible = {
+                is_in_faction = yes
+            }
+            #     NOT = {
+            #         has_game_rule = {
+            #             rule = FACTION_POINTS_SYSTEM
+            #             option = DISABLE_FACTION_POINTS
+            #         }
+			#     }
+            # }
+            # country_points_text_visible = {
+            #     NOT = {
+            #         has_game_rule = {
+            #             rule = FACTION_POINTS_SYSTEM
+            #             option = DISABLE_FACTION_POINTS
+            #         }
+			#     }
+            # }
+        }
+    }
+}

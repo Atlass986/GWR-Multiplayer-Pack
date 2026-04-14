@@ -1,0 +1,18 @@
+characters = {
+	GWR_great_leader={
+		name = GWR_atlass
+		
+		portraits = {
+			civilian = {
+				large="GFX_portrait_POL_Sejmik_Regency" 
+			}
+		}
+	
+		country_leader = {
+			ideology = liberalism
+			expire = "2067.6.7"
+		# traits = {conservative}
+
+		}
+	}	
+}

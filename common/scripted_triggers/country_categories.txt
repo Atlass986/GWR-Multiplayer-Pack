@@ -1,0 +1,363 @@
+is_super_major = {
+    OR = {
+        tag = SOV
+        tag = GER
+        tag = USA
+        AND = {tag = POL AND = {is_poland_super_major = yes}}
+        AND = {tag = ENG AND = {is_england_super_major = yes}}
+        AND = {is_part_of_mercosur = yes is_mercosur_major=yes is_mercosur_super_major = yes}
+    }
+}
+
+is_major_country = {
+    OR = {
+        AND = {tag = JAP AND = {is_japan_regional = no}}
+        tag = FRA
+        tag = ITA
+        AND = {tag = ENG AND = {is_england_super_major = no}}
+        AND = {tag = POL AND = {is_poland_major = yes is_poland_super_major = no}}
+        AND = {tag = RAJ AND = {is_imperial_puppet = no is_raj_major = yes}}
+        AND = {is_part_of_china = yes AND = {is_china_major = yes}}
+        AND = {is_part_of_mercosur = yes is_mercosur_major=yes is_mercosur_super_major = no}
+        AND = {is_part_of_austrohungary = yes is_austrohungary_regional=yes is_austrohungary_major = yes}  
+        AND = {is_part_of_scandinavia = yes is_scandinavia_regional=yes is_scandinavia_major = yes}  
+    }
+}
+
+is_regional = {
+    OR = {
+        AND = {tag = JAP AND = {is_japan_regional = yes}}
+        AND = {is_part_of_china = yes AND = {is_china_regional = yes is_china_major = no}}
+        AND = {tag = POL AND = {is_poland_major = no is_poland_super_major = no}}
+        AND = {is_part_of_baltic = yes is_baltic_regional = yes}
+        AND = {is_part_of_mediterrenian = yes is_mediterrenian_regional=yes}
+        AND = {is_part_of_mercosur = yes is_mercosur_major=no}
+        AND = {is_part_of_austrohungary = yes is_austrohungary_regional=yes is_austrohungary_major = no}  
+        AND = {is_part_of_benelux = yes is_benelux_regional=yes}  
+        AND = {is_part_of_scandinavia = yes is_scandinavia_regional=yes is_scandinavia_major = no}  
+        AND = {tag = RAJ AND = {is_imperial_puppet = no is_raj_major = no}}
+        AND = {tag = YUG AND = {is_yugoslavia_regional = yes}}
+    }
+}
+
+is_minor = {
+    NOT = {
+        OR = {
+            is_super_major = yes
+            is_major_country = yes
+            is_regional = yes
+            is_super_mini = yes
+            is_mini = yes
+            AND = {is_part_of_china = yes is_china_major = yes}
+            AND = {is_part_of_baltic = yes is_baltic_regional = yes}
+            AND = {is_part_of_mediterrenian = yes is_mediterrenian_regional=yes}  
+            AND = {is_part_of_austrohungary = yes is_austrohungary_regional=yes}  
+            AND = {is_part_of_benelux = yes is_benelux_regional=yes}  
+            AND = {is_part_of_scandinavia = yes is_scandinavia_regional=yes}  
+            AND = {tag = YUG AND = {is_yugoslavia_regional = no}}
+
+        }
+    }
+}
+
+is_mini = {
+    OR = { 
+        AND = {is_imperial_puppet = yes is_super_mini = no} 
+        AND = {num_of_factories < 7 num_of_factories > 2}
+    }
+}
+
+is_super_mini = {
+    num_of_factories < 3
+}
+
+
+is_austrohungary_major = {
+    controls_state = 43
+    controls_state = 4
+    controls_state = 70
+    controls_state = 9
+    OR = {
+        controls_state = 109
+        controls_state = 104
+        controls_state = 76
+    }
+}
+is_austrohungary_regional = {
+    count_triggers = {
+        amount = 3
+        controls_state = 43
+        controls_state = 4
+        controls_state = 70
+        controls_state = 9
+        OR = {
+            controls_state = 109
+            controls_state = 104
+            controls_state = 76
+        }
+    }
+}
+
+
+
+
+
+
+is_imperial_puppet = {
+    AND = {is_part_of_imperial_sphere = yes is_subject_of = ENG date < 1940.1.1}
+}
+
+is_poland_major = {
+    OR = {
+        has_completed_focus = POL_unite_west_slavia 
+        has_completed_focus = POL_merge_internal_governments
+        has_completed_focus = POL_romanov
+        has_completed_focus = POL_greater_commonwealth
+    }
+}
+
+is_poland_super_major = {
+    has_completed_focus = POL_proclaim_slavic_unity
+}
+
+# is_brasil_major = {
+#     OR = {
+#         has_completed_focus = BRA_unify_south_america
+#         has_completed_focus = BRA_united_states_of_south_america
+#         has_completed_focus = BRA_union_of_latin_american_socialist_republics
+#     }
+    
+# }
+
+is_mercosur_major = {
+    OR = {
+        has_completed_focus = ARG_south_american_unity
+        has_completed_focus = ARG_integrate_the_motherland
+
+        has_completed_focus = BRA_unify_south_america
+        has_completed_focus = BRA_united_states_of_south_america
+        has_completed_focus = BRA_union_of_latin_american_socialist_republics
+    }
+}
+
+
+is_mercosur_super_major = {
+    AND = {
+        is_mercosur_major = yes
+        OR = {
+            AND = { ROOT = { exists = yes } ARG = { exists = no } }
+            AND = { ROOT = { exists = yes } BRA = { exists = no } }
+        }
+    }
+    
+    
+}
+
+is_china_major = {
+    AND = {
+        NOT = { is_subject_of = JAP }
+        controls_state = 608
+        controls_state = 1035
+        controls_state = 1037
+        controls_state = 622
+        controls_state = 594
+        controls_state = 328
+        controls_state = 325
+    } 
+}
+
+is_mediterrenian_regional = {
+    OR = {
+        has_completed_focus = GRE_byzantine_themata
+        has_completed_focus = TUR_reclaiming_our_lost_empire
+    }
+}
+
+is_england_super_major = {
+    has_completed_focus = ENG_imperial_federation
+}
+
+is_baltic_regional = {
+    controls_state = 11
+    controls_state = 808
+    controls_state = 812
+}
+is_benelux_regional = {
+    controls_state = 6
+    controls_state = 8
+    controls_state = 7
+}
+is_yugoslavia_regional = {
+    has_completed_focus = YUG_reunite_the_kingdom
+}
+is_raj_major = {
+    num_of_factories > 149
+}
+is_scandinavia_regional = {
+    count_triggers = {
+        amount = 3
+        controls_state = 141
+        controls_state = 110
+        controls_state = 111
+        controls_state = 37
+    }   
+}
+is_scandinavia_major = {
+    controls_state = 141
+    controls_state = 110
+    controls_state = 111
+    controls_state = 37
+    controls_state = 100
+}
+
+is_china_regional = {
+    count_triggers = {
+        amount = 3
+        controls_state = 608
+        controls_state = 1035
+        controls_state = 1037
+        controls_state = 622
+        controls_state = 594
+        controls_state = 328
+        controls_state = 325
+        controls_state = 1036
+        controls_state = 750
+    }
+}
+
+is_japan_regional = {
+    NOT = {
+        AND = {
+            JAP = {
+                OR = {
+                    count_triggers = {
+                        amount = 4
+                        controls_state = 524
+                        controls_state = 526
+                        controls_state = 609
+                        controls_state = 745
+                        controls_state = 1030
+                        controls_state = 1031
+                        controls_state = 1029
+                        controls_state = 525
+                        controls_state = 1028
+                        controls_state = 527
+                    }
+                    any_subject_country = {
+                        count_triggers = {
+                            amount = 2
+                            controls_state = 524
+                            controls_state = 609
+                            controls_state = 745
+                        }
+                    }
+                }
+                
+            }
+            MAN = {
+                OR = {
+                    is_subject_of = JAP
+                    NOT = { exists = yes }
+                }
+                
+            }
+        }
+    }
+    
+    
+}
+
+is_part_of_china = {
+    OR = {
+        TAG = CHI
+        TAG = GDC
+        TAG = GXC
+        TAG = YUN
+        TAG = SIC
+        TAG = XIC
+        TAG = XSM
+        TAG = KHM
+        TAG = KUM
+        TAG = GSM
+        TAG = NXM
+        TAG = PRC
+        TAG = SHX
+        TAG = SND
+        TAG = HBC
+        TAG = MEN
+        TAG = MAN
+    }
+}
+
+is_part_of_baltic = {
+    OR = {
+        TAG = LIT
+        TAG = LAT
+        TAG = EST
+    }
+}
+
+is_part_of_mercosur = {
+    OR = {
+        TAG = BRA
+        TAG = ARG
+    }
+}
+
+is_part_of_mediterrenian = {
+    OR = {
+        TAG = GRE
+        TAG = TUR
+    }
+}
+
+is_part_of_austrohungary = {
+    OR = {
+        TAG = HUN
+        TAG = AUS
+        TAG = CZE
+        TAG = TRA
+        TAG = SLO
+        TAG = SLV
+        TAG = CRO
+        TAG = BOS
+        TAG = HRZ
+    }
+}
+
+is_part_of_benelux = {
+    OR = {
+        TAG = BEL
+        TAG = HOL
+        TAG = LUX
+    }
+}
+
+is_part_of_scandinavia = {
+    OR = {
+        TAG = DEN
+        TAG = FIN
+        TAG = SWE
+        TAG = NOR
+        TAG = ICE
+        TAG = SMI
+        TAG = SMI
+    }
+}
+
+
+is_part_of_imperial_sphere = {
+    OR = {
+        TAG = MAL
+        TAG = BRM
+        TAG = RAJ
+        TAG = OMA
+        TAG = KUW
+        TAG = JOR
+        TAG = PAL
+        TAG = SAF
+        TAG = CAN
+        TAG = AST
+        TAG = NZL
+    }
+}

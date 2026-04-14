@@ -1,0 +1,178 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			
+			set_variable = { global.si_demand_state_cooldown_days = 30 }
+			set_variable = { global.si_demand_vassalisation_cooldown_days = 45 }
+			set_variable = { global.si_claim_state_cooldown_days = 14 }
+			set_variable = { global.si_core_state_cooldown_days = 15 }
+			set_variable = { global.si_move_capital_cooldown_days = 7 }
+
+			set_variable = { global.si_demand_state_pp_required = 250 }
+			set_variable = { global.si_demand_state_pp_take = -200 }
+
+			set_variable = { global.si_demand_vassalisation_pp_required = 100 }
+			set_variable = { global.si_demand_vassalisation_pp_take = -100 }
+
+			set_variable = { global.si_claim_state_cp_required = 15 }
+			set_variable = { global.si_claim_state_cp_take = -15 }
+
+			every_state = {
+				set_variable = { THIS.si_core_state_cp_required = 50 }
+				set_variable = { THIS.si_core_state_guns_required = 5000 }
+				set_variable = { THIS.si_core_state_cp_take = -50 }
+				set_variable = { THIS.si_core_state_guns_take = -5000 }
+
+				if = {
+					limit = {
+						any_country_with_core = {
+							always = yes
+						}
+					}
+					set_variable = { THIS.si_core_state_cp_required = 30 }
+					set_variable = { THIS.si_core_state_guns_required = 1500 }
+					set_variable = { THIS.si_core_state_cp_take = -30 }
+					set_variable = { THIS.si_core_state_guns_take = -1500 }
+				}
+			}
+			
+			every_possible_country = {
+				set_variable = { THIS.si_move_capital_pp_required = 50 }
+				set_variable = { THIS.si_move_capital_pp_take = -50 }
+			}
+
+			set_variable = { global.si_core_state_resistance_required = 20 }
+			set_variable = { global.si_core_state_compliance_required = 80 }
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = si_core_required_compliance_rules
+						option = SI_CORE_REQUIRED_90
+					}
+				}
+				set_variable = { global.si_core_state_compliance_required = 90 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = si_core_required_compliance_rules
+						option = SI_CORE_REQUIRED_70
+					}
+				}
+				set_variable = { global.si_core_state_compliance_required = 70 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = si_core_required_compliance_rules
+						option = SI_CORE_REQUIRED_60
+					}
+				}
+				set_variable = { global.si_core_state_compliance_required = 60 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = si_core_required_compliance_rules
+						option = SI_CORE_REQUIRED_50
+					}
+				}
+				set_variable = { global.si_core_state_compliance_required = 50 }
+			}
+
+			set_variable = { global.si_ai_reluctance_time_days = 135 }
+			set_variable = { global.si_ai_reluctance_points_per_stage = 15 }
+
+		}
+	}
+
+	on_daily = {
+		effect = {
+
+			if = {
+				limit = {
+					ROOT = {
+						check_variable = {
+							var = ROOT.si_move_capital_pp_required
+							value = 50
+							compare = equals
+						}
+						has_war = yes
+					}
+				}
+				ROOT = {
+					set_variable = { ROOT.si_move_capital_pp_required = 50 }
+					set_variable = { ROOT.si_move_capital_pp_take = -50 }
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						check_variable = {
+							var = ROOT.si_move_capital_pp_required
+							value = 50
+							compare = not_equals
+						}
+						has_war = no
+					}
+				}
+				ROOT = {
+					set_variable = { ROOT.si_move_capital_pp_required = 50 }
+					set_variable = { ROOT.si_move_capital_pp_take = -50 }
+				}
+			}
+
+			if = {
+				limit = {
+					ROOT = {
+						exists = no
+					}
+					any_state = {
+						is_in_array = {
+							array = ROOT.selected_states_array
+							value = THIS.id
+						}
+					}
+				}
+				ROOT = {
+					clear_array = THIS.selected_states_array
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						exists = no
+						check_variable = { ROOT.si_ai_reluctance_stage > 0 }
+					}
+				}
+				set_variable = { ROOT.si_ai_reluctance_stage = 0 }
+			}
+
+		}
+	}
+
+	on_state_control_changed = {
+		effect = {
+			every_country = {
+				if = {
+					limit = {
+						any_state = {
+							is_in_array = {
+								array = ROOT.selected_states_array
+								value = FROM.FROM.id
+							}
+						}
+						remove_from_array = {
+							array = THIS.selected_states_array
+							value = FROM.FROM.id
+						}
+					}
+				}
+				
+			}
+
+		}
+	}
+
+}

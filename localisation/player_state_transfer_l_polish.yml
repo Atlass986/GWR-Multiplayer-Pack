@@ -1,0 +1,25 @@
+﻿l_polish:
+ Mark:"Zaznacz"
+ PLAYER_STATE_MARK_FOR_TRANSFER:0 "§HZaznacz region§!\nOznacza wybrany region\n"
+ ST_STATE_UNMARK_FOR_TRANSFER:0 "§HOdznacz region§!\nOdznacza wybrany region\n"
+ mark_state_yes:0 "\n  §Oznacz!§!"
+ mark_state_no:0 "\n  §RZaznaczony!§!"
+
+ CLEAR_ALL_MARKINGS:0 "Wszystkie zaznaczenia zostaną usunięte\n\n"
+ CLEAR_ALL_MARKINGS_DELAYED:0 ""
+
+ TRANSFER_STATES:0 "Przekaż regiony"
+
+ TRANSFER_STATES_DELAYED:0 ""
+ TRANSFER_REGIONS_BUTTON_TITLE:"Przekaż regiony"
+ TRANSFER_REGIONS_DIPLO_ACTION_TT:"Przekaż regiony krajowi §Y[?sending_to.GetNameWithFlag]§!."
+ CANCEL_PLAYER_TRANSFER_DELAYED:""
+ CANCEL_PLAYER_TRANSFER:"Zamknij"
+ PINGTOOL:0 "§HAI Reenabler§!\nMark, then click (WiP)\n\n"
+ PINGTOOL_DELAYED:0 ""
+ transfer_states_on:0 "Host Tool: £trigger_no"
+ transfer_states_off:0 "Host Tool: £trigger_yes"
+
+  
+ player_mark_status_marked:0   "     Odznacz region "
+ player_mark_status_unmarked:0 "      Zaznacz region  "

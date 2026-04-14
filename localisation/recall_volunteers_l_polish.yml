@@ -1,0 +1,6 @@
+﻿l_polish:
+ RECALL_VOLUNTEERS_TITLE:0 "Odwołaj ochotników"
+ RECALL_VOLUNTEERS_ACTION_DESC:0 "Możemy odwołać ochotników z innego kraju."
+ RECALL_VOLUNTEERS_TOOLTIP:0 "§Y[This.GetNameWithFlag]§! §Rmusi mieć jakiś ochotników których możemy odwołać.§!"
+ RECALL_VOLUNTEERS_TOOLTIP_G:0 "§Y[This.GetNameWithFlag]§! musi mieć jakiś ochotników których możemy odwołać."
+#  STATE_1047:"Panama Wschodnia"

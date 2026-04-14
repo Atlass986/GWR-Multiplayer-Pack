@@ -1,0 +1,62 @@
+﻿l_english:
+  PAY_CIV_FACTORY_TITLE:0 "Send civillian factory"
+  PAY_CIV_FACTORY_ACTION_DESC:0 "SEND 1 CIVILLIAN FACTORY TO THE TARGETED COUNTRY"
+  pay_civ_factory_send_text:0 "Are you sure you want to send 1 civillian factory to this nation."
+  pay_civ_get_message:0 "We Recieved 1 civillian factory to us"
+  pay_civ_get_title:0 "Recieved Civillian Factory"
+
+  PAY_DOCKYARD_TITLE:0 "Send dockyard"
+  PAY_DOCKYARD_ACTION_DESC:0 "SEND 1 DOCKYARD TO THE TARGETED COUNTRY"
+  pay_dockyard_send_text:0 "Are you sure you want to send 1 dockyard to this nation."
+  pay_dock_get_message:0 "We Recieved 1 dockyard to us"
+  pay_dock_get_title:0 "Recieved Dockyard"
+
+  PAY_MIL_FACTORY_TITLE:0 "Send military factory"
+  PAY_MIL_FACTORY_ACTION_DESC:0 "SEND 1 MILITARY FACTORY TO THE TARGETED COUNTRY"
+  pay_mil_factory_send_text:0 "Are you sure you want to send 1 military factory to this nation."
+  pay_mil_get_message:0 "We Recieved 1 military factory to us"
+  pay_mil_get_title:0 "Recieved Military Factory"
+
+  BECOME_PUPPET_LOC:0 "Are you sure you want to become their puppet?"
+  BECOME_PUPPET_TITLE:0 "Become Puppet"
+  BECOME_PUPPET_DESC:0 "BECOME PUPPET TO TARGETED COUNTRY"
+  BECOME_PUPPET_ACTION_DESC:0 "If they accept you will become puppet!"
+
+  a:0 "a"
+  a:0 "a"
+  a:0 "a"
+  a:0 "a"
+
+  OPEN_LETTER_WRITTING_DIPLO_ACTIONS_TT: "§GClick§! to show other diplomatic actions."
+ 
+ WRITE_LETTER_DIPLO_ACTION_TITLE: "Send a message"
+ WRITE_LETTER_DIPLO_ACTION_TT: "Send a diplomatic message to the government of §Y[This.GetNameWithFlag]§!."
+ 
+ WRITE_LETTER_POPUP_SENDER_TITLE: "Message"
+ WRITE_LETTER_POPUP_SENDER_SHORT_DESC: "Send a diplomatic message to the government of §Y[?selected_country_to_message.GetNameWithFlag]§!."
+
+ WRITE_LETTER_POPUP_SENDER_ENTRY: "§H[This.GetMessageTypedText]§!"
+ 
+ SEND_INSULT_BUTTON_TT: "§Y[This.GetNameWithFlag]§! sends message to §Y[?selected_country_to_message.GetNameWithFlag]§!."
+
+ WRITE_LETTER_POPUP_RECEIVER_TITLE: "Diplomatic Message"
+ WRITE_LETTER_POPUP_RECEIVER_SHORT_DESC: "We just received this message. \n§Y[This.GetNameWithFlag]§!"
+ WRITE_LETTER_POPUP_RECEIVER_ENTRY: "§H[This.GetReceivedInsultEntry]§!"
+ WRITE_LETTER_POPUP_RECEIVER_ENTRY: "§H[This.GetMessageTypedReceivedText]§!"
+ WRITE_LETTER_TUTORIAL: "Press yellow gear (lpm) then start typing. To clear text right click yellow gear. Available characters show up when You hover over yellow gear."
+ 
+ RECEIVED_LETTER_OK_BUTTON_TT: "§Y[This.GetNameWithFlag]§! sent us letter."
+ 
+ WRITE_LETTER_BACK: "Message back"
+ WRITE_LETTER_BACK_TT: "Send a letter back."
+  
+ WRITE_LETTER_BUTTON_TT: "§GClick§! to enter or leave writting Your message mode. \n§GRight-click§! to clear the currently saved message."
+ WRITE_LETTER_BUTTON_TT_DELAYED: "§RMaximum allowed amount of characters is 1000.§!\n§HOnly letters from A to Z, numbers and a few special characters are allowed.§! \nYou can type the letters normally and delete the last character by pressing £DEL£. \n\nThe following special characters can be used, the hotkey to type them is stated in the brackets behind them: \n§YMinus§! (§G-§!) \n§YSpace§! (§Gspace bar§!) \n§YComma§! (§G,§!) \n§YQuestion Mark§! (§GCtrl + Q§!) \n§YApostrophe§! (§GShift + ^§!) \n§YDot§! (§G.§!) \n§YQuotation Mark§! (§GShift + 2§!) \n§YExclamation Mark§! (§GShift + 1§!) \n§YOpened Round Bracket§! (§GShift + 8§!) \n§YClosed Round Bracket§! (§GShift + 9§!)"
+ 
+ HAS_WRITTEN_LETTER: "The typed message has at least §Y1§! character"
+
+ string_cannot_send_letter_because_no_or_too_short_letter: "\n\n§RYou must type a message with at least §Y3§! characters.§W"
+
+ string_quotation_mark: "\""
+
+ LETTER_MESSAGE: "Sent a diplomatic message"
