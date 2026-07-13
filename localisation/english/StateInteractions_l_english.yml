@@ -9,9 +9,10 @@
 
  SI_state_claim_button:0 "Claim §Y[FROM.GetName]§![FROM.owner.GetFlag] ([?global.si_claim_state_cp_required] £GFX_command_power )\n--------------------\n§YAdditional requirements§!\n- §Y[FROM.owner.GetName]§! is §RNOT§! you, your subject or ally\n- §Y[FROM.owner.GetName]§! has border with you or your subject\n- §Y[FROM.GetName]§! is §RNOT§! claimed by you or core of yours\n--------------------\nCooldown: §Y[?global.si_claim_state_cooldown_days]§! days (§gMinor interactions§!)"
 
- SI_state_core_button:0 "Core §Y[FROM.GetName]§![FROM.owner.GetFlag] ([?FROM.si_core_state_guns_required] £GFX_infantry_equipment_text_icon [?FROM.si_core_state_cp_required] £GFX_command_power )\n--------------------\n§YAdditional requirements§!\n- §Y[FROM.GetName]§! is owned by you\n- §Y[FROM.GetName]§! is §RNOT§! core of yours\n§gNon-colony states§!:\n- §CCompliance§! is greater than §Y[?global.si_core_state_compliance_required]%§!\n- §OResistance§! is below §Y[?global.si_core_state_resistance_required]%§!\n--------------------\nCooldown: §Y[?global.si_core_state_cooldown_days]§! days (§gMinor interactions§!)"
+ SI_state_move_cap_button:0 "Move capital to §Y[FROM.GetName]§![FROM.owner.GetFlag] ([?global.si_move_capital_pp_required] £GFX_pol_power )\n--------------------\n§YAdditional requirements§!\n- §Y[FROM.GetName]§! is owned by you\n- §Y[FROM.GetName]§! is §RNOT§! your capital\n- §Y[FROM.GetName]§! is your core\n--------------------\nCooldown: §Y[?global.si_move_capital_cooldown_days]§! days (§gOther interactions§!)"
 
- SI_state_move_cap_button:0 "Move capital to §Y[FROM.GetName]§![FROM.owner.GetFlag] ([?ROOT.si_move_capital_pp_required] £GFX_pol_power )\n--------------------\n§YAdditional requirements§!\n- §Y[FROM.GetName]§! is owned by you\n- §Y[FROM.GetName]§! is §RNOT§! your capital\n- §Y[FROM.GetName]§! is your core\n--------------------\nCooldown: §Y[?global.si_move_capital_cooldown_days]§! days (§gOther interactions§!)"
+ SI_state_ask_resources_button:0 "Ask for resource rights to §Y[FROM.GetName]§![FROM.owner.GetFlag] ([?global.si_ask_resources_pp_required] £GFX_pol_power )\n--------------------\n§YAdditional requirements§!\n- §Y[FROM.GetName]§! is §RNOT§! owned by you\n- §Y[FROM.GetName]§! is §RNOT§! having resource rights given to someone else\n- §Y[FROM.OWNER.GetName]§!§Y[FROM.OWNER.GetFlag]§! is §RNOT§! at war with You\n--------------------\nCooldown: §Y[?global.si_ask_resources_cooldown_days]§! days (§gOther interactions§!)"
+
 
  SI_state_transfer_menu_button:0 "Toggle §YState transfer§! menu"
 
@@ -54,6 +55,19 @@
  sievent.7.t:0 "[FROM.GetNameDefCap] gets vassalised"
  sievent.7.desc:0 "Facing insurmountable pressure, [FROM.GetNameDef] administration has signed a treaty of vassalage, effectively surrendering its sovereignty. While their flag may still fly, its policies and armies are now directed from a foreign capital."
  sievent.7.a:0 "Balance of power shifts."
+
+ sievent.8.t:0 "§2[FROM.GetNameDefCap]§! asks for resource rights in §t[?FROM.requested_resource_@ROOT.GetName]§!"
+ sievent.8.desc:0 "§t[?FROM.requested_resource_@ROOT.GetName]§! is a rich state, do we want to give those resources to them?"
+ sievent.8.a:0 "We agree"
+ sievent.8.b:0 "Get out!"
+
+ sievent.9.t:0 "§2[FROM.GetNameDefCap]§! agrees!"
+ sievent.9.a:0 "That's how You negotiate!"
+ sievent.9.desc:0 "Offer taken!"
+
+ sievent.10.t:0 "§2[FROM.GetNameDefCap]§! declines!"
+ sievent.10.a:0 "What a pity!"
+ sievent.10.desc:0 "Offer declined!"
 
  SI_STATE_TRANSFER_RULES:0 "State Transfer Rules"
  SI_AI_BEHAVIOUR_RULES:0 "AI Behaviour"
@@ -111,7 +125,7 @@
  SI_transfer_mark_all_tt:0 "Mark all states with same owner."
  SI_transfer_unmark_all_tt:0 "Unmark all states."
  SI_transfer_state_tt:0 "Transfer selected state(s)."
- SI_transfer_core_tt:0 "Core selected state(s) to selected owner\'s."
+ SI_transfer_core_tt:0 "Core selected state(s) to selected owner's."
 
  SI_state_transfer_gamerule_sp:0 "Singleplayer"
  SI_state_transfer_gamerule_mp:0 "Multiplayer"

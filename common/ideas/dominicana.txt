@@ -1,0 +1,302 @@
+ideas = {
+    country = {
+        DOM_belizean_paymants = {
+            picture = ger_mefo_bills_payment
+            allowed = {
+                always = yes
+            }
+
+            modifier = {
+                consumer_goods_factor = 0.05
+            }
+        }
+
+        ##############################
+        DOM_dominicanian_dictatorship_idea = {
+            picture = AFG_from_the_ashes
+            allowed = {
+                always = yes
+            }
+
+            modifier = {
+                political_power_gain = 0.25
+                stability_factor = -0.05
+                surrender_limit = 0.15
+            }
+        }
+        DOM_unmodernized_country_idea = {
+            picture = generic_economic_crisis
+            allowed = {
+                always = yes
+            }
+
+            modifier = {
+                political_power_gain = -0.25
+                stability_factor = -0.20
+                consumer_goods_factor = 0.30
+                production_speed_buildings_factor = -0.05
+            }
+        }
+        DOM_fuhrer_in_power_idea = {
+            picture = general_staff
+            allowed = {
+                always = yes
+            }
+
+            modifier = {
+                political_power_gain = 0.25
+                stability_factor = 0.10
+                surrender_limit = 0.15
+                war_support_factor = 0.05
+                consumer_goods_factor = -0.10
+            }
+        }
+        DOM_disorganized_army_force_idea = {
+            picture = MEX_politicised_army
+            allowed = {
+                always = no
+            }
+
+            modifier = {
+                army_attack_factor = -0.15
+                planning_speed = -0.10
+                army_org_factor = -0.15
+            }
+
+        }
+        
+        DOM_government_stabilizing_idea = {
+            picture = JAP_collapsing_government
+            allowed = {
+                always = no
+            }
+
+            modifier = {
+                political_power_gain = 0.25
+                stability_weekly = 0.005
+                surrender_limit = 0.25
+            }
+        }
+        DOM_expansion_desire_idea = {
+            picture = FRA_army_of_aggression_focus
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                political_power_gain = -0.25
+                army_attack_against_minor_factor = 0.15
+                naval_invasion_prep_speed = 0.40
+            }
+        }
+        DOM_nuestro_mar_idea = {
+        picture = ITA_new_roman_empire_ns
+        allowed = {
+            always = no
+        }
+        modifier = {
+        army_org_factor = 0.10
+        army_attack_factor = 0.10
+        army_defence_factor = 0.10
+        shore_bombardment_bonus = 0.20
+        naval_damage_factor = 0.15
+        naval_defense_factor = 0.15
+        naval_morale_factor = 0.10
+        navy_max_range_factor = 0.10
+        navy_anti_air_attack_factor = 0.10
+        naval_speed_factor = 0.10
+        production_speed_dockyard_factor = 0.15
+    }
+}
+
+        ################################################
+        ###              Indusrial Path              ###
+        ################################################
+        DOM_industrial_reforms_idea = {
+            picture = ARG_public_works_investment
+            allowed = {
+                always = no
+            }
+            modifier = {
+                production_speed_buildings_factor = 0.10
+                consumer_goods_factor = -0.10
+                production_speed_infrastructure_factor = 0.20
+                industrial_capacity_factory = 0.05
+            }
+        }
+        DOM_school_dotation_idea = {
+        picture = AFG_communist_graduates
+        allowed = {
+            always = no
+        }
+        modifier = {
+            research_speed_factor = 0.05
+            experience_gain_army_factor = 0.10
+            encryption_factor = 0.10
+            decryption_factor = 0.10
+            training_time_army_factor = -0.05
+            army_org_factor = 0.05
+    }
+}
+        DOM_urbanizated_islands_idea = {
+        picture = undisturbed_isolation
+            allowed = {
+                always = no
+            }
+            modifier = {
+                consumer_goods_factor = -0.10
+                global_building_slots_factor = 0.1
+                local_resources_factor = 0.05
+                conscription_factor = 0.05
+            }
+        }
+        # mulitary-industrial
+        DOM_militarized_islands_idea = {
+            picture = ARG_rapid_militarization
+            allowed = { always = no }
+            
+            modifier = {
+                consumer_goods_factor = -0.05
+                production_speed_arms_factory_factor = 0.1
+                tech_air_damage_factor = -0.1
+                industry_air_damage_factor = -0.05
+            }}
+
+            DOM_air_power_idea = {
+            picture = JAP_mitsubishi_airplanes
+            allowed = { always = no }
+            			equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+            			equipment_bonus = {
+				small_plane_cas_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+                        modifier = {
+                air_agility_factor = 0.1
+                air_defence_factor = 0.15
+            }
+        
+        }
+        DOM_strategic_solutions_idea = {
+            picture = generic_air_research
+            allowed = { always = no }
+                        			equipment_bonus = {
+				large_plane_airframe = {
+					build_cost_ic = -0.30 instant = yes
+				}
+			}
+
+            modifier = {
+                air_range_factor = 0.2
+                air_strategic_bomber_bombing_factor = 0.1
+                strategic_bomb_visibility = -0.2
+            }
+        }
+        DOM_strengthen_both_sides_idea = {
+            picture = HUN_mavag_aircraft
+            allowed = { always = no }
+            modifier = {
+                production_speed_air_base_factor = 0.15
+                
+            }
+        }
+        # MILITARNE
+
+        DOM_new_military_academy_idea = {
+            picture = AUS_women_in_academia
+            allowed = { always = no }
+            modifier = {
+                experience_gain_army_unit_factor = 0.1
+                training_time_army_factor = -0.05
+            }
+        }
+        DOM_reorganizing_army_idea = {
+            picture = MEX_politicised_army_2
+            allowed = { always = no }
+            modifier = {
+                army_attack_factor = 0.1
+                army_org_factor = 0.1
+            }
+        }
+
+        DOM_mass_mobilization_spirit_idea = {
+            picture = RAJ_circuvment_demobilization_restrictions
+            allowed = { always = no }
+            modifier = {
+                conscription = 0.02
+                training_time_factor = -0.10
+            }
+        }
+
+
+        DOM_antillean_militarism_idea = {
+            picture = RAJ_private_military_complex
+            allowed = { always = no }
+            
+            			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+            			equipment_bonus = {
+				support_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+        }
+
+        DOM_island_defense_spirit_idea = {
+            picture = SWE_hedgehog_defense
+            allowed = { always = no }
+            modifier = {
+                dig_in_speed_factor = 0.15
+                production_speed_anti_air_building_factor = 0.15
+            }
+        }
+
+        # MORSKIE
+        DOM_pirates_from_caribbean_idea = {
+            picture = generic_navy_submarines
+            allowed = { always = no }
+            modifier = {
+                convoy_raiding_efficiency_factor = 0.15
+                navy_visibility = -0.05
+            }
+        }
+        DOM_marines_supremacy_idea = {
+            picture = usa_desegregation_1
+            allowed = { always = no}
+            modifier = {
+                special_forces_cap  = 0.10
+                naval_invasion_prep_speed = 0.1
+                amphibious_invasion = 0.03
+            }
+        }
+
+        DOM_naval_hegemony_idea = {
+            picture = generic_coastal_defense_ships
+            allowed = { always = no }
+            modifier = {
+                navy_anti_air_attack = 5
+                naval_enemy_fleet_size_ratio_penalty_factor = 0.15
+                naval_morale = 15
+                navy_org_factor = 0.10
+            }
+        }
+
+        DOM_trade_dominance_idea = {
+            picture = can_wartime_prices_and_trade_board
+            allowed = { always = no }
+            modifier = {
+                political_power_gain = 0.15
+                trade_opinion_factor = 0.25
+                embargo_cost_factor = -0.3
+            }
+        }
+        
+
+    }
+}

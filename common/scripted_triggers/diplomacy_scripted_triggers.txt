@@ -83,6 +83,10 @@ DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
+	if = { 
+		limit = { is_ai = no }
+		always = no
+	}
 }
 
 DIPLOMACY_REVOKE_GUARANTEE_ENABLE_TRIGGER = {
@@ -104,7 +108,7 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 	if = {
 		limit = { 
 			FROM = { NOT = {
-				original_tag = TUN original_tag = EGY original_tag = MOR original_tag = WES original_tag = MRT original_tag = CBV
+				original_tag = TUN original_tag = EGY original_tag = MOR original_tag = WES original_tag = MRT original_tag = CBV original_tag = GYA 
 				original_tag = MLI original_tag = SEN original_tag = GAM original_tag = GNB	original_tag = GNA original_tag = SIE original_tag = MLI
 				original_tag = IVO original_tag = VOL original_tag = GHA original_tag = NGR	original_tag = TOG original_tag = DAH original_tag = SOK
 				original_tag = BIA original_tag = CHA original_tag = CMR original_tag = EQC	original_tag = CAR original_tag = GAB original_tag = RCG
@@ -113,10 +117,17 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 				original_tag = SUD original_tag = SOM original_tag = ERI original_tag = DJI	original_tag = TIG original_tag = QEM original_tag = AFA
 				original_tag = HAR original_tag = ORO original_tag = SID original_tag = GBA	original_tag = BEG original_tag = UGA original_tag = SMI
 				original_tag = OCC original_tag = NAV original_tag = BRI original_tag = COR	original_tag = LBA original_tag = TTS original_tag = SPM
-				original_tag = PAP original_tag = TOS original_tag = PLU original_tag = FSM original_tag = CRO
+				original_tag = PAP original_tag = TOS original_tag = PLU original_tag = FSM original_tag = CRO original_tag = ALG original_tag = CAY
 				original_tag = SRL original_tag = MLD original_tag = FSA original_tag = UAE	original_tag = QAT original_tag = BHR original_tag = KUR
+				original_tag = UKR original_tag = BLR
 				### OTHER
-				original_tag = NEP original_tag = BHU original_tag = TIB original_tag = OMA	original_tag = YEM original_tag = FSM original_tag = CRO
+				original_tag = NEP original_tag = BHU original_tag = TIB original_tag = OMA	original_tag = YEM original_tag = FSM original_tag = SUR 
+				### RAJ
+				original_tag = RAS original_tag = MYS original_tag = KOL original_tag = HYD	original_tag = BAN original_tag = MPU original_tag = SKK
+				original_tag = WIS original_tag = RJP original_tag = SIN original_tag = PAK	original_tag = BLC original_tag = KHL original_tag = NWF
+				original_tag = KAS
+
+
 			} }
 			NOT = {
 				

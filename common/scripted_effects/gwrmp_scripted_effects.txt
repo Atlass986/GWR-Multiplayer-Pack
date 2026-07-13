@@ -1,0 +1,2977 @@
+# GWR Multiplayer Pack scripted_effects.txt
+
+remove_every_guarantee = {
+    every_other_country = {
+        limit = { OR = { is_guaranteed_by = PREV has_guaranteed = PREV } }
+        diplomatic_relation = {
+            country = THIS
+            relation = guarantee
+            active = no
+        }
+        diplomatic_relation = {
+            country = PREV
+            relation = guarantee
+            active = no
+        }
+    }
+}
+
+remove_useless_cores = {
+    if = { limit = { is_core_of = PRE } remove_core_of = PRE }
+    else_if = { limit = { is_core_of = KSH } remove_core_of = KSH }
+    else_if = { limit = { is_core_of = NAV } remove_core_of = NAV }
+    else_if = { limit = { is_core_of = CHM } remove_core_of = CHM }
+    else_if = { limit = { is_core_of = LAO } remove_core_of = LAO }
+    else_if = { limit = { is_core_of = CAM } remove_core_of = CAM }
+    else_if = { limit = { is_core_of = SNG } remove_core_of = SNG }
+    else_if = { limit = { is_core_of = FSM } remove_core_of = FSM }
+    else_if = { limit = { is_core_of = GUM } remove_core_of = GUM }
+    else_if = { limit = { is_core_of = PLU } remove_core_of = PLU }
+    else_if = { limit = { is_core_of = FIJ } remove_core_of = FIJ }
+    else_if = { limit = { is_core_of = TAH } remove_core_of = TAH }
+    else_if = { limit = { is_core_of = PNG } remove_core_of = PNG }
+    else_if = { limit = { is_core_of = SOL } remove_core_of = SOL }
+    else_if = { limit = { is_core_of = HAW } remove_core_of = HAW }
+    else_if = { limit = { is_core_of = JAM } remove_core_of = JAM }
+    else_if = { limit = { is_core_of = BLZ } remove_core_of = BLZ }
+    else_if = { limit = { is_core_of = RIG } remove_core_of = RIG }
+    else_if = { limit = { is_core_of = YUC } remove_core_of = YUC }
+    else_if = { limit = { is_core_of = GRN } remove_core_of = GRN }
+    else_if = { limit = { is_core_of = CAT } remove_core_of = CAT }
+    else_if = { limit = { is_core_of = PUE } remove_core_of = PUE }
+    else_if = { limit = { is_core_of = GDL } remove_core_of = GDL }
+    else_if = { limit = { is_core_of = BAS } remove_core_of = BAS }
+    else_if = { limit = { is_core_of = WPG } remove_core_of = WPG }
+    else_if = { limit = { is_core_of = TML } remove_core_of = TML }
+    else_if = { limit = { is_core_of = QUE } remove_core_of = QUE }
+    else_if = { limit = { is_core_of = EZO } remove_core_of = EZO }
+    else_if = { limit = { is_core_of = PAN } remove_core_of = PAN }
+    else_if = { limit = { is_core_of = TIG } remove_core_of = TIG }
+    else_if = { limit = { is_core_of = QEM } remove_core_of = QEM }
+    else_if = { limit = { is_core_of = BEG } remove_core_of = BEG }
+    else_if = { limit = { is_core_of = GBA } remove_core_of = GBA }
+    else_if = { limit = { is_core_of = SID } remove_core_of = SID }
+    else_if = { limit = { is_core_of = ORO } remove_core_of = ORO }
+    else_if = { limit = { is_core_of = HAR } remove_core_of = HAR }
+    else_if = { limit = { is_core_of = FOR } remove_core_of = FOR }
+    else_if = { limit = { is_core_of = ANU } remove_core_of = ANU }
+    else_if = { limit = { is_core_of = GLC } remove_core_of = GLC }
+    else_if = { limit = { is_core_of = OCC } remove_core_of = OCC }
+    else_if = { limit = { is_core_of = BRI } remove_core_of = BRI }
+    else_if = { limit = { is_core_of = COR } remove_core_of = COR }
+    else_if = { limit = { is_core_of = SPM } remove_core_of = SPM }
+    else_if = { limit = { is_core_of = ASY } remove_core_of = ASY }
+}
+
+add_resources_on_startup = {
+	if = {
+		limit = { state = 2 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = rubber amount = 2 }
+		add_resource = { type = tungsten amount = 11 }
+	}
+	else_if = {
+		limit = { state = 3 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = chromium amount = 35 }
+	}
+	else_if = {
+		limit = { state = 4 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 6 }
+		add_resource = { type = steel amount = 11 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 7 }
+		add_resource = { type = steel amount = 21 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = tungsten amount = 9 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 8 }
+		add_resource = { type = steel amount = 7 }
+		add_resource = { type = aluminium amount = 6 }
+	}
+	else_if = {
+		limit = { state = 9 }
+		add_resource = { type = steel amount = 41 }
+		add_resource = { type = coal amount = 12 }
+	}
+	else_if = {
+		limit = { state = 10 }
+		add_resource = { type = steel amount = 8 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 11 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = rubber amount = 1 }
+		add_resource = { type = steel amount = 15 }
+	}
+	else_if = {
+		limit = { state = 12 }
+		add_resource = { type = steel amount = 23 }
+		add_resource = { type = aluminium amount = 11 }
+	}
+	else_if = {
+		limit = { state = 13 }
+		add_resource = { type = steel amount = 30 }
+		add_resource = { type = aluminium amount = 11 }
+	}
+	else_if = {
+		limit = { state = 16 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 20 }
+		add_resource = { type = coal amount = 50 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = rubber amount = 1 }
+	}
+	else_if = {
+		limit = { state = 24 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = rubber amount = 1 }
+	}
+	else_if = {
+		limit = { state = 26 }
+		add_resource = { type = coal amount = 37 }
+	}
+	else_if = {
+		limit = { state = 28 }
+		add_resource = { type = coal amount = 10 }
+	}
+	else_if = {
+		limit = { state = 34 }
+		add_resource = { type = aluminium amount = 9 }
+		add_resource = { type = coal amount = 15 }
+	}
+	else_if = {
+		limit = { state = 35 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = coal amount = 7 }
+	}
+	else_if = {
+		limit = { state = 37 }
+		add_resource = { type = steel amount = 22 }
+		add_resource = { type = aluminium amount = 12 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 38 }
+		add_resource = { type = aluminium amount = 3 }
+	}
+	else_if = {
+		limit = { state = 41 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = oil amount = 5 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 42 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 43 }
+		add_resource = { type = steel amount = 42 }
+		add_resource = { type = coal amount = 32 }
+	}
+	else_if = {
+		limit = { state = 44 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = steel amount = 11 }
+		add_resource = { type = aluminium amount = 6 }
+		add_resource = { type = chromium amount = 4 }
+	}
+	else_if = {
+		limit = { state = 46 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = oil amount = 20 }
+	}
+	else_if = {
+		limit = { state = 47 }
+		add_resource = { type = steel amount = 58 }
+		add_resource = { type = oil amount = 5 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 48 }
+		add_resource = { type = aluminium amount = 13 }
+		add_resource = { type = steel amount = 24 }
+	}
+	else_if = {
+		limit = { state = 51 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 59 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = rubber amount = 1 }
+	}
+	else_if = {
+		limit = { state = 60 }
+		add_resource = { type = tungsten amount = 11 }
+		add_resource = { type = chromium amount = 11 }
+		add_resource = { type = steel amount = 21 }
+	}
+	else_if = {
+		limit = { state = 64 }
+		add_resource = { type = rubber amount = 1 }
+		add_resource = { type = oil amount = 2 }
+	}
+	else_if = {
+		limit = { state = 66 }
+		add_resource = { type = steel amount = 42 }
+		add_resource = { type = aluminium amount = 5 }
+		add_resource = { type = coal amount = 15 }
+	}
+	else_if = {
+		limit = { state = 69 }
+		add_resource = { type = steel amount = 21 }
+		add_resource = { type = coal amount = 19 }
+	}
+	else_if = {
+		limit = { state = 70 }
+		add_resource = { type = tungsten amount = 18 }
+		add_resource = { type = aluminium amount = 21 }
+	}
+	else_if = {
+		limit = { state = 74 }
+		add_resource = { type = coal amount = 20 }
+	}
+	else_if = {
+		limit = { state = 75 }
+		add_resource = { type = steel amount = 21 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = rubber amount = 2 }
+		add_resource = { type = coal amount = 8 }
+	}
+	else_if = {
+		limit = { state = 76 }
+		add_resource = { type = steel amount = 54 }
+	}
+	else_if = {
+		limit = { state = 77 }
+		add_resource = { type = oil amount = 12 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 81 }
+		add_resource = { type = tungsten amount = 9 }
+	}
+	else_if = {
+		limit = { state = 82 }
+		add_resource = { type = aluminium amount = 21 }
+		add_resource = { type = chromium amount = 16 }
+	}
+	else_if = {
+		limit = { state = 83 }
+		add_resource = { type = aluminium amount = 15 }
+	}
+	else_if = {
+		limit = { state = 84 }
+		add_resource = { type = steel amount = 21 }
+		add_resource = { type = coal amount = 15 }
+	}
+	else_if = {
+		limit = { state = 85 }
+		add_resource = { type = steel amount = 15 }
+		add_resource = { type = aluminium amount = 5 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = rubber amount = 1 }
+	}
+	else_if = {
+		limit = { state = 86 }
+		add_resource = { type = steel amount = 5 }
+		add_resource = { type = coal amount = 3 }
+	}
+	else_if = {
+		limit = { state = 88 }
+		add_resource = { type = steel amount = 30 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = aluminium amount = 15 }
+		add_resource = { type = rubber amount = 1 }
+		add_resource = { type = coal amount = 12 }
+	}
+	else_if = {
+		limit = { state = 89 }
+		add_resource = { type = steel amount = 12 }
+		add_resource = { type = oil amount = 4 }
+	}
+	else_if = {
+		limit = { state = 90 }
+		add_resource = { type = steel amount = 15 }
+		add_resource = { type = aluminium amount = 6 }
+		add_resource = { type = coal amount = 15 }
+	}
+	else_if = {
+		limit = { state = 91 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = oil amount = 7 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 92 }
+		add_resource = { type = steel amount = 7 }
+		add_resource = { type = oil amount = 1 }
+		add_resource = { type = coal amount = 5 }
+	}
+	else_if = {
+		limit = { state = 97 }
+		add_resource = { type = tungsten amount = 18 }
+		add_resource = { type = chromium amount = 13 }
+	}
+	else_if = {
+		limit = { state = 99 }
+		add_resource = { type = steel amount = 21 }
+		add_resource = { type = tungsten amount = 8 }
+	}
+	else_if = {
+		limit = { state = 100 }
+		add_resource = { type = aluminium amount = 18 }
+	}
+	else_if = {
+		limit = { state = 101 }
+		add_resource = { type = aluminium amount = 6 }
+		add_resource = { type = oil amount = 6 }
+		add_resource = { type = steel amount = 2 }
+	}
+	else_if = {
+		limit = { state = 102 }
+		add_resource = { type = aluminium amount = 8 }
+	}
+	else_if = {
+		limit = { state = 104 }
+		add_resource = { type = steel amount = 56 }
+		add_resource = { type = aluminium amount = 19 }
+	}
+	else_if = {
+		limit = { state = 107 }
+		add_resource = { type = oil amount = 5 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = coal amount = 11 }
+	}
+	else_if = {
+		limit = { state = 108 }
+		add_resource = { type = tungsten amount = 11 }
+	}
+	else_if = {
+		limit = { state = 110 }
+		add_resource = { type = oil amount = 5 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 111 }
+		add_resource = { type = oil amount = 6 }
+		add_resource = { type = rubber amount = 4 }
+		add_resource = { type = steel amount = 30 }
+	}
+	else_if = {
+		limit = { state = 112 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 113 }
+		add_resource = { type = aluminium amount = 8 }
+		add_resource = { type = steel amount = 24 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 117 }
+		add_resource = { type = steel amount = 21 }
+	}
+	else_if = {
+		limit = { state = 120 }
+		add_resource = { type = chromium amount = 14 }
+		add_resource = { type = tungsten amount = 7 }
+	}
+	else_if = {
+		limit = { state = 122 }
+		add_resource = { type = coal amount = 20 }
+	}
+	else_if = {
+		limit = { state = 126 }
+		add_resource = { type = oil amount = 5 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 131 }
+		add_resource = { type = steel amount = 23 }
+		add_resource = { type = coal amount = 20 }
+	}
+	else_if = {
+		limit = { state = 132 }
+		add_resource = { type = oil amount = 11 }
+		add_resource = { type = rubber amount = 5 }
+	}
+	else_if = {
+		limit = { state = 133 }
+		add_resource = { type = oil amount = 8 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = coal amount = 50 }
+	}
+	else_if = {
+		limit = { state = 141 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = oil amount = 7 }
+		add_resource = { type = rubber amount = 4 }
+	}
+	else_if = {
+		limit = { state = 142 }
+		add_resource = { type = steel amount = 23 }
+		add_resource = { type = chromium amount = 7 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = coal amount = 15 }
+	}
+	else_if = {
+		limit = { state = 144 }
+		add_resource = { type = oil amount = 19 }
+		add_resource = { type = steel amount = 34 }
+	}
+	else_if = {
+		limit = { state = 148 }
+		add_resource = { type = steel amount = 28 }
+		add_resource = { type = chromium amount = 11 }
+		add_resource = { type = tungsten amount = 15 }
+		add_resource = { type = coal amount = 6 }
+	}
+	else_if = {
+		limit = { state = 150 }
+		add_resource = { type = steel amount = 15 }
+		add_resource = { type = aluminium amount = 21 }
+	}
+	else_if = {
+		limit = { state = 151 }
+		add_resource = { type = steel amount = 41 }
+		add_resource = { type = aluminium amount = 11 }
+	}
+	else_if = {
+		limit = { state = 152 }
+		add_resource = { type = steel amount = 13 }
+		add_resource = { type = tungsten amount = 23 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = coal amount = 20 }
+	}
+	else_if = {
+		limit = { state = 154 }
+		add_resource = { type = tungsten amount = 9 }
+	}
+	else_if = {
+		limit = { state = 155 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 158 }
+		add_resource = { type = steel amount = 31 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = chromium amount = 7 }
+		add_resource = { type = tungsten amount = 11 }
+		add_resource = { type = coal amount = 4 }
+	}
+	else_if = {
+		limit = { state = 159 }
+		add_resource = { type = steel amount = 74 }
+		add_resource = { type = rubber amount = 2 }
+		add_resource = { type = coal amount = 2 }
+	}
+	else_if = {
+		limit = { state = 160 }
+		add_resource = { type = steel amount = 21 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = tungsten amount = 8 }
+		add_resource = { type = coal amount = 3 }
+	}
+	else_if = {
+		limit = { state = 161 }
+		add_resource = { type = chromium amount = 15 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = rubber amount = 1 }
+	}
+	else_if = {
+		limit = { state = 170 }
+		add_resource = { type = steel amount = 18 }
+		add_resource = { type = aluminium amount = 1 }
+		add_resource = { type = tungsten amount = 18 }
+	}
+	else_if = {
+		limit = { state = 171 }
+		add_resource = { type = aluminium amount = 64 }
+	}
+	else_if = {
+		limit = { state = 172 }
+		add_resource = { type = steel amount = 60 }
+	}
+	else_if = {
+		limit = { state = 173 }
+		add_resource = { type = chromium amount = 11 }
+	}
+	else_if = {
+		limit = { state = 174 }
+		add_resource = { type = tungsten amount = 12 }
+		add_resource = { type = aluminium amount = 28 }
+		add_resource = { type = coal amount = 15 }
+	}
+	else_if = {
+		limit = { state = 180 }
+		add_resource = { type = steel amount = 28 }
+	}
+	else_if = {
+		limit = { state = 181 }
+		add_resource = { type = steel amount = 23 }
+		add_resource = { type = aluminium amount = 9 }
+	}
+	else_if = {
+		limit = { state = 182 }
+		add_resource = { type = steel amount = 32 }
+		add_resource = { type = aluminium amount = 11 }
+	}
+	else_if = {
+		limit = { state = 183 }
+		add_resource = { type = chromium amount = 5 }
+	}
+	else_if = {
+		limit = { state = 185 }
+		add_resource = { type = steel amount = 14 }
+	}
+	else_if = {
+		limit = { state = 186 }
+		add_resource = { type = steel amount = 2 }
+	}
+	else_if = {
+		limit = { state = 189 }
+		add_resource = { type = steel amount = 22 }
+		add_resource = { type = aluminium amount = 9 }
+	}
+	else_if = {
+		limit = { state = 190 }
+		add_resource = { type = tungsten amount = 11 }
+	}
+	else_if = {
+		limit = { state = 191 }
+		add_resource = { type = tungsten amount = 10 }
+	}
+	else_if = {
+		limit = { state = 194 }
+		add_resource = { type = coal amount = 15 }
+	}
+	else_if = {
+		limit = { state = 201 }
+		add_resource = { type = coal amount = 11 }
+	}
+	else_if = {
+		limit = { state = 211 }
+		add_resource = { type = oil amount = 7 }
+		add_resource = { type = rubber amount = 4 }
+	}
+	else_if = {
+		limit = { state = 212 }
+		add_resource = { type = steel amount = 21 }
+		add_resource = { type = tungsten amount = 7 }
+		add_resource = { type = coal amount = 6 }
+	}
+	else_if = {
+		limit = { state = 214 }
+		add_resource = { type = steel amount = 126 }
+	}
+	else_if = {
+		limit = { state = 219 }
+		add_resource = { type = rubber amount = 2 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = tungsten amount = 6 }
+	}
+	else_if = {
+		limit = { state = 221 }
+		add_resource = { type = steel amount = 34 }
+		add_resource = { type = chromium amount = 19 }
+		add_resource = { type = coal amount = 50 }
+	}
+	else_if = {
+		limit = { state = 228 }
+		add_resource = { type = steel amount = 24 }
+		add_resource = { type = tungsten amount = 9 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = coal amount = 64 }
+	}
+	else_if = {
+		limit = { state = 229 }
+		add_resource = { type = oil amount = 55 }
+		add_resource = { type = steel amount = 15 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 231 }
+		add_resource = { type = coal amount = 15 }
+	}
+	else_if = {
+		limit = { state = 232 }
+		add_resource = { type = oil amount = 11 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 234 }
+		add_resource = { type = oil amount = 5 }
+		add_resource = { type = rubber amount = 1 }
+	}
+	else_if = {
+		limit = { state = 245 }
+		add_resource = { type = coal amount = 40 }
+	}
+	else_if = {
+		limit = { state = 261 }
+		add_resource = { type = coal amount = 70 }
+	}
+	else_if = {
+		limit = { state = 266 }
+		add_resource = { type = oil amount = 26 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 267 }
+		add_resource = { type = tungsten amount = 13 }
+		add_resource = { type = steel amount = 42 }
+		add_resource = { type = oil amount = 22 }
+		add_resource = { type = rubber amount = 5 }
+		add_resource = { type = chromium amount = 18 }
+	}
+	else_if = {
+		limit = { state = 271 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = steel amount = 23 }
+		add_resource = { type = chromium amount = 5 }
+		add_resource = { type = tungsten amount = 8 }
+	}
+	else_if = {
+		limit = { state = 272 }
+		add_resource = { type = steel amount = 1 }
+	}
+	else_if = {
+		limit = { state = 273 }
+		add_resource = { type = steel amount = 2 }
+	}
+	else_if = {
+		limit = { state = 274 }
+		add_resource = { type = rubber amount = 2 }
+		add_resource = { type = aluminium amount = 6 }
+	}
+	else_if = {
+		limit = { state = 275 }
+		add_resource = { type = steel amount = 13 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = coal amount = 25 }
+	}
+	else_if = {
+		limit = { state = 276 }
+		add_resource = { type = aluminium amount = 12 }
+		add_resource = { type = oil amount = 6 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = coal amount = 11 }
+	}
+	else_if = {
+		limit = { state = 277 }
+		add_resource = { type = steel amount = 15 }
+		add_resource = { type = aluminium amount = 8 }
+		add_resource = { type = oil amount = 8 }
+		add_resource = { type = rubber amount = 4 }
+		add_resource = { type = coal amount = 4 }
+	}
+	else_if = {
+		limit = { state = 278 }
+		add_resource = { type = aluminium amount = 40 }
+	}
+	else_if = {
+		limit = { state = 279 }
+		add_resource = { type = steel amount = 8 }
+		add_resource = { type = aluminium amount = 7 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = rubber amount = 1 }
+	}
+	else_if = {
+		limit = { state = 280 }
+		add_resource = { type = rubber amount = 4 }
+	}
+	else_if = {
+		limit = { state = 282 }
+		add_resource = { type = oil amount = 5 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 283 }
+		add_resource = { type = steel amount = 1 }
+	}
+	else_if = {
+		limit = { state = 284 }
+		add_resource = { type = steel amount = 20 }
+	}
+	else_if = {
+		limit = { state = 285 }
+		add_resource = { type = chromium amount = 8 }
+		add_resource = { type = aluminium amount = 8 }
+	}
+	else_if = {
+		limit = { state = 286 }
+		add_resource = { type = rubber amount = 11 }
+		add_resource = { type = aluminium amount = 12 }
+		add_resource = { type = oil amount = 15 }
+	}
+	else_if = {
+		limit = { state = 288 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = tungsten amount = 14 }
+	}
+	else_if = {
+		limit = { state = 289 }
+		add_resource = { type = rubber amount = 78 }
+		add_resource = { type = tungsten amount = 12 }
+		add_resource = { type = steel amount = 18 }
+		add_resource = { type = aluminium amount = 9 }
+	}
+	else_if = {
+		limit = { state = 291 }
+		add_resource = { type = oil amount = 26 }
+		add_resource = { type = steel amount = 11 }
+		add_resource = { type = aluminium amount = 5 }
+		add_resource = { type = rubber amount = 4 }
+	}
+	else_if = {
+		limit = { state = 292 }
+		add_resource = { type = oil amount = 5 }
+		add_resource = { type = steel amount = 22 }
+		add_resource = { type = aluminium amount = 12 }
+	}
+	else_if = {
+		limit = { state = 294 }
+		add_resource = { type = chromium amount = 2 }
+	}
+	else_if = {
+		limit = { state = 295 }
+		add_resource = { type = steel amount = 30 }
+		add_resource = { type = tungsten amount = 11 }
+		add_resource = { type = rubber amount = 18 }
+	}
+	else_if = {
+		limit = { state = 297 }
+		add_resource = { type = rubber amount = 8 }
+	}
+	else_if = {
+		limit = { state = 298 }
+		add_resource = { type = steel amount = 12 }
+		add_resource = { type = rubber amount = 14 }
+	}
+	else_if = {
+		limit = { state = 300 }
+		add_resource = { type = steel amount = 10 }
+		add_resource = { type = aluminium amount = 5 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = rubber amount = 1 }
+	}
+	else_if = {
+		limit = { state = 302 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = oil amount = 8 }
+		add_resource = { type = coal amount = 4 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 303 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = coal amount = 4 }
+	}
+	else_if = {
+		limit = { state = 304 }
+		add_resource = { type = oil amount = 9 }
+		add_resource = { type = steel amount = 12 }
+	}
+	else_if = {
+		limit = { state = 305 }
+		add_resource = { type = steel amount = 24 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = rubber amount = 12 }
+	}
+	else_if = {
+		limit = { state = 306 }
+		add_resource = { type = steel amount = 30 }
+		add_resource = { type = aluminium amount = 10 }
+	}
+	else_if = {
+		limit = { state = 307 }
+		add_resource = { type = rubber amount = 20 }
+		add_resource = { type = steel amount = 30 }
+	}
+	else_if = {
+		limit = { state = 309 }
+		add_resource = { type = steel amount = 30 }
+		add_resource = { type = rubber amount = 10 }
+		add_resource = { type = oil amount = 5 }
+	}
+	else_if = {
+		limit = { state = 310 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = aluminium amount = 9 }
+		add_resource = { type = rubber amount = 10 }
+		add_resource = { type = oil amount = 5 }
+	}
+	else_if = {
+		limit = { state = 312 }
+		add_resource = { type = steel amount = 12 }
+		add_resource = { type = aluminium amount = 6 }
+		add_resource = { type = chromium amount = 30 }
+	}
+	else_if = {
+		limit = { state = 313 }
+		add_resource = { type = chromium amount = 5 }
+		add_resource = { type = rubber amount = 12 }
+		add_resource = { type = steel amount = 10 }
+		add_resource = { type = aluminium amount = 4 }
+	}
+	else_if = {
+		limit = { state = 314 }
+		add_resource = { type = steel amount = 20 }
+	}
+	else_if = {
+		limit = { state = 316 }
+		add_resource = { type = steel amount = 18 }
+		add_resource = { type = aluminium amount = 7 }
+		add_resource = { type = rubber amount = 20 }
+	}
+	else_if = {
+		limit = { state = 317 }
+		add_resource = { type = steel amount = 15 }
+		add_resource = { type = tungsten amount = 28 }
+	}
+	else_if = {
+		limit = { state = 322 }
+		add_resource = { type = chromium amount = 14 }
+		add_resource = { type = steel amount = 25 }
+	}
+	else_if = {
+		limit = { state = 323 }
+		add_resource = { type = steel amount = 25 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = chromium amount = 35 }
+	}
+	else_if = {
+		limit = { state = 324 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = aluminium amount = 9 }
+		add_resource = { type = tungsten amount = 30 }
+	}
+	else_if = {
+		limit = { state = 325 }
+		add_resource = { type = tungsten amount = 7 }
+		add_resource = { type = steel amount = 30 }
+		add_resource = { type = aluminium amount = 13 }
+		add_resource = { type = rubber amount = 18 }
+	}
+	else_if = {
+		limit = { state = 329 }
+		add_resource = { type = steel amount = 69 }
+		add_resource = { type = aluminium amount = 13 }
+		add_resource = { type = tungsten amount = 21 }
+		add_resource = { type = chromium amount = 11 }
+	}
+	else_if = {
+		limit = { state = 330 }
+		add_resource = { type = steel amount = 28 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = chromium amount = 20 }
+	}
+	else_if = {
+		limit = { state = 335 }
+		add_resource = { type = steel amount = 4 }
+		add_resource = { type = coal amount = 4 }
+	}
+	else_if = {
+		limit = { state = 339 }
+		add_resource = { type = coal amount = 4 }
+	}
+	else_if = {
+		limit = { state = 346 }
+		add_resource = { type = steel amount = 60 }
+		add_resource = { type = aluminium amount = 28 }
+	}
+	else_if = {
+		limit = { state = 347 }
+		add_resource = { type = coal amount = 10 }
+	}
+	else_if = {
+		limit = { state = 348 }
+		add_resource = { type = steel amount = 12 }
+	}
+	else_if = {
+		limit = { state = 349 }
+		add_resource = { type = steel amount = 4 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = rubber amount = 1 }
+	}
+	else_if = {
+		limit = { state = 350 }
+		add_resource = { type = steel amount = 27 }
+		add_resource = { type = tungsten amount = 11 }
+		add_resource = { type = oil amount = 13 }
+	}
+	else_if = {
+		limit = { state = 355 }
+		add_resource = { type = coal amount = 5 }
+	}
+	else_if = {
+		limit = { state = 356 }
+		add_resource = { type = coal amount = 3 }
+	}
+	else_if = {
+		limit = { state = 357 }
+		add_resource = { type = aluminium amount = 4 }
+	}
+	else_if = {
+		limit = { state = 358 }
+		add_resource = { type = aluminium amount = 4 }
+	}
+	else_if = {
+		limit = { state = 360 }
+		add_resource = { type = aluminium amount = 8 }
+	}
+	else_if = {
+		limit = { state = 361 }
+		add_resource = { type = oil amount = 11 }
+		add_resource = { type = rubber amount = 6 }
+	}
+	else_if = {
+		limit = { state = 367 }
+		add_resource = { type = coal amount = 60 }
+	}
+	else_if = {
+		limit = { state = 369 }
+		add_resource = { type = coal amount = 60 }
+	}
+	else_if = {
+		limit = { state = 374 }
+		add_resource = { type = rubber amount = 7 }
+	}
+	else_if = {
+		limit = { state = 375 }
+		add_resource = { type = rubber amount = 13 }
+		add_resource = { type = coal amount = 50 }
+	}
+	else_if = {
+		limit = { state = 382 }
+		add_resource = { type = coal amount = 40 }
+	}
+	else_if = {
+		limit = { state = 388 }
+		add_resource = { type = chromium amount = 56 }
+	}
+	else_if = {
+		limit = { state = 389 }
+		add_resource = { type = chromium amount = 34 }
+	}
+	else_if = {
+		limit = { state = 389 }
+		add_resource = { type = coal amount = 40 }
+	}
+	else_if = {
+		limit = { state = 395 }
+		add_resource = { type = coal amount = 80 }
+	}
+	else_if = {
+		limit = { state = 396 }
+		add_resource = { type = coal amount = 45 }
+	}
+	else_if = {
+		limit = { state = 405 }
+		add_resource = { type = chromium amount = 16 }
+		add_resource = { type = coal amount = 20 }
+	}
+	else_if = {
+		limit = { state = 411 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = rubber amount = 5 }
+		add_resource = { type = aluminium amount = 21 }
+		add_resource = { type = steel amount = 53 }
+	}
+	else_if = {
+		limit = { state = 412 }
+		add_resource = { type = oil amount = 6 }
+		add_resource = { type = steel amount = 42 }
+		add_resource = { type = aluminium amount = 15 }
+		add_resource = { type = tungsten amount = 11 }
+	}
+	else_if = {
+		limit = { state = 413 }
+		add_resource = { type = steel amount = 35 }
+	}
+	else_if = {
+		limit = { state = 414 }
+		add_resource = { type = aluminium amount = 8 }
+		add_resource = { type = tungsten amount = 11 }
+	}
+	else_if = {
+		limit = { state = 415 }
+		add_resource = { type = tungsten amount = 11 }
+		add_resource = { type = steel amount = 56 }
+		add_resource = { type = aluminium amount = 18 }
+	}
+	else_if = {
+		limit = { state = 416 }
+		add_resource = { type = chromium amount = 16 }
+		add_resource = { type = coal amount = 20 }
+	}
+	else_if = {
+		limit = { state = 418 }
+		add_resource = { type = chromium amount = 8 }
+	}
+	else_if = {
+		limit = { state = 419 }
+		add_resource = { type = aluminium amount = 8 }
+		add_resource = { type = steel amount = 2 }
+	}
+	else_if = {
+		limit = { state = 423 }
+		add_resource = { type = aluminium amount = 6 }
+	}
+	else_if = {
+		limit = { state = 424 }
+		add_resource = { type = aluminium amount = 3 }
+	}
+	else_if = {
+		limit = { state = 426 }
+		add_resource = { type = aluminium amount = 9 }
+	}
+	else_if = {
+		limit = { state = 428 }
+		add_resource = { type = aluminium amount = 6 }
+	}
+	else_if = {
+		limit = { state = 429 }
+		add_resource = { type = aluminium amount = 5 }
+	}
+	else_if = {
+		limit = { state = 430 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 436 }
+		add_resource = { type = steel amount = 4 }
+		add_resource = { type = aluminium amount = 8 }
+	}
+	else_if = {
+		limit = { state = 439 }
+		add_resource = { type = steel amount = 28 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = oil amount = 5 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = coal amount = 6 }
+	}
+	else_if = {
+		limit = { state = 440 }
+		add_resource = { type = aluminium amount = 4 }
+	}
+	else_if = {
+		limit = { state = 442 }
+		add_resource = { type = steel amount = 60 }
+		add_resource = { type = aluminium amount = 19 }
+	}
+	else_if = {
+		limit = { state = 444 }
+		add_resource = { type = steel amount = 2 }
+	}
+	else_if = {
+		limit = { state = 445 }
+		add_resource = { type = chromium amount = 8 }
+	}
+	else_if = {
+		limit = { state = 446 }
+		add_resource = { type = steel amount = 16 }
+	}
+	else_if = {
+		limit = { state = 447 }
+		add_resource = { type = steel amount = 40 }
+		add_resource = { type = aluminium amount = 19 }
+		add_resource = { type = oil amount = 12 }
+		add_resource = { type = rubber amount = 7 }
+	}
+	else_if = {
+		limit = { state = 448 }
+		add_resource = { type = steel amount = 21 }
+		add_resource = { type = oil amount = 5 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = chromium amount = 9 }
+	}
+	else_if = {
+		limit = { state = 450 }
+		add_resource = { type = steel amount = 45 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = tungsten amount = 13 }
+	}
+	else_if = {
+		limit = { state = 452 }
+		add_resource = { type = oil amount = 7 }
+	}
+	else_if = {
+		limit = { state = 453 }
+		add_resource = { type = steel amount = 15 }
+	}
+	else_if = {
+		limit = { state = 454 }
+		add_resource = { type = steel amount = 12 }
+	}
+	else_if = {
+		limit = { state = 455 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = aluminium amount = 9 }
+	}
+	else_if = {
+		limit = { state = 456 }
+		add_resource = { type = steel amount = 8 }
+		add_resource = { type = aluminium amount = 2 }
+	}
+	else_if = {
+		limit = { state = 457 }
+		add_resource = { type = steel amount = 12 }
+	}
+	else_if = {
+		limit = { state = 458 }
+		add_resource = { type = steel amount = 21 }
+		add_resource = { type = tungsten amount = 21 }
+		add_resource = { type = chromium amount = 9 }
+		add_resource = { type = rubber amount = 8 }
+	}
+	else_if = {
+		limit = { state = 459 }
+		add_resource = { type = aluminium amount = 15 }
+	}
+	else_if = {
+		limit = { state = 461 }
+		add_resource = { type = chromium amount = 7 }
+	}
+	else_if = {
+		limit = { state = 462 }
+		add_resource = { type = steel amount = 4 }
+	}
+	else_if = {
+		limit = { state = 466 }
+		add_resource = { type = chromium amount = 15 }
+	}
+	else_if = {
+		limit = { state = 470 }
+		add_resource = { type = oil amount = 6 }
+	}
+	else_if = {
+		limit = { state = 471 }
+		add_resource = { type = tungsten amount = 26 }
+	}
+	else_if = {
+		limit = { state = 472 }
+		add_resource = { type = chromium amount = 4 }
+		add_resource = { type = steel amount = 12 }
+		add_resource = { type = tungsten amount = 26 }
+	}
+	else_if = {
+		limit = { state = 473 }
+		add_resource = { type = tungsten amount = 8 }
+		add_resource = { type = steel amount = 8 }
+		add_resource = { type = coal amount = 35 }
+	}
+	else_if = {
+		limit = { state = 478 }
+		add_resource = { type = tungsten amount = 2 }
+		add_resource = { type = steel amount = 22 }
+	}
+	else_if = {
+		limit = { state = 480 }
+		add_resource = { type = oil amount = 40 }
+		add_resource = { type = steel amount = 2 }
+	}
+	else_if = {
+		limit = { state = 481 }
+		add_resource = { type = steel amount = 4 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 482 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = aluminium amount = 8 }
+		add_resource = { type = coal amount = 12 }
+	}
+	else_if = {
+		limit = { state = 483 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 488 }
+		add_resource = { type = tungsten amount = 19 }
+	}
+	else_if = {
+		limit = { state = 489 }
+		add_resource = { type = oil amount = 35 }
+		add_resource = { type = steel amount = 28 }
+		add_resource = { type = aluminium amount = 22 }
+		add_resource = { type = coal amount = 3 }
+	}
+	else_if = {
+		limit = { state = 492 }
+		add_resource = { type = steel amount = 23 }
+		add_resource = { type = aluminium amount = 9 }
+	}
+	else_if = {
+		limit = { state = 493 }
+		add_resource = { type = steel amount = 2 }
+		add_resource = { type = rubber amount = 2 }
+		add_resource = { type = coal amount = 5 }
+	}
+	else_if = {
+		limit = { state = 495 }
+		add_resource = { type = aluminium amount = 4 }
+		add_resource = { type = rubber amount = 30 }
+	}
+	else_if = {
+		limit = { state = 496 }
+		add_resource = { type = steel amount = 15 }
+		add_resource = { type = tungsten amount = 12 }
+		add_resource = { type = chromium amount = 22 }
+		add_resource = { type = aluminium amount = 44 }
+		add_resource = { type = coal amount = 10 }
+	}
+	else_if = {
+		limit = { state = 497 }
+		add_resource = { type = rubber amount = 7 }
+		add_resource = { type = steel amount = 8 }
+		add_resource = { type = aluminium amount = 8 }
+	}
+	else_if = {
+		limit = { state = 498 }
+		add_resource = { type = aluminium amount = 12 }
+		add_resource = { type = steel amount = 12 }
+	}
+	else_if = {
+		limit = { state = 499 }
+		add_resource = { type = steel amount = 40 }
+		add_resource = { type = tungsten amount = 22 }
+		add_resource = { type = chromium amount = 40 }
+	}
+	else_if = {
+		limit = { state = 500 }
+		add_resource = { type = steel amount = 24 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = oil amount = 5 }
+	}
+	else_if = {
+		limit = { state = 501 }
+		add_resource = { type = aluminium amount = 24 }
+	}
+	else_if = {
+		limit = { state = 502 }
+		add_resource = { type = aluminium amount = 8 }
+		add_resource = { type = oil amount = 4 }
+	}
+	else_if = {
+		limit = { state = 503 }
+		add_resource = { type = aluminium amount = 24 }
+	}
+	else_if = {
+		limit = { state = 505 }
+		add_resource = { type = tungsten amount = 6 }
+		add_resource = { type = rubber amount = 6 }
+	}
+	else_if = {
+		limit = { state = 507 }
+		add_resource = { type = aluminium amount = 8 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = coal amount = 7 }
+	}
+	else_if = {
+		limit = { state = 509 }
+		add_resource = { type = aluminium amount = 8 }
+		add_resource = { type = steel amount = 40 }
+	}
+	else_if = {
+		limit = { state = 510 }
+		add_resource = { type = oil amount = 14 }
+		add_resource = { type = rubber amount = 6 }
+	}
+	else_if = {
+		limit = { state = 511 }
+		add_resource = { type = aluminium amount = 48 }
+		add_resource = { type = chromium amount = 80 }
+	}
+	else_if = {
+		limit = { state = 512 }
+		add_resource = { type = aluminium amount = 3 }
+	}
+	else_if = {
+		limit = { state = 517 }
+		add_resource = { type = steel amount = 4 }
+		add_resource = { type = chromium amount = 2 }
+		add_resource = { type = oil amount = 4 }
+	}
+	else_if = {
+		limit = { state = 518 }
+		add_resource = { type = aluminium amount = 8 }
+	}
+	else_if = {
+		limit = { state = 519 }
+		add_resource = { type = chromium amount = 2 }
+	}
+	else_if = {
+		limit = { state = 521 }
+		add_resource = { type = aluminium amount = 4 }
+	}
+	else_if = {
+		limit = { state = 522 }
+		add_resource = { type = aluminium amount = 18 }
+	}
+	else_if = {
+		limit = { state = 523 }
+		add_resource = { type = rubber amount = 8 }
+	}
+	else_if = {
+		limit = { state = 524 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = steel amount = 3 }
+		add_resource = { type = aluminium amount = 2 }
+		add_resource = { type = chromium amount = 2 }
+		add_resource = { type = tungsten amount = 2 }
+	}
+	else_if = {
+		limit = { state = 525 }
+		add_resource = { type = steel amount = 40 }
+		add_resource = { type = aluminium amount = 21 }
+		add_resource = { type = tungsten amount = 17 }
+		add_resource = { type = chromium amount = 11 }
+		add_resource = { type = oil amount = 2 }
+	}
+	else_if = {
+		limit = { state = 528 }
+		add_resource = { type = coal amount = 21 }
+		add_resource = { type = steel amount = 15 }
+	}
+	else_if = {
+		limit = { state = 533 }
+		add_resource = { type = steel amount = 21 }
+		add_resource = { type = aluminium amount = 11 }
+	}
+	else_if = {
+		limit = { state = 535 }
+		add_resource = { type = steel amount = 44 }
+		add_resource = { type = aluminium amount = 22 }
+	}
+	else_if = {
+		limit = { state = 536 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = steel amount = 11 }
+		add_resource = { type = coal amount = 30 }
+	}
+	else_if = {
+		limit = { state = 539 }
+		add_resource = { type = chromium amount = 9 }
+		add_resource = { type = tungsten amount = 9 }
+		add_resource = { type = rubber amount = 2 }
+		add_resource = { type = aluminium amount = 6 }
+	}
+	else_if = {
+		limit = { state = 540 }
+		add_resource = { type = steel amount = 6 }
+	}
+	else_if = {
+		limit = { state = 541 }
+		add_resource = { type = steel amount = 2 }
+	}
+	else_if = {
+		limit = { state = 543 }
+		add_resource = { type = steel amount = 30 }
+		add_resource = { type = aluminium amount = 10 }
+		add_resource = { type = chromium amount = 16 }
+		add_resource = { type = rubber amount = 25 }
+		add_resource = { type = oil amount = 15 }
+	}
+	else_if = {
+		limit = { state = 544 }
+		add_resource = { type = rubber amount = 2 }
+		add_resource = { type = aluminium amount = 14 }
+	}
+	else_if = {
+		limit = { state = 545 }
+		add_resource = { type = steel amount = 8 }
+		add_resource = { type = chromium amount = 35 }
+		add_resource = { type = tungsten amount = 8 }
+	}
+	else_if = {
+		limit = { state = 547 }
+		add_resource = { type = steel amount = 2 }
+		add_resource = { type = coal amount = 20 }
+	}
+	else_if = {
+		limit = { state = 548 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = tungsten amount = 14 }
+	}
+	else_if = {
+		limit = { state = 549 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = chromium amount = 12 }
+	}
+	else_if = {
+		limit = { state = 551 }
+		add_resource = { type = rubber amount = 1 }
+	}
+	else_if = {
+		limit = { state = 552 }
+		add_resource = { type = steel amount = 2 }
+	}
+	else_if = {
+		limit = { state = 553 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = aluminium amount = 10 }
+	}
+	else_if = {
+		limit = { state = 554 }
+		add_resource = { type = steel amount = 16 }
+	}
+	else_if = {
+		limit = { state = 557 }
+		add_resource = { type = steel amount = 8 }
+	}
+	else_if = {
+		limit = { state = 558 }
+		add_resource = { type = rubber amount = 12 }
+		add_resource = { type = steel amount = 2 }
+		add_resource = { type = aluminium amount = 2 }
+	}
+	else_if = {
+		limit = { state = 569 }
+		add_resource = { type = coal amount = 80 }
+	}
+	else_if = {
+		limit = { state = 578 }
+		add_resource = { type = coal amount = 28 }
+	}
+	else_if = {
+		limit = { state = 581 }
+		add_resource = { type = oil amount = 11 }
+		add_resource = { type = coal amount = 30 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 584 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = oil amount = 5 }
+	}
+	else_if = {
+		limit = { state = 585 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = chromium amount = 12 }
+		add_resource = { type = tungsten amount = 4 }
+		add_resource = { type = aluminium amount = 46 }
+		add_resource = { type = coal amount = 10 }
+	}
+	else_if = {
+		limit = { state = 591 }
+		add_resource = { type = rubber amount = 16 }
+	}
+	else_if = {
+		limit = { state = 592 }
+		add_resource = { type = tungsten amount = 14 }
+		add_resource = { type = aluminium amount = 14 }
+	}
+	else_if = {
+		limit = { state = 593 }
+		add_resource = { type = tungsten amount = 33 }
+	}
+	else_if = {
+		limit = { state = 594 }
+		add_resource = { type = tungsten amount = 22 }
+		add_resource = { type = rubber amount = 5 }
+	}
+	else_if = {
+		limit = { state = 595 }
+		add_resource = { type = rubber amount = 3 }
+		add_resource = { type = tungsten amount = 3 }
+	}
+	else_if = {
+		limit = { state = 596 }
+		add_resource = { type = aluminium amount = 18 }
+	}
+	else_if = {
+		limit = { state = 597 }
+		add_resource = { type = aluminium amount = 14 }
+	}
+	else_if = {
+		limit = { state = 598 }
+		add_resource = { type = aluminium amount = 12 }
+	}
+	else_if = {
+		limit = { state = 599 }
+		add_resource = { type = tungsten amount = 13 }
+		add_resource = { type = rubber amount = 6 }
+	}
+	else_if = {
+		limit = { state = 600 }
+		add_resource = { type = steel amount = 4 }
+		add_resource = { type = tungsten amount = 8 }
+	}
+	else_if = {
+		limit = { state = 602 }
+		add_resource = { type = tungsten amount = 4 }
+		add_resource = { type = steel amount = 4 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 605 }
+		add_resource = { type = steel amount = 6 }
+		add_resource = { type = aluminium amount = 2 }
+		add_resource = { type = oil amount = 12 }
+	}
+	else_if = {
+		limit = { state = 607 }
+		add_resource = { type = aluminium amount = 2 }
+	}
+	else_if = {
+		limit = { state = 608 }
+		add_resource = { type = steel amount = 4 }
+	}
+	else_if = {
+		limit = { state = 609 }
+		add_resource = { type = steel amount = 1 }
+	}
+	else_if = {
+		limit = { state = 611 }
+		add_resource = { type = aluminium amount = 4 }
+	}
+	else_if = {
+		limit = { state = 612 }
+		add_resource = { type = aluminium amount = 8 }
+	}
+	else_if = {
+		limit = { state = 613 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = aluminium amount = 22 }
+		add_resource = { type = oil amount = 4 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 614 }
+		add_resource = { type = steel amount = 6 }
+	}
+	else_if = {
+		limit = { state = 615 }
+		add_resource = { type = steel amount = 20 }
+		add_resource = { type = aluminium amount = 9 }
+	}
+	else_if = {
+		limit = { state = 616 }
+		add_resource = { type = steel amount = 15 }
+		add_resource = { type = tungsten amount = 4 }
+	}
+	else_if = {
+		limit = { state = 617 }
+		add_resource = { type = aluminium amount = 9 }
+		add_resource = { type = oil amount = 2 }
+		add_resource = { type = rubber amount = 1 }
+	}
+	else_if = {
+		limit = { state = 618 }
+		add_resource = { type = coal amount = 40 }
+	}
+	else_if = {
+		limit = { state = 619 }
+		add_resource = { type = steel amount = 32 }
+		add_resource = { type = chromium amount = 11 }
+	}
+	else_if = {
+		limit = { state = 620 }
+		add_resource = { type = steel amount = 6 }
+		add_resource = { type = rubber amount = 2 }
+	}
+	else_if = {
+		limit = { state = 622 }
+		add_resource = { type = steel amount = 19 }
+		add_resource = { type = tungsten amount = 5 }
+		add_resource = { type = aluminium amount = 12 }
+		add_resource = { type = chromium amount = 8 }
+	}
+	else_if = {
+		limit = { state = 623 }
+		add_resource = { type = rubber amount = 27 }
+	}
+	else_if = {
+		limit = { state = 625 }
+		add_resource = { type = steel amount = 25 }
+		add_resource = { type = aluminium amount = 13 }
+		add_resource = { type = chromium amount = 6 }
+	}
+	else_if = {
+		limit = { state = 636 }
+		add_resource = { type = steel amount = 8 }
+	}
+	else_if = {
+		limit = { state = 656 }
+		add_resource = { type = steel amount = 10 }
+		add_resource = { type = aluminium amount = 4 }
+	}
+	else_if = {
+		limit = { state = 658 }
+		add_resource = { type = steel amount = 10 }
+		add_resource = { type = aluminium amount = 62 }
+	}
+	else_if = {
+		limit = { state = 660 }
+		add_resource = { type = rubber amount = 1 }
+		add_resource = { type = steel amount = 4 }
+	}
+	else_if = {
+		limit = { state = 664 }
+		add_resource = { type = chromium amount = 2 }
+		add_resource = { type = steel amount = 12 }
+	}
+	else_if = {
+		limit = { state = 666 }
+		add_resource = { type = coal amount = 7 }
+	}
+	else_if = {
+		limit = { state = 671 }
+		add_resource = { type = chromium amount = 6 }
+		add_resource = { type = steel amount = 12 }
+		add_resource = { type = coal amount = 10 }
+	}
+	else_if = {
+		limit = { state = 674 }
+		add_resource = { type = oil amount = 2 }
+	}
+	else_if = {
+		limit = { state = 676 }
+		add_resource = { type = steel amount = 12 }
+		add_resource = { type = aluminium amount = 4 }
+		add_resource = { type = tungsten amount = 9 }
+		add_resource = { type = chromium amount = 4 }
+	}
+	else_if = {
+		limit = { state = 677 }
+		add_resource = { type = steel amount = 15 }
+		add_resource = { type = aluminium amount = 7 }
+	}
+	else_if = {
+		limit = { state = 678 }
+		add_resource = { type = oil amount = 2 }
+	}
+	else_if = {
+		limit = { state = 680 }
+		add_resource = { type = oil amount = 27 }
+		add_resource = { type = rubber amount = 4 }
+	}
+	else_if = {
+		limit = { state = 681 }
+		add_resource = { type = steel amount = 46 }
+	}
+	else_if = {
+		limit = { state = 683 }
+		add_resource = { type = aluminium amount = 14 }
+		add_resource = { type = steel amount = 42 }
+	}
+	else_if = {
+		limit = { state = 688 }
+		add_resource = { type = steel amount = 10 }
+		add_resource = { type = aluminium amount = 5 }
+	}
+	else_if = {
+		limit = { state = 689 }
+		add_resource = { type = aluminium amount = 18 }
+		add_resource = { type = chromium amount = 20 }
+		add_resource = { type = rubber amount = 12 }
+	}
+	else_if = {
+		limit = { state = 704 }
+		add_resource = { type = steel amount = 12 }
+		add_resource = { type = chromium amount = 6 }
+	}
+	else_if = {
+		limit = { state = 716 }
+		add_resource = { type = coal amount = 40 }
+	}
+	else_if = {
+		limit = { state = 717 }
+		add_resource = { type = tungsten amount = 2 }
+	}
+	else_if = {
+		limit = { state = 719 }
+		add_resource = { type = steel amount = 2 }
+		add_resource = { type = aluminium amount = 18 }
+	}
+	else_if = {
+		limit = { state = 723 }
+		add_resource = { type = tungsten amount = 2 }
+		add_resource = { type = steel amount = 2 }
+	}
+	else_if = {
+		limit = { state = 724 }
+		add_resource = { type = rubber amount = 184 }
+	}
+	else_if = {
+		limit = { state = 726 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 740 }
+		add_resource = { type = tungsten amount = 2 }
+	}
+	else_if = {
+		limit = { state = 746 }
+		add_resource = { type = aluminium amount = 15 }
+	}
+	else_if = {
+		limit = { state = 757 }
+		add_resource = { type = chromium amount = 6 }
+		add_resource = { type = steel amount = 2 }
+	}
+	else_if = {
+		limit = { state = 760 }
+		add_resource = { type = coal amount = 20 }
+	}
+	else_if = {
+		limit = { state = 762 }
+		add_resource = { type = steel amount = 87 }
+		add_resource = { type = aluminium amount = 35 }
+		add_resource = { type = coal amount = 100 }
+	}
+	else_if = {
+		limit = { state = 773 }
+		add_resource = { type = steel amount = 40 }
+		add_resource = { type = aluminium amount = 11 }
+		add_resource = { type = oil amount = 15 }
+		add_resource = { type = rubber amount = 3 }
+	}
+	else_if = {
+		limit = { state = 790 }
+		add_resource = { type = coal amount = 8 }
+	}
+	else_if = {
+		limit = { state = 805 }
+		add_resource = { type = steel amount = 2 }
+	}
+	else_if = {
+		limit = { state = 808 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = rubber amount = 1 }
+		add_resource = { type = steel amount = 11 }
+	}
+	else_if = {
+		limit = { state = 810 }
+		add_resource = { type = chromium amount = 13 }
+	}
+	else_if = {
+		limit = { state = 812 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = rubber amount = 1 }
+		add_resource = { type = steel amount = 15 }
+	}
+	else_if = {
+		limit = { state = 815 }
+		add_resource = { type = tungsten amount = 6 }
+	}
+	else_if = {
+		limit = { state = 816 }
+		add_resource = { type = coal amount = 40 }
+	}
+	else_if = {
+		limit = { state = 818 }
+		add_resource = { type = tungsten amount = 9 }
+	}
+	else_if = {
+		limit = { state = 821 }
+		add_resource = { type = oil amount = 11 }
+	}
+	else_if = {
+		limit = { state = 847 }
+		add_resource = { type = coal amount = 11 }
+	}
+	else_if = {
+		limit = { state = 847 }
+		add_resource = { type = tungsten amount = 59 }
+	}
+	else_if = {
+		limit = { state = 869 }
+		add_resource = { type = oil amount = 5 }
+		add_resource = { type = coal amount = 9 }
+	}
+	else_if = {
+		limit = { state = 881 }
+		add_resource = { type = coal amount = 25 }
+	}
+	else_if = {
+		limit = { state = 889 }
+		add_resource = { type = aluminium amount = 14 }
+		add_resource = { type = coal amount = 8 }
+	}
+	else_if = {
+		limit = { state = 923 }
+		add_resource = { type = tungsten amount = 11 }
+		add_resource = { type = steel amount = 44 }
+	}
+	else_if = {
+		limit = { state = 925 }
+		add_resource = { type = coal amount = 11 }
+	}
+	else_if = {
+		limit = { state = 929 }
+		add_resource = { type = aluminium amount = 11 }
+	}
+	else_if = {
+		limit = { state = 954 }
+		add_resource = { type = coal amount = 7 }
+	}
+	else_if = {
+		limit = { state = 995 }
+		add_resource = { type = oil amount = 3 }
+		add_resource = { type = rubber amount = 1 }
+		add_resource = { type = steel amount = 23 }
+		add_resource = { type = aluminium amount = 11 }
+	}
+	else_if = {
+		limit = { state = 999 }
+		add_resource = { type = coal amount = 8 }
+	}
+	else_if = {
+		limit = { state = 1000 }
+		add_resource = { type = steel amount = 33 }
+	}
+	else_if = {
+		limit = { state = 1011 }
+		add_resource = { type = steel amount = 45 }
+		add_resource = { type = aluminium amount = 21 }
+		add_resource = { type = tungsten amount = 11 }
+		add_resource = { type = chromium amount = 7 }
+	}
+	else_if = {
+		limit = { state = 1026 }
+		add_resource = { type = tungsten amount = 30 }
+		add_resource = { type = coal amount = 6 }
+	}
+	else_if = {
+		limit = { state = 1037 }
+		add_resource = { type = coal amount = 10 }
+	}
+	else_if = {
+		limit = { state = 1041 }
+		add_resource = { type = steel amount = 58 }
+	}
+}
+
+unlock_starting_templates = {    
+    country_lock_all_division_template = no
+		
+    #USSR
+    if = {
+        limit = { has_template = "NKVD Pogranichnaya Diviziya" }
+        set_division_template_lock = { division_template = "NKVD Pogranichnaya Diviziya" is_locked = no }
+    }
+    
+    #Switzerland
+    else_if = {
+        limit = { has_template = "Leichte-Brigade" }
+        set_division_template_lock = { division_template = "Leichte-Brigade" is_locked = no }
+    }
+    
+    #Ethiopia
+    else_if = {
+        limit = { has_template = "Kebur Zabagna" }
+        set_division_template_lock = { division_template = "Kebur Zabagna" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Chitet Sefari" }
+        set_division_template_lock = { division_template = "Chitet Sefari" is_locked = no }
+    }
+    
+    #Italy
+    else_if = {
+        limit = { has_template = "Truppe Irregolari a Cavallo" }
+        set_division_template_lock = { division_template = "Truppe Irregolari a Cavallo" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Banda Indigena Irregolare" }
+        set_division_template_lock = { division_template = "Banda Indigena Irregolare" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Camicie Nere" }
+        set_division_template_lock = { division_template = "Camicie Nere" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Banda Irregolare Eritrea" }
+        set_division_template_lock = { division_template = "Banda Irregolare Eritrea" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Banda Irregolare Somala" }
+        set_division_template_lock = { division_template = "Banda Irregolare Somala" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Banda Irregolare Libica" }
+        set_division_template_lock = { division_template = "Banda Irregolare Libica" is_locked = no }
+    }
+    
+    #SEA
+    #Mengukuo
+    else_if = {
+        limit = { has_template = "Mongol Levy" }
+        set_division_template_lock = { division_template = "Mongol Levy" is_locked = no }
+    }
+    
+    #Japan
+    else_if = {
+        limit = { has_template = "Kantō-gun Hohei Shidan" }
+        set_division_template_lock = { division_template = "Kantō-gun Hohei Shidan" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Dai-Nippon Teikoku Rikugun Hohei Shidan" }
+        set_division_template_lock = { division_template = "Dai-Nippon Teikoku Rikugun Hohei Shidan" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Ashigaru Levy" }
+        set_division_template_lock = { division_template = "Ashigaru Levy" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Kokumin Giyū Sentōtai" }
+        set_division_template_lock = { division_template = "Kokumin Giyū Sentōtai" is_locked = no }
+    }
+    
+    #Manchuria
+    else_if = {
+        limit = { has_template = "Yong Ying" }
+        set_division_template_lock = { division_template = "Yong Ying" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Rebel Forces" }
+        set_division_template_lock = { division_template = "Rebel Forces" is_locked = no }
+    }
+    
+    #China
+    else_if = {
+        limit = { has_template = "Blueshirt Militia" }
+        set_division_template_lock = { division_template = "Blueshirt Militia" is_locked = no }
+    }
+}
+
+unlock_later_templates = {
+    country_lock_all_division_template = no
+    
+    #"Anti-Exploit Punitive Brigade" is only given to AI
+    if = {
+        limit = { has_template = "Makedonska Revolyutsionna Militsiya" }
+        set_division_template_lock = { division_template = "Makedonska Revolyutsionna Militsiya" is_locked = no }
+    }
+    
+    #France
+    else_if = {
+        limit = { has_template = "Syria Intervention Force" }
+        set_division_template_lock = { division_template = "Syria Intervention Force" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Syria Defense Force" }
+        set_division_template_lock = { division_template = "Syria Defense Force" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Indochina Intervention Force" }
+        set_division_template_lock = { division_template = "Indochina Intervention Force" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Indochina Defense Force" }
+        set_division_template_lock = { division_template = "Indochina Defense Force" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Central Africa Intervention Force" }
+        set_division_template_lock = { division_template = "Central Africa Intervention Force" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Central Africa Defense Force" }
+        set_division_template_lock = { division_template = "Central Africa Defense Force" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "West Africa Intervention Force" }
+        set_division_template_lock = { division_template = "West Africa Intervention Force" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "West Africa Defense Force" }
+        set_division_template_lock = { division_template = "West Africa Defense Force" is_locked = no }
+    }
+    
+    #Italy
+    else_if = {
+        limit = { has_template = "Divisione Partigiana" }
+        set_division_template_lock = { division_template = "Divisione Partigiana" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Truppe Irregolari a Cavallo" }
+        set_division_template_lock = { division_template = "Truppe Irregolari a Cavallo" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Truppe Irregolari di Cammelli" }
+        set_division_template_lock = { division_template = "Truppe Irregolari di Cammelli" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Cavalleria Coloniale" }
+        set_division_template_lock = { division_template = "Cavalleria Coloniale" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Banda Indigena Irregolare" }
+        set_division_template_lock = { division_template = "Banda Indigena Irregolare" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Camicie Nere" }
+        set_division_template_lock = { division_template = "Camicie Nere" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Camicie Rosse" }
+        set_division_template_lock = { division_template = "Camicie Rosse" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Banda Irregolare Eritrea" }
+        set_division_template_lock = { division_template = "Banda Irregolare Eritrea" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Banda Irregolare Somala" }
+        set_division_template_lock = { division_template = "Banda Irregolare Somala" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Banda Irregolare Libica" }
+        set_division_template_lock = { division_template = "Banda Irregolare Libica" is_locked = no }
+    }
+    
+    #???
+    else_if = {
+        limit = { has_template = "Tomislav's Royal Guards" }
+        set_division_template_lock = { division_template = "Tomislav's Royal Guards" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Montenegrin Chetniks" }
+        set_division_template_lock = { division_template = "Montenegrin Chetniks" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Redemption Army" }
+        set_division_template_lock = { division_template = "Redemption Army" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Manchu Banner" }
+        set_division_template_lock = { division_template = "Manchu Banner" is_locked = no }
+    }
+    
+    #Soviets
+    else_if = {
+        limit = { has_template = "Shtrafnaya Chast" }
+        set_division_template_lock = { division_template = "Shtrafnaya Chast" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Trotskyist Revolutionary Militias" }
+        set_division_template_lock = { division_template = "Trotskyist Revolutionary Militias" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Resistance Fighters" } #Also used by Ethiopia
+        set_division_template_lock = { division_template = "Resistance Fighters" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Peasant Militia" }
+        set_division_template_lock = { division_template = "Peasant Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "International Marxist Brigades" }
+        set_division_template_lock = { division_template = "International Marxist Brigades" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Soviet Special Brigades" }
+        set_division_template_lock = { division_template = "Soviet Special Brigades" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "POUM Special Brigades" }
+        set_division_template_lock = { division_template = "POUM Special Brigades" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Brigada de las Juventudes del POUM" }
+        set_division_template_lock = { division_template = "Brigada de las Juventudes del POUM" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Trotskyist Workers' Militia" }
+        set_division_template_lock = { division_template = "Trotskyist Workers' Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Trotskyist Peasant Militia" }
+        set_division_template_lock = { division_template = "Trotskyist Peasant Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Bukharinist Workers' Militia" }
+        set_division_template_lock = { division_template = "Bukharinist Workers' Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Bukharinist Peasant Militia" }
+        set_division_template_lock = { division_template = "Bukharinist Peasant Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Japanese Expeditionary Force" }
+        set_division_template_lock = { division_template = "Japanese Expeditionary Force" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Opposition Partisan Brigade" }
+        set_division_template_lock = { division_template = "Opposition Partisan Brigade" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "International Brigades" }
+        set_division_template_lock = { division_template = "International Brigades" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "German Trained Division" }
+        set_division_template_lock = { division_template = "German Trained Division" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "NKVD Pogranichnaya Diviziya" }
+        set_division_template_lock = { division_template = "NKVD Pogranichnaya Diviziya" is_locked = no }
+    }
+    
+    #Spain
+    else_if = {
+        limit = { has_template = "Brigada Internacionales" }
+        set_division_template_lock = { division_template = "Brigada Internacionales" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Fifth Columnist Brigade" }
+        set_division_template_lock = { division_template = "Fifth Columnist Brigade" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Anarchist Militia" }
+        set_division_template_lock = { division_template = "Anarchist Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Carabineros" }
+        set_division_template_lock = { division_template = "Carabineros" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Brigada Legionario" }
+        set_division_template_lock = { division_template = "Brigada Legionario" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Guarnición Nacionalista" }
+        set_division_template_lock = { division_template = "Guarnición Nacionalista" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Guarnición Republicana" }
+        set_division_template_lock = { division_template = "Guarnición Republicana" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Requeté Carlista" }
+        set_division_template_lock = { division_template = "Requeté Carlista" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "División de la Guardia de Asalto" }
+        set_division_template_lock = { division_template = "División de la Guardia de Asalto" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Brigada de la Guardia Civil" }
+        set_division_template_lock = { division_template = "Brigada de la Guardia Civil" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Brigada de Juventudes Sindicales" }
+        set_division_template_lock = { division_template = "Brigada de Juventudes Sindicales" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Brigada Popular" }
+        set_division_template_lock = { division_template = "Brigada Popular" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Brigada Anarquista" }
+        set_division_template_lock = { division_template = "Brigada Anarquista" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Spanish Loyalist Division" }
+        set_division_template_lock = { division_template = "Spanish Loyalist Division" is_locked = no }
+    }
+    
+    #Britain
+    else_if = {
+        limit = { has_template = "Loyalist Brigade" }
+        set_division_template_lock = { division_template = "Loyalist Brigade" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Blackshirt Brigade" }
+        set_division_template_lock = { division_template = "Blackshirt Brigade" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Pakistani Liberation Army" }
+        set_division_template_lock = { division_template = "Pakistani Liberation Army" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Hindu Militia" }
+        set_division_template_lock = { division_template = "Hindu Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Bangladeshi Liberation Army" }
+        set_division_template_lock = { division_template = "Bangladeshi Liberation Army" is_locked = no }
+    }
+    
+    #USA
+    else_if = {
+        limit = { has_template = "Local Volunteers" }
+        set_division_template_lock = { division_template = "Local Volunteers" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Citizen Militia" }
+        set_division_template_lock = { division_template = "Citizen Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Silver Legion" }
+        set_division_template_lock = { division_template = "Silver Legion" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Exiles" }
+        set_division_template_lock = { division_template = "Exiles" is_locked = no }
+    }
+    
+    #Baltics
+    else_if = {
+        limit = { has_template = "Soviet Volunteers" } #Also used by Japan
+        set_division_template_lock = { division_template = "Soviet Volunteers" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Forest Brothers" }
+        set_division_template_lock = { division_template = "Forest Brothers" is_locked = no }
+    }
+    
+    #Germany (SS)
+    else_if = {
+        limit = { has_template = "SS Motorisierte Division" }
+        set_division_template_lock = { division_template = "SS Motorisierte Division" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "SS Panzergrenadier Division" }
+        set_division_template_lock = { division_template = "SS Panzergrenadier Division" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "SS Panzergrenadier Division (n.A.)" }
+        set_division_template_lock = { division_template = "SS Panzergrenadier Division (n.A.)" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "SS Panzer Division" }
+        set_division_template_lock = { division_template = "SS Panzer Division" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "SS Panzer Division (n.A.)" }
+        set_division_template_lock = { division_template = "SS Panzer Division (n.A.)" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "SS Panzer Division (vollgep.)" }
+        set_division_template_lock = { division_template = "SS Panzer Division (vollgep.)" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "SS Waffen-Grenadier-Division" }
+        set_division_template_lock = { division_template = "SS Waffen-Grenadier-Division" is_locked = no }
+    }
+    
+    #Germany (civil war)
+    else_if = {
+        limit = { has_template = "SS-Sturmbrigade" }
+        set_division_template_lock = { division_template = "SS-Sturmbrigade" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Landsturmregiment" }
+        set_division_template_lock = { division_template = "Landsturmregiment" is_locked = no }
+    }
+    
+    #Ethiopia
+    else_if = {
+        limit = { has_template = "Arbegnoch Fighters" }
+        set_division_template_lock = { division_template = "Arbegnoch Fighters" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Kebur Zabagna" }
+        set_division_template_lock = { division_template = "Kebur Zabagna" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Chitet Sefari" }
+        set_division_template_lock = { division_template = "Chitet Sefari" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Guards" }
+        set_division_template_lock = { division_template = "Guards" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Red Guards" }
+        set_division_template_lock = { division_template = "Red Guards" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Black Lions" }
+        set_division_template_lock = { division_template = "Black Lions" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Eritrean Askari" }
+        set_division_template_lock = { division_template = "Eritrean Askari" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "International brigade" }
+        set_division_template_lock = { division_template = "International brigade" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Irregular Cavalry Division" }
+        set_division_template_lock = { division_template = "Irregular Cavalry Division" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Irregular Camelry Division" }
+        set_division_template_lock = { division_template = "Irregular Camelry Division" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Congolese Mercenaries" }
+        set_division_template_lock = { division_template = "Congolese Mercenaries" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Arab Mercenaries" }
+        set_division_template_lock = { division_template = "Arab Mercenaries" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Sudanese Mercenaries" }
+        set_division_template_lock = { division_template = "Sudanese Mercenaries" is_locked = no }
+    }
+    
+    #Rebellions
+    else_if = {
+        limit = { has_template = "Resistance" }
+        set_division_template_lock = { division_template = "Resistance" is_locked = no }
+    }
+    
+    #Bulgaria
+    else_if = {
+        limit = { has_template = "Fatherland Front Militia" }
+        set_division_template_lock = { division_template = "Fatherland Front Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Fatherland Front Partisans" }
+        set_division_template_lock = { division_template = "Fatherland Front Partisans" is_locked = no }
+    }
+    
+    #Yugoslavia
+    else_if = {
+        limit = { has_template = "Yugoslavian Defence Army" }
+        set_division_template_lock = { division_template = "Yugoslavian Defence Army" is_locked = no }
+    }
+    
+    #Switzerland
+    else_if = {
+        limit = { has_template = "Leichte-Brigade" }
+        set_division_template_lock = { division_template = "Leichte-Brigade" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Swiss Citizen Militia" }
+        set_division_template_lock = { division_template = "Swiss Citizen Militia" is_locked = no }
+    }
+    
+    #Mixed
+    else_if = {
+        limit = { has_template = "FFI Demi-Brigade" } #Free France
+        set_division_template_lock = { division_template = "FFI Demi-Brigade" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "East African Irregulars" } #Horn of Africa
+        set_division_template_lock = { division_template = "East African Irregulars" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Maori Volunteers" } #New Zealand
+        set_division_template_lock = { division_template = "Maori Volunteers" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Morges Division" } #Poland
+        set_division_template_lock = { division_template = "Morges Division" is_locked = no }
+    }
+    
+    #Japan (civil war)
+    else_if = {
+        limit = { has_template = "Japanese People's Regiment" }
+        set_division_template_lock = { division_template = "Japanese People's Regiment" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Japanese Loyalist Regiment" }
+        set_division_template_lock = { division_template = "Japanese Loyalist Regiment" is_locked = no }
+    }
+    
+    #Latvia
+    else_if = {
+        limit = { has_template = "Ugonskrust Division" }
+        set_division_template_lock = { division_template = "Ugonskrust Division" is_locked = no }
+    }
+    
+    #Netherlands
+    else_if = {
+        limit = { has_template = "Hare Majesteits Duitse Legioen" }
+        set_division_template_lock = { division_template = "Hare Majesteits Duitse Legioen" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "American Garrison" }
+        set_division_template_lock = { division_template = "American Garrison" is_locked = no }
+    }
+    
+    #Denmark
+    else_if = {
+        limit = { has_template = "Landstormen Militia" }
+        set_division_template_lock = { division_template = "Landstormen Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Modstandsbevægelsen Militia" }
+        set_division_template_lock = { division_template = "Modstandsbevægelsen Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Danske Brigade" }
+        set_division_template_lock = { division_template = "Danske Brigade" is_locked = no }
+    }
+    
+    #Finland
+    else_if = {
+        limit = { has_template = "Rannikkorykmentti" }
+        set_division_template_lock = { division_template = "Rannikkorykmentti" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Mustapaidat" }
+        set_division_template_lock = { division_template = "Mustapaidat" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Punakaarti" }
+        set_division_template_lock = { division_template = "Punakaarti" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Neuvostoliiton Legioona" }
+        set_division_template_lock = { division_template = "Neuvostoliiton Legioona" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Rangaistusdivisioona" }
+        set_division_template_lock = { division_template = "Rangaistusdivisioona" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Karjalan Metsäsissit" }
+        set_division_template_lock = { division_template = "Karjalan Metsäsissit" is_locked = no }
+    }
+    
+    #Sweden
+    else_if = {
+        limit = { has_template = "Mobile Headquarter" }
+        set_division_template_lock = { division_template = "Mobile Headquarter" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Hemvärn" }
+        set_division_template_lock = { division_template = "Hemvärn" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Stormtrupper" }
+        set_division_template_lock = { division_template = "Stormtrupper" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Workers Militia" }
+        set_division_template_lock = { division_template = "Workers Militia" is_locked = no }
+    }
+    
+    #Norway
+    else_if = {
+        limit = { has_template = "Kongens Menn" }
+        set_division_template_lock = { division_template = "Kongens Menn" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "forsvarsmilitser" }
+        set_division_template_lock = { division_template = "forsvarsmilitser" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Hemmelige Hæren" }
+        set_division_template_lock = { division_template = "Hemmelige Hæren" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Hirden Milits" }
+        set_division_template_lock = { division_template = "Hirden Milits" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "våpenfolket" }
+        set_division_template_lock = { division_template = "våpenfolket" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "folkets hær" }
+        set_division_template_lock = { division_template = "folkets hær" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Norsk Milits" }
+        set_division_template_lock = { division_template = "Norsk Milits" is_locked = no }
+    }
+    
+    #Brazil
+    else_if = {
+        limit = { has_template = "Legião Estrangeira" }
+        set_division_template_lock = { division_template = "Legião Estrangeira" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Batalhões de Presos" }
+        set_division_template_lock = { division_template = "Batalhões de Presos" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Integralist Militia" }
+        set_division_template_lock = { division_template = "Integralist Militia" is_locked = no }
+    }
+    
+    #Chile
+    else_if = {
+        limit = { has_template = "Carabineros Patrios de Chile" }
+        set_division_template_lock = { division_template = "Carabineros Patrios de Chile" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Voluntarios Argentinos" }
+        set_division_template_lock = { division_template = "Voluntarios Argentinos" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Republican Guard" }
+        set_division_template_lock = { division_template = "Republican Guard" is_locked = no }
+    }
+    
+    #Hungary
+    else_if = {
+        limit = { has_template = "Rongyos Gárda" }
+        set_division_template_lock = { division_template = "Rongyos Gárda" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Volksbundmiliz" }
+        set_division_template_lock = { division_template = "Volksbundmiliz" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Volksbund Militia" }
+        set_division_template_lock = { division_template = "Volksbund Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Horthysta Gyalogdándar" }
+        set_division_template_lock = { division_template = "Horthysta Gyalogdándar" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Fasiszta Milícia" }
+        set_division_template_lock = { division_template = "Fasiszta Milícia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Monarchista Milícia" }
+        set_division_template_lock = { division_template = "Monarchista Milícia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Lenin-fiúk" }
+        set_division_template_lock = { division_template = "Lenin-fiúk" is_locked = no }
+    }
+    
+    #Congo
+    else_if = {
+        limit = { has_template = "Division loyale de Léopoldville" }
+        set_division_template_lock = { division_template = "Division loyale de Léopoldville" is_locked = no }
+    }
+    
+    #Germany (misc)
+    else_if = {
+        limit = { has_template = "Straf-Division" }
+        set_division_template_lock = { division_template = "Straf-Division" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Waffen-SS Division" }
+        set_division_template_lock = { division_template = "Waffen-SS Division" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "SS-Verfügungstruppe" }
+        set_division_template_lock = { division_template = "SS-Verfügungstruppe" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Afrikanische Schutztruppe" }
+        set_division_template_lock = { division_template = "Afrikanische Schutztruppe" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Askari Schutztruppe" }
+        set_division_template_lock = { division_template = "Askari Schutztruppe" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Asiatische Schutztruppe" }
+        set_division_template_lock = { division_template = "Asiatische Schutztruppe" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Freikorps" }
+        set_division_template_lock = { division_template = "Freikorps" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Bund Wiking" }
+        set_division_template_lock = { division_template = "Bund Wiking" is_locked = no }
+    }
+    
+    #India
+    else_if = { #pre-DLC
+        limit = { has_template = "Battaglione Azad Hindoustan" }
+        set_division_template_lock = { division_template = "Battaglione Azad Hindoustan" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Royal Indian Infantry" }
+        set_division_template_lock = { division_template = "Royal Indian Infantry" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Princely Personal Guard" }
+        set_division_template_lock = { division_template = "Princely Personal Guard" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Ahadi Division" }
+        set_division_template_lock = { division_template = "Ahadi Division" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Loyalist Infantry Division" }
+        set_division_template_lock = { division_template = "Loyalist Infantry Division" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Firqat Aljaysh Aleiraqii" }
+        set_division_template_lock = { division_template = "Firqat Aljaysh Aleiraqii" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Arab Free Legion" }
+        set_division_template_lock = { division_template = "Arab Free Legion" is_locked = no }
+    }
+    
+    #Iran
+    else_if = {
+        limit = { has_template = "Vafadaran" }
+        set_division_template_lock = { division_template = "Vafadaran" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Shorshian" }
+        set_division_template_lock = { division_template = "Shorshian" is_locked = no }
+    }
+    
+    #Afghanistan
+    else_if = {
+        limit = { has_template = "Tribal Militia" }
+        set_division_template_lock = { division_template = "Tribal Militia" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Pashtun Levy" }
+        set_division_template_lock = { division_template = "Pashtun Levy" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Royal Guard" }
+        set_division_template_lock = { division_template = "Royal Guard" is_locked = no }
+    }
+    
+    #SEA
+    #Mengukuo
+    else_if = {
+        limit = { has_template = "Mongol Levy" }
+        set_division_template_lock = { division_template = "Mongol Levy" is_locked = no }
+    }
+    
+    #Japan
+    else_if = {
+        limit = { has_template = "Kantō-gun Hohei Shidan" }
+        set_division_template_lock = { division_template = "Kantō-gun Hohei Shidan" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Dai-Nippon Teikoku Rikugun Hohei Shidan" }
+        set_division_template_lock = { division_template = "Dai-Nippon Teikoku Rikugun Hohei Shidan" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Ashigaru Levy" }
+        set_division_template_lock = { division_template = "Ashigaru Levy" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Kokumin Giyū Sentōtai" }
+        set_division_template_lock = { division_template = "Kokumin Giyū Sentōtai" is_locked = no }
+    }
+    
+    #Manchuria
+    else_if = {
+        limit = { has_template = "Yong Ying" }
+        set_division_template_lock = { division_template = "Yong Ying" is_locked = no }
+    }
+    else_if = {
+        limit = { has_template = "Rebel Forces" }
+        set_division_template_lock = { division_template = "Rebel Forces" is_locked = no }
+    }
+    
+    #China
+    else_if = {
+        limit = { has_template = "Blueshirt Militia" }
+        set_division_template_lock = { division_template = "Blueshirt Militia" is_locked = no }
+    }
+	
+}
+
+set_country_cost = {
+	if = {
+        limit = { is_ai = yes  }
+        set_variable = { country_cost = 0 }
+    } 
+    else_if = {
+        limit = { is_super_major = yes  }
+        set_variable = { country_cost = 4 }
+    } 
+    else_if = {
+        limit = { is_major_country = yes  }
+        set_variable = { country_cost = 3 }
+    } 
+    else_if = {
+        limit = { is_regional = yes  }
+        set_variable = { country_cost = 2 }
+    } 
+    else_if = {
+        limit = { is_minor = yes }
+        set_variable = { country_cost = 1 }
+    } 
+    else_if = {
+        limit = { is_mini = yes  }
+        set_variable = { country_cost = 0.5 }
+    } 
+    else = {
+        set_variable = { country_cost = 0 }
+    }
+}
+
+set_faction_limit = {
+    if = {
+        limit = { date < 1937.1.1 }
+        set_variable = { global.faction_limit = 5 }
+    }
+    else_if = {
+        limit = { date < 1938.1.1 }
+        set_variable = { global.faction_limit = 6 }
+    }
+    else_if = {
+        limit = { date < 1939.1.1 }
+        set_variable = { global.faction_limit = 8 }
+    }
+    else_if = {
+        limit = { date < 1940.1.1 }
+        set_variable = { global.faction_limit = 10 }
+    }
+    else_if = {
+        limit = { date < 1941.1.1 }
+        set_variable = { global.faction_limit = 11 }
+    }
+    else_if = {
+        limit = { date < 1942.1.1 }
+        set_variable = { global.faction_limit = 13 }
+    }
+    else_if = {
+        limit = { date < 1943.1.1 }
+        set_variable = { global.faction_limit = 15 }
+    }
+    else_if = {
+        limit = { date < 1944.1.1 }
+        set_variable = { global.faction_limit = 16 }
+    }
+    else_if = {
+        limit = { date < 1945.1.1 }
+        set_variable = { global.faction_limit = 18 }
+    }
+    else_if = {
+        limit = { date < 1946.1.1 }
+        set_variable = { global.faction_limit = 20 }
+    }
+    else = {
+        set_variable = { global.faction_limit = 24 }
+    }
+}
+
+set_faction_points = {
+    set_variable = { faction_points = country_cost }
+    every_other_country = {
+        limit = { is_ai = no is_in_faction_with = PREV is_faction_leader = no }
+        set_variable = { faction_points = 0 }
+        set_country_cost = yes
+        PREV = { add_to_variable = { faction_points = PREV.country_cost } }
+        add_to_temp_array = { 
+            array = temp_countries
+            value = THIS
+        }
+    }
+    for_each_scope_loop = {
+        array = temp_countries
+        set_variable = { faction_points = PREV.faction_points } 
+    }
+    clear_temp_array = temp_countries
+}
+
+faction_system_update_country = {
+	if = {
+		limit = { is_in_faction = yes is_faction_leader = yes }
+		set_country_cost = yes
+		set_faction_points = yes
+	}
+	else_if = {
+		limit = { is_in_faction = no }
+		set_country_cost = yes 
+	}
+}
+
+clear_generated_messages_cache = {
+	clear_array = written_type_of_message_array
+	clear_variable = show_write_message_menu
+}
+
+set_si = {
+	set_variable = { global.si_demand_state_cooldown_days = 5 }
+	set_variable = { global.si_demand_vassalisation_cooldown_days = 45 }
+	set_variable = { global.si_claim_state_cooldown_days = 14 }
+	set_variable = { global.si_core_state_cooldown_days = 15 }
+	set_variable = { global.si_move_capital_cooldown_days = 7 }
+	set_variable = { global.si_ask_resources_cooldown_days = 7 }
+	set_variable = { global.si_demand_state_pp_required = 10 }
+	set_variable = { global.si_demand_state_pp_take = -5 }
+	set_variable = { global.si_demand_vassalisation_pp_required = 100 }
+	set_variable = { global.si_demand_vassalisation_pp_take = -100 }
+	set_variable = { global.si_claim_state_cp_required = 15 }
+	set_variable = { global.si_claim_state_cp_take = -15 }
+	set_variable = { global.si_ask_resources_pp_required = 5 }
+	set_variable = { global.si_ask_resources_pp_take = -5 }
+	set_variable = { global.si_move_capital_pp_required = 250 }
+	set_variable = { global.si_move_capital_pp_take = -250 }
+}
+
+trasfer_remove_invalid_states = {
+	if = {
+		limit = {
+			is_in_array = {
+				array = FROM.selected_states_array
+				value = FROM.FROM.id
+			}
+		}
+		remove_from_array = {
+			array = FROM.selected_states_array
+			value = FROM.FROM.id
+		}
+	}
+}
+
+always_volunteers_country = {
+	if = { 
+        limit = { NOT = { tag = GWR } is_ai = no }
+		if = {
+			limit = { date < 1939.1.1 }
+			if = {
+				limit = { 
+					OR = {
+						check_variable = { country_cost < 2 } 
+						is_subject = yes
+					}
+				}
+				add_ideas = always_volunteers_min_1936
+				if = {
+					limit = { has_idea = always_volunteers_maj_1936 }
+					remove_ideas = always_volunteers_maj_1936
+				}
+			}
+			else_if = {
+				limit = { 
+					check_variable = { country_cost > 1 } 
+				}
+				add_ideas = always_volunteers_maj_1936
+				if = {
+					limit = { has_idea = always_volunteers_min_1936 }
+					remove_ideas = always_volunteers_min_1936
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = { 
+					OR = {
+						check_variable = { country_cost < 2 } 
+						is_subject = yes
+					}
+				}
+				add_ideas = always_volunteers_min_1939
+				if = {
+					limit = { has_idea = always_volunteers_maj_1936 }
+					remove_ideas = always_volunteers_maj_1936
+				}
+				else_if = {
+					limit = { has_idea = always_volunteers_min_1936 }
+					remove_ideas = always_volunteers_min_1936 
+				}
+				else_if = {
+					limit = { has_idea = always_volunteers_maj_1939 }
+					remove_ideas = always_volunteers_maj_1939 
+				}
+			}
+			else_if = {
+				limit = { 
+					check_variable = { country_cost > 1 } 
+				}
+				add_ideas = always_volunteers_maj_1939
+				if = {
+					limit = { has_idea = always_volunteers_maj_1936 }
+					remove_ideas = always_volunteers_maj_1936
+				}
+				else_if = {
+					limit = { has_idea = always_volunteers_min_1936 }
+					remove_ideas = always_volunteers_min_1936
+				}
+				else_if = {
+					limit = { has_idea = always_volunteers_min_1939 }
+					remove_ideas = always_volunteers_min_1939
+				}
+			}
+		}
+    }
+}
+
+set_basic_tech = {
+	if = {
+		limit = { amount_research_slots < 3 }
+		set_research_slots = 3
+	}
+	set_technology = {
+		infantry_weapons = 1       
+		infantry_weapons1 = 1      
+		tech_trucks = 1            
+		tech_support = 1           
+		tech_engineers = 1       
+		basic_train = 1     
+		gwtank_chassis = 1
+		gw_artillery = 1 
+		transport = 1 
+		early_ship_hull_submarine = 1
+		early_ship_hull_light = 1
+		iw_small_airframe = 1      
+		engines_1 = 1             
+		aa_lmg = 1                 
+	}
+}
+
+on_startup_handle_global = {
+	set_faction_limit = yes
+	set_si = yes
+}
+
+on_startup_handle_country = {
+    remove_every_guarantee = yes
+    unlock_starting_templates = yes
+	faction_system_update_country = yes
+	always_volunteers_country = yes
+	set_basic_tech = yes
+}
+
+on_startup_handle_state = {
+    remove_useless_cores = yes
+    add_resources_on_startup = yes
+}
+
+on_monthly_handle_global = {
+	set_faction_limit = yes
+}
+
+on_monthly_handle_country = {
+    unlock_later_templates = yes
+	faction_system_update_country = yes
+	always_volunteers_country = yes
+}
+
+on_leave_faction_handle_country = {
+	set_variable = { faction_points = 0 }
+}
+
+on_state_control_changed_country = {
+	trasfer_remove_invalid_states = yes
+}

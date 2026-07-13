@@ -459,6 +459,8 @@ technologies = {
 		#industrial_capacity_factory_powered = 0.15 
 		#industrial_capacity_dockyard_powered = 0.1 
 		global_building_slots_factor = 0.20
+		#global_building_slots = 1
+		consumer_goods_factor = -0.025
 		
 		path = {
 			leads_to_tech = concentrated_industry5
@@ -499,6 +501,8 @@ technologies = {
 		#industrial_capacity_factory_powered = 0.15 
 		#industrial_capacity_dockyard_powered = 0.1 
 		global_building_slots_factor = 0.20
+		consumer_goods_factor = -0.025
+		
 		
 		research_cost = 2
 		start_year = 1943
@@ -533,7 +537,6 @@ technologies = {
 	}
 	
 	dispersed_industry = {
-
 		industrial_capacity_factory = 0.1
 		industrial_capacity_dockyard = 0.1
 		#industrial_capacity_factory_powered = 0.05 
@@ -542,7 +545,10 @@ technologies = {
 		line_change_production_efficiency_factor = 0.1
 		production_factory_start_efficiency_factor = 0.05
 		industry_air_damage_factor = -0.15
-		global_building_slots_factor = 0.2
+		global_building_slots_factor = 0.15
+		factory_energy_consumption = -0.03
+		production_factory_efficiency_gain_factor = 0.05
+		global_building_slots = 1
 		
 		path = {
 			leads_to_tech = dispersed_industry2 
@@ -619,7 +625,10 @@ technologies = {
 		line_change_production_efficiency_factor = 0.1
 		production_factory_start_efficiency_factor = 0.05
 		industry_air_damage_factor = -0.10
-		global_building_slots_factor = 0.2
+		global_building_slots_factor = 0.15
+		factory_energy_consumption = -0.03
+		production_factory_efficiency_gain_factor = 0.05
+		#global_building_slots = 1
 		
 		path = {
 			leads_to_tech = dispersed_industry3 
@@ -664,6 +673,8 @@ technologies = {
 		industry_free_repair_factor = 0.10
 		industry_air_damage_factor = -0.10
 		global_building_slots_factor = 0.2
+		factory_energy_consumption = -0.03
+		production_factory_efficiency_gain_factor = 0.05
 		
 		path = {
 			leads_to_tech = dispersed_industry4 
@@ -707,7 +718,9 @@ technologies = {
 		production_factory_start_efficiency_factor = 0.05
 		industry_free_repair_factor = 0.10
 		industry_air_damage_factor = -0.10
-		global_building_slots_factor = 0.2
+		global_building_slots_factor = 0.25
+		factory_energy_consumption = -0.03
+		production_factory_efficiency_gain_factor = 0.05
 		
 		path = {
 			leads_to_tech = dispersed_industry5 
@@ -751,7 +764,9 @@ technologies = {
 		production_factory_start_efficiency_factor = 0.05
 		industry_air_damage_factor = -0.10
 		industry_free_repair_factor = 0.15
-		global_building_slots_factor = 0.2
+		global_building_slots_factor = 0.25
+		factory_energy_consumption = -0.03
+		production_factory_efficiency_gain_factor = 0.05
 		
 		
 		research_cost = 2

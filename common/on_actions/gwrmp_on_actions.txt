@@ -1,0 +1,30 @@
+# GWR Multiplayer Pack on_actions.txt
+
+on_actions = {
+    on_startup = {
+        effect = { 
+            GWR = { on_startup_handle_global = yes }
+            every_country = { on_startup_handle_country = yes } 
+            every_state = { on_startup_handle_state = yes }
+        }
+    }
+
+    on_monthly = {
+        effect = {
+            GWR = { on_monthly_handle_global = yes }
+            every_country = { on_monthly_handle_country = yes } 
+        }
+    }
+    
+    on_leave_faction = {
+        effect = {
+            ROOT = { on_leave_faction_handle_country = yes }
+        }
+    }
+
+    on_state_control_changed = {
+		effect = {
+			every_country = { on_state_control_changed_country = yes }
+		}
+	}
+}

@@ -2358,30 +2358,338 @@ news_event = {
 	}
 }
 
-# Benelux accepts puppet offer
+# Over the Alps - Ultimatum to Switzerland
 country_event = {
-	id = FRA_benelux_puppet_offer.2
-	title = FRA_benelux_puppet_offer.2.t
-	desc = FRA_benelux_puppet_offer.2.d
-	picture = GFX_report_event_generic_sign_treaty3
+	id = france.35
+	title = "FRA_over_the_alps.1.t"
+	desc = "FRA_over_the_alps.1.d"
+	picture = GFX_report_event_SWI_assembly_hall
+
+	is_triggered_only = yes
+
+	option = { # Accept Personal Union
+		name = "FRA_over_the_alps.1.a"
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		SWI = {
+			create_country_leader = {
+				name = "Napoleon VI"
+				desc = "POLITICS_?DOUARD_DALADIER_DESC"
+				picture = GFX_portraits_fra_napoleon_vi
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					swi_king
+					the_soldier_king
+				}
+			}
+		}
+		custom_effect_tooltip = if_they_accept_tt
+		FRA = {
+			set_autonomy = {
+				target = SWI
+				autonomy_state = autonomy_personal_union
+			}
+			transfer_state = 845
+			add_country_leader_trait = swi_ruler
+		}
+		FRA = { country_event = france.38 }
+		
+	}
+
+	option = { # Refuse
+		name = "FRA_over_the_alps.1.b"
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value < 0
+				}
+			}
+		}
+		FRA = {
+			create_wargoal = {
+				type = annex_everything
+				target = ROOT
+			}
+		}
+		FRA = { country_event = france.39 }
+	}
+}
+country_event = {
+	id = france.36
+	title = "FRA_over_the_spain.1.t"
+	desc = "FRA_over_the_spain.1.d"
+	picture = GFX_report_event_BOL_bolivian_socialist_revolution
+
+	is_triggered_only = yes
+
+	option = { # Accept Personal Union
+		name = "FRA_over_the_spain.1.a"
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		SPR = {
+			create_country_leader = {
+				name = "Napoleon VI"
+				desc = "POLITICS_?DOUARD_DALADIER_DESC"
+				picture = GFX_portraits_fra_napoleon_vi
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					spr_king
+					the_soldier_king
+				}
+			}
+		}
+		custom_effect_tooltip = if_they_accept_tt
+		FRA = {
+			set_autonomy = {
+				target = SPR
+				autonomy_state = autonomy_personal_union
+			}
+			transfer_state = 165
+			add_country_leader_trait = spr_ruler
+		}
+		FRA = { country_event = france.38 }
+	}
+
+	option = { # Refuse
+		name = "FRA_over_the_spain.1.b"
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value < 0
+				}
+			}
+		}
+		FRA = {
+			create_wargoal = {
+				type = annex_everything
+				target = ROOT
+			}
+		}
+		FRA = { country_event = france.39 }
+	}
+	
+}
+
+country_event = {
+	id = france.37
+	title = "FRA_over_the_portugal.1.t"
+	desc = "FRA_over_the_portugal.1.d"
+	picture = GFX_report_event_ETH_rif_map
+
+	is_triggered_only = yes
+
+	option = { # Accept Personal Union
+		name = "FRA_over_the_portugal.1.a"
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value > 50
+				}
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		POR = {
+			create_country_leader = {
+				name = "Napoleon VI"
+				desc = "POLITICS_?DOUARD_DALADIER_DESC"
+				picture = GFX_portraits_fra_napoleon_vi
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					por_king
+					the_soldier_king
+				}
+			}
+		}
+		custom_effect_tooltip = if_they_accept_tt
+		FRA = {
+			set_autonomy = {
+				target = POR
+				autonomy_state = autonomy_personal_union
+			}
+			add_country_leader_trait = por_ruler
+			
+		}
+		FRA = { country_event = france.38 }
+	}
+
+	option = { # Refuse
+		name = "FRA_over_the_portugal.1.b"
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value < 0
+				}
+			}
+		}
+		FRA = {
+			create_wargoal = {
+				type = annex_everything
+				target = ROOT
+			}
+		}
+		FRA = { country_event = france.39 }
+	}
+}
+country_event = {
+	id = france.38
+	title = "FRA_over_the_alps.1.t.win"
+	desc = "FRA_over_the_alps.1.d.win"
+	picture = GFX_report_event_ARG_coup_detat
+
+	is_triggered_only = yes
+
+	option = { # Accept Personal Union
+		name = "FRA_over_the_alps.1.a.win"
+		ai_chance = {
+			base = 100
+		}
+		add_stability = 0.05
+		add_war_support = 0.05
+	}
+}
+country_event = {
+	id = france.39
+	title = "FRA_over_the_alps.1.t.lost"
+	desc = "FRA_over_the_alps.1.d.lost"
+	picture = GFX_report_event_soldiers_parade
+
+	is_triggered_only = yes
+
+	option = { # Accept Personal Union
+		name = "FRA_over_the_alps.1.a.lost"
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.05
+		add_war_support = -0.05
+	}
+}
+country_event = {
+	id = france.40
+	title = "FRA_invitation_SWI.t"
+	desc = "FRA_invitation_SWI.d"
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = { # Accept Faction Invitation
+		name = france.40.a
+		ai_chance = {
+			base = 90
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		FRA = {
+			country_event = france.41
+			add_to_faction = ROOT
+		}
+	}
+
+	option = { # Refuse
+		name = france.40.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_opinion = {
+					target = FRA
+					value < 0
+				}
+			}
+		}
+		FRA = {
+			country_event = france.42
+		}
+	}
+}
+
+# Switzerland accepts faction invitation (France)
+country_event = {
+	id = france.41
+	title = "FRA_invitation_SWI_accepted.t"
+	desc = "FRA_invitation_SWI_accepted.d"
+	picture = GFX_report_event_generic_sign_treaty2
 
 	is_triggered_only = yes
 
 	option = {
-		name = FRA_benelux_puppet_offer.2.a
+		name = france.41.a
+		effect_tooltip = {
+			add_to_faction = SWI
+		}
+		add_political_power = 50
+		SWI = {
+			add_ai_strategy = {
+				type = alliance
+				id = "FRA"
+				value = 200
+			}
+		}
 	}
 }
 
-# Benelux rejects puppet offer
+# Switzerland refuses faction invitation (France)
 country_event = {
-	id = FRA_benelux_puppet_offer.3
-	title = FRA_benelux_puppet_offer.3.t
-	desc = FRA_benelux_puppet_offer.3.d
-	picture = GFX_report_event_generic_read_write
+	id = france.42
+	title = "FRA_invitation_SWI_refused.t"
+	desc = "FRA_invitation_SWI_refused.d"
+	picture = GFX_report_event_generic_sign_treaty2
 
 	is_triggered_only = yes
 
 	option = {
-		name = FRA_benelux_puppet_offer.3.a
+		name = france.42.a
+		add_political_power = -30
+		SWI = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = refused_faction_invitation
+			}
+		}
 	}
 }
+

@@ -23,17 +23,6 @@ ideas = {
 			allowed = { always = no }
 		}
 
-		SI_AI_reluctance_idea = {
-
-			allowed_civil_war = { always = yes }
-
-			allowed = { always = no }
-
-			on_remove = {
-				set_variable = { ROOT.si_ai_reluctance_stage = 0 }
-				set_variable = { ROOT.si_ai_reluctance_value = 0 }
-			}
-		}
 
 		SI_new_gov_stabilisation_idea_1 = {
 			name = SI_puppet_establishment_idea

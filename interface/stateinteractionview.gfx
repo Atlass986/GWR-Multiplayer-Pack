@@ -52,8 +52,14 @@ spriteTypes = {
 		textureFile = "gfx/interface/StateTransferButtonTransfer.dds"
 	}
 
-	# spriteType = {
-	# 	name = "GFX_SI_state_transfer_core_button"
-	# 	textureFile = "gfx/interface/StateTransferButtonCore.dds"
-	# }
+	spriteType = {
+		name = "GFX_gwrmp_state_actions"
+		textureFile = "gfx/interface/gwrmp_state_actions.dds"
+	}
+
+	spriteType = {
+		name = "GFX_generic_box_smallest_0"
+		textureFile = "gfx/interface/generic_box_smallest_0.dds"
+	}
+
 }

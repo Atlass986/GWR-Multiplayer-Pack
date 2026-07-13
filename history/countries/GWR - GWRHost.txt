@@ -2,7 +2,7 @@ capital = 703
 
 oob = "GWR_1936"
 
-set_research_slots = 4
+set_research_slots = 10
 
 set_stability = 2
 set_war_support = 2
@@ -21,6 +21,10 @@ set_technology = {
 	interwar_antiair = 1
 	basic_train = 1
 	electronic_mechanical_engineering = 1
+	cavity_magnatron = 1
+	centimetric_radar = 1
+	phased_array = 1
+	monopulse_radar = 1
 	radio = 1
 	fuel_silos = 1
 	fuel_refining = 1
@@ -66,6 +70,9 @@ recruit_character = GWR_great_leader
 add_ideas = {
     GWR_host_boost
 }
+
+set_rule = { can_create_factions = no }
+set_rule = { can_join_factions = no }
 
 # ITA = {
 # 	add_attache = GWR

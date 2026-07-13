@@ -136,12 +136,7 @@ country_event = {
 				}
 			}
 		}
-		FRA = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = refused_puppet_offer
-			}
-		}
+
 		FRA = {
 			country_event = {
 				id = FRA_belgium_puppet_offer.3
@@ -198,12 +193,6 @@ country_event = {
 			}
 		}
 		FRA = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = refused_puppet_offer
-			}
-		}
-		FRA = {
 			country_event = {
 				id = FRA_netherlands_puppet_offer.3
 				days = 1
@@ -256,12 +245,6 @@ country_event = {
 					target = FRA
 					value < 0
 				}
-			}
-		}
-		FRA = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = refused_puppet_offer
 			}
 		}
 		FRA = {

@@ -1,0 +1,12 @@
+l_polish:
+ WARNING_30D_TITLE:0 "Za 30 wojna!"
+ WARNING_30D_ACTION_DESC:0 "Ostrzeżenie dla gracza o wojnie. Wymagane, aby pójść na wojnę PVP"
+ WARNING_60D_TITLE:0 "Za 60 wojna!"
+ WARNING_60D_ACTION_DESC:0 "Ostrzeżenie dla gracza o wojnie. Wymagane, aby pójść na wojnę PVP"
+ warning_idea:0 "Ostrzeżenie przed wojną"
+ warning_desc:0 "Przekażemy informacje o nieuchronnej wojnie"
+ warning_receive_desc:0 "1"
+ warning_accept_title:0 "1"
+ warning_accept_desc:0 "1"
+ warning_reject_title:0 "1"
+ warning_reject_desc:0 "1"

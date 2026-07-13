@@ -1,0 +1,163 @@
+DOM_antillean_airspace_protectiors = {
+    include = generic_light_aircraft_organization
+
+    icon = GFX_focus_NORDIC_dem_airforce
+
+    allowed = {
+        tag = DOM
+    }
+}
+DOM_antillean_naval_protectors = {
+		include = generic_battle_line_ship_organization
+
+		icon = GFX_focus_ARG_study_the_battle_of_the_river_plate
+
+		allowed = {
+				tag = DOM
+		}
+}
+DOM_antillean_pirates_from_caribean = {
+    include = generic_raider_ship_organization
+
+    icon = GFX_goal_generic_navy_anti_submarine
+
+    allowed = {
+        tag = DOM
+    }
+		
+}
+DOM_antillean_tank_thought = {
+		include = generic_infantry_tank_organization
+
+		icon = GFX_focus_generic_heavy_tank
+
+		allowed = {
+				tag = DOM
+		}
+}
+DOM_strategic_organization = {
+	include = generic_heavy_aircraft_organization
+	icon = GFX_focus_JAP_z_bomber_project
+	
+	allowed = {	
+        tag = DOM
+	}
+
+
+	tree_header_text = {
+		text = mio_header_design_department
+		x = 2
+	}
+
+	tree_header_text = {
+		text = mio_header_operational_department
+		x = 7
+	}
+
+	override_trait = {
+		token = generic_mio_trait_advanced_turbochargers
+
+		position = { x=0 y=1 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_extended_rear_fuselage
+
+		position = { x=5 y=0 }
+	}
+
+	override_trait = {
+		token = generic_mio_trait_pressurized_cockpit
+
+		position = { x=2 y=1 }
+	}
+
+	add_trait = {
+		token = GER_mio_trait_doppel_blitz
+		name = GER_mio_trait_doppel_blitz
+		icon = GFX_generic_mio_department_icon_plane_heavy_engine
+		special_trait_background = yes
+		
+		position = { x=3 y=0 }
+		relative_position_id = generic_mio_trait_reinforced_frames
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+		} 
+	} 
+
+	add_trait = {
+		token = GER_mio_trait_advanced_night_equipment
+		name = GER_mio_trait_advanced_night_equipment
+		icon = GFX_generic_mio_trait_icon_detection
+		special_trait_background = yes
+		
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_pressurized_cockpit
+		all_parents = { generic_mio_trait_pressurized_cockpit }
+
+		equipment_bonus = {
+			night_penalty = -0.05
+		} 
+	} 
+
+	add_trait = {
+		token = GER_mio_trait_stepless_cockpit
+		name = GER_mio_trait_stepless_cockpit
+		icon = GFX_generic_mio_trait_icon_strategic_attack
+		special_trait_background = yes
+		
+		position = { x=1 y=1 }
+		relative_position_id = generic_mio_trait_pressurized_cockpit
+		all_parents = { generic_mio_trait_pressurized_cockpit }
+
+		limit_to_equipment_type = { mio_cat_eq_only_strategic_bomber }
+
+		equipment_bonus = {
+			air_bombing = 0.05
+		} 
+	} 
+
+
+	add_trait = {
+		token = GER_mio_trait_aerodynamic_research_insitute
+		name = GER_mio_trait_aerodynamic_research_insitute
+		icon = GFX_generic_mio_department_icon_facilities
+		special_trait_background = yes
+
+		relative_position_id = generic_mio_trait_air_deployed_sonobuoys
+
+		position = { x = 1 y = 0 }  
+		
+		visible = {
+			FROM = { original_tag = DOM }
+		}
+
+
+
+		organization_modifier = {
+		    military_industrial_organization_research_bonus = 0.1
+		}
+
+	}
+
+	add_trait = {
+		token = GER_mio_trait_amerikabomber_learnings
+		name = GER_mio_trait_amerikabomber_learnings
+
+		icon = GFX_generic_mio_department_icon_plane_medium_engine
+		special_trait_background = yes
+		
+		position = { x=0 y=3 }
+		relative_position_id = GER_mio_trait_aerodynamic_research_insitute
+
+
+
+		limit_to_equipment_type = { mio_cat_eq_only_strategic_bomber }
+
+		equipment_bonus = {
+			air_range = 0.1
+			air_bombing = 0.05
+		} 
+	}
+}

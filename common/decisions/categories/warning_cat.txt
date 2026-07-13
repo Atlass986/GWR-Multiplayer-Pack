@@ -1,0 +1,11 @@
+warning_category = {
+    icon = generic_formable_nations
+
+    visible = {
+		is_ai = no always = no
+	}
+
+    allowed = {
+        is_ai = no always = no
+    } 
+}

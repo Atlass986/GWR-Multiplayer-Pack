@@ -1,0 +1,16 @@
+ideas = {
+    country = {
+        MEX_integrations_effort = {
+            picture = ger_mefo_bills_payment
+            allowed = {
+                always = yes
+            }
+
+            modifier = {
+                consumer_goods_factor = 0.1
+            }
+        }
+
+
+}
+}

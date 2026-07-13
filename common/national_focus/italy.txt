@@ -1742,8 +1742,7 @@ focus_tree = {
 				state = 849
 			}
 			849 = {
-				ITA_check_for_cooperatives_and_add_dm = yes #If appropriate, apply dm from Cooperatives for Intensive Exploitation 
-				state = 849 
+				ITA_check_for_cooperatives_and_add_dm = yes
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = synthetic_refinery
@@ -10108,8 +10107,8 @@ focus_tree = {
 	focus = {
 		id = ITA_a_greater_purpose
 		icon = GFX_goal_support_fascism
-		prerequisite = { focus = Victory }
-		relative_position_id = Victory
+		prerequisite = { focus = ITA_victory }
+		relative_position_id = ITA_victory
 		x = 0
 		y = 1
 
@@ -10165,14 +10164,14 @@ NOT = {
     focus = {
         id = ITA_claim_bulgaria
         icon = GFX_focus_generic_attack_bulgaria
-		relative_position_id = Victory
-        prerequisite = { focus = Victory }   # możesz zmienić
+		relative_position_id = ITA_victory
+        prerequisite = { focus = ITA_victory }   # możesz zmienić
         x = 2
         y = 1
         cost = 10
 
         available = {
-            BUL = exists
+            BUL = { exists = yes }
             has_war = no
         }
 
@@ -10187,14 +10186,14 @@ NOT = {
 	focus = {
         id = ITA_claim_hun
         icon = GFX_focus_HUN_carrying_on_arpads_legacy
-		relative_position_id = Victory
-        prerequisite = { focus = Victory }   # możesz zmienić
+		relative_position_id = ITA_victory
+        prerequisite = { focus = ITA_victory }   # możesz zmienić
         x = -2
         y = 1
         cost = 10
 
         available = {
-            HUN = exists
+            HUN = { exists=yes }
             has_war = no
         }
 
@@ -10217,7 +10216,7 @@ NOT = {
 
         available = {
 			date > 1938.6.1
-            GRE = exists
+            GRE = { exists=yes }
            
         }
 
@@ -10240,7 +10239,7 @@ NOT = {
 
         available = {
 			date > 1938.6.1
-            GRE = exists
+            GRE = {exists = yes}
            
         }
 
@@ -10278,7 +10277,6 @@ NOT = {
             }
 		completion_reward = {
 			add_stability = -0.05
-			add_
 			set_country_flag = Unification_efforts
 		}
 	}
@@ -10291,10 +10289,6 @@ NOT = {
 			prerequisite = { focus = ITA_unification_efforts }
 		relative_position_id = ITA_unification_efforts
             available = {
-				has_country_flag = {
-				flag = Unification_efforts
-				days > 365
-			}
 				YUG = { is_puppet_of = ITA } 
 				GRE = { is_puppet_of = ITA } 
 				ALB = { is_puppet_of = ITA } 
@@ -14975,7 +14969,7 @@ NOT = {
 	}
 
 	focus = {
-		id = Victory
+		id = ITA_victory
 		icon = GFX_focus_SMB_blue_water_fleet
 		prerequisite = { focus = ITA_claims_on_turkey_bba focus = ITA_war_with_greece}
 		prerequisite = { focus = ITA_italy_first }
@@ -19772,7 +19766,7 @@ focus = {
 				ideology = neutrality
 				popularity = 0.10
 			}
-		add_tension = 0.05
+		add_world_tension = {amount = 0.05}
 		}		
 	}
 	focus = {
@@ -19794,7 +19788,7 @@ focus = {
 				ideology = neutrality
 				popularity = 0.10
 			}
-			add_tension = 0.05
+			add_world_tension = {amount = 0.05}
 		}
 	}
 	focus = {
@@ -19847,10 +19841,19 @@ focus = {
 				idea = ITA_invasion_of_spain
 				days = 180
 			}
-			create_wargoal = {
-				type = take_state_focus
-				target = SPA
-				generator = { 116 183 452 446 447 457 453 456 551 269 }
+			if = { limit = {SPA = {exists = yes} } 
+				create_wargoal = {
+					type = take_state_focus
+					target = SPA
+					generator = { 116 183 452 446 447 457 453 456 551 269 }
+				}
+			}
+			if = { limit = {SPR = {exists = yes} } 
+				create_wargoal = {
+					type = take_state_focus
+					target = SPR
+					generator = { 116 183 452 446 447 457 453 456 551 269 }
+				}
 			}
 		}
 	}

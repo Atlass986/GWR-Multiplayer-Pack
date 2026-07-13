@@ -18,6 +18,22 @@ guiTypes = {
 
 			shortcut = "ctrl+shift+s"
 		}
+
+		buttonType = {
+			name = "interaction_debug_button"
+
+			# size = { width = 34 height = 34 }
+
+			scale = 0.9
+
+			position = { x = 124 y = 12 }
+
+			spriteType = "GFX_debug_gfx_strip"
+			
+			# shortcut = "ctrl+shift+q"
+
+			pdx_tooltip = "SI_interaction_debug_button"
+		}
 	}
 	containerWindowType = {
 		name = "state_interaction_container"
@@ -40,104 +56,10 @@ guiTypes = {
 			spriteType = "GFX_SI_state_menu4"
 		}
 
-		buttonType = {
-			name = "interaction_debug_button"
+		
 
-			# size = { width = 34 height = 34 }
+		
 
-			scale = 0.9
-
-			position = { x = 12 y = 10 }
-
-			spriteType = "GFX_debug_gfx_strip"
-			
-			# shortcut = "ctrl+shift+q"
-
-			pdx_tooltip = "SI_interaction_debug_button"
-		}
-
-		buttonType = {
-			name = "state_menu_demand_state_button"
-
-			# size = { width = 34 height = 34 }
-
-			position = { x = 127 y = 8 }
-
-			quadTextureSprite = "GFX_state_buttons_strip"
-			frame = 2
-
-			# shortcut = "ctrl+shift+q"
-
-			pdx_tooltip = "SI_state_demand_button"
-		}
-		buttonType = {
-			name = "state_menu_demand_vsl_button"
-
-			# size = { width = 34 height = 34 }
-
-			position = { x = 172 y = 8 }
-
-			quadTextureSprite = "GFX_state_buttons_strip"
-			frame = 3
-
-			# shortcut = "ctrl+shift+w"
-
-			pdx_tooltip = "SI_state_vsl_button"
-		}
-		# buttonType = {
-		# 	name = "state_menu_demand_int_button"
-
-		# 	size = { width = 34 height = 34 }
-
-		# 	position = { x = 13 y = 8 }
-
-		# 	quadTextureSprite = "GFX_state_buttons_strip"
-		# 	frame = 1
-
-		# 	pdx_tooltip = "SI_state_int_button"
-		# }
-		buttonType = {
-			name = "state_menu_claim_state_button"
-
-			# size = { width = 34 height = 34 }
-
-			position = { x = 217 y = 8 }
-
-			quadTextureSprite = "GFX_state_buttons_strip"
-			frame = 4
-
-			# shortcut = "ctrl+shift+e"
-
-			pdx_tooltip = "SI_state_claim_button"
-		}
-		# buttonType = {
-		# 	name = "state_menu_core_state_button"
-
-		# 	size = { width = 34 height = 34 }
-
-		# 	position = { x = 262 y = 8 }
-
-		# 	quadTextureSprite = "GFX_state_buttons_strip"
-		# 	frame = 5
-
-		# 	# shortcut = "ctrl+shift+r"
-
-		# 	pdx_tooltip = "SI_state_core_button"
-		# }
-		buttonType = {
-			name = "state_menu_move_capital_button"
-
-			# size = { width = 34 height = 34 }
-
-			position = { x = 262 y = 8 }
-
-			quadTextureSprite = "GFX_state_buttons_strip"
-			frame = 6
-
-			# shortcut = "ctrl+shift+t"
-
-			pdx_tooltip = "SI_state_move_cap_button"
-		}
 
 		buttonType = {
 			name = "state_menu_transfer_menu_button"
@@ -154,130 +76,125 @@ guiTypes = {
 
 			pdx_tooltip = "SI_state_transfer_menu_button"
 		}
-
-
-		
 	}
 	containerWindowType = {
 		name = "state_interactions_state_transfer_container"
-
-		position = { x = 0 y = 316 }
-
-		size = { width = 350 height = 80 }
-
-		fade_time = 250
-
-		fade_type = linear
-
-		moveable = yes
-
+		position = { x = 68 y = -55 }
+		size = { width = 350 height = 10 }
+		clipping = no
+		moveable = no
 		background = {
 			name = "Background"
-			spriteType = "GFX_BPT_areadef_conf_bg"
-		}
-
+			spriteType = "GFX_gwrmp_state_actions"
+			position = { x = -57 y = -15 }
+		}			
 		instantTextBoxType = {
 			name = "state_transfer_state_name"
-
-			position = { x = 16 y = 6 }
-
-			maxWidth = 320
-
+			position = { x = -50 y = -5 }
+			maxWidth = 520
 			font = "hoi_20bs"
-
 			text = "SI_state_transfer_title"
 		}
-
+		buttonType = {
+			name = "state_menu_demand_state_button"
+			position = { x = 63 y = -11 }
+			quadTextureSprite = "GFX_state_buttons_strip"
+			frame = 2
+			pdx_tooltip = "SI_state_demand_button"
+		}
+		buttonType = {
+			name = "state_menu_demand_vsl_button"
+			position = { x = 108 y = -11 }
+			quadTextureSprite = "GFX_state_buttons_strip"
+			frame = 3
+			pdx_tooltip = "SI_state_vsl_button"
+		}
+		buttonType = {
+			name = "state_menu_claim_state_button"
+			position = { x = 153 y = -11 }
+			quadTextureSprite = "GFX_state_buttons_strip"
+			frame = 4
+			pdx_tooltip = "SI_state_claim_button"
+		}
+		buttonType = {
+			name = "state_menu_move_capital_button"
+			position = { x = 198 y = -11 }
+			quadTextureSprite = "GFX_state_buttons_strip"
+			frame = 6
+			pdx_tooltip = "SI_state_move_cap_button"
+		}
+		buttonType = {
+			name = "state_menu_ask_resources_button"
+			position = { x = 243 y = -11 }
+			quadTextureSprite = "GFX_state_buttons_strip"
+			frame = 5
+			pdx_tooltip = "SI_state_ask_resources_button"
+		}
+		buttonType = {
+			name = "send_message_diplo_action_button"
+			position = { x = -28 y = 31 }
+			quadTextureSprite = "GFX_diplo_actions_bg"
+			frame = 1
+			pdx_tooltip = "WRITE_LETTER_DIPLO_ACTION_TT"
+			clicksound = click_action
+		}
+		buttonType = {
+			name = "send_message_diplo_action_selected_button"
+			position = { x = -28 y = 31 }
+			quadTextureSprite = "GFX_diplo_actions_bg"
+			frame = 2
+			pdx_tooltip = "WRITE_LETTER_DIPLO_ACTION_TT"
+			clicksound = click_action
+		}
+		instantTextBoxType = {
+			name = "send_message_diplo_action_button_text"
+			position = { x = -20 y = 36 }
+			font = "hoi_16mbs"
+			format = center
+			text = "WRITE_LETTER_DIPLO_ACTION_TITLE"
+			maxWidth = 220
+			fixedsize = yes
+			alwaystransparent = yes
+		}
 		buttonType = {
 			name = "state_transfer_mark_button"
-
-			position = { x = 10 y = 36 }
-			
+			position = { x = 227 y = 31 }
 			quadTextureSprite = "GFX_sort_button_140x29"
-
 			frame = 1
-
 			font = "hoi_18mbs"
-
 			text = "SI_state_mark_button"
-
 			shortcut = "ctrl+z"
-
+			clicksound = click_action
 			pdx_tooltip = "SI_transfer_mark_state_tt"
 		}
 		buttonType = {
 			name = "state_transfer_unmark_button"
-
-			position = { x = 10 y = 36 }
-			
+			position = { x = 227 y = 31 }
 			quadTextureSprite = "GFX_sort_button_140x29"
-
 			frame = 2
-
 			font = "hoi_18mbs"
-
 			text = "SI_state_unmark_button"
-
 			shortcut = "ctrl+z"
-
+			clicksound = click_action
 			pdx_tooltip = "SI_transfer_unmark_state_tt"
 		}
-
-		# buttonType = {
-		# 	name = "state_transfer_mark_all_button"
-
-		# 	position = { x = 165 y = 32 }
-
-		# 	spriteType = "GFX_SI_state_transfer_select_all_button"
-
-		# 	font = "hoi_18mbs"
-
-		# 	shortcut = "ctrl+a"
-
-		# 	pdx_tooltip = "SI_transfer_mark_all_tt"
-		# }
-
 		buttonType = {
 			name = "state_transfer_unmark_all_button"
-
-			position = { x = 165 y = 32 }
-
+			position = { x = 290 y = -11 }
 			spriteType = "GFX_SI_state_transfer_deselect_all_button"
-
 			font = "hoi_18mbs"
-
 			shortcut = "ctrl+x"
-
+			clicksound = click_action
 			pdx_tooltip = "SI_transfer_unmark_all_tt"
 		}
-
-		# buttonType = {
-		# 	name = "state_transfer_core_button"
-
-		# 	position = { x = 255 y = 32 }
-
-		# 	spriteType = "GFX_SI_state_transfer_core_button"
-
-		# 	font = "hoi_18mbs"
-
-		# 	shortcut = "ctrl+c"
-
-		# 	pdx_tooltip = "SI_transfer_core_tt"
-		# }
-
 		buttonType = {
 			name = "state_transfer_transfer_button"
-
-			position = { x = 210 y = 32 }
-
+			position = { x = 335 y = -11 }
 			spriteType = "GFX_SI_state_transfer_transfer_button"
-
 			font = "hoi_18mbs"
-
 			shortcut = "ctrl+t"
-
+			clicksound = click_action
 			pdx_tooltip = "SI_transfer_state_tt"
 		}
 	}
-
 }

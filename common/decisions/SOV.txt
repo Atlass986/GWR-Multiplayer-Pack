@@ -13201,25 +13201,14 @@ SOV_soviet_civil_war_dec_cat = {
 				custom_effect_tooltip = SOV_assassinate_stalin_good_tt
 				custom_effect_tooltip = SOV_assassinate_stalin_outcome_tt
 				hidden_effect = {
-					random_list = {
-						80 = {
-							retire_character = SOV_iosif_stalin
-							SOV_promote_to_country_leader_beriya = yes
-							news_event = {
-								id = NSB_soviet_communist_civil_war.009
-							}
-							subtract_from_variable = { SOV_paranoia_weekly_modifiers_amount = 2 } #Stalin will always have the Authority Undermined trait (+2 weekly Paranoia)
-							SOV_paranoia_modifier_update_gui_tooltip = yes #Update Paranoia UI
-							set_country_flag = SOV_assassinated_stalin_flag
-						}
-						20 = {
-							SOV_paranoia_very_high_increase_effect = yes
-							news_event = {
-								id = NSB_soviet_communist_civil_war.008
-							}
-						}
+					retire_character = SOV_iosif_stalin
+					SOV_promote_to_country_leader_beriya = yes
+					news_event = {
+						id = NSB_soviet_communist_civil_war.009
 					}
-					# TODO Create events
+					subtract_from_variable = { SOV_paranoia_weekly_modifiers_amount = 2 } #Stalin will always have the Authority Undermined trait (+2 weekly Paranoia)
+					SOV_paranoia_modifier_update_gui_tooltip = yes #Update Paranoia UI
+					set_country_flag = SOV_assassinated_stalin_flag
 				}
 			}
 			ELSE = {
@@ -13227,7 +13216,7 @@ SOV_soviet_civil_war_dec_cat = {
 				custom_effect_tooltip = SOV_assassinate_stalin_outcome_tt
 				hidden_effect = {
 					random_list = {
-						50 = {
+						70 = {
 							retire_character = SOV_iosif_stalin
 							SOV_promote_to_country_leader_beriya = yes
 							news_event = {
@@ -13235,7 +13224,7 @@ SOV_soviet_civil_war_dec_cat = {
 							}
 							set_country_flag = SOV_assassinated_stalin_flag
 						}
-						50 = {
+						30 = {
 							SOV_paranoia_very_high_increase_effect = yes
 							news_event = {
 								id = NSB_soviet_communist_civil_war.008
@@ -15504,7 +15493,13 @@ SOV_soviet_civil_war_dec_cat = {
 		cost = 5
 		days_remove = 14
 		complete_effect = {
-			SOV_paranoia_very_low_increase_effect = yes
+			hidden_effect = {
+				random_list = {
+					70 = { SOV_paranoia_very_low_increase_effect = yes }
+					30 = { }
+				}
+				
+			}
 			IF = {
 				limit = {
 					NOT = { has_country_flag = SOV_siberia_states_unlocked }
@@ -15613,10 +15608,16 @@ SOV_soviet_civil_war_dec_cat = {
 			}
 		}
 		on_map_mode = map_only
-		cost = 15
+		cost = 5
 		days_remove = 14
 		complete_effect = {
-			SOV_paranoia_low_increase_effect = yes
+			hidden_effect = {
+				random_list = {
+					70 = { SOV_paranoia_very_low_increase_effect = yes }
+					30 = { }
+				}
+				
+			}
 			IF = {
 				limit = {
 					NOT = { has_country_flag = SOV_far_east_states_unlocked }
@@ -15751,10 +15752,16 @@ SOV_soviet_civil_war_dec_cat = {
 		}
 
 		on_map_mode = map_only
-		cost = 15
+		cost = 5
 		days_remove = 14
 		complete_effect = {
-			SOV_paranoia_low_increase_effect = yes
+			hidden_effect = {
+				random_list = {
+					70 = { SOV_paranoia_very_low_increase_effect = yes }
+					30 = { }
+				}
+				
+			}
 			IF = {
 				limit = {
 					NOT = { has_country_flag = SOV_northern_states_unlocked }
@@ -15881,7 +15888,13 @@ SOV_soviet_civil_war_dec_cat = {
 		cost = 25
 		days_remove = 14
 		complete_effect = {
-			SOV_paranoia_low_increase_effect = yes
+			hidden_effect = {
+				random_list = {
+					70 = { SOV_paranoia_very_low_increase_effect = yes }
+					30 = { }
+				}
+				
+			}
 			IF = {
 				limit = {
 					NOT = { has_country_flag = SOV_ukrainian_states_unlocked }
@@ -16016,10 +16029,16 @@ SOV_soviet_civil_war_dec_cat = {
 			}
 		}
 		on_map_mode = map_only
-		cost = 15
+		cost = 10
 		days_remove = 14
 		complete_effect = {
-			SOV_paranoia_low_increase_effect = yes
+			hidden_effect = {
+				random_list = {
+					70 = { SOV_paranoia_very_low_increase_effect = yes }
+					30 = { }
+				}
+				
+			}
 			IF = {
 				limit = {
 					NOT = { has_country_flag = SOV_steppe_states_unlocked }
@@ -16148,10 +16167,16 @@ SOV_soviet_civil_war_dec_cat = {
 			}
 		}
 		on_map_mode = map_only
-		cost = 15
+		cost = 10
 		days_remove = 14
 		complete_effect = {
-			SOV_paranoia_low_increase_effect = yes
+			hidden_effect = {
+				random_list = {
+					70 = { SOV_paranoia_very_low_increase_effect = yes }
+					30 = { }
+				}
+				
+			}
 			IF = {
 				limit = {
 					NOT = { has_country_flag = SOV_urals_states_unlocked }

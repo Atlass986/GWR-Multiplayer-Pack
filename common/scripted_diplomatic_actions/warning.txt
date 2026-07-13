@@ -1,0 +1,134 @@
+scripted_diplomatic_actions = {
+	#PAY FACTORIES
+ 	warning_30d = {
+		visible = { 
+			always = no
+			THIS = { NOT = { has_war_with = ROOT } } 
+			ROOT = { OR = { is_faction_leader = yes is_in_faction = no } }
+			NOT = { any_country = { has_war_with = PREV } }
+		}
+		selectable = { 
+			THIS = { 
+				OR = { 
+					NOT = { is_in_faction = yes } 
+					is_faction_leader = yes
+				} 
+			} 
+			THIS = { NOT = { has_idea = warning } }
+			ROOT = { NOT = { has_idea = warning } }
+		}
+
+		requires_acceptance = no
+		cost = -10
+		command_power = 1
+
+		show_acceptance_on_action_button = no
+
+		icon = 4
+
+		on_sent_effect = {
+			log = "1. Adding"
+			log = "2. Post-Adding"
+		}
+
+		complete_effect = {
+			#set_variable = {  }
+			log = "3. Complete"
+			THIS = {
+				add_timed_idea = {
+					idea = warning
+					days = 30
+				} 
+				set_country_flag = warning_reciver
+				set_variable = { war_with = PREV.THIS }
+			}
+			ROOT = {
+				add_timed_idea = {
+					idea = warning
+					days = 30
+				} 
+				set_country_flag = warning_sender
+				set_variable = { war_with = PREV.THIS }
+			}
+		}
+
+		reject_effect = {}
+
+		send_description = warning_desc
+		receive_description = warning_receive_desc
+		accept_title = warning_accept_title
+		accept_description = warning_accept_desc
+		reject_title = warning_reject_title
+		reject_description = warning_reject_desc
+
+		ai_acceptance = {
+			condition = { base = 0 }
+		}
+
+		ai_desire = { base = -1	}
+	}
+	warning_60d = {
+		visible = { 
+			always = no
+			THIS = { NOT = { has_war_with = ROOT } } 
+			ROOT = { OR = { is_faction_leader = yes is_in_faction = no } }
+			any_country = { has_war_with = PREV }
+		}
+		selectable = { 
+			THIS = { 
+				OR = { 
+					NOT = { is_in_faction = yes } 
+					is_faction_leader = yes 
+				} 
+			} 
+			THIS = { NOT = { has_idea = warning } }
+			ROOT = { NOT = { has_idea = warning } }
+		}
+
+		requires_acceptance = no
+		cost = 10
+		command_power = -1
+
+		show_acceptance_on_action_button = no
+
+		icon = 4
+
+		on_sent_effect = {
+			log = "1. Adding"
+			log = "2. Post-Adding"
+		}
+
+		complete_effect = {
+			log = "3. Complete"
+			THIS = {
+				add_timed_idea = {
+					idea = warning
+					days = 60
+				}
+				set_country_flag = warning@ROOT
+			}
+			ROOT = {
+				add_timed_idea = {
+					idea = warning
+					days = 60
+				}
+				set_country_flag = warning@ROOT
+			}
+		}
+
+		reject_effect = {}
+
+		send_description = warning_desc
+		receive_description = warning_receive_desc
+		accept_title = warning_accept_title
+		accept_description = warning_accept_desc
+		reject_title = warning_reject_title
+		reject_description = warning_reject_desc
+
+		ai_acceptance = {
+			condition = { base = 0 }
+		}
+
+		ai_desire = { base = -1	}
+	}
+}

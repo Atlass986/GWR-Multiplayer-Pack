@@ -1,0 +1,10 @@
+l_polish:
+ COUNTRY_POINTS_TOOLTIP:0"Aktualna wartość punktowa Twojego państwa"
+ FACTION_POINTS_TOOLTIP:0"Aktualna wartość punktowa Twojej frakcji"
+ COUNTRY_POINTS_ENEMY_TOOLTIP:0"Aktualna wartość punktowa wybranego państwa"
+ FACTION_POINTS_ENEMY_TOOLTIP:0"Aktualna wartość punktowa wybranej frakcji"
+ faction_points_exceeded_0:0"Przekraczamy limit frakcji!"
+ faction_points_exceeded_1:0"Mocno przekraczamy limit frakcji!"
+ faction_points_exceeded_2:0"Bradzo mocno przekraczamy limit frakcji!"
+ faction_points_exceeded_3:0"Drastycznie przekraczamy limit frakcji!"
+ faction_points_exceeded_4:0"Śmiertelnie przekraczamy limit frakcji!"

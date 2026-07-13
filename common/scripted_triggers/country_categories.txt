@@ -11,6 +11,7 @@ is_super_major = {
 
 is_major_country = {
     OR = {
+        AND = {num_of_factories > 185}
         AND = {tag = JAP AND = {is_japan_regional = no}}
         tag = FRA
         tag = ITA
@@ -26,6 +27,7 @@ is_major_country = {
 
 is_regional = {
     OR = {
+        AND = {num_of_factories < 184 num_of_factories > 57}
         AND = {tag = JAP AND = {is_japan_regional = yes}}
         AND = {is_part_of_china = yes AND = {is_china_regional = yes is_china_major = no}}
         AND = {tag = POL AND = {is_poland_major = no is_poland_super_major = no}}
@@ -36,7 +38,6 @@ is_regional = {
         AND = {is_part_of_benelux = yes is_benelux_regional=yes}  
         AND = {is_part_of_scandinavia = yes is_scandinavia_regional=yes is_scandinavia_major = no}  
         AND = {tag = RAJ AND = {is_imperial_puppet = no is_raj_major = no}}
-        AND = {tag = YUG AND = {is_yugoslavia_regional = yes}}
     }
 }
 
@@ -54,8 +55,6 @@ is_minor = {
             AND = {is_part_of_austrohungary = yes is_austrohungary_regional=yes}  
             AND = {is_part_of_benelux = yes is_benelux_regional=yes}  
             AND = {is_part_of_scandinavia = yes is_scandinavia_regional=yes}  
-            AND = {tag = YUG AND = {is_yugoslavia_regional = no}}
-
         }
     }
 }
@@ -63,12 +62,12 @@ is_minor = {
 is_mini = {
     OR = { 
         AND = {is_imperial_puppet = yes is_super_mini = no} 
-        AND = {num_of_factories < 7 num_of_factories > 2}
+        AND = {num_of_factories < 15 num_of_factories > 4}
     }
 }
 
 is_super_mini = {
-    num_of_factories < 3
+    num_of_factories < 5
 }
 
 
@@ -186,9 +185,6 @@ is_benelux_regional = {
     controls_state = 6
     controls_state = 8
     controls_state = 7
-}
-is_yugoslavia_regional = {
-    has_completed_focus = YUG_reunite_the_kingdom
 }
 is_raj_major = {
     num_of_factories > 149

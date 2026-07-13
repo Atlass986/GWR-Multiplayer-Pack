@@ -1,0 +1,37 @@
+warning_category = {
+    war_incoming = {
+		activation = { has_idea = warning always = no }
+        available = { NOT = { has_idea = warning } }
+        cancel_trigger = { always = no }
+        icon = mission_icon
+        is_good = no
+        days_mission_timeout = 30
+        war_with_on_remove = ROOT.war_with
+        complete_effect = {
+            ROOT = {
+                declare_war_on = {
+                    target = ROOT.war_with
+                    type = annex_everything
+                }
+            }
+        }
+    }
+    cancel_warning = {
+        visible = { has_idea = warning has_country_flag = warning_sender always = no }
+        icon = QAT_example
+        complete_effect = {
+            add_political_power = -100
+            add_command_power = -100
+            add_stability = -0.1
+            add_war_support = -0.15
+            remove_ideas = { warning }
+            clear_country_flag = warning_sender
+            ROOT = {
+                var:war_with = { 
+                    remove_ideas = { warning }
+                    clear_country_flag = warning_reciver
+                }
+            }
+        }
+    }
+}

@@ -6358,7 +6358,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SOV_strengthen_the_mobilization_plan
-		cost = 10
+		cost = 5
 
 		available = {
 			NOT = { has_country_flag = SOV_paranoia_system_active_flag }
@@ -6388,6 +6388,7 @@ focus_tree = {
 		id = SOV_military_reorganization
 		icon = GFX_SOV_military_reorganization_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_rehabilitated_military }
+		prerequisite = { focus = SOV_desperate_measures }
 		x = 0
 		y = 2
 		relative_position_id = SOV_rehabilitated_military
@@ -6435,8 +6436,11 @@ focus_tree = {
 		cost = 5
 
 		available = {
-			any_enemy_country = {
+			OR = {
+				any_enemy_country = {
 				SOV_is_major_not_original_sov = yes
+				}
+				has_global_flag = SOV_soviet_civil_war_over
 			}
 		}
 		
@@ -6570,7 +6574,6 @@ focus_tree = {
 					}
 				}
 
-				SOV_spawn_penal_divisions_effect = yes
 			}
 		}
 	}
@@ -6708,8 +6711,34 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
+			if = {
+				limit = {
+					SOV_konstantin_rokossovsky = {
+						NOT = { has_character_flag = SOV_character_purged_flag }
+						is_corps_commander = yes
+					}
+				}
+				recruit_character = SOV_konstantin_rokossovsky
+				SOV_konstantin_rokossovsky = {
+					promote_leader = yes
+				}
+			}
+			else = {
+				random_army_leader = {
+					limit = {
+						NOT = { has_character_flag = SOV_potential_target_flag }
+						is_corps_commander = yes
+						NOT = { is_character = SOV_georgy_zhukov }
+						NOT = { is_character = SOV_ivan_konev }
+					}
+					promote_leader = yes
+				}
+			}
 			add_to_variable = { SOV_the_red_army_army_org_regain = 0.1 }
 			custom_effect_tooltip = SOV_barrier_troops_ns_tt
+			custom_effect_tooltip = available_military_high_command
+			show_ideas_tooltip = konstantin_rokossovsky 
+			
 		}
 	}
 
@@ -6729,6 +6758,32 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
+			if = {
+				limit = {
+					SOV_georgy_zhukov = {
+						NOT = { has_character_flag = SOV_character_purged_flag }
+						is_corps_commander = yes
+					}
+				}
+				recruit_character = SOV_georgy_zhukov
+				SOV_georgy_zhukov = {
+					promote_leader = yes
+				}
+			}
+			else = {
+				random_army_leader = {
+					limit = {
+						NOT = { has_character_flag = SOV_potential_target_flag }
+						is_corps_commander = yes
+						NOT = { is_character = SOV_konstantin_rokossovsky }
+						NOT = { is_character = SOV_ivan_konev }
+					}
+					promote_leader = yes
+				}
+			}
+			custom_effect_tooltip = available_theorist
+			show_ideas_tooltip = georgy_zhukov
+			
 			add_to_variable = { SOV_the_red_army_cas_damage_reduction = 0.05 }
 			add_to_variable = { SOV_the_red_army_max_dig_in = 5 }
 			add_to_variable = { SOV_the_red_army_dig_in_speed_factor = 0.05 }
@@ -7998,7 +8053,7 @@ focus_tree = {
 				effect_tooltip = { 
 					remove_ideas = trotskyite_plot_nsb
 				}
-				# remove_ideas = trotskyite_plot_nsb
+				remove_ideas = trotskyite_plot_nsb
 				# custom_effect_tooltip = SOV_behead_the_snake_no_lar_tt
 			}
 
@@ -8709,7 +8764,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SOV_the_left_opposition
-		cost = 10
+		cost = 5
 
 		available = {
 			SOV_soviet_civil_war_not_started = yes 
@@ -9111,6 +9166,12 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
+			hidden_effect = {
+				if = {
+					retire_character = SOV_georgy_zhukov
+					retire_character = SOV_konstantin_rokossovsky
+				}
+			}
 			SOV_opposition_support_medium_increase_effect = yes
 			custom_effect_tooltip = SOV_left_opposition_coup_tt
 			add_to_variable = { SOV.SOV_left_opposition_army_support = 0.05 }
@@ -9971,7 +10032,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_the_need_for_policy_changes
-		cost = 10
+		cost = 5
 		available = {
 			SOV_soviet_civil_war_not_started = yes 
 		}
@@ -10167,7 +10228,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_undermine_stalins_authority
-		cost = 10
+		cost = 5
 		available = {
 			SOV_soviet_civil_war_not_started = yes 
 			NOT = { has_idea = SOV_lavrenty_beriya }
@@ -10290,6 +10351,12 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
+			hidden_effect = {
+				if = {
+					retire_character = SOV_georgy_zhukov
+					retire_character = SOV_konstantin_rokossovsky
+				}
+			}
 			# Stalin dead
 			IF = {
 				limit = {
@@ -11333,7 +11400,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_cooperation_against_stalin
-		cost = 10
+		cost = 5
 		available = {
 			SOV_soviet_civil_war_not_started = yes 
 		}
@@ -11409,7 +11476,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_cooperation_against_stalin
-		cost = 10
+		cost = 5
 		available = {
 			SOV_soviet_civil_war_not_started = yes 
 		}
@@ -11848,11 +11915,8 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_PROPAGANDA}
 
 		completion_reward = {
-			add_political_power = 25
-			custom_effect_tooltip = available_military_high_command
-			show_ideas_tooltip = konstantin_rokossovsky 
-			custom_effect_tooltip = available_theorist
-			show_ideas_tooltip = georgy_zhukov
+			add_political_power = 200
+			
 
 			custom_effect_tooltip = unlock_propaganda_campaign_tt
 			unlock_decision_tooltip = SOV_propaganda_heroes_forward
@@ -11901,50 +11965,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			if = {
-				limit = {
-					SOV_georgy_zhukov = {
-						NOT = { has_character_flag = SOV_character_purged_flag }
-						is_corps_commander = yes
-					}
-				}
-				SOV_georgy_zhukov = {
-					promote_leader = yes
-				}
-			}
-			else = {
-				random_army_leader = {
-					limit = {
-						NOT = { has_character_flag = SOV_potential_target_flag }
-						is_corps_commander = yes
-						NOT = { is_character = SOV_konstantin_rokossovsky }
-						NOT = { is_character = SOV_ivan_konev }
-					}
-					promote_leader = yes
-				}
-			}
-			if = {
-				limit = {
-					SOV_konstantin_rokossovsky = {
-						NOT = { has_character_flag = SOV_character_purged_flag }
-						is_corps_commander = yes
-					}
-				}
-				SOV_konstantin_rokossovsky = {
-					promote_leader = yes
-				}
-			}
-			else = {
-				random_army_leader = {
-					limit = {
-						NOT = { has_character_flag = SOV_potential_target_flag }
-						is_corps_commander = yes
-						NOT = { is_character = SOV_georgy_zhukov }
-						NOT = { is_character = SOV_ivan_konev }
-					}
-					promote_leader = yes
-				}
-			}
+			
 			if = {
 				limit = {
 					SOV_ivan_konev = {
@@ -16363,6 +16384,12 @@ ai_will_do = {
 		search_filters = {}
 
 		completion_reward = {
+			hidden_effect = {
+				if = {
+					retire_character = SOV_georgy_zhukov
+					retire_character = SOV_konstantin_rokossovsky
+				}
+			}
 			#create unit after war begins - 15 infantry, split between ukraine and siberia (7 and 8)
 			set_country_flag = Sov_the_eyes_fear_flag
 			custom_effect_tooltip = SOV_the_eyes_fear_tt
@@ -16500,6 +16527,7 @@ ai_will_do = {
 			}
 		}
 		available = {
+			surrender_progress > 0.75
 			has_global_flag = SOV_soviet_civil_war
 			OR = { 
 				has_country_flag = SOV_CSW_transfer_vladivostok_flag
@@ -16859,7 +16887,7 @@ ai_will_do = {
 		x = 2
 		y = 2
 		relative_position_id = SOV_reopen_novodevichi
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 1
 		}
@@ -16955,7 +16983,7 @@ ai_will_do = {
 		x = 4
 		y = 2
 		relative_position_id = SOV_consolidate_power
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -17059,7 +17087,7 @@ ai_will_do = {
 		x = 5
 		y = 1
 		relative_position_id = SOV_reconvene_the_zemsky_sobor
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -17180,7 +17208,7 @@ ai_will_do = {
 		x = -5
 		y = 1
 		relative_position_id = SOV_reconvene_the_zemsky_sobor
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}

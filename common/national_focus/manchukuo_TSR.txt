@@ -2206,7 +2206,7 @@
 		}
 
 		available = {
-
+			is_ai = no
 		}
 
 		bypass = {

@@ -1,0 +1,9 @@
+﻿l_english: 
+ DOM_event.1.buy:0 "The Antillean Empire Wants To Purchase British Honduras"
+ DOM_event.1.desc:0 "The Antillean Empire has approached our government with an offer to purchase British Honduras. They claim that the territory naturally belongs within the Antillean sphere of influence and promise economic cooperation and regional stability in exchange. Accepting the proposal would strengthen relations with the Antilleans, but at the cost of relinquishing one of our remaining colonial possessions in the Caribbean."
+ DOM_event.1.a:0 "Accept the Offer"
+ DOM_event.1.b:0 "Reject the Proposal"
+ DOM_event.2.buy:0 "The United Kingdom Sold British Honduras To Us"
+ DOM_event.2.desc:0 "After lengthy negotiations, the United Kingdom has agreed to transfer British Honduras to the Antillean Empire. This acquisition marks a major expansion of our influence on the mainland and strengthens our position as the dominant power in the Caribbean region."
+ DOM_event.2.a:0 "Finally!"
+ 

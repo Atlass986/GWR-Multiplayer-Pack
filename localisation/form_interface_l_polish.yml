@@ -1,0 +1,24 @@
+﻿l_polish:
+ formable_nations_mod_category:0 "Form New Nation"
+ ##############################
+ extra_ideas:0 "Decyzje"
+ form_nation:0 "Stwórz nowy kraj"
+ core_land:0 "§GWszyskie wymagane prowincje zostaną regionem narodowym.§!\n"
+ ##############################
+ formable_nations_africa:0 "Afryka"
+ formable_nations_africa_tt:0 "§YAfryka§!: Kontrolowane przez §Y[From.GetName]§!"
+ formable_nations_balkan:0 "Bałkany"
+ formable_nations_iberia:0 "Iberia"
+ ##############################
+ unification_of_africa_category:0 "Zjednoczenie Afryki"
+ unification_of_balkans_category:0 "Zjednoczenie Bałkanów"
+ unification_of_iberia_category:0 "Zjednoczenie Iberii"
+ greater_romania_category:0 "Zjednoczenie Wielkiej Rumunii"
+ #############################
+ # Greater Romania 
+ #############################
+ integrate_oddessa:0 "Wciel Odesse"
+ integrate_west_crisana:0 "Wciel Zachodnią Crisane"
+ integrate_carpatia_ruthenia:0 "Wciel Ruś Zakarpacką"
+ integrate_banat:0 "Wciel Banat"
+ 

@@ -1,0 +1,994 @@
+focus_tree = {
+    id = dominicanan_tree
+    country = {
+        factor = 0
+        modifier = {
+            add = 10
+            tag = DOM
+        }
+    }
+
+    default = no
+
+    continuous_focus_position = { x = 50 y = 1000 }
+
+################################################
+###              Political Path              ###
+################################################
+
+##############################################################
+
+    focus = {
+        id = DOM_reorganize_antillean_goverment
+        icon = GFX_focus_CHL_liberate_the_caribbean
+        x = 1
+        y = 0
+        cost = 10
+        available = {
+            has_global_flag = antilles_formed_flag
+        }
+
+        completion_reward = {
+            add_timed_idea = {
+                idea = DOM_government_stabilizing_idea
+                days = 365
+            }
+        }
+    }
+    focus = {
+        id = DOM_for_our_fuhrer
+        icon = GFX_focus_GER_support_the_fuhrer
+        available = {
+            NOT = { has_idea = DOM_government_stabilizing_idea }
+        }
+        prerequisite = {
+            focus = DOM_reorganize_antillean_goverment
+        }
+        x = 1
+        y = 1
+        cost = 5
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = DOM_dominicanian_dictatorship_idea
+                add_idea = DOM_fuhrer_in_power_idea
+}
+        }
+    }
+    focus = {
+        id = DOM_continental_ambitions
+        icon = GFX_focus_BRA_create_faction
+        prerequisite = {
+            focus = DOM_for_our_fuhrer
+        }
+        x = 1
+        y = 3
+        cost = 5
+
+        completion_reward = {
+            add_timed_idea = {
+                idea = DOM_expansion_desire_idea
+                days = 365
+            }
+        }
+    }
+    focus = {
+        id = DOM_strike_at_the_central_america
+        icon = GFX_goal_generic_major_war
+
+        prerequisite = {
+            focus = DOM_continental_ambitions
+        }
+        x = -1
+        y = 4
+        cost = 5
+
+        completion_reward = {
+            create_wargoal = {
+                type = annex_everything
+                target = ELS
+            }
+    
+        }
+    }
+    focus = {
+        id = DOM_absorb_cerntal_american_empire
+        icon = GFX_focus_generic_annex_country
+
+        prerequisite = {
+            focus = DOM_strike_at_the_central_america
+        }
+        available = {
+            NOT = { ELS = { exists = yes } }
+        }
+        x = -1
+        y = 5
+    
+        cost = 5
+
+        completion_reward = {
+            every_state = {
+                limit = { is_core_of = ELS }
+                add_core_of = ROOT
+            }
+    475 = { add_core_of = ROOT }
+    474 = { add_core_of = ROOT }
+    
+        }
+    }
+        focus = {
+        id = DOM_secure_south_caribbean_sea
+        icon = GFX_SOV_expand_the_morskaya_aviatsiya_ccp_2d_sov_compatibility
+
+        prerequisite = {
+            focus = DOM_continental_ambitions
+        }
+        x = 3
+        y = 4
+    
+        cost = 5
+
+        completion_reward = {
+            create_wargoal = {
+                type = annex_everything
+                target = COL
+            }
+            create_wargoal = {
+                type = annex_everything
+                target = VEN
+            }            
+        }
+
+    }
+        focus = {
+        id = DOM_integrate_southen_costal_states
+        icon = GFX_focus_generic_annex_country_2
+
+        prerequisite = {
+            focus = DOM_secure_south_caribbean_sea
+        }
+        available = {
+		ROOT = {
+            controls_state = 307
+            controls_state = 489
+            controls_state = 493
+            
+        }}
+        x = 3
+        y = 5
+    
+        cost = 5
+
+        completion_reward = {
+    307 = { add_core_of = ROOT }
+    489 = { add_core_of = ROOT }
+    493 = { add_core_of = ROOT }
+    1047 = { add_core_of = ROOT }
+    685 = { add_core_of = ROOT }
+    488 = { add_core_of = ROOT }
+    306 = { add_core_of = ROOT }
+    486 = { add_core_of = ROOT }
+        }
+    }
+    focus = {
+        id = DOM_belizean_purchase
+        icon = GFX_focus_chi_british_cooperation
+        prerequisite = {
+            focus = DOM_continental_ambitions
+        }
+        available = {
+        OR = {
+        311 = { is_owned_by = ENG }
+        BLZ = { is_subject_of = ENG }
+
+        
+    }
+    }
+        relative_position_id = DOM_continental_ambitions
+        y = 1
+        cost = 5
+        completion_reward = {
+            ENG = {
+                country_event = {
+                    id = DOM_event.1
+                }
+            }
+        }
+    }
+    focus = {
+        id = DOM_like_the_romans
+        icon = GFX_focus_ITA_mare_nostrum
+
+        prerequisite = {
+            focus = DOM_absorb_cerntal_american_empire
+        }
+        prerequisite = {
+            focus = DOM_integrate_southen_costal_states
+        }
+	available = {
+			ROOT = {
+				controls_state = 315
+				controls_state = 318
+				controls_state = 686
+				controls_state = 308
+				controls_state = 692
+				controls_state = 691
+				controls_state = 307
+				controls_state = 489
+				controls_state = 695
+				controls_state = 493
+				controls_state = 304
+				controls_state = 685
+				controls_state = 316
+				controls_state = 317
+				controls_state = 312
+				controls_state = 314
+				controls_state = 311
+				controls_state = 313
+				controls_state = 474
+				controls_state = 689
+			}
+	}
+        x = 1
+        y = 6
+    
+        cost = 10
+
+        completion_reward = {
+            set_cosmetic_tag = DOM_CARIBEAN
+            add_ideas = DOM_nuestro_mar_idea
+        }
+    }
+################################################
+###              Indusrial Path              ###
+################################################
+
+focus = {
+    id = DOM_industrial_reforms
+    icon = GFX_focus_JAP_remove_the_weeds_from_the_crop
+
+    x = 12
+    y = 0
+    cost = 10
+    completion_reward = {
+        add_ideas = DOM_industrial_reforms_idea
+         add_tech_bonus = {
+            name = industriii
+            bonus = 1.0 
+            uses = 2
+            category = industry
+    }
+
+    }
+    }
+    focus = {
+		id = DOM_rebuild_civilian_industry
+		icon = GFX_focus_BRA_amazon_colonization
+        prerequisite { focus = DOM_industrial_reforms }
+		cost = 10.00
+		x = 8
+		y = 1
+        completion_reward = {
+        random_owned_controlled_state = {
+        limit = { is_core_of = ROOT }
+
+        add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+            type = industrial_complex
+            level = 2
+            instant_build = yes
+        }
+    }
+}
+	}
+    focus = {
+		id = DOM_improve_the_production_methods_of_civilan_goods
+		icon = GFX_focus_BRA_amazon_colonization
+        prerequisite { focus = DOM_rebuild_civilian_industry }
+		cost = 10
+		x = 6
+		y = 2
+        completion_reward = {
+        random_owned_controlled_state = {
+        limit = { is_core_of = ROOT }
+
+        add_extra_state_shared_building_slots = 2
+            add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+        }
+    }
+}
+
+	}
+    focus = {
+		id = DOM_schools_investment
+		icon = GFX_focus_generic_university_1
+        prerequisite { focus = DOM_rebuild_civilian_industry }
+		cost = 10.00
+		x = 10
+		y = 2
+        completion_reward = {
+            add_ideas = DOM_school_dotation_idea
+        }
+
+	}
+	focus = {
+		id = inteligent_of_the_antilles
+		icon = GFX_focus_ARG_fascist_researchers
+        prerequisite { focus = DOM_schools_investment }
+        prerequisite { focus = DOM_improve_the_production_methods_of_civilan_goods }
+		cost = 10.00
+		x = 8
+		y = 3
+        completion_reward = {
+            add_research_slot = 1
+            create_intelligence_agency = {
+            name = ""
+        }
+            add_tech_bonus = {
+            name = engineering_bonus
+            bonus = 1.0
+            uses = 1
+            category = electronics
+}
+    }
+	}
+focus = {
+    id = DOM_islands_urbanization
+    icon = GFX_focus_ARG_capitalize_the_beef_industry
+    prerequisite = { focus = DOM_industrial_reforms }
+    cost = 10.00
+    x = 16
+    y = 1
+
+completion_reward = {
+    add_ideas = DOM_urbanizated_islands_idea
+
+    315 = {
+        add_extra_state_shared_building_slots = 1
+    }
+    318 = {
+        add_extra_state_shared_building_slots = 1
+    }
+    319 = {
+        add_extra_state_shared_building_slots = 1
+    }
+    690 = {
+        add_extra_state_shared_building_slots = 2
+    }
+    693 = {
+        add_extra_state_shared_building_slots = 2
+    }
+}
+}
+	focus = {
+		id = DOM_cuban_urbanization
+		icon = GFX_focus_PRC_bolshevik_urbanization
+        prerequisite { focus = DOM_islands_urbanization }
+		cost = 10.00
+		x = 14
+		y = 2
+        completion_reward = {
+            315 = {add_extra_state_shared_building_slots = 3
+                    add_resource = {
+                type = steel
+                amount = 14
+            }}
+        }
+	}
+focus = {
+    id = DOM_hispaniolan_urbanization
+    icon = GFX_focus_PRC_bolshevik_urbanization_completed
+    prerequisite = { focus = DOM_islands_urbanization } # Dodany znak '='
+    cost = 10
+    x = 18
+    y = 2
+
+    completion_reward = {
+
+        318 = {
+            add_extra_state_shared_building_slots = 1
+            add_resource = {
+                type = aluminium
+                amount = 8
+            }
+            add_resource = {
+                type = steel
+                amount = 2
+            }
+        }
+
+
+        319 = {
+            add_extra_state_shared_building_slots = 2
+            add_resource = {
+                type = coal
+                amount = 12
+            }
+        }
+    }
+}
+    	focus = {
+		id = DOM_bahamian_urbanization
+		icon = GFX_focus_CHL_silverworking
+        prerequisite { focus = DOM_islands_urbanization }
+		cost = 10.00
+		x = 16
+		y = 2
+        completion_reward = {
+            690 = {add_extra_state_shared_building_slots = 2}
+            693 = {add_extra_state_shared_building_slots = 2}
+            693 = {
+            add_resource = {
+                type = rubber
+                amount = 9
+            }
+            add_resource = {
+                type = steel
+                amount = 6
+            }
+    }
+        }
+    }
+        focus = {
+            id = DOM_country_industrialization
+            icon = GFX_focus_PRC_urbanization
+            prerequisite = { focus = DOM_cuban_urbanization }
+            prerequisite = { focus = DOM_hispaniolan_urbanization }
+            prerequisite = { focus = DOM_bahamian_urbanization }
+            cost = 10
+            x = 16
+            y = 4
+            completion_reward = {
+               remove_ideas = DOM_unmodernized_country_idea
+                random_owned_controlled_state = {
+        add_extra_state_shared_building_slots = 1
+        add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+        }
+    }
+
+
+                }
+            }
+    focus = {
+        id = DOM_cuban_civilian_industry
+        icon = GFX_focus_DEN_civilian_preparations
+        prerequisite = { focus = DOM_country_industrialization }
+        x = 14
+        y = 5
+        cost = 10
+        completion_reward = {
+                315 = {
+        add_extra_state_shared_building_slots = 2
+        add_building_construction = {
+            type = industrial_complex
+            level = 2
+            instant_build = yes
+        }
+    }
+        }
+    }
+    focus = {
+        id = DOM_hispaniolan_civilian_industry
+        icon = GFX_focus_PRC_bolshevik_urbanization_1
+        prerequisite = { focus = DOM_country_industrialization }
+        x = 18
+        y = 5
+        cost = 10
+        completion_reward = {
+                318 = {
+        add_extra_state_shared_building_slots = 2
+        add_building_construction = {
+            type = industrial_complex
+            level = 2
+            instant_build = yes
+        }
+    }
+        319 = {
+        add_extra_state_shared_building_slots = 1
+        add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+        }
+    }
+
+        }
+    }
+    focus = {
+        id = DOM_bahamian_civilian_industry
+        icon = GFX_focus_ARG_strengthening_the_concordancia
+        prerequisite = { focus = DOM_country_industrialization }
+        x = 16
+        y = 5
+        cost = 5
+        completion_reward = {
+                690 = {
+        add_extra_state_shared_building_slots = 1
+        add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+        }
+    }
+    693 = {
+        add_extra_state_shared_building_slots = 2
+        add_building_construction = {
+            type = industrial_complex
+            level = 1
+            instant_build = yes
+        }
+    }
+
+        }
+    }
+
+
+    ################################################
+    ###         Indusrial-Military Path          ###
+    ################################################
+
+    focus = {
+        id = DOM_militarize_the_islands
+        icon = GFX_focus_CHL_protect_the_easter_island
+        x = 12
+        y = 8
+        cost = 10
+        completion_reward = {
+                add_ideas = DOM_militarized_islands_idea
+
+        }
+    }
+    focus = {
+        id = DOM_secure_the_airspace
+        icon = GFX_focus_NORDIC_dem_airforce
+        prerequisite = { focus = DOM_militarize_the_islands }
+        mutually_exclusive = { focus = DOM_strategic_solutions }
+        x = 10
+        y = 10
+        cost = 10
+        completion_reward = {
+                 add_ideas = DOM_air_power_idea
+
+        }
+    }
+    focus = {
+        id = DOM_support_light_airforce
+        icon = GFX_focus_generic_multi_role_aircraft
+        prerequisite = { focus = DOM_secure_the_airspace }
+        x = 9
+        y = 12
+        cost = 10
+        completion_reward = {
+            add_breakthrough_progress = {
+                specialization = specialization_air
+                value = 1
+            }
+                        add_tech_bonus = {
+                name = small_plane_airframe_research_bonus
+                bonus = 1.0
+                uses = 2
+                category = light_fighter
+            }
+319 = {
+            add_building_construction = {
+    type = air_facility
+    level = 1
+    instant_build = yes
+    province = 7632}
+}
+
+
+        }
+    }
+    focus = {
+        id = DOM_create_fighter_factories
+        icon = GFX_goal_continuous_air_production
+        prerequisite = { focus = DOM_support_light_airforce }
+        prerequisite = { focus = DOM_strength_both_sides }
+        x = 10
+        y = 13
+        cost = 10
+        completion_reward = {
+    random_owned_controlled_state = {
+        add_extra_state_shared_building_slots = 3
+
+        add_building_construction = {
+            type = arms_factory
+            level = 3
+            instant_build = yes
+        }
+    }
+
+    }}
+    focus = {
+        id = DOM_strategic_solutions
+        icon = GFX_focus_generic_daytime_bombing
+        prerequisite = { focus = DOM_militarize_the_islands }
+        mutually_exclusive = { focus = DOM_secure_the_airspace }
+        x = 14
+        y = 10
+        cost = 10
+        completion_reward = {
+            add_ideas = DOM_strategic_solutions_idea
+        }
+    }
+    focus = {
+        id = DOM_support_large_airforce
+        icon = GFX_focus_JAP_z_bomber_project
+        prerequisite = { focus = DOM_strategic_solutions }
+        x = 15
+        y = 12
+        cost = 10
+        completion_reward = {
+            add_breakthrough_progress = {
+                specialization = specialization_air
+                value = 1
+            }
+            319 = {
+            add_building_construction = {
+    type = air_facility
+    level = 1
+    instant_build = yes
+    province = 7632}
+}           add_tech_bonus = {
+                name = small_plane_airframe_research_bonus
+                bonus = 1.0
+                uses = 2
+                category = cat_strategic_bomber
+            }
+        }
+    }
+        focus = {
+        id = DOM_create_bombers_factories
+        icon = GFX_goal_generic_air_bomber
+        prerequisite = { focus = DOM_support_large_airforce }
+        prerequisite = { focus = DOM_strength_both_sides }
+        x = 14
+        y = 13
+        cost = 10
+        completion_reward = {
+             random_owned_controlled_state = {
+            limit = {
+                is_coastal = yes
+            }
+
+            add_extra_state_shared_building_slots = 3
+
+            add_building_construction = {
+                type = arms_factory
+                level = 3
+                instant_build = yes
+            }
+        }
+            
+        }
+    }
+    focus = {
+        id = DOM_strength_both_sides
+        icon = GFX_goal_generic_air_production
+        prerequisite = { focus = DOM_secure_the_airspace focus = DOM_strategic_solutions }
+        x = 12
+        y = 12
+        cost = 10
+        completion_reward = {
+            add_ideas = DOM_strengthen_both_sides_idea
+                random_owned_controlled_state = {
+        add_extra_state_shared_building_slots = 2
+
+        add_building_construction = {
+            type = arms_factory
+            level = 2
+            instant_build = yes
+        }
+    }
+
+        }
+    }
+    focus = {
+        id = DOM_new_possibilities
+        icon = GFX_focus_JAP_expand_the_showa_research_association
+        prerequisite = { focus = DOM_strength_both_sides }
+        prerequisite = { focus = DOM_create_fighter_factories focus = DOM_create_bombers_factories }
+        x = 12
+        y = 14
+        cost = 10
+        completion_reward = {
+            add_breakthrough_progress = {
+                specialization = specialization_nuclear
+                value = 1
+            }
+            add_research_slot = 1
+                                    add_tech_bonus = {
+                name = atomic_research_bonus
+                bonus = 1.0
+                uses = 1
+                category = nuclear
+            }
+                        315 = {
+            add_building_construction = {
+    type = nuclear_facility
+    level = 1
+    instant_build = yes
+    province = 10498}
+}
+
+
+    }}
+
+
+        
+
+
+    ################################################
+    ###              Military Path               ###
+    ################################################
+
+    focus = {
+        id = DOM_new_antillean_military_academy
+        icon = GFX_SOV_barrier_troops_ccp_2d_sov_compatibility
+        x = 22
+        y = 0
+        cost = 10
+        completion_reward = {
+            add_ideas = DOM_new_military_academy_idea
+            add_tech_bonus = {
+                name = army_reform_bonus
+                bonus = 0.5
+                uses = 1
+                category = land_doctrine
+            }
+        }
+    }
+
+    focus = {
+        id = DOM_island_fortress_network
+        icon = GFX_goal_generic_fortify_city
+        prerequisite = { focus = DOM_new_antillean_military_academy }
+        x = 20
+        y = 1
+        cost = 10
+        completion_reward = {
+            315 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+            318 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+            319 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+            add_ideas = DOM_island_defense_spirit_idea
+        }
+    }
+
+    focus = {
+        id = DOM_integration_of_militias
+        icon = GFX_focus_AUS_raid_military_storages
+        prerequisite = { focus = DOM_new_antillean_military_academy }
+        x = 22
+        y = 1
+        cost = 7
+        completion_reward = {
+random_owned_controlled_state = {
+        limit = { is_core_of = ROOT }
+        add_extra_state_shared_building_slots = 2
+
+        add_building_construction = {
+            type = arms_factory
+            level = 2
+            instant_build = yes
+        }
+    }
+
+    }}
+
+    focus = {
+        id = DOM_antillean_conscription_act
+        icon = GFX_focus_generic_manpower
+        prerequisite = { focus = DOM_integration_of_militias }
+        x = 21
+        y = 2
+        cost = 7
+        completion_reward = {
+            add_ideas = DOM_mass_mobilization_spirit_idea
+            add_manpower = 50000
+        }
+    }
+
+    focus = {
+        id = DOM_jungle_warfare_school
+        icon = GFX_focus_generic_jungle_training
+        prerequisite = { focus = DOM_integration_of_militias }
+        x = 23
+        y = 2
+        cost = 10
+        completion_reward = {
+            add_potential_special_forces_tree = yes
+                add_tech_bonus = {
+        name = jungle_tech_bonus
+        bonus = 1.0
+        uses = 1
+        category = rangers_tech_cat
+    }
+            army_experience = 100
+        }
+    }
+
+    focus = {
+        id = DOM_militarization_of_the_nation
+        icon = GFX_focus_CHI_military_mission
+        prerequisite = { focus = DOM_jungle_warfare_school focus = DOM_antillean_conscription_act }
+        x = 22
+        y = 3
+        cost = 10
+        completion_reward = {
+            add_ideas = DOM_antillean_militarism_idea
+        }
+    }
+
+    focus = {
+        id = DOM_army_reforms
+        icon = GFX_focus_CZE_army_reform
+        prerequisite = { focus = DOM_militarization_of_the_nation }
+        x = 22
+        y = 4
+        cost = 20
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = DOM_disorganized_army_force_idea
+                add_idea = DOM_reorganizing_army_idea
+            }
+                        add_tech_bonus = {
+                name = army_reform_bonus
+                bonus = 1
+                uses = 1
+                category = land_doctrine
+            }
+            
+        }
+    }
+
+    ################################################
+    ###              Naval Path                  ###
+    ################################################
+
+    focus = {
+        id = DOM_naval_expansion
+        icon = GFX_focus_JAP_naval_armaments_program
+        x = 27
+        y = 0
+        cost = 10
+        completion_reward = {
+            add_tech_bonus = {
+                name = naval_research_bonus
+                bonus = 1.0
+                uses = 2
+                category = naval_equipment
+            }
+            add_resource = {
+                type = steel
+                amount = 15
+            }
+        }
+    }
+
+    focus = {
+        id = DOM_naval_academy_santo_domingo
+        icon = GFX_focus_generic_naval_invasion
+        prerequisite = { focus = DOM_naval_expansion }
+        x = 26
+        y = 1
+        cost = 10
+        completion_reward = {
+            navy_experience = 100
+            add_tech_bonus = {
+                name = naval_doctrine_bonus
+                bonus = 1
+                uses = 2
+                category = naval_doctrine
+            }
+        }
+    }
+
+    focus = {
+        id = DOM_antillean_dockyards
+        icon = GFX_goal_generic_construct_naval_dockyard
+        prerequisite = { focus = DOM_naval_expansion }
+        x = 28
+        y = 1
+        cost = 10
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = { is_coastal = yes }
+                add_extra_state_shared_building_slots = 3
+                add_building_construction = {
+                    type = dockyard
+                    level = 3
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    focus = {
+        id = DOM_deep_water_ports
+        icon = GFX_focus_generic_coastal_fort
+        prerequisite = { focus = DOM_antillean_dockyards }
+        x = 29
+        y = 2
+        cost = 7
+        completion_reward = {
+            every_owned_state = {
+                limit = { is_coastal = yes }
+                add_building_construction = { type = naval_base level = 1 instant_build = yes }
+            }
+        }
+    }
+
+    focus = {
+        id = DOM_amphibious_supremacy
+        icon = GFX_SOV_naval_infantry_ccp_2d_sov_compatibility
+        prerequisite = { focus = DOM_antillean_dockyards }
+        x = 27
+        y = 2
+        cost = 10
+        completion_reward = {
+            add_ideas = DOM_marines_supremacy_idea
+    add_tech_bonus = {
+        name = marines_tech_bonus
+        bonus = 1.0
+        uses = 1
+        category = marine_tech
+    }
+        }
+    }
+
+    focus = {
+        id = DOM_pirates_from_caribbean
+        icon = GFX_SOV_submarine_warfare_ccp_2d_sov_compatibility
+        prerequisite = { focus = DOM_antillean_dockyards }
+        x = 28
+        y = 3
+        cost = 10
+
+completion_reward = {
+    add_ideas = DOM_pirates_from_caribbean_idea
+    navy_experience = 100
+
+    add_tech_bonus = {
+        name = submarine_research_bonus
+        bonus = 1.0
+        uses = 1
+        category = ss_tech
+    }
+}
+    }
+
+    focus = {
+        id = DOM_mastery_of_the_archipelago
+        icon = GFX_focus_GER_high_seas_fleet
+        prerequisite = { focus = DOM_amphibious_supremacy focus = DOM_pirates_from_caribbean }
+        x = 27
+        y = 4
+        cost = 10
+        completion_reward = {
+            add_ideas = DOM_naval_hegemony_idea
+        }
+    }
+
+    focus = {
+        id = DOM_monopolize_caribbean_trade
+        icon = GFX_goal_generic_positive_trade_relations
+        prerequisite = { focus = DOM_mastery_of_the_archipelago }
+        x = 27
+        y = 5
+        cost = 10
+        completion_reward = {
+            add_ideas = DOM_trade_dominance_idea
+        }
+    }
+
+}
+
+
+

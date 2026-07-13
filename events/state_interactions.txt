@@ -26,344 +26,14 @@ country_event = { # X demand state event
 
 	option = { # Give up
 		name = sievent.2.a
-		ai_chance = {
-			base = 40
-
-			modifier = {
-				add = FROM.relations_value_positive_scaled_@ROOT
-			}
-			modifier = {
-				add = 10
-				has_government = FROM
-			}
-			modifier = {
-				add = 10
-				has_war = yes
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.8
-				}
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.6
-				}
-			}
-			modifier = {
-				add = 20
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.5
-				}
-			}
-			modifier = {
-				add = 50
-				FROM = {
-					is_in_faction = yes
-					num_faction_members > 2
-				}
-			}
-			modifier = {
-				add = 10
-				var:FROM.requested_state_@ROOT = {
-					is_claimed_by = FROM
-				}
-			}
-			modifier = {
-				add = 15
-				var:FROM.requested_state_@ROOT = {
-					is_core_of = FROM
-				}
-			}
-			modifier = {
-				factor = FROM.total_population_factor_var
-			}
-			modifier = {
-				factor = 0.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_INCREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				factor = 2
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_DECREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				add = FROM.relations_value_negative_scaled_@ROOT
-			}
-			modifier = {
-				add = ROOT.si_ai_reluctance_value
-			}
-			modifier = {
-				add = -15
-				is_subject = yes
-			}
-			modifier = {
-				add = -10
-				NOT = { has_government = FROM }
-			}
-			modifier = {
-				add = -10
-				FROM = { has_war = yes }
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio > 0.9
-				}
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.2
-				}
-			}
-			modifier = {
-				add = -20
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.5
-				}
-			}
-			modifier = {
-				add = -50
-				is_in_faction = yes
-				num_faction_members > 2
-			}
-			modifier = {
-				add = -5
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = pastoral
-						has_state_category = small_island
-					}
-				}
-			}
-			modifier = {
-				add = -7.5
-				var:FROM.requested_state_@ROOT = {
-					has_state_category = rural
-				}
-			}
-			modifier = {
-				add = -15
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = town
-						has_state_category = large_town
-					}
-				}
-			}
-			modifier = {
-				add = -25
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = city
-						has_state_category = large_city
-					}
-				}
-			}
-			modifier = {
-				add = -35
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = metropolis
-						has_state_category = megalopolis
-					}
-				}
-			}
-		}
-
 		var:FROM.requested_state_@ROOT = { transfer_state_to = FROM }
-
 		hidden_effect = {
-			FROM = {
-				clear_variable = FROM.requested_state_@FROM
-				clear_variable = FROM.request_target_civilian_factories_@FROM
-				clear_variable = FROM.request_target_military_factories_@FROM
-				clear_variable = FROM.relations_value_positive_scaled_@FROM
-				clear_variable = FROM.relations_value_negative_scaled_@FROM
-				clear_variable = FROM.total_population_factor_var
-			}
+			FROM = { clear_variable = FROM.requested_state_@FROM }
 		}
-
 		news_event = { id = sievent.6  hours = 12 random_hours = 12 }
 	}
 	option = { # Its ours.
 		name = sievent.2.b
-		ai_chance = {
-			base = 70
-
-			modifier = {
-				add = FROM.relations_value_positive_scaled_@ROOT
-			}
-			modifier = {
-				add = var:FROM.request_target_civilian_factories_@ROOT # 5 points per factory
-			}
-			modifier = {
-				add = var:FROM.request_target_military_factories_@ROOT # 10 points per factory
-			}
-			modifier = {
-				add = 10
-				NOT = { has_government = FROM }
-			}
-			modifier = {
-				add = 10
-				FROM = { has_war = yes }
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio > 0.9
-				}
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.2
-				}
-			}
-			modifier = {
-				add = 20
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.5
-				}
-			}
-			modifier = {
-				add = 15
-				is_subject = yes
-			}
-			modifier = {
-				add = 30
-				check_variable = { var:ROOT.owned_states > var:FROM.owned_states }
-			}
-			modifier = {
-				add = 50
-				is_in_faction = yes
-				num_faction_members > 2
-			}
-			modifier = {
-				add = 20
-				OR = {
-					NOT = {
-						var:FROM.requested_state_@ROOT = { is_claimed_by = FROM }
-					}
-					NOT = {
-						var:FROM.requested_state_@ROOT = { is_core_of = FROM }
-					}
-				}
-			}
-			modifier = {
-				add = 5
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = pastoral
-						has_state_category = small_island
-					}
-				}
-			}
-			modifier = {
-				add = 7.5
-				var:FROM.requested_state_@ROOT = {
-					has_state_category = rural
-				}
-			}
-			modifier = {
-				add = 15
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = town
-						has_state_category = large_town
-					}
-				}
-			}
-			modifier = {
-				add = 25
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = city
-						has_state_category = large_city
-					}
-				}
-			}
-			modifier = {
-				add = 35
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = metropolis
-						has_state_category = megalopolis
-					}
-				}
-			}
-			modifier = {
-				factor = 1.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_INCREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				factor = 0.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_DECREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				add = FROM.relations_value_negative_scaled_@ROOT
-			}
-			modifier = {
-				add = -10
-				has_government = FROM
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.9
-				}
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.6
-				}
-			}
-			modifier = {
-				add = -20
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.5
-				}
-			}
-			modifier = {
-				add = -50
-				FROM = {
-					is_in_faction = yes
-					num_faction_members > 2
-				}
-			}
-		}
-
 		FROM = {
 			country_event = {
 				id = sievent.3
@@ -387,297 +57,13 @@ country_event = { # X isnt giving up state
 
 	option = { # Ok then
 		name = sievent.3.a
-		ai_chance = {
-			base = 75
-
-			modifier = {
-				add = 10
-				has_government = FROM
-			}
-			modifier = {
-				add = 15
-				FROM = { is_subject = yes }
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.8
-				}
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.6
-				}
-			}
-			modifier = {
-				add = 20
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.5
-				}
-			}
-			modifier = {
-				add = 30
-				check_variable = { var:ROOT.owned_states < var:FROM.owner_states }
-			}
-			modifier = {
-				add = 50
-				FROM = {
-					is_in_faction = yes
-					num_faction_members > 2
-				}
-			}
-			modifier = {
-				add = 10
-				var:ROOT.requested_state_@FROM = {
-					NOT = { is_claimed_by = ROOT }
-				}
-			}
-			modifier = {
-				add = 15
-				var:ROOT.requested_state_@FROM = {
-					NOT = { is_core_of = ROOT }
-				}
-			}
-			modifier = {
-				add = 10
-				check_variable = { var:ROOT.request_target_civilian_factories_@FROM < 2 }
-			}
-			modifier = {
-				add = 15
-				check_variable = { var:ROOT.request_target_military_factories_@FROM < 2 }
-			}
-			modifier = {
-				factor = 0.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_INCREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				factor = 2
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_DECREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				add = -10
-				NOT = { has_government = FROM }
-			}
-			modifier = {
-				add = -10
-				FROM = { has_war = yes }
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio > 0.9
-				}
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.2
-				}
-			}
-			modifier = {
-				add = -20
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.5
-				}
-			}
-			modifier = {
-				add = -50
-				is_in_faction = yes
-				num_faction_members > 2
-			}
-		}
-
 		add_stability = -0.05
 		add_political_power = -50
 
-		hidden_effect = {
-			clear_variable = ROOT.requested_state_@FROM
-			clear_variable = ROOT.request_target_civilian_factories_@FROM
-			clear_variable = ROOT.request_target_military_factories_@FROM
-			clear_variable = ROOT.relations_value_positive_scaled_@FROM
-			clear_variable = ROOT.relations_value_negative_scaled_@FROM
-			clear_variable = ROOT.total_population_factor_var
-		}
+		hidden_effect = { clear_variable = ROOT.requested_state_@FROM	}
 	}
 	option = { # WAR!
 		name = sievent.3.b
-		ai_chance = {
-			base = 75
-
-			modifier = {
-				add = 10
-				NOT = { has_government = FROM }
-			}
-			modifier = {
-				add = 10
-				FROM = { has_war = yes }
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio > 0.9
-				}
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.2
-				}
-			}
-			modifier = {
-				add = 20
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.5
-				}
-			}
-			modifier = {
-				add = 50
-				is_in_faction = yes
-				num_faction_members > 2
-			}
-			modifier = {
-				add = var:ROOT.request_target_civilian_factories_@FROM
-			}
-			modifier = {
-				add = var:ROOT.request_target_military_factories_@FROM
-			}
-			modifier = {
-				add = 10
-				var:ROOT.requested_state_@FROM = { is_claimed_by = ROOT }
-			}
-			modifier = {
-				add = 15
-				var:ROOT.requested_state_@FROM = { is_core_of = ROOT }
-			}
-			modifier = {
-				add = 5
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = pastoral
-						has_state_category = small_island
-					}
-				}
-			}
-			modifier = {
-				add = 7.5
-				var:FROM.requested_state_@ROOT = {
-					has_state_category = rural
-				}
-			}
-			modifier = {
-				add = 10
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = town
-						has_state_category = large_town
-					}
-				}
-			}
-			modifier = {
-				add = 20
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = city
-						has_state_category = large_city
-					}
-				}
-			}
-			modifier = {
-				add = 30
-				var:FROM.requested_state_@ROOT = {
-					OR = {
-						has_state_category = metropolis
-						has_state_category = megalopolis
-					}
-				}
-			}
-			modifier = {
-				factor = ROOT.total_population_factor_var
-			}
-			modifier = {
-				factor = 1.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_INCREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				factor = 0.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_DECREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				add = -10
-				has_government = FROM
-			}
-			modifier = {
-				add = -10
-				has_war = yes
-			}
-			modifier = {
-				add = -15
-				FROM = { is_subject = yes }
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.8
-				}
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.6
-				}
-			}
-			modifier = {
-				add = -20
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.5
-				}
-			}
-			modifier = {
-				add = -50
-				FROM = {
-					is_in_faction = yes
-					num_faction_members > 2
-				}
-			}
-			modifier = {
-				add = -10
-				var:ROOT.requested_state_@FROM = { NOT = { is_claimed_by = ROOT } }
-			}
-			modifier = {
-				add = -15
-				var:ROOT.requested_state_@FROM = { NOT = { is_core_of = ROOT } }
-			}
-		}
-
 		if = {
 			limit = {
 				var:ROOT.requested_state_@FROM = {
@@ -690,14 +76,7 @@ country_event = { # X isnt giving up state
 			var:ROOT.requested_state_@FROM = { add_claim_by = ROOT }
 		}
 
-		hidden_effect = {
-			clear_variable = ROOT.requested_state_@FROM
-			clear_variable = ROOT.request_target_civilian_factories_@FROM
-			clear_variable = ROOT.request_target_military_factories_@FROM
-			clear_variable = ROOT.relations_value_positive_scaled_@FROM
-			clear_variable = ROOT.relations_value_negative_scaled_@FROM
-			clear_variable = ROOT.total_population_factor_var
-		}
+		hidden_effect = { clear_variable = ROOT.requested_state_@FROM }
 
 	}
 }
@@ -715,129 +94,11 @@ country_event = { # X request vassalisation
 
 	option = { # We cannot aford a war.
 		name = sievent.4.a
-		ai_chance = {
-			base = 35
-
-			modifier = {
-				add = FROM.relations_value_positive_scaled_@ROOT
-			}
-			modifier = {
-				add = 10
-				has_government = FROM
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.8
-				}
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.6
-				}
-			}
-			modifier = {
-				add = 20
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.5
-				}
-			}
-			modifier = {
-				add = 30
-				is_subject = yes
-			}
-			modifier = {
-				factor = FROM.total_population_factor_var
-			}
-			modifier = {
-				add = 50
-				FROM = {
-					is_in_faction = yes
-					num_faction_members > 2
-				}
-			}
-			modifier = {
-				factor = 0.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_INCREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				factor = 2
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_DECREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				add = ROOT.si_ai_reluctance_value
-			}
-			modifier = {
-				add = -10
-				NOT = { has_government = FROM }
-			}
-			modifier = {
-				add = FROM.relations_value_negative_scaled_@ROOT
-			}
-			modifier = {
-				add = -10
-				FROM = { has_war = yes }
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio > 0.9
-				}
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.2
-				}
-			}
-			modifier = {
-				add = -20
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.5
-				}
-			}
-			modifier = {
-				add = -50
-				ROOT = {
-					is_in_faction = yes
-					num_faction_members > 2
-				}
-			}
-			modifier = {
-				add = -25
-				FROM = {
-					OR = {
-						has_idea = SI_new_gov_stabilisation_idea_1
-						has_idea = SI_new_gov_stabilisation_idea_2
-						has_idea = SI_new_gov_stabilisation_idea_3
-					}
-				}
-			}
-		}
-
 		FROM = {
 			set_autonomy = {
 				target = ROOT
-				autonomy_state = autonomy_puppet
+				autonomy_state = autonomy_colony
 			}
-
-			clear_variable = FROM.relations_value_positive_scaled_@ROOT
-			clear_variable = FROM.relations_value_negative_scaled_@ROOT
 
 			hidden_effect = {
 				if = {
@@ -879,125 +140,6 @@ country_event = { # X request vassalisation
 
 	option = { # Come and take us!
 		name = sievent.4.b
-		ai_chance = {
-			base = 65
-
-			modifier = {
-				add = FROM.relations_value_positive_scaled_@ROOT
-			}
-			modifier = {
-				add = 10
-				NOT = { has_government = FROM }
-			}
-			modifier = {
-				add = 10
-				FROM = { has_war = yes }
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio > 0.9
-				}
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.2
-				}
-			}
-			modifier = {
-				add = 20
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.5
-				}
-			}
-			modifier = {
-				add = 30
-				is_subject = yes
-			}
-			modifier = {
-				add = 30
-				check_variable = { var:ROOT.owned_states > var:FROM.owner_states }
-			}
-			modifier = {
-				add = 50
-				is_in_faction = yes
-				num_faction_members > 2
-			}
-			modifier = {
-				factor = 1.25
-				FROM = {
-					has_idea = SI_new_gov_stabilisation_idea_1
-				}
-			}
-			modifier = {
-				factor = 1.5
-				FROM = {
-					has_idea = SI_new_gov_stabilisation_idea_2
-				}
-			}
-			modifier = {
-				factor = 1.75
-				FROM = {
-					has_idea = SI_new_gov_stabilisation_idea_3
-				}
-			}
-			modifier = {
-				factor = 1.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_INCREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				factor = 0.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_DECREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				add = FROM.relations_value_negative_scaled_@ROOT
-			}
-			modifier = {
-				add = -10
-				has_government = FROM
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.8
-				}
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.6
-				}
-			}
-			modifier = {
-				add = -20
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.5
-				}
-			}
-			modifier = {
-				add = -50
-				FROM = {
-					is_in_faction = yes
-					num_faction_members > 2
-				}
-			}
-		}
-
 		FROM = {
 			country_event = {
 				id = sievent.5
@@ -1021,109 +163,6 @@ country_event = { # X denies vassalisation
 
 	option = { # We cannot aford a war.
 		name = sievent.5.a
-		ai_chance = {
-			base = 50
-
-			modifier = {
-				add = 10
-				has_government = FROM
-			}
-			modifier = {
-				add = 10
-				has_war = yes
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.8
-				}
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.6
-				}
-			}
-			modifier = {
-				add = 20
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.5
-				}
-			}
-			modifier = {
-				add = 30
-				FROM = { is_subject = yes }
-			}
-			modifier = {
-				add = 30
-				check_variable = { var:ROOT.owned_states < var:FROM.owner_states }
-			}
-			modifier = {
-				add = 50
-				FROM = {
-					is_in_faction = yes
-					num_faction_members > 2
-				}
-			}
-			modifier = {
-				factor = 0.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_INCREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				factor = 2
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_DECREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				add = -10
-				NOT = { has_government = FROM }
-			}
-			modifier = {
-				add = -10
-				FROM = { has_war = yes }
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio > 0.9
-				}
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.2
-				}
-			}
-			modifier = {
-				add = -20
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.5
-				}
-			}
-			modifier = {
-				add = -30
-				check_variable = { var:ROOT.owned_states > var:FROM.owner_states }
-			}
-			modifier = {
-				add = -50
-				is_in_faction = yes
-				num_faction_members > 2
-			}
-		}
-
 		add_political_power = -50
 		add_stability = -0.05
 
@@ -1134,109 +173,12 @@ country_event = { # X denies vassalisation
 
 	option = { # We'll take them anyway!
 		name = sievent.5.b
-		ai_chance = {
-			base = 50
-
-			modifier = {
-				add = 10
-				NOT = { has_government = FROM }
-			}
-			modifier = {
-				add = 10
-				FROM = { has_war = yes }
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio > 0.9
-				}
-			}
-			modifier = {
-				add = 10
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.2
-				}
-			}
-			modifier = {
-				add = 20
-				strength_ratio = {
-					tag = FROM
-					ratio > 1.5
-				}
-			}
-			modifier = {
-				add = 50
-				is_in_faction = yes
-				num_faction_members > 2
-			}
-			modifier = {
-				factor = ROOT.total_population_factor_var
-			}
-			modifier = {
-				factor = 1.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_INCREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				factor = 0.5
-				FROM = { is_ai = no }
-				has_game_rule = {
-					rule = si_increase_ai_rejectance_rules
-					option = SI_AI_REJECT_DECREASED_FOR_PLAYERS
-				}
-			}
-			modifier = {
-				add = -10
-				has_government = FROM
-			}
-			modifier = {
-				add = -10
-				has_war = yes
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.8
-				}
-			}
-			modifier = {
-				add = -10
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.6
-				}
-			}
-			modifier = {
-				add = -20
-				strength_ratio = {
-					tag = FROM
-					ratio < 0.5
-				}
-			}
-			modifier = {
-				add = -30
-				FROM = { is_subject = yes }
-			}
-			modifier = {
-				add = -50
-				FROM = {
-					is_in_faction = yes
-					num_faction_members > 2
-				}
-			}
-		}
-
-		create_wargoal = {
-			target = FROM
-			type = puppet_wargoal_focus
-			expire = 90
-		}
+		add_war_support = 0.05
+		# create_wargoal = {
+		# 	target = FROM
+		# 	type = puppet_wargoal_focus
+		# 	expire = 90
+		# }
 
 		clear_variable = ROOT.relations_value_positive_scaled_@FROM
 		clear_variable = ROOT.relations_value_negative_scaled_@FROM
@@ -1278,5 +220,73 @@ news_event = { # X gets vassalised
 		ai_chance = {
 			base = 1
 		}
+	}
+}
+
+country_event = { # X asks for resource rights
+	# ROOT -- Reciever
+	# FROM -- Sender
+
+	id = sievent.8
+	timeout_days = 28
+	is_triggered_only = yes
+	picture = GFX_report_event_generic_read_write
+	title = sievent.8.t
+	desc = sievent.8.desc
+
+	option = {
+		name = sievent.8.a		
+		ROOT = {
+			give_resource_rights = { receiver = FROM state = var:FROM.requested_resource_@ROOT }
+		}
+		hidden_effect = {
+			FROM = {
+				clear_variable = FROM.requested_resource_@FROM
+				country_event = { id = sievent.9 hours = 1 }
+			}
+		}
+	}
+	option = {
+		name = sievent.8.b	
+		hidden_effect = {
+			FROM = {
+				clear_variable = FROM.requested_resource_@FROM
+				country_event = { id = sievent.10 hours = 1 }
+			}
+		}
+	}
+
+}
+
+country_event = { # X accepts
+	# ROOT -- Reciever
+	# FROM -- Sender
+
+	id = sievent.9
+	desc = sievent.9.desc
+	timeout_days = 3
+	is_triggered_only = yes
+	picture = GFX_report_event_sanation_revolt
+	title = sievent.9.t
+
+
+	option = {
+		name = sievent.9.a		
+	}
+}
+
+country_event = { # X declines
+	# ROOT -- Reciever
+	# FROM -- Sender
+
+	id = sievent.10
+	desc = sievent.10.desc
+	timeout_days = 3
+	is_triggered_only = yes
+	picture = GFX_report_event_second_vienna_award_pact
+	title = sievent.10.t
+
+	option = {
+		name = sievent.10.a		
 	}
 }

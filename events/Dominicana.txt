@@ -1,0 +1,55 @@
+add_namespace = DOM_event
+
+country_event = {
+    id = DOM_event.1
+    title = "DOM_event.1.buy"
+    desc = "DOM_event.1.desc"
+    picture = GFX_report_event_generic_conference
+    is_triggered_only = yes
+
+
+    option = {
+        name = "DOM_event.1.a"
+        ai_chance = { factor = 100 }
+
+        add_offsite_building = {
+            type = industrial_complex
+            level = 1
+        }
+
+        311 = {
+            transfer_state_to = DOM
+        }
+        DOM = {
+        country_event = {
+            id = DOM_event.2
+            days = 3
+        }}
+    }
+
+    option = {
+        name = "DOM_event.1.b"
+        ai_chance = { factor = 0 }
+    }
+}
+
+country_event = {
+    id = DOM_event.2
+    title = "DOM_event.2.buy"
+    desc = "DOM_event.2.desc"
+    picture = GFX_report_event_king_speech
+ is_triggered_only = yes
+
+
+
+    option = {
+        name = "DOM_event.2.a"
+        add_timed_idea = {
+            idea = DOM_belizean_paymants
+            days = 90
+        }
+            311 = { add_core_of = BLZ }
+            release_puppet = BLZ
+
+    }
+}

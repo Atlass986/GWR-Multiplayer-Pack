@@ -1,0 +1,9 @@
+﻿l_polish: 
+ DOM_event.1.buy:0 "Imperium Antylskie chce zakupić Honduras Brytyjski"
+ DOM_event.1.desc:0 "Imperium Antylskie zwróciło się do naszego rządu z ofertą zakupu Hondurasu Brytyjskiego. Twierdzą oni, że terytorium to naturalnie należy do antylskiej strefy wpływów, a w zamian obiecują współpracę gospodarczą i stabilizację regionalną. Przyjęcie tej propozycji zacieśniłoby relacje z Antylami, ale kosztem zrzeczenia się jednej z naszych pozostałych posiadłości kolonialnych na Karaibach."
+ DOM_event.1.a:0 "Zaakceptuj ofertę"
+ DOM_event.1.b:0 "Odrzuć propozycję"
+ DOM_event.2.buy:0 "Zjednoczone Królestwo sprzedało nam Honduras Brytyjski"
+ DOM_event.2.desc:0 "Po długich negocjacjach Zjednoczone Królestwo zgodziło się przekazać Honduras Brytyjski Imperium Antylskiemu. Nabytkiem tym przypieczętowaliśmy znaczną ekspansję naszych wpływów na kontynencie i umocniliśmy naszą pozycję jako dominującego mocarstwa w regionie Karaibów."
+ DOM_event.2.a:0 "Wreszcie!"
+ 

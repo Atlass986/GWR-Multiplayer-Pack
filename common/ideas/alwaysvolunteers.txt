@@ -1,16 +1,25 @@
 ideas = {
 	country = {
-		always_volunteers = {
+		always_volunteers_min_1936 = {
+			picture = HUN_secret_rearmament
+		}
+		always_volunteers_maj_1936 = {
 			picture = HUN_secret_rearmament
 			modifier = {
-				send_volunteer_divisions_required = -1
-				send_volunteers_tension = -2.00
-				send_volunteer_size = 1
+				hidden_modifier = { send_volunteer_size = 3 }
 			}
-			rule = {
-				can_send_volunteers = yes
+		}
+		always_volunteers_min_1939 = {
+			picture = HUN_secret_rearmament
+			modifier = {
+				hidden_modifier = { send_volunteer_size = 2 }
 			}
-			
+		}
+		always_volunteers_maj_1939 = {
+			picture = HUN_secret_rearmament
+			modifier = {
+				hidden_modifier = { send_volunteer_size = 8 }
+			}
 		}
 	}
 }

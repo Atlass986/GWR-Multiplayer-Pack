@@ -235,6 +235,14 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = MEX_alberto_pani
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = {
@@ -459,7 +467,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MEX_focus_agricultural_credit_bank
 
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 100
@@ -478,6 +486,14 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
+						random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 			every_state = {
 				limit = {
 					is_owned_by = ROOT
@@ -527,6 +543,14 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
+						random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 			every_state = {
 				limit = {
 					is_owned_by = ROOT
@@ -621,6 +645,14 @@ focus_tree = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = MEX_luis_montes_de_oca
 			MEX_decrease_cedillo_tension = yes
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -657,6 +689,15 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
 			add_ideas = MEX_strike_breaking
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
 		}
 	}
 
@@ -692,6 +733,14 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
+						random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 			277 = {
 				add_building_construction = {
 					type = infrastructure
@@ -828,6 +877,14 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 			}
 			MEX_decrease_cedillo_tension = yes
+						random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -965,7 +1022,7 @@ focus_tree = {
 				}
 				add_resource = {
 					type = oil
-					amount = 4
+					amount = 6
 				}
 			}
 		}
@@ -1387,10 +1444,10 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
 			480 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -1404,10 +1461,10 @@ focus_tree = {
 				}
 			}
 			482 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -2877,11 +2934,8 @@ focus_tree = {
 		y = 1
 		relative_position_id = MEX_focus_engineering_school
 
-		cost = 20
+		cost = 10
 
-		available = {
-			num_of_factories > 50
-		}
 		
 		ai_will_do = {
 			factor = 100
@@ -3770,7 +3824,6 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_research_slot = 1
 			swap_ideas = {
 				remove_idea = MEX_politicised_army
 				add_idea = MEX_revolutionary_army
@@ -5435,7 +5488,7 @@ focus_tree = {
 		id = MEX_focus_liberate_the_caribbean
 		icon = GFX_goal_demand_sudetenland
 		prerequisite = { focus = MEX_focus_unify_centroamerica }
-		x = -2
+		x = 0
 		y = 1
 		relative_position_id = MEX_focus_unify_centroamerica
 
@@ -5699,10 +5752,10 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = yes
 
-		completion_reward = {
+		completion_reward = {	
 			unlock_decision_tooltip = MEX_decision_integrate_cuba
+			unlock_decision_tooltip = MEX_decision_integrate_the_dominican_republic
 			unlock_decision_tooltip = MEX_decision_integrate_haiti
-			unlock_decision_tooltip = MEX_decision_integrate_the_dominican_republic			
 		}
 	}
 	
@@ -5710,7 +5763,7 @@ focus_tree = {
 		id = MEX_focus_push_past_the_darien_gap
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		prerequisite = { focus = MEX_focus_unify_centroamerica }
-		x = 3
+		x = 4
 		y = 1
 		relative_position_id = MEX_focus_unify_centroamerica
 
@@ -5809,13 +5862,109 @@ focus_tree = {
 		will_lead_to_war_with = ECU
 		will_lead_to_war_with = VEN
 	}
+		focus = {
+		id = MEX_integrate_columbia
+		icon = GFX_focus_generic_attack_colombia
+		prerequisite = { focus = MEX_focus_push_past_the_darien_gap }
+		x = -2
+		y = 1
+		relative_position_id = MEX_focus_push_past_the_darien_gap
+		available = {
+		NOT = { has_idea = MEX_integrations_effort }
+			controls_state = 493
+			controls_state = 306
+			controls_state = 486
+		}
+
+		cost = 5
+
+
+
+		completion_reward = {
+			add_political_power = -50
+			add_state_core = 493
+			add_state_core = 306
+			add_state_core = 486
+			add_timed_idea = {
+				idea = MEX_integrations_effort
+				days = 90
+			}
+
+
+		}
+	}	
+focus = {
+		id = MEX_integrate_venezuela
+		icon = GFX_focus_generic_attack_venezuela
+		prerequisite = { focus = MEX_focus_push_past_the_darien_gap }
+		x = 2
+		y = 1
+		relative_position_id = MEX_focus_push_past_the_darien_gap
+		available = {
+		NOT = { has_idea = MEX_integrations_effort }
+		controls_state = 489
+		controls_state = 307	
+		controls_state = 488
+		}
+		cost = 5
+
+
+
+		completion_reward = {
+			add_political_power = -50
+			add_timed_idea = {
+				idea = MEX_integrations_effort
+				days = 90
+			}
+			add_state_core = 489
+			add_state_core = 307
+			add_state_core = 488
+			add_state_core = 695
+			add_state_core = 691
+
+
+		}
+	}	
+focus = {
+		id = MEX_integrate_equador
+		icon = GFX_focus_generic_attack_ecuador
+		prerequisite = { focus = MEX_focus_push_past_the_darien_gap }
+		x = 4
+		y = 1
+		relative_position_id = MEX_focus_push_past_the_darien_gap
+		available = {
+		NOT = { has_idea = MEX_integrations_effort }
+		controls_state = 490
+		controls_state = 305
+		controls_state = 649
+		}
+		cost = 5
+
+
+
+		completion_reward = {
+			add_political_power = -25
+			add_timed_idea = {
+				idea = MEX_integrations_effort
+				days = 45
+			}
+			add_state_core = 305
+			add_state_core = 490
+			add_state_core = 649
+
+
+		}
+	}	
+
+
 
 	focus = {
 		id = MEX_focus_andean_offensive
 		icon = GFX_goal_generic_attack_allies
 		prerequisite = { focus = MEX_focus_push_past_the_darien_gap }
+		prerequisite = { focus = MEX_focus_integrate_columbia focus = MEX_integrate_venezuela focus = MEX_integrate_equador focus = MEX_integrate_columbia }
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = MEX_focus_push_past_the_darien_gap
 
 		cost = 10
@@ -5973,12 +6122,211 @@ focus_tree = {
 		will_lead_to_war_with = CHL
 		will_lead_to_war_with = ARG
 	}	
+focus = {
+		id = MEX_integrate_peru
+		icon = GFX_focus_generic_attack_peru
+		prerequisite = { focus = MEX_focus_andean_offensive }
+		available = {
+		NOT = { has_idea = MEX_integrations_effort }
+		controls_state = 303
+		controls_state = 491
+		controls_state = 494
+		controls_state = 492
+		controls_state = 947
+		}
+		x = -3
+		y = 1
+		relative_position_id = MEX_focus_andean_offensive
 
+		cost = 5
+
+
+
+		completion_reward = {
+			add_political_power = -75
+			add_timed_idea = {
+				idea = MEX_integrations_effort
+				days = 90
+			}
+			add_state_core = 303
+			add_state_core = 491
+			add_state_core = 494
+			add_state_core = 492
+			add_state_core = 947
+
+
+		}
+	}	
+focus = {
+		id = MEX_integrate_bolivia
+		icon = GFX_focus_generic_attack_bolivia
+		prerequisite = { focus = MEX_focus_andean_offensive }
+		x = 1
+		y = 1
+		relative_position_id = MEX_focus_andean_offensive
+		available = {
+		NOT = { has_idea = MEX_integrations_effort }
+		controls_state = 302
+		controls_state = 487
+		}
+
+		cost = 5
+
+
+
+		completion_reward = {
+			add_political_power = -25
+			add_timed_idea = {
+				idea = MEX_integrations_effort
+				days = 45
+			}
+			add_state_core = 302
+			add_state_core = 487
+
+
+		}
+	}	
+focus = {
+		id = MEX_integrate_chile
+		icon = GFX_focus_generic_attack_chile
+		prerequisite = { focus = MEX_focus_andean_offensive }
+		available = {
+		NOT = { has_idea = MEX_integrations_effort }
+				controls_state = 951
+				controls_state = 506
+				controls_state = 952
+				controls_state = 279
+				controls_state = 950
+				controls_state = 949
+				controls_state = 507
+				controls_state = 948
+		}
+		x = -1
+		y = 1
+		relative_position_id = MEX_focus_andean_offensive
+
+		cost = 5
+
+
+
+		completion_reward = {
+			add_political_power = -75
+			add_timed_idea = {
+				idea = MEX_integrations_effort
+				days = 90
+
+			}
+			add_state_core = 951
+			add_state_core = 506
+			add_state_core = 952
+			add_state_core = 279
+			add_state_core = 950
+			add_state_core = 949
+			add_state_core = 507
+			add_state_core = 948
+
+
+		}
+	}	
+focus = {
+		id = MEX_integrate_argentina
+		icon = GFX_focus_generic_attack_argentina
+		prerequisite = { focus = MEX_focus_andean_offensive }
+		x = 5
+		y = 1
+		relative_position_id = MEX_focus_andean_offensive
+		available = {
+		NOT = { has_idea = MEX_integrations_effort }
+		controls_state = 959
+		controls_state = 957
+		controls_state = 509
+		controls_state = 508
+		controls_state = 960
+		controls_state = 958
+		controls_state = 511
+		controls_state = 512
+		controls_state = 955
+		controls_state = 954
+		controls_state = 278
+		controls_state = 956
+		controls_state = 510
+		controls_state = 953
+		}
+
+		cost = 10
+
+		completion_reward = {
+			add_political_power = -100
+			add_timed_idea = {
+				idea = MEX_integrations_effort
+				days = 180
+			}
+			add_state_core = 959
+			add_state_core = 957
+			add_state_core = 509
+			add_state_core = 508
+			add_state_core = 960
+			add_state_core = 958
+			add_state_core = 511
+			add_state_core = 512
+			add_state_core = 955
+			add_state_core = 954
+			add_state_core = 278
+			add_state_core = 956
+			add_state_core = 510
+			add_state_core = 953
+
+
+		}
+	}	
+focus = {
+		id = MEX_integrate_paraguay
+		icon = GFX_focus_generic_attack_paraguay
+		prerequisite = { focus = MEX_focus_andean_offensive }
+		x = 3
+		y = 1
+		relative_position_id = MEX_focus_andean_offensive
+		available = {
+		NOT = { has_idea = MEX_integrations_effort }
+		controls_state = 301
+		controls_state = 688
+		}
+
+		cost = 5
+
+
+
+		completion_reward = {
+			add_political_power = -25
+			add_timed_idea = {
+				idea = MEX_integrations_effort
+				days = 45
+			}
+			add_state_core = 301
+			add_state_core = 688
+
+
+		}
+	}	
+	focus = {
+		id = MEX_proclaim_the_latin_american_union
+		icon = GFX_focus_BRA_create_faction
+		prerequisite = { focus = MEX_focus_andean_offensive }
+		prerequisite = { focus = MEX_integrate_peru focus = MEX_integrate_bolivia focus = MEX_integrate_chile focus = MEX_integrate_argentina focus = MEX_integrate_paraguay }
+		x = 0
+		y = 2
+		cost = 5
+		relative_position_id = MEX_focus_andean_offensive
+		completion_reward = {
+			set_cosmetic_tag = MEX_LATIN
+		}
+	}
+	
 	focus = {
 		id = MEX_focus_seize_the_panama_canal
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = MEX_focus_unify_centroamerica }
-		x = 1
+		x = -3
 		y = 2
 		relative_position_id = MEX_focus_unify_centroamerica
 
@@ -6015,11 +6363,12 @@ focus_tree = {
 		will_lead_to_war_with = USA
 	}
 
+
 	focus = {
 		id = MEX_focus_integrate_the_south
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = MEX_focus_unify_centroamerica }
-		x = 0
+		x = -2
 		y = 1
 		relative_position_id = MEX_focus_unify_centroamerica
 
@@ -6211,7 +6560,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = MEX_focus_rescind_the_mexican_cession
 
-		cost = 30
+		cost = 10
 
 		ai_will_do = {
 			factor = 100
@@ -6285,7 +6634,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_political_power = -300
+			add_political_power = -200
 			every_state = {
 				limit = {
 					OR = {
@@ -6790,7 +7139,14 @@ focus_tree = {
 				uses = 1
 				category = artillery
 			}
-		}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+		}}
 	}
 	
 	focus = {
@@ -6916,7 +7272,14 @@ focus_tree = {
 				custom_effect_tooltip = available_designer
 				show_ideas_tooltip = MEX_tnca
 			}
-			
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+		}
 		}
 	}
 	

@@ -1,5 +1,21 @@
 characters = {
 	
+	######## GWR ##########
+	ITA_military_dictatorship = {
+		name = ITA_military_dictatorship
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ITA_grand_council
+			}
+		}
+		#GFX_portrait_ITA_military_dictatorship
+		country_leader = {
+			ideology = despotism
+			traits = { second_army_command }
+			expire = 1967.1.1.1
+		}
+	}
+	######################
 
   ####    ####   #    #  #    #  #####  #####   #   #      #       ######    ##    #####   ######  #####    ####  
  #    #  #    #  #    #  ##   #    #    #    #   # #       #       #        #  #   #    #  #       #    #  #      
@@ -37,20 +53,8 @@ characters = {
 			}
 		}
 	}
-	ITA_military_dictatorship = {
-		name = ITA_military_dictatorship
-		portraits = {
-			civilian = {
-				large = GFX_portrait_ITA_grand_council
-			}
-		}
-		#GFX_portrait_ITA_military_dictatorship
-		country_leader = {
-			ideology = despotism
-			traits = { second_army_command }
-			expire = 1967.1.1.1
-		}
-	}
+
+
 	ITA_grand_council = {
 		name = ITA_grand_council
 		portraits = {

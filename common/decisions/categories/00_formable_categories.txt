@@ -749,3 +749,59 @@ shit_countries_category = {
 		} 
 	}
 }
+
+greater_romania_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_picture_form_maphilindo
+	allowed = {
+		OR = {
+			original_tag = ROM # Albania
+		} 
+	}
+}
+unification_of_balkans_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_picture_form_maphilindo
+	allowed = {
+		OR = {
+			original_tag = ROM # Albania
+			original_tag = YUG # Albania
+			original_tag = BUL # Albania
+			original_tag = ALB # Albania
+			original_tag = GRE # Albania
+		} 
+	}
+}
+unification_of_africa_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_picture_form_maphilindo
+	allowed = {
+		OR = {
+			original_tag = LIB # Albania
+			original_tag = AFA # Albania
+			original_tag = ETH # Albania
+			original_tag = COG # Albania
+			original_tag = SAF # Albania
+		} 
+	}
+}
+unification_of_iberia_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_picture_form_maphilindo
+	allowed = {
+		OR = {
+			original_tag = POR # Albania
+			original_tag = SPR # Albania
+		} 
+	}
+}
+restore_denmark_norway_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_picture_form_maphilindo
+	allowed = {
+		OR = {
+			original_tag = DEN # Albania
+			original_tag = NOR # Albania
+		} 
+	}
+}
