@@ -1,0 +1,65 @@
+# GWR Multiplayer Pack ideas.txt
+
+ideas = {
+	country = {
+    	GWR_host_boost = {
+        	picture = GER_henschel_civilian
+        	allowed = { always = yes }
+        	modifier = {
+				hidden_modifier = {
+					intel_network_gain = 2
+					navy_intel_factor = 20
+					airforce_intel_factor = 20
+					civilian_intel_factor = 20
+					army_intel_factor = 20
+					army_intel_to_others = -200
+					navy_intel_to_others = -200
+					airforce_intel_to_others = -200
+					civilian_intel_to_others = -200
+					operative_slot = 10
+					operative_death_on_capture_chance = 1
+					intelligence_agency_defense = 25
+					enemy_justify_war_goal_time = 20
+				}
+			}
+    	}
+		always_volunteers_min_1936 = {
+			picture = HUN_secret_rearmament
+			modifier = {
+				hidden_modifier = { air_volunteer_cap = 4 }
+			}	
+		}
+		always_volunteers_maj_1936 = {
+			picture = HUN_secret_rearmament
+			modifier = {
+				hidden_modifier = { send_volunteer_size = 3 air_volunteer_cap = 4 }
+			}
+		}
+		always_volunteers_min_1939 = {
+			picture = HUN_secret_rearmament
+			modifier = {
+				hidden_modifier = { send_volunteer_size = 2 air_volunteer_cap = 9 }
+			}
+		}
+		always_volunteers_maj_1939 = {
+			picture = HUN_secret_rearmament
+			modifier = {
+				hidden_modifier = { send_volunteer_size = 8 air_volunteer_cap = 9 }
+			}
+		}
+	}
+	hidden_ideas = {
+		SI_major_demands_idea = {
+			allowed_civil_war = { always = yes }
+			allowed = { always = no }
+		}
+		SI_minor_demands_idea = {
+			allowed_civil_war = { always = yes }
+			allowed = { always = no }
+		}
+		SI_else_demands_idea = {
+			allowed_civil_war = { always = yes }
+			allowed = { always = no }
+		}
+	}
+}

@@ -1,0 +1,68 @@
+﻿l_english:
+# VOLUNTEERS RECALLING
+RECALL_VOLUNTEERS_TITLE:0 "Recall Volunteers"
+RECALL_VOLUNTEERS_ACTION_DESC:0 "We can decide to recall the volunteers we have sent to other countries."
+RECALL_VOLUNTEERS_TOOLTIP:0 "§Y[This.GetNameWithFlag]§! §Rmust have any volunteers from us we can recall.§!"
+RECALL_VOLUNTEERS_TOOLTIP_G:0 "§Y[This.GetNameWithFlag]§! must have any volunteers from us we can recall."
+
+# COUNTRY/FACTION POINTS
+COUNTRY_POINTS_TOOLTIP:0"Your current points value"
+FACTION_POINTS_TOOLTIP:0"Your faction's points value"
+COUNTRY_POINTS_ENEMY_TOOLTIP:0"Selected country points value"
+FACTION_POINTS_ENEMY_TOOLTIP:0"Selected faction's points value"
+faction_points_exceeded_0:0 "We are exceeding the faction limit!"
+faction_points_exceeded_1:0 "We are heavily exceeding the faction limit!"
+faction_points_exceeded_2:0 "We are severely exceeding the faction limit!"
+faction_points_exceeded_3:0 "We are drastically exceeding the faction limit!"
+faction_points_exceeded_4:0 "We are lethally exceeding the faction limit!"
+
+# ALWAYS VOLUNTEERS
+always_volunteers_min_1936: "Always Volunteers"
+always_volunteers_min_1939: "Always Volunteers"
+always_volunteers_maj_1936: "Always Volunteers"
+always_volunteers_maj_1939: "Always Volunteers"
+always_volunteers_min_1936_desc: "Allows You to send volunteer divisions.\n§YMinor / Puppet§! can send §G1§! division AND §G400§! airplanes §Rbefore§! §Y1939§!\n§YMinor / Puppet§! can send (§G3§! infantry OR §G2§! tanks) AND §G900§! airplanes §Rafter§! §Y1939§!"
+always_volunteers_min_1939_desc: "Allows You to send volunteer divisions.\n§YMinor / Puppet§! can send §G1§! division AND §G400§! airplanes §Rbefore§! §Y1939§!\n§YMinor / Puppet§! can send (§G3§! infantry OR §G2§! tanks) AND §G900§! airplanes §Rafter§! §Y1939§!"
+always_volunteers_maj_1936_desc: "Allows You to send volunteer divisions.\n§YRegional / Major / Super Major§! can send §G3§! infantry AND §G1§! tanks AND §G400§! airplanes §Rbefore§! §Y1939§!\n§YRegional / Major / Super Major§! can send §G6§! infantry AND §G3§! tanks AND §G900§! airplanes §Rafter§! §Y1939§!"
+always_volunteers_maj_1939_desc: "Allows You to send volunteer divisions.\n§YRegional / Major / Super Major§! can send §G3§! infantry AND §G1§! tanks AND §G400§! airplanes §Rbefore§! §Y1939§!\n§YRegional / Major / Super Major§! can send §G6§! infantry AND §G3§! tanks AND §G900§! airplanes §Rafter§! §Y1939§!"
+
+# HOST STATE
+GWR: "Host State"
+GWR_DEF: "Host State"
+GWR_ADJ: "Host State's"
+GWR_atlass: "The great Atłass"
+GWR_host_boost: "§RHOST§!"
+
+# DIPLO ACTIONS
+PAY_CIV_FACTORY_TITLE:0 "Send civillian factory"
+PAY_CIV_FACTORY_ACTION_DESC:0 "SEND 1 CIVILLIAN FACTORY TO THE TARGETED COUNTRY"
+pay_civ_factory_send_text:0 "Are you sure you want to send 1 civillian factory to this nation."
+pay_civ_get_message:0 "We Recieved 1 civillian factory to us"
+pay_civ_get_title:0 "Recieved Civillian Factory"
+
+PAY_DOCKYARD_TITLE:0 "Send dockyard"
+PAY_DOCKYARD_ACTION_DESC:0 "SEND 1 DOCKYARD TO THE TARGETED COUNTRY"
+pay_dockyard_send_text:0 "Are you sure you want to send 1 dockyard to this nation."
+pay_dock_get_message:0 "We Recieved 1 dockyard to us"
+pay_dock_get_title:0 "Recieved Dockyard"
+
+PAY_MIL_FACTORY_TITLE:0 "Send military factory"
+PAY_MIL_FACTORY_ACTION_DESC:0 "SEND 1 MILITARY FACTORY TO THE TARGETED COUNTRY"
+pay_mil_factory_send_text:0 "Are you sure you want to send 1 military factory to this nation."
+pay_mil_get_message:0 "We Recieved 1 military factory to us"
+pay_mil_get_title:0 "Recieved Military Factory"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

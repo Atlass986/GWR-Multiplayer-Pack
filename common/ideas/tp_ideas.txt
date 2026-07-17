@@ -1,69 +1,31 @@
 ideas = {
-
 	country = {
-	
 		tp_fascist_nation = {
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = fascism
-			}
-
+			allowed = {	always = no	}
+			allowed_civil_war = { has_government = fascism }
 			removal_cost = -1
-
 			picture = generic_fascism_drift_bonus
-
-			
-			modifier = {
-				fascism_drift = 100
-			}
+			modifier = { fascism_drift = 100 }
 		}
 	
 		tp_fascism_banned = {
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				NOT = { has_government = fascism }
-			}
-
+			allowed = {	always = no }
+			allowed_civil_war = { NOT = { has_government = fascism } }
 			removal_cost = -1
-
-			picture = generic_fascism_banned
-
-			
-			modifier = {
-				fascism_drift = -100
-			}
+			picture = generic_fascism_banned			
+			modifier = { fascism_drift = -100 }
 		}
 
-		tp_communist_nation = {
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = communism
-			}
-
+		tp_communist_nation = {			
+			allowed = { always = no }
+			allowed_civil_war = { has_government = communism }
 			removal_cost = -1
-
 			picture = generic_communism_drift_bonus
-
-			
-			modifier = {
-				communism_drift = 100
-			}
+			modifier = { communism_drift = 100 }
 		}
 	
 		tp_communism_banned = {
-			
+
 			allowed = {
 				always = no
 			}

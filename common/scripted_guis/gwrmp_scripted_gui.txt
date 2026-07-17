@@ -23,9 +23,28 @@ scripted_gui = {
         window_name = "country_points_enemy_window"  
         context_type = selected_country_context       
         visible = { 
-            ROOT = { NOT = {  has_tech = nuclear_reactor } }
-            THIS = { is_ai = no }
-            
+            ROOT = { NOT = { has_tech = nuclear_reactor } is_in_faction = yes }
+            THIS = { NOT = { tag = ROOT } is_ai = no } 
+        }
+        triggers = {
+            faction_points_enemy_text_visible = {
+                is_in_faction = yes 
+            }
+            faction_points_enemy_icon_visible = {
+                is_in_faction = yes 
+            }
+            faction_points_enemy_value_bg_visible = {
+                is_in_faction = yes 
+            }
+        }
+    }
+
+    country_points_no_faction_enemy_display = {
+        window_name = "country_points_no_faction_enemy_window"  
+        context_type = selected_country_context       
+        visible = { 
+            ROOT = { NOT = { has_tech = nuclear_reactor } NOT = { is_in_faction = yes } }
+            THIS = { NOT = { tag = ROOT } is_ai = no } 
         }
         triggers = {
             faction_points_enemy_text_visible = {
@@ -61,8 +80,8 @@ scripted_gui = {
         window_name = "country_points_enemy_nukes_window"  
         context_type = selected_country_context       
         visible = { 
-            ROOT = { has_tech = nuclear_reactor }
-            THIS = { is_ai = no } 
+            ROOT = { has_tech = nuclear_reactor is_in_faction = yes }
+            THIS = { NOT = { tag = ROOT } is_ai = no } 
         }
         triggers = {
             faction_points_enemy_text_visible = {
@@ -73,6 +92,26 @@ scripted_gui = {
             }
             faction_points_enemy_value_bg_visible = {
                 is_in_faction = yes
+            }
+        }
+    }
+
+    country_points_no_faction_enemy_nukes_display = {
+        window_name = "country_points_no_faction_enemy_nukes_window"  
+        context_type = selected_country_context       
+        visible = { 
+            ROOT = { has_tech = nuclear_reactor NOT = { is_in_faction = yes } }
+            THIS = { NOT = { tag = ROOT } is_ai = no } 
+        }
+        triggers = {
+            faction_points_enemy_text_visible = {
+                is_in_faction = yes 
+            }
+            faction_points_enemy_icon_visible = {
+                is_in_faction = yes 
+            }
+            faction_points_enemy_value_bg_visible = {
+                is_in_faction = yes 
             }
         }
     }

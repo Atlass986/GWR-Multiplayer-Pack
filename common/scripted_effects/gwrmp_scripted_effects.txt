@@ -3,16 +3,7 @@
 remove_every_guarantee = {
     every_other_country = {
         limit = { OR = { is_guaranteed_by = PREV has_guaranteed = PREV } }
-        diplomatic_relation = {
-            country = THIS
-            relation = guarantee
-            active = no
-        }
-        diplomatic_relation = {
-            country = PREV
-            relation = guarantee
-            active = no
-        }
+        diplomatic_relation = { country = PREV relation = guarantee active = no }
     }
 }
 
@@ -2777,7 +2768,7 @@ set_faction_limit = {
 set_faction_points = {
     set_variable = { faction_points = country_cost }
     every_other_country = {
-        limit = { is_ai = no is_in_faction_with = PREV is_faction_leader = no }
+        limit = { is_in_faction_with = PREV is_faction_leader = no is_ai = no }
         set_variable = { faction_points = 0 }
         set_country_cost = yes
         PREV = { add_to_variable = { faction_points = PREV.country_cost } }
@@ -2802,6 +2793,7 @@ faction_system_update_country = {
 	else_if = {
 		limit = { is_in_faction = no }
 		set_country_cost = yes 
+		set_variable = { faction_points = 0 }
 	}
 }
 
@@ -2845,83 +2837,86 @@ trasfer_remove_invalid_states = {
 }
 
 always_volunteers_country = {
-	if = { 
-        limit = { NOT = { tag = GWR } is_ai = no }
-		if = {
-			limit = { date < 1939.1.1 }
+	if = {
+		limit = { is_ai = no }
+		if = { 
+			limit = { NOT = { tag = GWR } }
 			if = {
-				limit = { 
-					OR = {
-						check_variable = { country_cost < 2 } 
-						is_subject = yes
+				limit = { date < 1939.1.1 }
+				if = {
+					limit = { 
+						OR = {
+							check_variable = { country_cost < 2 } 
+							is_subject = yes
+						}
+					}
+					add_ideas = always_volunteers_min_1936
+					if = {
+						limit = { has_idea = always_volunteers_maj_1936 }
+						remove_ideas = always_volunteers_maj_1936
 					}
 				}
-				add_ideas = always_volunteers_min_1936
-				if = {
-					limit = { has_idea = always_volunteers_maj_1936 }
-					remove_ideas = always_volunteers_maj_1936
+				else_if = {
+					limit = { 
+						check_variable = { country_cost > 1 } 
+					}
+					add_ideas = always_volunteers_maj_1936
+					if = {
+						limit = { has_idea = always_volunteers_min_1936 }
+						remove_ideas = always_volunteers_min_1936
+					}
 				}
 			}
-			else_if = {
-				limit = { 
-					check_variable = { country_cost > 1 } 
-				}
-				add_ideas = always_volunteers_maj_1936
+			else = {
 				if = {
-					limit = { has_idea = always_volunteers_min_1936 }
-					remove_ideas = always_volunteers_min_1936
+					limit = { 
+						OR = {
+							check_variable = { country_cost < 2 } 
+							is_subject = yes
+						}
+					}
+					add_ideas = always_volunteers_min_1939
+					if = {
+						limit = { has_idea = always_volunteers_maj_1936 }
+						remove_ideas = always_volunteers_maj_1936
+					}
+					else_if = {
+						limit = { has_idea = always_volunteers_min_1936 }
+						remove_ideas = always_volunteers_min_1936 
+					}
+					else_if = {
+						limit = { has_idea = always_volunteers_maj_1939 }
+						remove_ideas = always_volunteers_maj_1939 
+					}
+				}
+				else_if = {
+					limit = { 
+						check_variable = { country_cost > 1 } 
+					}
+					add_ideas = always_volunteers_maj_1939
+					if = {
+						limit = { has_idea = always_volunteers_maj_1936 }
+						remove_ideas = always_volunteers_maj_1936
+					}
+					else_if = {
+						limit = { has_idea = always_volunteers_min_1936 }
+						remove_ideas = always_volunteers_min_1936
+					}
+					else_if = {
+						limit = { has_idea = always_volunteers_min_1939 }
+						remove_ideas = always_volunteers_min_1939
+					}
 				}
 			}
 		}
-		else = {
-			if = {
-				limit = { 
-					OR = {
-						check_variable = { country_cost < 2 } 
-						is_subject = yes
-					}
-				}
-				add_ideas = always_volunteers_min_1939
-				if = {
-					limit = { has_idea = always_volunteers_maj_1936 }
-					remove_ideas = always_volunteers_maj_1936
-				}
-				else_if = {
-					limit = { has_idea = always_volunteers_min_1936 }
-					remove_ideas = always_volunteers_min_1936 
-				}
-				else_if = {
-					limit = { has_idea = always_volunteers_maj_1939 }
-					remove_ideas = always_volunteers_maj_1939 
-				}
-			}
-			else_if = {
-				limit = { 
-					check_variable = { country_cost > 1 } 
-				}
-				add_ideas = always_volunteers_maj_1939
-				if = {
-					limit = { has_idea = always_volunteers_maj_1936 }
-					remove_ideas = always_volunteers_maj_1936
-				}
-				else_if = {
-					limit = { has_idea = always_volunteers_min_1936 }
-					remove_ideas = always_volunteers_min_1936
-				}
-				else_if = {
-					limit = { has_idea = always_volunteers_min_1939 }
-					remove_ideas = always_volunteers_min_1939
-				}
-			}
-		}
-    }
+	}
 }
 
 set_basic_tech = {
-	if = {
-		limit = { amount_research_slots < 3 }
-		set_research_slots = 3
-	}
+	#if = {
+		#limit = { amount_research_slots < 3 }
+		#set_research_slots = 3
+	#}
 	set_technology = {
 		infantry_weapons = 1       
 		infantry_weapons1 = 1      
@@ -2931,7 +2926,6 @@ set_basic_tech = {
 		basic_train = 1     
 		gwtank_chassis = 1
 		gw_artillery = 1 
-		transport = 1 
 		early_ship_hull_submarine = 1
 		early_ship_hull_light = 1
 		iw_small_airframe = 1      
@@ -2940,9 +2934,23 @@ set_basic_tech = {
 	}
 }
 
+create_gwr_agency = {
+	create_intelligence_agency = {
+		name = "Host State Intelligence Agency"
+		icon = "GFX_intelligence_agency_logo_generic"
+	}
+
+	upgrade_intelligence_agency = upgrade_economy_civilian
+	upgrade_intelligence_agency = upgrade_army_department
+	upgrade_intelligence_agency = upgrade_naval_department
+	upgrade_intelligence_agency = upgrade_airforce_department
+}
+
+
 on_startup_handle_global = {
 	set_faction_limit = yes
 	set_si = yes
+	create_gwr_agency = yes
 }
 
 on_startup_handle_country = {
@@ -2963,13 +2971,20 @@ on_monthly_handle_global = {
 }
 
 on_monthly_handle_country = {
-    unlock_later_templates = yes
-	faction_system_update_country = yes
-	always_volunteers_country = yes
+	if = {
+		limit = { is_ai = no }
+		unlock_later_templates = yes
+		faction_system_update_country = yes
+		always_volunteers_country = yes
+	}
 }
 
 on_leave_faction_handle_country = {
-	set_variable = { faction_points = 0 }
+	faction_system_update_country = yes
+}
+
+on_join_faction_handle_leader = {
+	faction_system_update_country = yes
 }
 
 on_state_control_changed_country = {

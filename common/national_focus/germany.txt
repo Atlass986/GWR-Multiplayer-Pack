@@ -249,19 +249,12 @@ focus_tree = {
 		relative_position_id = GER_currency_reforms
 		cost = 5
 		available = {
-			NOT = {
-				has_idea = GER_mefo_bills_ended
-			}
+			NOT = { has_idea = GER_mefo_bills_ended }
 		}
-
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
-
 		completion_reward = {
 			add_stability = 0.05
-			add_popularity = {
-			    ideology = ROOT
-			    popularity = 0.05
-			}
+			add_popularity = { ideology = ROOT popularity = 0.05 }
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 

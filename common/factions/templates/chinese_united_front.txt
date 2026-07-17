@@ -17,6 +17,7 @@ faction_template_chinese_united_front = {
 
 	default_rules = {
 		joining_rule_china_only
+		
 		change_leader_rule_manpower
 		dismissal_rule_offensive_war
 	}

@@ -1946,7 +1946,7 @@ ideas = {
 	
 		# TECHNOLOGY
 		
-			picture = {renault}
+			picture = renault
 						
 			allowed = {
 				tag = FRA
@@ -1962,7 +1962,7 @@ ideas = {
 	
 		FRA_AMX = {
 		
-			picture = {generic_tank_manufacturer_2}
+			picture = generic_tank_manufacturer_2
 
 			available = {
 				has_completed_focus = FRA_army_reform

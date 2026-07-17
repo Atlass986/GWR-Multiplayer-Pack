@@ -18,7 +18,18 @@ on_actions = {
     
     on_leave_faction = {
         effect = {
-            ROOT = { on_leave_faction_handle_country = yes }
+            ROOT = {
+                on_leave_faction_handle_country = yes 
+            }
+        }
+    }
+
+    on_join_faction = {
+        effect = {
+            FROM = {
+                add_to_faction = ROOT 
+                on_join_faction_handle_leader = yes 
+            }
         }
     }
 

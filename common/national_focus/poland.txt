@@ -7199,6 +7199,61 @@ focus_tree = {
 				custom_effect_tooltip = form_country_estonia_coring_states_tt
 				custom_effect_tooltip = form_country_latvia_coring_states_tt
 			}
+			random_core_state = {
+				limit = { is_controlled_by = POL }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = { is_controlled_by = POL }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = { is_controlled_by = POL }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = { is_controlled_by = POL }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = { is_controlled_by = POL }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = { is_controlled_by = POL }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			
 		}
 	}
 	
@@ -10082,7 +10137,7 @@ focus_tree = {
 
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 2.5
@@ -10171,6 +10226,34 @@ focus_tree = {
 			custom_effect_tooltip = form_country_lithuania_coring_states_tt
 			custom_effect_tooltip = form_country_poland_coring_states_tt
 			custom_effect_tooltip = form_country_latvia_coring_states_tt
+
+			random_core_state = {
+				limit = { is_controlled_by = POL }
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = { is_controlled_by = POL }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				limit = { is_controlled_by = POL }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 

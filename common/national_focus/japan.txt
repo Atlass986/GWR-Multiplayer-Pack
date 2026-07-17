@@ -9360,7 +9360,7 @@ focus_tree = {
 					}
 					add_faction_goal = faction_goal_secure_the_oil_supply
 					add_faction_goal = faction_goal_war_on_communism_in_asia
-					set_faction_rule = joining_rule_asia_pacific_ocenania_only
+					set_faction_rule = 
 					set_faction_rule = faction_peace_rule_puppeting_focus
 				}
 				set_faction_name = JAP_greater_east_asian_co_prosperity_sphere

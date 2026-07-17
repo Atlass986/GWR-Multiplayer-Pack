@@ -1,26 +1,5 @@
 ﻿l_english:
-  PAY_CIV_FACTORY_TITLE:0 "Send civillian factory"
-  PAY_CIV_FACTORY_ACTION_DESC:0 "SEND 1 CIVILLIAN FACTORY TO THE TARGETED COUNTRY"
-  pay_civ_factory_send_text:0 "Are you sure you want to send 1 civillian factory to this nation."
-  pay_civ_get_message:0 "We Recieved 1 civillian factory to us"
-  pay_civ_get_title:0 "Recieved Civillian Factory"
-
-  PAY_DOCKYARD_TITLE:0 "Send dockyard"
-  PAY_DOCKYARD_ACTION_DESC:0 "SEND 1 DOCKYARD TO THE TARGETED COUNTRY"
-  pay_dockyard_send_text:0 "Are you sure you want to send 1 dockyard to this nation."
-  pay_dock_get_message:0 "We Recieved 1 dockyard to us"
-  pay_dock_get_title:0 "Recieved Dockyard"
-
-  PAY_MIL_FACTORY_TITLE:0 "Send military factory"
-  PAY_MIL_FACTORY_ACTION_DESC:0 "SEND 1 MILITARY FACTORY TO THE TARGETED COUNTRY"
-  pay_mil_factory_send_text:0 "Are you sure you want to send 1 military factory to this nation."
-  pay_mil_get_message:0 "We Recieved 1 military factory to us"
-  pay_mil_get_title:0 "Recieved Military Factory"
-
-  BECOME_PUPPET_LOC:0 "Are you sure you want to become their puppet?"
-  BECOME_PUPPET_TITLE:0 "Become Puppet"
-  BECOME_PUPPET_DESC:0 "BECOME PUPPET TO TARGETED COUNTRY"
-  BECOME_PUPPET_ACTION_DESC:0 "If they accept you will become puppet!"
+  
 
   a:0 "a"
   a:0 "a"

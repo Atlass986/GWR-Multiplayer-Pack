@@ -24,6 +24,8 @@ faction_template_generic = {
 	}
 
 	default_rules = {
+		
+		
 		dismissal_rule_offensive_war
 		change_leader_rule_manpower
 	}
@@ -52,6 +54,7 @@ faction_template_generic_dominance = {
 	}
 
 	default_rules = {
+		
 		generate_wargoal_threat_reduction_20
 	}
 
@@ -83,6 +86,9 @@ faction_template_defensive_democratic = {
 	}
 
 	default_rules = {
+		
+		
+		
 		war_declaration_threat_75
 		change_leader_rule_industry
 		dismissal_rule_offensive_war
@@ -126,7 +132,9 @@ faction_template_anti_communist = {
 	}
 
 	default_rules = {
+		faction_peace_rule_ideology_focus
 		dismissal_rule_ideology_communist
+		
 		guarantee_threat_reduction_15
 		change_leader_rule_industry
 	}
@@ -168,6 +176,7 @@ faction_template_anti_fascist = {
 	}
 
 	default_rules = {
+		
 		generate_wargoal_threat_reduction_20
 		change_leader_rule_manpower
 		change_leader_rule_industry
@@ -210,6 +219,7 @@ faction_template_regional_anti_communist = {
 	}
 
 	default_rules = {
+		
 		generate_wargoal_threat_reduction_20
 		change_leader_rule_manpower
 		change_leader_rule_industry
@@ -251,6 +261,7 @@ faction_template_regional_anti_democratic = {
 	}
 
 	default_rules = {
+		
 		change_leader_rule_manpower
 		change_leader_rule_industry
 	}
@@ -285,6 +296,9 @@ faction_template_regional = {
 	}
 
 	default_rules = {
+		
+		
+		
 		faction_peace_take_claimed_focus
 		change_leader_rule_manpower
 		war_declaration_threat_25

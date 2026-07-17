@@ -101,6 +101,58 @@ guiTypes = {
 	}
 
 	containerWindowType = {
+		name = "country_points_no_faction_enemy_window"
+		clipping = no
+		position = { x = 1050 y = 10 }
+		size = { width = 200 height = 40 }
+		
+
+		iconType = {
+			name ="country_points_enemy_value_bg"
+			spriteType = "GFX_generic_box_smallest_0"
+			position = { x = -24 y = -4 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "COUNTRY_POINTS_ENEMY_TOOLTIP"
+		}
+
+		iconType = {
+			name = "country_points_enemy_icon"
+			spriteType = "GFX_going_to_combat" 
+			position = { x = -19 y = -2 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "COUNTRY_POINTS_ENEMY_TOOLTIP"
+		}
+		instantTextBoxType = {
+			name = "country_points_enemy_text"
+			position = { x = 4 y = 0 }
+			font = "hoi_16mbs"
+			text = "[?PREV.country_cost]"
+		}
+
+		iconType ={
+			name ="faction_points_enemy_value_bg"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x = 30 y = -4 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "FACTION_POINTS_ENEMY_TOOLTIP"
+		}
+		iconType = {
+			name = "faction_points_enemy_icon"
+			spriteType = "GFX_in_combat" 
+			position = { x = 35 y = -2 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "FACTION_POINTS_ENEMY_TOOLTIP"
+
+		}
+		instantTextBoxType = {
+			name = "faction_points_enemy_text"
+			position = { x = 58 y = 0 }
+			font = "hoi_16mbs"
+			text = "[?PREV.faction_points]/[?global.faction_limit]"
+		}
+	}
+
+	containerWindowType = {
 		name = "country_points_nukes_window"
 		clipping = no
 		position = { x = 1030 y = 10 }
@@ -153,6 +205,58 @@ guiTypes = {
 		name = "country_points_enemy_nukes_window"
 		clipping = no
 		position = { x = 1180 y = 10 }
+		size = { width = 200 height = 40 }
+		
+
+		iconType = {
+			name ="country_points_enemy_value_bg"
+			spriteType = "GFX_generic_box_smallest_0"
+			position = { x = -28 y = -4 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "COUNTRY_POINTS_ENEMY_TOOLTIP"
+		}
+
+		iconType = {
+			name = "country_points_enemy_icon"
+			spriteType = "GFX_going_to_combat" 
+			position = { x = -22 y = -2 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "COUNTRY_POINTS_ENEMY_TOOLTIP"
+		}
+		instantTextBoxType = {
+			name = "country_points_enemy_text"
+			position = { x = 2 y = 0 }
+			font = "hoi_16mbs"
+			text = "[?PREV.country_cost]"
+		}
+
+		iconType ={
+			name ="faction_points_enemy_value_bg"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x = 26 y = -4 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "FACTION_POINTS_ENEMY_TOOLTIP"
+		}
+		iconType = {
+			name = "faction_points_enemy_icon"
+			spriteType = "GFX_in_combat" 
+			position = { x = 32 y = -2 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "FACTION_POINTS_ENEMY_TOOLTIP"
+
+		}
+		instantTextBoxType = {
+			name = "faction_points_enemy_text"
+			position = { x = 56 y = 0 }
+			font = "hoi_16mbs"
+			text = "[?PREV.faction_points]/[?global.faction_limit]"
+		}
+	}
+
+	containerWindowType = {
+		name = "country_points_no_faction_enemy_nukes_window"
+		clipping = no
+		position = { x = 1105 y = 10 }
 		size = { width = 200 height = 40 }
 		
 

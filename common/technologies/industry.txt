@@ -305,6 +305,8 @@ technologies = {
 		#industrial_capacity_factory_powered = 0.075 
 		#industrial_capacity_dockyard_powered = 0.05 
 		global_building_slots_factor = 0.20
+		global_building_slots = 1
+
 		
 		path = {
 			leads_to_tech = concentrated_industry2 
@@ -460,7 +462,6 @@ technologies = {
 		#industrial_capacity_dockyard_powered = 0.1 
 		global_building_slots_factor = 0.20
 		#global_building_slots = 1
-		consumer_goods_factor = -0.025
 		
 		path = {
 			leads_to_tech = concentrated_industry5
@@ -501,7 +502,6 @@ technologies = {
 		#industrial_capacity_factory_powered = 0.15 
 		#industrial_capacity_dockyard_powered = 0.1 
 		global_building_slots_factor = 0.20
-		consumer_goods_factor = -0.025
 		
 		
 		research_cost = 2

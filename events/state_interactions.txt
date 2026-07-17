@@ -100,39 +100,6 @@ country_event = { # X request vassalisation
 				autonomy_state = autonomy_colony
 			}
 
-			hidden_effect = {
-				if = {
-					limit = {
-						NOT = {
-							has_idea = SI_new_gov_stabilisation_idea_1
-							has_idea = SI_new_gov_stabilisation_idea_2
-							has_idea = SI_new_gov_stabilisation_idea_3
-						}
-					}
-					add_timed_idea = {
-						idea = SI_new_gov_stabilisation_idea_1
-						days = 150
-					}
-				}
-				else_if = {
-					limit = {
-						has_idea = SI_new_gov_stabilisation_idea_1
-					}
-					remove_ideas = SI_new_gov_stabilisation_idea_1
-					add_timed_idea = {
-						idea = SI_new_gov_stabilisation_idea_2
-						days = 180
-					}
-				}
-				else = {
-					remove_ideas = SI_new_gov_stabilisation_idea_1
-					remove_ideas = SI_new_gov_stabilisation_idea_2
-					add_timed_idea = {
-						idea = SI_new_gov_stabilisation_idea_3
-						days = 210
-					}
-				}
-			}
 		}
 
 		news_event = { id = sievent.7 hours = 12 random_hours = 12 }
