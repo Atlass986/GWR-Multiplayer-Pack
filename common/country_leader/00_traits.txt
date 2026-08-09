@@ -44,6 +44,40 @@
 leader_traits = {
 	############## GWR #################
 
+	spanish_armada_ambitions = {
+		random = no
+    	naval_coordination = 0.10
+    	convoy_raiding_efficiency_factor = 0.15	
+		industrial_capacity_dockyard = 0.25	
+		experience_gain_navy = 0.15
+	}
+	french_military_influence = {
+		random = no
+   		political_power_factor = 0.10
+    	war_stability_factor = 0.05
+    	consumer_goods_factor = -0.15
+
+		political_advisor_cost_factor = -0.25
+	}
+	habsburg_king_of_spain = {
+		random = no
+   	 	planning_speed = 0.10
+		conscription = 0.03
+		political_power_gain = -0.1
+ 		war_support_factor = 0.10
+		annex_cost_factor = -0.15
+		subjects_autonomy_gain = -0.5
+
+		}
+	king_of_spanish_empire = {
+		random = no
+		experience_gain_army = 0.15
+		war_stability_factor = 0.15
+		political_power_factor = 0.25
+		resistance_activity = -0.02
+		non_core_manpower = 0.01
+	# HIszpania /\
+	}
     swi_ruler = {
         random = no
         experience_gain_air = 0.03

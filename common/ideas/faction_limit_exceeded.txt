@@ -108,7 +108,6 @@ ideas = {
                 max_planning_factor = -0.8
                 air_attack_factor = -0.5
                 air_accidents_factor = 0.9
-                
                 stability_weekly = -0.1
                 war_support_weekly = -0.1
                 political_power_factor = -0.9

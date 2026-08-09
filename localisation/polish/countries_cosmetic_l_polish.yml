@@ -3143,3 +3143,12 @@
  KUM_yetishar_tag_fascism_ADJ: "dungan."
  ITA_military_dictat: "Imperium Włoskie"
  ITA_west_rome: "Cesarstwo Zachodnorzymskie"
+
+ FRA_france_empire_neutrality:0 "Imperium Karolingów"
+ FRA_france_empire_neutrality_DEF:0 "Imperium Karolingów"
+ FRA_france_empire_fascism:0 "Imperium Karolingów"
+ FRA_france_empire_fascism_DEF:0 "Imperium Karolingów"
+ FRA_france_empire_democratic:0 "Imperium Karolingów"
+ FRA_france_empire_democratic_DEF:0 "Imperium Karolingów"
+ FRA_france_empire_communism:0 "Imperium Karolingów"
+ FRA_france_empire_communism_DEF:0 "Imperium Karolingów"

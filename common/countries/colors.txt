@@ -1269,5 +1269,30 @@ GWR = {
 	color_ui = rgb { 254 254 254 }
 }
 
+CEA = {
+	color = rgb { 206 56 93 }
+	color_ui = rgb { 255 73 121 }
+}
+
+CFA = {
+	color = rgb { 62 113 228 }
+	color_ui = rgb { 74 147 255 }
+}
+
+CPA = {
+	color = rgb { 247 205 94 }
+	color_ui = rgb { 255 255 122 }
+}
+
+CIA = {
+	color = rgb { 72 127 63 }
+	color_ui = rgb { 255 255 122 }
+}
+
+COA = {
+	color = rgb { 39 116 70 }
+	color_ui = rgb { 255 255 122 }
+}
+
 ####################################
 

@@ -101,7 +101,6 @@ focus_tree = {
 		bypass = {		
 		}
 		prerequisite = { focus = POR_colonial_assimilation_policy }
-		mutually_exclusive = { focus = POR_limited_self_rule }
 			
 		icon = GFX_focus_por_luso_tropicalism
 		x = -2
@@ -113,166 +112,6 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_tooltip = POR_mozambique_overseas_territory
 			unlock_decision_tooltip = POR_angola_overseas_province
-		}
-	}
-
-	focus = {
-		id = POR_limited_self_rule
-		available = {
-			OR = {
-				has_full_control_of_state = 796 #North Angola
-				has_full_control_of_state = 540 #Luanda
-				has_full_control_of_state = 891 #Zambesi
-				has_full_control_of_state = 892 #Southwest Angola
-				has_full_control_of_state = 544 #Mozambique
-				has_full_control_of_state = 896 #Manica e Sofala
-				has_full_control_of_state = 897 #Zambezia
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				OR = {
-					has_government = fascism
-					has_government = neutrality
-				}			
-			}
-			modifier = {
-				add = 1
-				OR = {
-					has_government = democratic
-					any_country = {
-						is_in_faction_with = ROOT
-						is_faction_leader = yes
-						has_government = democratic
-					}
-				}		
-			}
-		}
-
-		bypass = {
-		}
-		prerequisite = { focus = POR_colonial_army }
-		mutually_exclusive = { focus = POR_luso_tropicalism }
-			
-		icon = GFX_focus_por_limited_self_rule
-
-		x = 0
-		y = 1
-
-		relative_position_id = POR_colonial_army
-		cost = 10
-		completion_reward = {
-			add_political_power = 120
-			add_manpower = 30000
-			ANG = {
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 796 }
-					}
-					transfer_state = 796
-					POR = { set_country_flag = POR_released_angola_flag }
-				}
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 540 }
-					}
-					transfer_state = 540
-					POR = { set_country_flag = POR_released_angola_flag }
-				}
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 891 }
-					}
-					transfer_state = 891
-					POR = { set_country_flag = POR_released_angola_flag }
-				}	
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 892 }
-					}
-					transfer_state = 892
-					POR = { set_country_flag = POR_released_angola_flag }
-				}							
-			}
-
-			MZB = {
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 544 }
-					}
-					transfer_state = 544
-					POR = { set_country_flag = POR_released_mozambique_flag }
-				}	
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 896 }
-					}
-					transfer_state = 896
-					POR = { set_country_flag = POR_released_mozambique_flag }
-				}
-				if = {
-					limit = { 
-						POR = { has_full_control_of_state = 897 }
-					}
-					transfer_state = 897
-					POR = { set_country_flag = POR_released_mozambique_flag }
-				}
-			}
-
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
-					}
-				}
-
-				POR = {
-					if = {
-						limit = { has_country_flag = POR_released_angola_flag }
-						set_autonomy = {
-						    target = ANG
-						    autonomy_state = autonomy_integrated_puppet
-						}
-					}
-					if = {
-						limit = { has_country_flag = POR_released_mozambique_flag }
-						set_autonomy = {
-						    target = MZB
-						    autonomy_state = autonomy_integrated_puppet
-						}
-					}
-				}
-			}
-			else = {
-				if = {
-					limit = { has_country_flag = POR_released_angola_flag }
-					POR = { puppet = ANG }
-				}
-				if = {
-					limit = { has_country_flag = POR_released_mozambique_flag }
-					POR = { puppet = MZB }
-				}
-			}			
-
-			every_other_country = {
-				limit = { has_government = democratic }
-				add_opinion_modifier = {
-					target = POR
-					modifier = democratic_leanings_good 
-				}
-			}
-
-			if = {
-				limit = {
-					has_completed_focus = POR_allow_free_elections
-				}
-				custom_effect_tooltip = available_political_advisor
-				show_ideas_tooltip = POR_francisco_da_cunha_leal
-			}
 		}
 	}
 
@@ -289,13 +128,13 @@ focus_tree = {
 
 		bypass = {		
 		}
-		prerequisite = { focus = POR_colonial_assimilation_policy }	
+		prerequisite = { focus = POR_colonial_army }	
 			
 		icon = GFX_focus_generic_africa_infrastructure
 		x = 2
 		y = 0
 
-		relative_position_id = POR_limited_self_rule
+		relative_position_id = POR_luso_tropicalism
 		cost = 10
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = { 

@@ -21,9 +21,112 @@ ideas = {
 				max_planning = 0.10
 			}
 		}
+		FRA_reintegrate_the_belux = {
+			picture = BEL_legacy_of_the_great_war
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
 
+			allowed_civil_war = {
+				has_government = democratic
+			}
 
-
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.15
+			}
+		}
+		ineffective_administration1 = {
+		picture = MEN_stretched_administration
+				allowed = {
+				original_tag = FRA
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+		stability_factor = -0.05
+		war_support_factor = -0.05
+			}
+		}
+		ineffective_administration2 = {
+		picture = MEN_stretched_administration
+				allowed = {
+				original_tag = FRA
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+			production_factory_max_efficiency_factor = -0.05
+			stability_factor = -0.05
+			war_support_factor = -0.05
+			}	
+		}
+		ineffective_administration3 = {
+		picture = MEN_stretched_administration
+			allowed = {
+			original_tag = FRA
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+			production_factory_max_efficiency_factor = -0.05
+			political_power_gain = -0.25
+			consumer_goods_factor = 0.15
+			stability_factor = -0.05
+			war_support_factor = -0.05
+			}	
+		}
+		ineffective_administration4 = {
+		picture = MEN_stretched_administration
+			allowed = {
+			original_tag = FRA
+			always = no
+			}
+			removal_cost = -1
+			modifier = {
+			production_factory_max_efficiency_factor = -0.05
+			industrial_capacity_factory = -0.1
+			supply_consumption_factor = 0.1
+			political_power_gain = -0.25
+			consumer_goods_factor = 0.15
+			conscription_factor = -0.25
+			stability_factor = -0.05
+			war_support_factor = -0.05
+			}	
+		}
+		FRA_reintegrate_the_switzerland = {
+			picture = SWI_weaponize_Swissness
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			modifier = {
+			industrial_capacity_factory = -0.2
+			industrial_capacity_dockyard = -0.2
+			}
+		}
+		FRA_reintegrate_the_north_italy= {
+			picture = ARG_liberation_theology
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+			modifier = {
+			conscription_factor = -0.05
+			production_factory_max_efficiency_factor = -0.5
+			}
+		}
+		FRA_reintegrate_the_east_francia = {
+		picture = BRA_estado_novo
+		modifier = {
+		production_speed_buildings_factor = -0.2
+		army_core_defence_factor = -0.1
+		army_attack_factor = -0.1
+		}	
+		}
 
 		FRA_full_employment = {
 			picture = generic_production_bonus
@@ -188,7 +291,6 @@ ideas = {
 				consumer_goods_factor = -0.1
 				production_factory_max_efficiency_factor = 0.025
 				production_speed_buildings_factor = 0.05
-				research_speed_factor = 0.05
 				war_support_factor = 0.1
 			}
 		}
@@ -238,6 +340,23 @@ ideas = {
  			communism_drift = 0.1
             }
         }
+		FRA_strengthen_the_state = {
+			picture = generic_production_bonus
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+ 		compliance_gain = 0.15
+			}
+		}
 		
 		FRA_national_champions = {
 			picture = ARG_construction_guilds
@@ -552,10 +671,29 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				production_speed_arms_factory_factor = 0.05
-				production_speed_dockyard_factor = 0.05
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.2
 			}
 		}
+		FRA_a_self_sufficient_economy = {
+		picture = generic_self_sufficiency
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = democratic
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			consumer_goods_factor = -0.25
+			production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+
 		FRA_market_dynamism = {
 			
 			allowed = {
@@ -607,6 +745,7 @@ ideas = {
 			
 			modifier = {
 				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
 			}
 		}
 		FRA_constitutional_revision = {
@@ -625,6 +764,103 @@ ideas = {
 			
 			modifier = {
 				stability_weekly = 0.005
+			}
+		}
+	FRA_invest_in_heavy_industry = {
+			picture = raj_rifle_factory_ishapore
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.05
+				production_speed_industrial_complex_factor = -0.5
+			}
+		}
+	FRA_expand_the_secret_service = {
+			picture = AFG_parliament_building_damaged
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			operative_slot = 2
+			enemy_operative_detection_chance_factor = 0.1
+			root_out_resistance_effectiveness_factor = 0.1
+			enemy_operative_intel_extraction_rate = 0.05
+			}
+		}
+		FRA_influence_the_church = {
+			picture = generic_constitutional_guarantees
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				neutrality_drift = 0.1
+			}
+		}
+		FRA_the_legacy_of_lothair = {
+			picture = generic_morale_bonus
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			army_defence_factor = 0.05
+			army_attack_factor = 0.05
+			}
+		}
+		FRA_loyalty_of_the_army = {
+			picture = HUN_rapid_army_expansion
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+			army_org = 2.5
+			}
+		}
+		equality_towards_citizens = {
+			picture = AFG_placated_graduates
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+			}
+		}
+
+		FRA_Propaganda_and_morale = {
+			picture = ITA_battaglie_per_la_nascite
+			allowed = {
+				original_tag = FRA
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				political_power_gain = 0.25
 			}
 		}
 
@@ -1879,11 +2115,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				army_core_defence_factor = 0.15
+				army_defence_factor = 0.15
 				army_morale_factor = 0.05
 				max_dig_in = 5
-				supply_consumption_factor = 0.15
-				army_attack_factor = -0.05
 			}
 		}
 

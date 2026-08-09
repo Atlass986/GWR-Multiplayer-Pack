@@ -1,4 +1,12 @@
 ﻿l_english:
+ FORM_IBE_neutrality:0 "Kingdom of Iberia"
+ FORM_IBE_fascism:0 "Iberian Empire"
+ FORM_IBE_democratic:0 "Iberian Federation"
+ FORM_IBE_communism:0 "People's Republic of Iberia"
+ RIFCS:0 "Spanish African Territories"
+ SPA_mexico:0 "Spanish Empire"
+ SPA_sicilies:0 "United Kingdom of Spain and two Sicilies"
+ SPA_iberia:0 "Franco-Spanish Kingdom"
  INS_HOL_democratic:0 "Dutch East Indies"
  INS_HOL_democratic_DEF:0 "the Dutch East Indies"
  INS_subject:0 "$OVERLORDADJ$ East Indies"

@@ -1,5 +1,135 @@
 # GWR Multiplayer Pack scripted_effects.txt
 
+clear_african_cores_from_state = {
+	remove_core_of = AFA
+	#remove_core_of = ALG
+	remove_core_of = ANG
+	remove_core_of = BAR
+	remove_core_of = BIA
+	remove_core_of = BOT
+	remove_core_of = CAR
+	remove_core_of = CHA
+	remove_core_of = CMR
+	remove_core_of = DAH
+	remove_core_of = DJI
+	remove_core_of = EGY
+	remove_core_of = EQG
+	remove_core_of = ERI
+	remove_core_of = GAB
+	remove_core_of = GAM
+	remove_core_of = GHA
+	remove_core_of = GNA
+	remove_core_of = GNB
+	remove_core_of = IVO
+	remove_core_of = KAT
+	remove_core_of = KEN
+	remove_core_of = LBA
+	remove_core_of = MAD
+	remove_core_of = MLI
+	remove_core_of = MLW
+	remove_core_of = MOR
+	remove_core_of = MRT
+	remove_core_of = MZB
+	remove_core_of = NGA
+	remove_core_of = NGR
+	remove_core_of = NMB
+	remove_core_of = RCG
+	remove_core_of = SEN
+	remove_core_of = SIE
+	remove_core_of = SOK
+	remove_core_of = SOM
+	remove_core_of = SUD
+	remove_core_of = TZN
+	remove_core_of = TOG
+	remove_core_of = TUN
+	remove_core_of = UGA
+	remove_core_of = VOL
+	remove_core_of = WES
+	remove_core_of = ZAM
+	remove_core_of = ZIM
+	# ETHIOPIA
+	remove_core_of = TIG
+	remove_core_of = QEM
+	remove_core_of = BEG
+	remove_core_of = GBA
+	remove_core_of = SID
+	remove_core_of = ORO
+	remove_core_of = HAR
+}
+
+set_colonial_africa_cores = {
+	if = {
+		limit = { OWNER = { tag = LIB } } 
+		add_core_of = CFA
+		add_core_of = CEA
+	}
+	if = {
+		limit = { OWNER = { tag = FRA } }
+		add_core_of = CFA
+	}
+	else_if = {
+		limit = { OWNER = { OR = { tag = ENG is_subject_of = ENG } } }
+		add_core_of = CEA
+	}
+	else_if = {
+		limit = { OWNER = { OR = { tag = ITA tag = AFA tag = ETH } } }
+		add_core_of = CIA
+	}
+	else_if = {
+		limit = { OWNER = { tag = SPR } }
+		add_core_of = CPA
+	}
+	else_if = {
+		limit = { OWNER = { tag = POR } }
+		add_core_of = COA
+	}
+	clear_african_cores_from_state = yes
+}
+
+map_fixes = {
+	710 = { add_core_of = CEA set_compliance = 70 }	
+	712 = { add_core_of = CEA set_compliance = 70 }	
+	711 = { add_core_of = CEA set_compliance = 70 }	
+	270 = { add_core_of = CEA set_compliance = 70 }	
+	636 = { add_core_of = NZL set_compliance = 70 }	
+	643 = { add_core_of = NZL set_compliance = 70 }	
+	734 = { add_core_of = AST set_compliance = 70 }	
+	634 = { add_core_of = AST set_compliance = 70 }	
+	721 = { add_core_of = INS }	
+	299 = { add_core_of = ARG set_compliance = 70 }	
+	720 = { add_core_of = ARG set_compliance = 70 }	
+	453 = { add_core_of = CEA remove_core_of = EGY }
+	446 = { add_core_of = CEA remove_core_of = EGY }
+	455 = { add_core_of = CEA remove_core_of = JOR transfer_state_to = ENG set_compliance = 70 }
+	454 = { add_core_of = CEA remove_core_of = PAL transfer_state_to = ENG set_compliance = 70 }
+	293 = { add_core_of = SAU remove_core_of = YEM transfer_state_to = SAU }
+	553 = { add_core_of = CFA remove_core_of = LEB transfer_state_to = FRA set_compliance = 70 }
+	554 = { add_core_of = CFA remove_core_of = SYR transfer_state_to = FRA set_compliance = 70 }
+	680 = { add_core_of = CFA remove_core_of = SYR transfer_state_to = FRA set_compliance = 70 }
+	677 = { add_core_of = CFA remove_core_of = SYR transfer_state_to = FRA set_compliance = 70 }
+	799 = { add_core_of = CFA remove_core_of = SYR transfer_state_to = FRA set_compliance = 70 }
+	992 = { add_core_of = SAU remove_core_of = YEM remove_core_of = FSA }
+	659 = { add_core_of = SAU remove_core_of = YEM remove_core_of = FSA }
+	906 = { remove_core_of = YEM }	
+	1016 = { add_core_of = SAU remove_core_of = FSA remove_core_of = OMA transfer_state_to = ENG set_compliance = 70 }	
+	294 = { add_core_of = SAU remove_core_of = OMA transfer_state_to = ENG set_compliance = 70 }	
+	1015 = { add_core_of = SAU remove_core_of = IMO transfer_state_to = ENG set_compliance = 70 }	
+	1013 = { add_core_of = SAU remove_core_of = YEM transfer_state_to = ENG set_compliance = 70 }	
+	658 = { add_core_of = SAU remove_core_of = UAE }	
+	656 = { add_core_of = SAU remove_core_of = KUW transfer_state_to = ENG set_compliance = 70 }	
+	1014 = { add_core_of = SAU remove_core_of = BHR }	
+	765 = { add_core_of = SAU remove_core_of = QAT }	
+	116 = { remove_core_of = MLT }	
+	183 = { add_core_of = TUR add_core_of = GRE remove_core_of = CYP }	
+	422 = { add_core_of = RAJ remove_core_of = SRL }	
+	1070 = { add_core_of = AST remove_core_of = BOU remove_core_of = SOL }	
+	1071 = { add_core_of = AST set_compliance = 70 }	
+	635 = { add_core_of = AST set_compliance = 70 }	
+	523 = { remove_core_of = NZL }	
+	669 = { remove_core_of = NZL }	
+	604 = { remove_core_of = TIB }	
+}
+
 remove_every_guarantee = {
     every_other_country = {
         limit = { OR = { is_guaranteed_by = PREV has_guaranteed = PREV } }
@@ -41,9 +171,6 @@ remove_useless_cores = {
     else_if = { limit = { is_core_of = QEM } remove_core_of = QEM }
     else_if = { limit = { is_core_of = BEG } remove_core_of = BEG }
     else_if = { limit = { is_core_of = GBA } remove_core_of = GBA }
-    else_if = { limit = { is_core_of = SID } remove_core_of = SID }
-    else_if = { limit = { is_core_of = ORO } remove_core_of = ORO }
-    else_if = { limit = { is_core_of = HAR } remove_core_of = HAR }
     else_if = { limit = { is_core_of = FOR } remove_core_of = FOR }
     else_if = { limit = { is_core_of = ANU } remove_core_of = ANU }
     else_if = { limit = { is_core_of = GLC } remove_core_of = GLC }
@@ -52,6 +179,13 @@ remove_useless_cores = {
     else_if = { limit = { is_core_of = COR } remove_core_of = COR }
     else_if = { limit = { is_core_of = SPM } remove_core_of = SPM }
     else_if = { limit = { is_core_of = ASY } remove_core_of = ASY }
+    else_if = { limit = { is_core_of = LBV } remove_core_of = LBV }
+    else_if = { limit = { is_core_of = BOU } remove_core_of = BOU }
+    else_if = { limit = { is_core_of = WLS } remove_core_of = WLS }
+    else_if = { limit = { is_core_of = NIR } remove_core_of = NIR }
+    else_if = { limit = { is_core_of = SCO } remove_core_of = SCO }
+    else_if = { limit = { is_core_of = VAN } remove_core_of = VAN }
+    else_if = { limit = { is_core_of = SAM } remove_core_of = SAM }
 }
 
 add_resources_on_startup = {
@@ -2951,6 +3085,7 @@ on_startup_handle_global = {
 	set_faction_limit = yes
 	set_si = yes
 	create_gwr_agency = yes
+	map_fixes = yes
 }
 
 on_startup_handle_country = {
@@ -2962,8 +3097,12 @@ on_startup_handle_country = {
 }
 
 on_startup_handle_state = {
-    remove_useless_cores = yes
-    add_resources_on_startup = yes
+	add_resources_on_startup = yes
+	remove_useless_cores = yes
+	if = {
+		limit = { is_on_continent = africa }
+		set_colonial_africa_cores = yes
+	}
 }
 
 on_monthly_handle_global = {

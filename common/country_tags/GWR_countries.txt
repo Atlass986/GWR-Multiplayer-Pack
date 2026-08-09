@@ -1,1 +1,6 @@
 GWR = "countries/GWRHost.txt"
+CPA = "countries/Colony_Spanish_Africa.txt"
+CFA = "countries/Colony_French_Africa.txt"
+CEA = "countries/Colony_British_Africa.txt"
+CIA = "countries/Colony_Italian_Africa.txt"
+COA = "countries/Colony_Portuguese_Africa.txt"

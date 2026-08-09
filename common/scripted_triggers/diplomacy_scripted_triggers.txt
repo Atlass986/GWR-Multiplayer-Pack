@@ -41,7 +41,11 @@ DIPLOMACY_GUARANTEE_ENABLE_TRIGGER_OVERRIDES_GAME_TRIGGER = {
 }
 
 DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
-	if = {
+	if = { 
+		limit = { is_ai = yes }
+		always = no
+	}
+	elif = {
 		limit = {
 			has_game_rule = {
 				rule = allow_guarantees
@@ -50,7 +54,7 @@ DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
 		}
 		always = yes
 	}
-	if = {
+	elif = {
 		limit = {
 			has_game_rule = {
 				rule = allow_guarantees
@@ -59,7 +63,7 @@ DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
 		}
 		always = yes # Handled by game logic.
 	}
-	if = {
+	elif = {
 		limit = {
 			has_game_rule = {
 				rule = allow_guarantees
@@ -71,7 +75,7 @@ DIPLOMACY_GUARANTEE_ENABLE_TRIGGER = {
 			has_government = FROM
 		}
 	}
-	if = {
+	elif = {
 		limit = {
 			has_game_rule = {
 				rule = allow_guarantees
@@ -117,7 +121,7 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 				original_tag = SUD original_tag = SOM original_tag = ERI original_tag = DJI	original_tag = TIG original_tag = QEM original_tag = AFA
 				original_tag = HAR original_tag = ORO original_tag = SID original_tag = GBA	original_tag = BEG original_tag = UGA original_tag = SMI
 				original_tag = OCC original_tag = NAV original_tag = BRI original_tag = COR	original_tag = LBA original_tag = TTS original_tag = SPM
-				original_tag = PAP original_tag = TOS original_tag = PLU original_tag = FSM original_tag = CRO original_tag = ALG original_tag = CAY
+				original_tag = PAP original_tag = TOS original_tag = PLU original_tag = FSM original_tag = CRO original_tag = CAY
 				original_tag = SRL original_tag = MLD original_tag = FSA original_tag = UAE	original_tag = QAT original_tag = BHR original_tag = KUR
 				original_tag = UKR original_tag = BLR
 				### OTHER
@@ -126,6 +130,12 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 				original_tag = RAS original_tag = MYS original_tag = KOL original_tag = HYD	original_tag = BAN original_tag = MPU original_tag = SKK
 				original_tag = WIS original_tag = RJP original_tag = SIN original_tag = PAK	original_tag = BLC original_tag = KHL original_tag = NWF
 				original_tag = KAS
+				### AFRICA
+				original_tag = COA
+				original_tag = CEA
+				original_tag = CIA
+				original_tag = CPA
+				original_tag = CFA 
 
 
 			} }
