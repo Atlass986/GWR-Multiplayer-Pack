@@ -1,6 +1,5 @@
 ﻿l_english:
  SI_stateview_button:0 "Toggle §YState Interaction§! menu\n--------------------\nActive gamerules:\n- State Tansfer (§Y[SiStateTransferGameRule]§!)\n- AI Behaviour (§Y[SiAiBehaviourRule]§!)\n- AI Rejection (§Y[SiAiRejectionRule]§!)\n- Compliance for Coring (§Y[SiCoreComplianceRule]§!)\n- Coastal Claiming (§Y[SiClaimShoreRule]§!)"
-
  SI_state_demand_button:0 "Demand §Y[FROM.GetName]§![FROM.owner.GetFlag] ([?global.si_demand_state_pp_required] £GFX_pol_power )\n--------------------\n§YAdditional requirements§!\n- §Y[FROM.owner.GetName]§! is §RNOT§! at war with you, your subject or ally\n- §Y[FROM.owner.GetName]§! is §RNOT§! you, your subject or ally\n- §Y[FROM.GetName]§! has border with you or your subject\n- §Y[FROM.GetName]§! is §RNOT§! subject of demands\n- You are §RNOT§! a subject of another country\n--------------------\nCooldown: §Y[?global.si_demand_state_cooldown_days]§! days (§gMajor interactions§!)"
 
  SI_state_vsl_button:0 "Demand §Y[FROM.owner.GetAdjective]§![FROM.owner.GetFlag] Subjugation ([?global.si_demand_vassalisation_pp_required] £GFX_pol_power )\n--------------------\n§YAdditional requirements§!\n- §Y[FROM.owner.GetName]§! is §RNOT§! at war\n- §Y[FROM.owner.GetName]§! is §RNOT§! you, your subject or ally\n- §Y[FROM.owner.GetName]§! is §RNOT§! subject of demands\n- §Y[FROM.owner.GetName]§! has a border with you or your subject\n- You are §RNOT§! a subject of another country\n--------------------\nCooldown: §Y[?global.si_demand_vassalisation_cooldown_days]§! days (§gMajor interactions§!)"
@@ -117,7 +116,7 @@
  SI_vassalisation_demanded_threat:0 "Demanded Vassalisation"
 
  SI_state_transfer_title:0 "[FROM.owner.GetFlag] [FROM.GetName]"
- SI_state_mark_button:0 "Mark State"
+ SI_state_mark_button:0 "Mark State ([?global.si_mark_state_pp_required] £GFX_pol_power )"
  SI_state_unmark_button:0 "§RUnmark State§!"
 
  SI_transfer_mark_state_tt:0 "Mark selected state."

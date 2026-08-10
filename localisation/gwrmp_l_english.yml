@@ -33,6 +33,33 @@ GWR_ADJ: "Host State's"
 GWR_atlass: "The great Atłass"
 GWR_host_boost: "§RHOST§!"
 
+# GAME RULES
+GWRMP_PATHS_GROUP: "Country Paths"
+GWRMP_BLOCK_GERMAN_PATH_RULE: "German Historical Path"
+GWRMP_BLOCK_FUHRERPRINZIP_RULE: "German Fuhrerprinzip"
+GWRMP_BLOCK_USA_PATH_RULE: "USA Historical Path"
+GWRMP_BLOCK_SOVIET_PATH_RULE: "Soviet Historical Path"
+
+GWRMP_DIPLO_GROUP: "Diplomacy"
+GWRMP_MILITARY_ACCESS_RULE: "Military + Airbases Access"
+GWRMP_GUARANTEES_RULE: "Guarantees"
+GWRMP_WARS_RULE: "Wars"
+
+GWR_RULESET_DEFAULT: "GWR Ruleset"
+GWR_RULESET_DEFAULT_DESC: ""
+GWR_BLOCK_FASCISM_DEFAULT: "Fascism blocked"
+GWR_BLOCK_FASCISM_DEFAULT_DESC: ""
+GWR_BLOCK_DEFAULT: "Blocked"
+GWR_BLOCK_DEFAULT_DESC: ""
+GWR_ALLOW_DEFAULT: "Allowed"
+GWR_ALLOW_DEFAULT_DESC: ""
+GWR_NO_FACTION_DEFAULT: "No faction only"
+GWR_NO_FACTION_DEFAULT_DESC: ""
+GWR_NO_AI_DEFAULT: "Player only"
+GWR_NO_AI_DEFAULT_DESC: ""
+GWR_NO_AI_NO_FACTION_DEFAULT: "Player only + No faction only"
+GWR_NO_AI_NO_FACTION_DEFAULT_DESC: ""
+
 # DIPLO ACTIONS
 PAY_CIV_FACTORY_TITLE:0 "Send civillian factory"
 PAY_CIV_FACTORY_ACTION_DESC:0 "SEND 1 CIVILLIAN FACTORY TO THE TARGETED COUNTRY"
@@ -49,6 +76,13 @@ PAY_MIL_FACTORY_ACTION_DESC:0 "SEND 1 MILITARY FACTORY TO THE TARGETED COUNTRY"
 pay_mil_factory_send_text:0 "Are you sure you want to send 1 military factory to this nation."
 pay_mil_get_message:0 "We Recieved 1 military factory to us"
 pay_mil_get_title:0 "Recieved Military Factory"
+
+GWRMP_EARLY_MINOR_WAR: "War with §YMinor§! is allowed after §R1 September 1937§!"
+GWRMP_EARLY_MAJOR_WAR: "War with §YMajor§! is allowed after §R1 September 1938§!"
+GWRMP_EARLY_SUPER_MAJOR_WAR: "War with §YSuper Major§! is allowed after §R1 September 1939§!"
+GWRMP_EARLY_USA_WAR: "War with §YUnited States§! is allowed after §R1 February 1940§!"
+GWRMP_JUSTIFY_MAJOR: "Justification for §YMajor/Super Major§! is allowed after §R1 January 1938§!"
+GWRMP_JUSTIFY_MINOR: "Justification for §YMinor/Regional§! is allowed after §R1 January 1937§!"
 
 # AGENCY
 intel_upgrade_available:0 "§YIntelligence Agency Upgrade Available§!§G\n\nRight Click to dismiss\n§gShift + Right Click to disable permanently§!"

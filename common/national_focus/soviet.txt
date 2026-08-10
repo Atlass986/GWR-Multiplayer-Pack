@@ -6711,6 +6711,11 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
+			random_character = {
+				limit = { is_character = SOV_konstantin_rokossovsky }
+				set_nationality = SOV
+			}
+			recruit_character = SOV_konstantin_rokossovsky
 			if = {
 				limit = {
 					SOV_konstantin_rokossovsky = {
@@ -6718,7 +6723,7 @@ focus_tree = {
 						is_corps_commander = yes
 					}
 				}
-				recruit_character = SOV_konstantin_rokossovsky
+				
 				SOV_konstantin_rokossovsky = {
 					promote_leader = yes
 				}
@@ -6758,14 +6763,20 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
+			random_character = {
+				limit = { is_character = SOV_georgy_zhukov }
+				set_nationality = SOV
+			}
+			recruit_character = SOV_georgy_zhukov
 			if = {
+				
 				limit = {
 					SOV_georgy_zhukov = {
 						NOT = { has_character_flag = SOV_character_purged_flag }
 						is_corps_commander = yes
 					}
 				}
-				recruit_character = SOV_georgy_zhukov
+				
 				SOV_georgy_zhukov = {
 					promote_leader = yes
 				}
@@ -7164,7 +7175,10 @@ focus_tree = {
 		}
 
 		available = {
-
+			has_game_rule = {
+				rule = gwr_block_soviet_hist_path
+				option = GWR_ALLOW_SOVIET_DEFAULT
+			}
 		}
 		
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_SOV_POLITICAL_PARANOIA FOCUS_FILTER_STABILITY}
@@ -18060,7 +18074,7 @@ ai_will_do = {
 		x = -2
 		y = 1
 		relative_position_id = SOV_westward_bound
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -18096,7 +18110,7 @@ ai_will_do = {
 		x = 0
 		y = 1
 		relative_position_id = SOV_westward_bound 
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -18133,7 +18147,7 @@ ai_will_do = {
 		x = 2
 		y = 1
 		relative_position_id = SOV_westward_bound
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}

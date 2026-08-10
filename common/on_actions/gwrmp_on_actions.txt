@@ -32,10 +32,4 @@ on_actions = {
             }
         }
     }
-
-    on_state_control_changed = {
-		effect = {
-			every_country = { on_state_control_changed_country = yes }
-		}
-	}
 }

@@ -21,7 +21,7 @@
 #	}
 # }
 
-si_state_transfer_rules = {
+gwrmp_rules = {
 
 	name = "SI_STATE_TRANSFER_RULES"
 	group = "SI_GENERAL_GROUP"
@@ -114,20 +114,132 @@ si_core_required_compliance_rules = {
 		desc = "SI_CORE_REQUIRED_50_DESC"
 	}
 }
-si_allow_coastal_claim_rules = {
-
-	name = "SI_COASTAL_CLAIM_RULES"
-	group = "SI_GENERAL_GROUP"
-	icon = GFX_SI_mini_icon
+gwr_block_fuhrerprinzip_path = {
+	name = "GWRMP_BLOCK_FUHRERPRINZIP_RULE"
+	group = "GWRMP_PATHS_GROUP"
 
 	default = {
-		name = SI_COASTAL_CLAIM_DEFAULT
-		text = "SI_COASTAL_CLAIM_DEFAULT"
-		desc = "SI_COASTAL_CLAIM_DEFAULT_DESC"
+		name = GWR_BLOCK_FUHRERPRINZIP_FASCISM_DEFAULT
+		text = "GWR_BLOCK_FASCISM_DEFAULT"
+		desc = "GWR_BLOCK_FASCISM_DEFAULT_DESC"
 	}
 	option = {
-		name = SI_COASTAL_CLAIM_DISABLED
-		text = "SI_COASTAL_CLAIM_DISABLED"
-		desc = "SI_COASTAL_CLAIM_DISABLED_DESC"
+		name = GWR_ALLOW_FUHRERPRINZIP_DEFAULT
+		text = "GWR_ALLOW_DEFAULT"
+		desc = "GWR_ALLOW_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_BLOCK_FUHRERPRINZIP_DEFAULT
+		text = "GWR_BLOCK_DEFAULT"
+		desc = "GWR_BLOCK_DEFAULT_DESC"
+	}
+}
+gwr_block_german_hist_path = {
+	name = "GWRMP_BLOCK_GERMAN_PATH_RULE"
+	group = "GWRMP_PATHS_GROUP"
+
+	default = {
+		name = GWR_BLOCK_GERMAN_DEFAULT
+		text = "GWR_BLOCK_DEFAULT"
+		desc = "GWR_BLOCK_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_ALLOW_GERMAN_DEFAULT
+		text = "GWR_ALLOW_DEFAULT"
+		desc = "GWR_ALLOW_DEFAULT_DESC"
+	}
+}
+gwr_block_usa_hist_path = {
+	name = "GWRMP_BLOCK_USA_PATH_RULE"
+	group = "GWRMP_PATHS_GROUP"
+
+	default = {
+		name = GWR_BLOCK_USA_DEFAULT
+		text = "GWR_BLOCK_DEFAULT"
+		desc = "GWR_BLOCK_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_ALLOW_USA_DEFAULT
+		text = "GWR_ALLOW_DEFAULT"
+		desc = "GWR_ALLOW_DEFAULT_DESC"
+	}
+}
+gwr_block_soviet_hist_path = {
+	name = "GWRMP_BLOCK_SOVIET_PATH_RULE"
+	group = "GWRMP_PATHS_GROUP"
+
+	default = {
+		name = GWR_ALLOW_SOVIET_DEFAULT
+		text = "GWR_ALLOW_DEFAULT"
+		desc = "GWR_ALLOW_DEFAULT_DESC"
+		
+	}
+	option = {
+		name = GWR_BLOCK_SOVIET_DEFAULT
+		text = "GWR_BLOCK_DEFAULT"
+		desc = "GWR_BLOCK_DEFAULT_DESC"
+	}
+}
+
+gwr_military_access = {
+	name = "GWRMP_MILITARY_ACCESS_RULE"
+	group = "GWRMP_DIPLO_GROUP"
+
+	default = {
+		name = GWR_NO_FACTION_MILITARY_ACCESS_DEFAULT
+		text = "GWR_NO_FACTION_DEFAULT"
+		desc = "GWR_NO_FACTION_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_BLOCK_MILITARY_ACCESS_DEFAULT
+		text = "GWR_BLOCK_DEFAULT"
+		desc = "GWR_BLOCK_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_ALLOW_MILITARY_ACCESS_DEFAULT
+		text = "GWR_ALLOW_DEFAULT"
+		desc = "GWR_ALLOW_DEFAULT_DESC"
+	}
+}
+
+gwr_guarantees = {
+	name = "GWRMP_GUARANTEES_RULE"
+	group = "GWRMP_DIPLO_GROUP"
+
+	option = {
+		name = GWR_NO_AI_GUARANTEE_DEFAULT
+		text = "GWR_NO_AI_DEFAULT"
+		desc = "GWR_NO_AI_DEFAULT_DESC"
+	}
+	default = {
+		name = GWR_NO_AI_NO_FACTION_GUARANTEE_DEFAULT
+		text = "GWR_NO_AI_NO_FACTION_DEFAULT"
+		desc = "GWR_NO_AI_NO_FACTION_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_BLOCK_GUARANTEE_DEFAULT
+		text = "GWR_BLOCK_DEFAULT"
+		desc = "GWR_BLOCK_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_ALLOW_GUARANTEE_DEFAULT
+		text = "GWR_ALLOW_DEFAULT"
+		desc = "GWR_ALLOW_DEFAULT_DESC"
+	}
+}
+
+gwr_wars = {
+	name = "GWRMP_WARS_RULE"
+	group = "GWRMP_DIPLO_GROUP"
+
+	default = {
+		name = GWR_RULESET_WARS_DEFAULT
+		text = "GWR_RULESET_DEFAULT"
+		desc = "GWR_RULESET_DEFAULT"
+	}
+	option = {
+		name = GWR_ALLOW_WARS_DEFAULT
+		text = "GWR_ALLOW_DEFAULT"
+		desc = "GWR_ALLOW_DEFAULT_DESC"
 	}
 }

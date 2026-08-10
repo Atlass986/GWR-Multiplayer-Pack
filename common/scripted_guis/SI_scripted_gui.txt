@@ -210,7 +210,11 @@ scripted_gui = {
 			state_transfer_transfer_button_click = {
 				for_each_scope_loop = {
 					array = ROOT.selected_states_array
-					transfer_state_to = FROM.owner
+					if = { 
+						limit = { is_owned_and_controlled_by = ROOT }
+						ROOT = { add_political_power = var:global.si_demand_state_pp_take  } 
+						transfer_state_to = FROM.owner
+					}
 				}
 				ROOT = { clear_array = THIS.selected_states_array }
 			}
@@ -230,14 +234,7 @@ scripted_gui = {
 					check_variable = { selected_country_to_message = PREV.PREV.OWNER }
 				}
 			}
-			state_menu_transfer_menu_button_visible = {
-				NOT = {
-					has_game_rule = {
-						rule = si_state_transfer_rules
-						option = SI_STATE_TRANSFER_DISABLED
-					}
-				}
-			}
+			state_menu_transfer_menu_button_visible = {	}
 			send_message_diplo_action_button_click_enabled = {
 				FROM.OWNER = {
 					NOT = { tag = ROOT is_ai = yes }
@@ -415,26 +412,12 @@ scripted_gui = {
 			}
 			state_transfer_mark_button_click_enabled = {
 				OR = {
-					AND = {
-						has_game_rule = {
-							rule = si_state_transfer_rules
-							option = SI_STATE_TRANSFER_DEFAULT
-						}
-						always = yes
-					}
-					AND = {
-						has_game_rule = {
-							rule = si_state_transfer_rules
-							option = SI_STATE_TRANSFER_MP
-						}
+					FROM = { is_owned_and_controlled_by = ROOT is_capital = no }
+					FROM.owner = { 
+						is_subject_of = ROOT 
 						OR = {
-							FROM = {
-								is_owned_and_controlled_by = ROOT
-							}
-							FROM.owner = {
-								is_subject_of = ROOT
-								
-							}
+							AND = { is_ai = no PREV = { is_capital = no } }
+							is_ai = yes
 						}
 					}
 				}

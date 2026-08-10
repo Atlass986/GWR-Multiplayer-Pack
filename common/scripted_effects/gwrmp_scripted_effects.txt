@@ -128,6 +128,52 @@ map_fixes = {
 	523 = { remove_core_of = NZL }	
 	669 = { remove_core_of = NZL }	
 	604 = { remove_core_of = TIB }	
+	CHI = {
+		annex_country = {
+			target = YUN
+			transfer_troops = yes
+		}
+		annex_country = {
+			target = SIC
+			transfer_troops = yes
+		}
+	}
+	752 = {
+		add_extra_state_shared_building_slots = 5
+		add_building_construction = {
+			type = arms_factory
+			level = 5
+			instant_build = yes
+		}
+	}
+	1041 = {
+		add_victory_points = {
+			province = 4925
+			value = 7
+		}
+	}
+	1037 = {
+		add_victory_points = {
+			province = 6999
+			value = 11
+		}
+	}
+	751 = {
+		add_victory_points = {
+			province = 10841
+			value = 2
+		}
+	}
+	325 = {
+		add_victory_points = {
+			province = 1319
+			value = 8
+		}
+	}
+	ENG = {
+		annex_country = { target = BRM }
+		annex_country = { target = MAL }
+	}
 }
 
 remove_every_guarantee = {
@@ -2940,9 +2986,9 @@ set_si = {
 	set_variable = { global.si_demand_state_cooldown_days = 5 }
 	set_variable = { global.si_demand_vassalisation_cooldown_days = 45 }
 	set_variable = { global.si_claim_state_cooldown_days = 14 }
-	set_variable = { global.si_core_state_cooldown_days = 15 }
 	set_variable = { global.si_move_capital_cooldown_days = 7 }
 	set_variable = { global.si_ask_resources_cooldown_days = 7 }
+	set_variable = { global.si_mark_state_pp_required = 2 }
 	set_variable = { global.si_demand_state_pp_required = 10 }
 	set_variable = { global.si_demand_state_pp_take = -5 }
 	set_variable = { global.si_demand_vassalisation_pp_required = 100 }
@@ -2953,21 +2999,6 @@ set_si = {
 	set_variable = { global.si_ask_resources_pp_take = -5 }
 	set_variable = { global.si_move_capital_pp_required = 250 }
 	set_variable = { global.si_move_capital_pp_take = -250 }
-}
-
-trasfer_remove_invalid_states = {
-	if = {
-		limit = {
-			is_in_array = {
-				array = FROM.selected_states_array
-				value = FROM.FROM.id
-			}
-		}
-		remove_from_array = {
-			array = FROM.selected_states_array
-			value = FROM.FROM.id
-		}
-	}
 }
 
 always_volunteers_country = {
@@ -3124,8 +3155,4 @@ on_leave_faction_handle_country = {
 
 on_join_faction_handle_leader = {
 	faction_system_update_country = yes
-}
-
-on_state_control_changed_country = {
-	trasfer_remove_invalid_states = yes
 }

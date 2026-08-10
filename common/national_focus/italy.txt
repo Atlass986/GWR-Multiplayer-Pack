@@ -9191,10 +9191,6 @@ focus_tree = {
 				character = ITA_benito_mussolini
 				ruling_only = yes
 			}
-			power_balance_value = {
-				id = ITA_power_balance
-				value > 0.949
-			}
 		}
 
 		search_filters = {FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_BALANCE_OF_POWER}
