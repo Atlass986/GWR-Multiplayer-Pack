@@ -30,22 +30,60 @@
 #			}
 #		}
 
-DIPLOMACY_WAR_ENABLE_TRIGGER = {
+DIPLOMACY_WARNING_ENABLE_TRIGGER = {
 	if = {
 		limit = {
 			has_game_rule = {
 				rule = gwr_wars
 				option = GWR_RULESET_WARS_DEFAULT
+			}	
+		}
+		if = {
+			limit = { 
+				OR = {
+					is_ai = no 
+					FROM = { 
+						any_country = {
+							is_ai = no
+							OR = {
+								THIS = { is_subject_of = FROM }
+								FROM = { is_subject_of = THIS }
+								THIS = { is_in_faction_with = FROM }
+							}			
+						} 
+					} 
+				}
+			}
+			if = {
+				limit = { date < 1940.02.01 ROOT = { tag = USA } }
+				custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_USA_WAR_SELF
+					always = no
+				}
+			}
+			else_if = {
+				limit = { date < 1939.09.01 check_variable = { ROOT.country_cost > 3 } }
+				custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_SUPER_MAJOR_WAR_SELF
+					always = no
+				}
+			}
+			else_if = {
+				limit = { date < 1938.09.01 check_variable = { ROOT.country_cost > 2 } }
+				custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_MAJOR_WAR_SELF
+					always = no
+				}
+			}
+			else_if = {
+				limit = { date < 1937.09.01 check_variable = { ROOT.country_cost < 1.9 } }
+				custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_MINOR_WAR_SELF
+					always = no
+				}
 			}
 		}
 		if = {
-			limit = { date < 1940.02.01 ROOT = { tag = USA } }
-			custom_trigger_tooltip = {
-				tooltip = GWRMP_EARLY_USA_WAR
-				always = no
-			}
-		}
-		else_if = {
 			limit = { 
 				OR = {
 					any_country = {
@@ -74,7 +112,7 @@ DIPLOMACY_WAR_ENABLE_TRIGGER = {
 					always = no
 				}
 			}
-			else = { always = yes }
+			else = { hidden_trigger = { always = yes } }
 		}
 		else_if = {
 			limit = { 
@@ -98,7 +136,7 @@ DIPLOMACY_WAR_ENABLE_TRIGGER = {
 					always = no
 				}
 			}
-			else = { always = yes }
+			else = { hidden_trigger = { always = yes } }
 		}
 		else_if = {
 			limit = { FROM = { is_ai = no } }
@@ -110,10 +148,186 @@ DIPLOMACY_WAR_ENABLE_TRIGGER = {
 				}
 			}
 		}
-		else = { always = yes }
+		else = { hidden_trigger = { always = yes } }
+		if = {
+			limit = { has_game_rule = { rule = gwr_points option = GWR_RESTRICTIVE_POINTS_DEFAULT } }	
+			if = {
+				limit = { check_variable = { ROOT.faction_points > global.faction_limit } } 
+				custom_trigger_tooltip = {
+					tooltip = GWRMP_CANT_SEND_WARNING_TOO_MANY_POINTS
+					always = no
+				}
+			}	
+		}
 	}
-	
-	else = { always = yes }
+
+}
+
+DIPLOMACY_WAR_ENABLE_TRIGGER = {
+	if = { 
+		limit = { 
+			has_game_rule = {
+				rule = gwr_warnings
+				option = GWR_ALLOW_WARNINGS_DEFAULT
+			} 
+		}
+		
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						is_ai = no 
+						OR = {
+							any_country = {
+								AND = {
+									is_ai = no
+									OR = {
+										is_subject_of = PREV 
+										PREV = { is_subject_of = THIS }
+										is_in_faction_with = PREV
+									}	
+								}
+							} 
+							is_ai = no
+						}
+					}
+				}
+			}
+			
+			custom_trigger_tooltip = {
+				tooltip = GWRMP_USE_WARNING
+				always = no
+			}
+		}
+		else_if = { 
+			limit = { is_ai = yes } 
+			hidden_trigger = {
+				always = yes
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = gwr_wars
+				option = GWR_RULESET_WARS_DEFAULT
+			}	
+		}
+		
+		if = {
+			limit = { 
+				OR = {
+					is_ai = no 
+					FROM = { 
+						any_country = {
+							is_ai = no
+							OR = {
+								THIS = { is_subject_of = FROM }
+								FROM = { is_subject_of = THIS }
+								THIS = { is_in_faction_with = FROM }
+							}			
+						} 
+					} 
+				}
+			}
+			if = {
+				limit = { date < 1940.02.01 ROOT = { tag = USA } }
+				custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_USA_WAR_SELF
+					always = no
+				}
+			}
+			else_if = {
+				limit = { date < 1939.09.01 check_variable = { ROOT.country_cost > 3 } }
+				custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_SUPER_MAJOR_WAR_SELF
+					always = no
+				}
+			}
+			else_if = {
+				limit = { date < 1938.09.01 check_variable = { ROOT.country_cost > 2 } }
+				custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_MAJOR_WAR_SELF
+					always = no
+				}
+			}
+			else_if = {
+				limit = { date < 1937.09.01 check_variable = { ROOT.country_cost < 1.9 } }
+				custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_MINOR_WAR_SELF
+					always = no
+				}
+			}
+		}
+		if = {
+			limit = { 
+				OR = {
+					any_country = {
+						is_ai = no
+						OR = {
+							THIS = { is_subject_of = FROM }
+							FROM = { is_subject_of = THIS }
+							THIS = { is_in_faction_with = FROM }
+						}	
+						check_variable = { THIS.country_cost > 3  }					
+					} 
+					FROM = { check_variable = { THIS.country_cost > 3 } is_ai = no }
+				}
+			}
+			if = {
+				limit = { date < 1940.02.01 FROM = { tag = USA } }
+				custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_USA_WAR
+					always = no
+				}
+			}
+			else_if = {
+				limit = { date < 1939.09.01 }
+					custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_SUPER_MAJOR_WAR
+					always = no
+				}
+			}
+			else = { hidden_trigger = { always = yes } }
+		}
+		else_if = {
+			limit = { 
+				OR = { 
+					any_country = {
+						is_ai = no
+						OR = {
+							THIS = { is_subject_of = FROM }
+							THIS = { is_in_faction_with = FROM }
+							FROM = { is_subject_of = THIS }
+						}	
+						check_variable = { THIS.country_cost > 2 }					
+					} 
+					FROM = { check_variable = { THIS.country_cost > 2 } is_ai = no }
+				}
+			}
+			if = {
+				limit = { date < 1938.09.01 }
+					custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_MAJOR_WAR
+					always = no
+				}
+			}
+			else = { hidden_trigger = { always = yes } }
+		}
+		else_if = {
+			limit = { FROM = { is_ai = no } }
+			if = {
+				limit = { date < 1937.09.01 }
+					custom_trigger_tooltip = {
+					tooltip = GWRMP_EARLY_MINOR_WAR
+					always = no
+				}
+			}
+		}
+		else = { hidden_trigger = { always = yes } }
+	}
+
+	else = { always = no }
 }
 
 # This specifically overrides the rule check as to whether or not you can guarantee other ideologies
@@ -1753,6 +1967,16 @@ DIPLOMACY_LEAVE_FACTION_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
+	else_if = {
+		limit = { has_game_rule = { rule = gwr_warnings option = GWR_ALLOW_WARNINGS_DEFAULT } }	
+		if = { 
+			limit = { OR = { has_idea = warning_30d has_idea = warning_60d } } 
+			custom_trigger_tooltip = {
+				tooltip = GWRMP_CANT_LEAVE_FACTION_WITH_WARNING
+				always = no
+			}
+		}	
+	}
 }
 DIPLOMACY_ASSUME_FACTION_LEADERSHIP_ENABLE_TRIGGER = {
 	if = {
@@ -1780,6 +2004,16 @@ DIPLOMACY_KICK_FROM_FACTION_ENABLE_TRIGGER = {
 			tooltip = RULE_KICK_FROM_FACTION_BLOCKED_TOOLTIP
 			always = no
 		}
+	}
+	else_if = {
+		limit = { has_game_rule = { rule = gwr_warnings option = GWR_ALLOW_WARNINGS_DEFAULT } }	
+		if = { 
+			limit = { OR = { has_idea = warning_30d has_idea = warning_60d } } 
+			custom_trigger_tooltip = {
+				tooltip = GWRMP_CANT_KICK_FACTION_WITH_WARNING
+				always = no
+			}
+		}	
 	}
 }
 DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
@@ -2024,36 +2258,81 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
+	
 }
 DIPLOMACY_JOIN_FACTION_ENABLE_TRIGGER = {
-	if = { 
-		limit = {
-			has_dlc = "Arms Against Tyranny"
-			original_tag = DEN
-			has_country_flag = DEN_is_protectorate_flag
-			is_subject = yes 
-
-		}
-		custom_trigger_tooltip = {
-			tooltip = DENMARK_IS_A_PUPPET_FACTION
-			always = no
-		}
-	}
-}
-DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
-	if = { 
-		limit = {
-			has_dlc = "Arms Against Tyranny"
-			FROM = {
-				original_tag = DEN
-				has_country_flag = DEN_is_protectorate_flag
-				is_subject = yes 
+	if = {
+		limit = { has_game_rule = { rule = gwr_warnings option = GWR_ALLOW_WARNINGS_DEFAULT } }	
+		if = { 
+			limit = { 
+				FROM = { OR = { has_idea = warning_30d has_idea = warning_60d } }
+			} 
+			custom_trigger_tooltip = {
+				tooltip = GWRMP_CANT_JOIN_FACTION_WITH_WARNING
+				always = no
+			}
+		}	
+		if = {
+			limit = { 
+				THIS = { OR = { has_idea = warning_30d has_idea = warning_60d } }
+			} 
+			custom_trigger_tooltip = {
+				tooltip = GWRMP_CANT_JOIN_FACTION_WHILE_WARNING
+				always = no
 			}
 		}
-		custom_trigger_tooltip = {
-			tooltip = DENMARK_IS_A_PUPPET_FACTION
-			always = no
+	}
+	if = {
+		limit = { has_game_rule = { rule = gwr_points option = GWR_RESTRICTIVE_POINTS_DEFAULT } }	
+		ROOT = {
+			set_temp_variable = { new_points = PREV.FROM.faction_points } 
+			add_to_temp_variable = { var = new_points value = ROOT.country_cost }
 		}
+		if = {
+			limit = { check_variable = { var:new_points > global.faction_limit } } 
+			custom_trigger_tooltip = {
+				tooltip = GWRMP_CANT_JOIN_FACTION_TOO_MANY_POINTS
+				always = no
+			}
+		}	
+	}
+	
+}
+DIPLOMACY_OFFER_JOIN_FACTION_ENABLE_TRIGGER = {
+	if = {
+		limit = { has_game_rule = { rule = gwr_warnings option = GWR_ALLOW_WARNINGS_DEFAULT } }	
+		if = { 
+			limit = { 
+				FROM = { OR = { has_idea = warning_30d has_idea = warning_60d } }
+			} 
+			custom_trigger_tooltip = {
+				tooltip = GWRMP_CANT_INVITE_FACTION_WHILE_WARNING
+				always = no
+			}
+		}	
+		if = {
+			limit = { 
+				THIS = { OR = { has_idea = warning_30d has_idea = warning_60d } }
+			} 
+			custom_trigger_tooltip = {
+				tooltip = GWRMP_CANT_INVITE_FACTION_WITH_WARNING
+				always = no
+			}
+		}
+	}
+	if = {
+		limit = { has_game_rule = { rule = gwr_points option = GWR_RESTRICTIVE_POINTS_DEFAULT } }	
+		ROOT = {
+			set_temp_variable = { new_points = ROOT.faction_points } 
+			add_to_temp_variable = { var = new_points value = PREV.FROM.country_cost }
+		}
+		if = {
+			limit = { check_variable = { var:new_points > global.faction_limit } } 
+			custom_trigger_tooltip = {
+				tooltip = GWRMP_CANT_INVITE_FACTION_TOO_MANY_POINTS
+				always = no
+			}
+		}	
 	}
 }
 

@@ -1,11 +1,11 @@
 warning_category = {
     icon = generic_formable_nations
 
-    visible = {
-		is_ai = no always = no
-	}
+    priority = { base = 2000 }
+
+    visible = {	NOT = { has_idea = warning_cooldown } }
 
     allowed = {
-        is_ai = no always = no
+        #is_ai = no 
     } 
 }

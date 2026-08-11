@@ -230,16 +230,74 @@ gwr_guarantees = {
 
 gwr_wars = {
 	name = "GWRMP_WARS_RULE"
-	group = "GWRMP_DIPLO_GROUP"
+	group = "GWRMP_WARS_GROUP"
 
 	default = {
 		name = GWR_RULESET_WARS_DEFAULT
 		text = "GWR_RULESET_DEFAULT"
-		desc = "GWR_RULESET_DEFAULT"
+		desc = "GWR_RULESET_DEFAULT_DESC"
 	}
 	option = {
 		name = GWR_ALLOW_WARS_DEFAULT
 		text = "GWR_ALLOW_DEFAULT"
 		desc = "GWR_ALLOW_DEFAULT_DESC"
+	}
+}
+
+gwr_warnings = {
+	name = "GWRMP_WARNING_RULE"
+	group = "GWRMP_WARS_GROUP"
+
+	default = {
+		name = GWR_ALLOW_WARNINGS_DEFAULT
+		text = "GWR_ALLOW_DEFAULT"
+		desc = "GWR_ALLOW_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_BLOCK_WARNINGS_DEFAULT
+		text = "GWR_BLOCK_DEFAULT"
+		desc = "GWR_BLOCK_DEFAULT_DESC"
+	}
+}
+
+gwr_warnings_wargoals = {
+	name = "GWRMP_WARNING_WARGOAL_RULE"
+	group = "GWRMP_WARS_GROUP"
+
+	default = {
+		name = GWR_ALLOW_AFTER_1940_NO_WARGOAL_DEFAULT
+		text = "GWR_ALLOW_AFTER_1940_DEFAULT"
+		desc = "GWR_ALLOW_AFTER_1940_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_BLOCK_NO_WARGOAL_DEFAULT
+		text = "GWR_BLOCK_DEFAULT"
+		desc = "GWR_BLOCK_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_ALLOW_NO_WARGOAL_DEFAULT
+		text = "GWR_ALLOW_DEFAULT"
+		desc = "GWR_ALLOW_DEFAULT_DESC"
+	}
+}
+
+gwr_points = {
+	name = "GWRMP_POINTS_RULE"
+	group = "GWRMP_POINTS_GROUP"
+
+	default = {
+		name = GWR_RESTRICTIVE_POINTS_DEFAULT
+		text = "GWR_RESTRICTIVE_DEFAULT"
+		desc = "GWR_RESTRICTIVE_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_VISUAL_POINTS_DEFAULT
+		text = "GWR_VISUAL_DEFAULT"
+		desc = "GWR_VISUAL_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_BLOCKED_POINTS_DEFAULT
+		text = "GWR_BLOCK_DEFAULT"
+		desc = "GWR_BLOCK_DEFAULT_DESC"
 	}
 }

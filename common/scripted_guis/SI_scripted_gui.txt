@@ -416,7 +416,7 @@ scripted_gui = {
 					FROM.owner = { 
 						is_subject_of = ROOT 
 						OR = {
-							AND = { is_ai = no PREV = { is_capital = no } }
+							AND = { is_ai = no OR = { PREV = { is_capital = no is_ai = no} is_ai = yes} }
 							is_ai = yes
 						}
 					}

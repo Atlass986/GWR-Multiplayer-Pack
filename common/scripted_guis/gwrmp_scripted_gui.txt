@@ -24,7 +24,20 @@ scripted_gui = {
         context_type = selected_country_context       
         visible = { 
             ROOT = { NOT = { has_tech = nuclear_reactor } is_in_faction = yes }
-            THIS = { NOT = { tag = ROOT } is_ai = no } 
+            THIS = { 
+                NOT = { tag = ROOT } 
+                OR = {
+                    is_ai = no
+                    any_country = {
+                        is_ai = no
+                        OR = {
+                            THIS = { is_subject_of = FROM }
+                            FROM = { is_subject_of = THIS }
+                            THIS = { is_in_faction_with = FROM }
+                        }			
+                    }
+                } 
+			} 
         }
         triggers = {
             faction_points_enemy_text_visible = {
@@ -44,7 +57,20 @@ scripted_gui = {
         context_type = selected_country_context       
         visible = { 
             ROOT = { NOT = { has_tech = nuclear_reactor } NOT = { is_in_faction = yes } }
-            THIS = { NOT = { tag = ROOT } is_ai = no } 
+            THIS = { 
+                NOT = { tag = ROOT } 
+                OR = {
+                    is_ai = no
+                    any_country = {
+                        is_ai = no
+                        OR = {
+                            THIS = { is_subject_of = FROM }
+                            FROM = { is_subject_of = THIS }
+                            THIS = { is_in_faction_with = FROM }
+                        }			
+                    }
+                } 
+			} 
         }
         triggers = {
             faction_points_enemy_text_visible = {
@@ -81,7 +107,20 @@ scripted_gui = {
         context_type = selected_country_context       
         visible = { 
             ROOT = { has_tech = nuclear_reactor is_in_faction = yes }
-            THIS = { NOT = { tag = ROOT } is_ai = no } 
+            THIS = { 
+                NOT = { tag = ROOT } 
+                OR = {
+                    is_ai = no
+                    any_country = {
+                        is_ai = no
+                        OR = {
+                            THIS = { is_subject_of = FROM }
+                            FROM = { is_subject_of = THIS }
+                            THIS = { is_in_faction_with = FROM }
+                        }			
+                    }
+                } 
+			} 
         }
         triggers = {
             faction_points_enemy_text_visible = {
@@ -101,7 +140,20 @@ scripted_gui = {
         context_type = selected_country_context       
         visible = { 
             ROOT = { has_tech = nuclear_reactor NOT = { is_in_faction = yes } }
-            THIS = { NOT = { tag = ROOT } is_ai = no } 
+            THIS = { 
+                NOT = { tag = ROOT } 
+                OR = {
+                    is_ai = no
+                    any_country = {
+                        is_ai = no
+                        OR = {
+                            THIS = { is_subject_of = FROM }
+                            FROM = { is_subject_of = THIS }
+                            THIS = { is_in_faction_with = FROM }
+                        }			
+                    }
+                } 
+			} 
         }
         triggers = {
             faction_points_enemy_text_visible = {

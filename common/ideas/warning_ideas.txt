@@ -1,10 +1,14 @@
 ideas = {
 	hidden_ideas = {
-		warning = {
+		warning_30d = {
             allowed_civil_war = { always = yes }
 			allowed = { always = no }
         }
-        war_cooldown = {
+        warning_60d = {
+            allowed_civil_war = { always = yes }
+			allowed = { always = no }
+        }
+        warning_cooldown = {
             allowed_civil_war = { always = yes }
 			allowed = { always = no }
         }

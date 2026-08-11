@@ -1,37 +1,343 @@
 warning_category = {
-    war_incoming = {
-		activation = { has_idea = warning always = no }
-        available = { NOT = { has_idea = warning } }
-        cancel_trigger = { always = no }
+    war_incoming_30d = {
+		activation = { has_idea = warning_30d }
+        available = { always = no }
+        cancel_trigger = { 
+            OR = { NOT = { has_idea = warning_30d } NOT = { country_exists = THIS.war_with } }
+        }
         icon = mission_icon
-        is_good = no
+        is_good = yes
         days_mission_timeout = 30
-        war_with_on_remove = ROOT.war_with
-        complete_effect = {
-            ROOT = {
-                declare_war_on = {
-                    target = ROOT.war_with
-                    type = annex_everything
+        war_with_on_timeout = THIS.war_with
+        cancel_effect = {
+            custom_effect_tooltip = warning_set_cooldown
+            hidden_effect = {
+                ROOT = { 
+                    remove_ideas = { warning_30d warning_60d }
+                    if = {
+                        limit = { NOT = { has_idea = warning_cooldown } }
+                        add_timed_idea = { idea = warning_cooldown days = 5 }
+                    }
+                    clr_country_flag = warning_sender
+                    clr_country_flag = warning_faction_sender
+                    clr_country_flag = warning_receiver
+                    every_country = {
+                        limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
+                        if = {
+                            limit = { NOT = { has_idea = warning_cooldown }  }
+                            add_timed_idea = { idea = warning_cooldown days = 5 }
+                        }
+                        remove_ideas = { warning_30d warning_60d }
+                        clr_country_flag = warning_sender
+                        clr_country_flag = warning_faction_sender
+                        clr_country_flag = warning_receiver
+                    }
+                }
+                var:ROOT.war_with = { 
+                    remove_ideas = { warning_30d warning_60d } 
+                    if = {
+                        limit = { NOT = { has_idea = warning_cooldown }  }
+                        add_timed_idea = { idea = warning_cooldown days = 5 }
+                    }
+                    clr_country_flag = warning_sender
+                    clr_country_flag = warning_faction_sender
+                    clr_country_flag = warning_receiver
+                    every_country = {
+                        limit = { OR = { is_in_faction_with = ROOT.war_with is_subject_of = ROOT.war_with } }
+                        if = {
+                            limit = { NOT = { has_idea = warning_cooldown }  }
+                            add_timed_idea = { idea = warning_cooldown days = 5 }
+                        }
+                        remove_ideas = { warning_30d warning_60d }
+                        clr_country_flag = warning_sender
+                        clr_country_flag = warning_faction_sender
+                        clr_country_flag = warning_receiver
+                    }
                 }
             }
         }
-    }
-    cancel_warning = {
-        visible = { has_idea = warning has_country_flag = warning_sender always = no }
-        icon = QAT_example
-        complete_effect = {
-            add_political_power = -100
-            add_command_power = -100
-            add_stability = -0.1
-            add_war_support = -0.15
-            remove_ideas = { warning }
-            clear_country_flag = warning_sender
-            ROOT = {
-                var:war_with = { 
-                    remove_ideas = { warning }
-                    clear_country_flag = warning_reciver
+        timeout_effect = {
+            hidden_effect = {
+                ROOT = { 
+                    remove_ideas = { warning_30d warning_60d }
+                    clr_country_flag = warning_sender
+                    clr_country_flag = warning_faction_sender
+                    clr_country_flag = warning_receiver
+                    every_country = {
+                        limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
+                        remove_ideas = { warning_30d warning_60d }
+                        clr_country_flag = warning_sender
+                        clr_country_flag = warning_faction_sender
+                        clr_country_flag = warning_receiver
+                    }
+                }
+                var:ROOT.war_with = { 
+                    remove_ideas = { warning_30d warning_60d } 
+                    clr_country_flag = warning_sender
+                    clr_country_flag = warning_faction_sender
+                    clr_country_flag = warning_receiver
+                    every_country = {
+                        limit = { OR = { is_in_faction_with = ROOT.war_with is_subject_of = ROOT.war_with } }
+                        remove_ideas = { warning_30d warning_60d }
+                        clr_country_flag = warning_sender
+                        clr_country_flag = warning_faction_sender
+                        clr_country_flag = warning_receiver
+                    }
                 }
             }
+            if = { 
+                limit = { has_country_flag = warning_sender }
+                ROOT = {
+                    declare_war_on = {
+                        target = THIS.war_with
+                        type = annex_everything
+                    }
+                    custom_effect_tooltip = GWRMP_WARNING_CALL_TO_WAR
+                    hidden_effect = { 
+                        add_timed_idea = { idea = warning_cooldown days = 30 }
+                        var:ROOT.war_with = {
+                            add_timed_idea = { idea = warning_cooldown days = 120 }
+                            every_other_country = {
+                                limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
+                                add_to_war = { targeted_alliance=PREV enemy = ROOT hostility_reason = asked_to_join }
+                                add_timed_idea = { idea = warning_cooldown days = 120 }
+                            }
+                            ROOT = {
+                                every_other_country = {
+                                    limit = { OR = { is_in_faction_with = ROOT is_subject_of = ROOT } }
+                                    add_to_war = { targeted_alliance=PREV enemy = PREV.PREV hostility_reason = asked_to_join }
+                                    add_timed_idea = { idea = warning_cooldown days = 30 }
+                                }    
+                            }
+                        }    
+                    }      
+                }
+            }
+            else_if = {
+                limit = { has_country_flag = warning_faction_sender }
+                
+                var:ROOT.leader_war_with = {
+                    declare_war_on = {
+                        target = ROOT.war_with
+                        type = annex_everything
+                    }
+                    hidden_effect = {
+                        var:THIS.war_with = {
+                            add_timed_idea = { idea = warning_cooldown days = 120 }
+                            every_other_country = {
+                                limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
+                                add_timed_idea = { idea = warning_cooldown days = 120 }
+                                add_to_war = { targeted_alliance=PREV enemy = PREV.PREV hostility_reason = asked_to_join }
+                            }
+                            ROOT = {
+                                add_timed_idea = { idea = warning_cooldown days = 30 }
+                                every_other_country = {
+                                    limit = { OR = { is_in_faction_with = ROOT is_subject_of = ROOT } }
+                                    add_timed_idea = { idea = warning_cooldown days = 30 }
+                                    add_to_war = { targeted_alliance=PREV enemy = PREV.PREV hostility_reason = asked_to_join }
+                                }    
+                            }
+                        }
+                    }                    
+                }     
+            }
+            else = {
+                var:ROOT.war_with = {
+                    declare_war_on = {
+                        target = ROOT.leader_war_with
+                        type = annex_everything
+                    }
+                    add_timed_idea = { idea = warning_cooldown days = 30 }
+                    hidden_effect = {
+                        every_other_country = {
+                            limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
+                            add_timed_idea = { idea = warning_cooldown days = 30 }
+                            add_to_war = { targeted_alliance=PREV enemy = ROOT hostility_reason = asked_to_join }
+                        }
+                        var:ROOT.leader_war_with = {
+                            add_timed_idea = { idea = warning_cooldown days = 120 }
+                            every_other_country = {
+                                limit = { OR = { is_in_faction_with = ROOT is_subject_of = ROOT } }
+                                add_timed_idea = { idea = warning_cooldown days = 120 }
+                                add_to_war = { targeted_alliance=PREV enemy = PREV.PREV hostility_reason = asked_to_join }
+                            }    
+                        }
+                    }
+                }   
+            }
+        }
+    }
+
+    war_incoming_60d = {
+		activation = { has_idea = warning_60d }
+        available = { always = no }
+        cancel_trigger = { OR = { NOT = { has_idea = warning_60d } NOT = { country_exists = THIS.war_with } } }
+        icon = mission_icon
+        is_good = yes
+        days_mission_timeout = 60
+        war_with_on_timeout = THIS.war_with
+        cancel_effect = {
+            custom_effect_tooltip = warning_set_cooldown
+            hidden_effect = {
+                ROOT = { 
+                    remove_ideas = { warning_30d warning_60d }
+                    add_timed_idea = { idea = warning_cooldown days = 5 }
+                }
+                var:ROOT.war_with = { 
+                    remove_ideas = { warning_30d warning_60d } 
+                    set_truce = { target = PREV days = 60 }
+                    add_timed_idea = { idea = warning_cooldown days = 5 }
+                }
+            }
+        }
+        timeout_effect = {
+            hidden_effect = {
+                ROOT = { 
+                    remove_ideas = { warning_30d warning_60d }
+                    clr_country_flag = warning_sender
+                    clr_country_flag = warning_faction_sender
+                    clr_country_flag = warning_receiver
+                    every_country = {
+                        limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
+                        remove_ideas = { warning_30d warning_60d }
+                        clr_country_flag = warning_sender
+                        clr_country_flag = warning_faction_sender
+                        clr_country_flag = warning_receiver
+                    }
+                }
+                var:ROOT.war_with = { 
+                    remove_ideas = { warning_30d warning_60d } 
+                    clr_country_flag = warning_sender
+                    clr_country_flag = warning_faction_sender
+                    clr_country_flag = warning_receiver
+                    every_country = {
+                        limit = { OR = { is_in_faction_with = ROOT.war_with is_subject_of = ROOT.war_with } }
+                        remove_ideas = { warning_30d warning_60d }
+                        clr_country_flag = warning_sender
+                        clr_country_flag = warning_faction_sender
+                        clr_country_flag = warning_receiver
+                    }
+                }
+            }
+            if = { 
+                limit = { has_country_flag = warning_sender }
+                ROOT = {
+                    declare_war_on = {
+                        target = THIS.war_with
+                        type = annex_everything
+                    }
+                    hidden_effect = { 
+                        add_timed_idea = { idea = warning_cooldown days = 120 }
+                        var:ROOT.war_with = {
+                            add_timed_idea = { idea = warning_cooldown days = 120 }
+                            every_other_country = {
+                                limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
+                                add_to_war = { targeted_alliance=PREV enemy = ROOT hostility_reason = asked_to_join }
+                                add_timed_idea = { idea = warning_cooldown days = 120 }
+                            }
+                            ROOT = {
+                                every_other_country = {
+                                    limit = { OR = { is_in_faction_with = ROOT is_subject_of = ROOT } }
+                                    add_to_war = { targeted_alliance=PREV enemy = PREV.PREV hostility_reason = asked_to_join }
+                                    add_timed_idea = { idea = warning_cooldown days = 120 }
+                                }    
+                            }
+                        }    
+                    }      
+                }
+            }
+            else_if = {
+                limit = { has_country_flag = warning_faction_sender }
+                var:ROOT.leader_war_with = {
+                    declare_war_on = {
+                        target = ROOT.war_with
+                        type = annex_everything
+                    }
+                    hidden_effect = {
+                        var:THIS.war_with = {
+                            every_other_country = {
+                                limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
+                                add_to_war = { targeted_alliance=PREV enemy = PREV.PREV hostility_reason = asked_to_join }
+                            }
+                            ROOT = {
+                                every_other_country = {
+                                    limit = { OR = { is_in_faction_with = ROOT is_subject_of = ROOT } }
+                                    add_to_war = { targeted_alliance=PREV enemy = PREV.PREV hostility_reason = asked_to_join }
+                                }    
+                            }
+                        }
+                    }                    
+                }     
+            }
+            else = {
+                var:ROOT.war_with = {
+                    declare_war_on = {
+                        target = ROOT.leader_war_with
+                        type = annex_everything
+                    }
+                    hidden_effect = {
+                        every_other_country = {
+                            limit = { OR = { is_in_faction_with = PREV is_subject_of = ROOT } }
+                            add_to_war = { targeted_alliance=PREV enemy = ROOT hostility_reason = asked_to_join }
+                        }
+                        var:ROOT.leader_war_with = {
+                            every_other_country = {
+                                limit = { OR = { is_in_faction_with = ROOT is_subject_of = ROOT } }
+                                add_to_war = { targeted_alliance=PREV enemy = PREV.PREV hostility_reason = asked_to_join }
+                            }    
+                        }
+                    }
+                }   
+            }
+        }
+    }
+    
+    cancel_warning = {
+        cost = 50
+        visible = { NOT = { has_war_with = THIS.war_with } has_country_flag = warning_sender OR = { has_idea = warning_30d has_idea = warning_60d } }
+        available = { }
+        complete_effect = {
+            custom_effect_tooltip = warning_set_cooldown
+            hidden_effect = {
+                ROOT = { 
+                    remove_ideas = { warning_30d warning_60d }
+                    add_timed_idea = { idea = warning_cooldown days = 5 }
+                    clr_country_flag = warning_sender
+                    clr_country_flag = warning_faction_sender
+                    clr_country_flag = warning_receiver
+                    every_country = {
+                        limit = { is_in_faction_with = PREV }
+                        add_timed_idea = { idea = warning_cooldown days = 5 }
+                        remove_ideas = { warning_30d warning_60d }
+                        clr_country_flag = warning_sender
+                        clr_country_flag = warning_faction_sender
+                        clr_country_flag = warning_receiver
+                        add_war_support = -0.10
+                    }
+                }
+                var:ROOT.war_with = { 
+                    remove_ideas = { warning_30d warning_60d } 
+                    set_truce = { target = PREV days = 60 }
+                    add_timed_idea = { idea = warning_cooldown days = 5 }
+                    clr_country_flag = warning_sender
+                    clr_country_flag = warning_faction_sender
+                    clr_country_flag = warning_receiver
+                    every_country = {
+                        limit = { is_in_faction_with = ROOT.war_with }
+                        add_timed_idea = { idea = warning_cooldown days = 5 }
+                        remove_ideas = { warning_30d warning_60d }
+                        set_truce = { target = ROOT days = 60 }
+                        every_country = {
+                            limit = { is_in_faction_with = ROOT }
+                            set_truce = { target = PREV days = 60 }
+                        }
+                        clr_country_flag = warning_sender
+                        clr_country_flag = warning_faction_sender
+                        clr_country_flag = warning_receiver
+                    }
+                }
+            }
+            add_war_support = -0.10
         }
     }
 }

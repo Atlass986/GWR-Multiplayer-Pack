@@ -142,7 +142,7 @@ map_fixes = {
 		add_extra_state_shared_building_slots = 5
 		add_building_construction = {
 			type = arms_factory
-			level = 5
+			level = 7
 			instant_build = yes
 		}
 	}
@@ -173,6 +173,39 @@ map_fixes = {
 	ENG = {
 		annex_country = { target = BRM }
 		annex_country = { target = MAL }
+	}
+	PRC = {
+		annex_country = { target = NXM transfer_troops = yes }
+		annex_country = { target = GSM transfer_troops = yes }
+		annex_country = { target = XSM transfer_troops = yes }
+		annex_country = { target = KHM transfer_troops = yes }
+		annex_country = { target = SIK transfer_troops = yes }
+	}
+	every_state = {
+		limit = { is_core_of = XIC }
+		add_extra_state_shared_building_slots = 5
+		add_building_construction = {
+			type = arms_factory
+			level = 3
+			instant_build = yes
+		}
+	}
+	671 = { add_core_of = CHI add_core_of = PRC remove_core_of = VIN }	
+	998 = { add_core_of = CHI add_core_of = PRC remove_core_of = BRM }	
+	990 = { add_core_of = CHI add_core_of = PRC remove_core_of = MPU }	
+	434 = { add_core_of = CHI add_core_of = PRC }	
+	787 = { add_core_of = CHI add_core_of = PRC remove_core_of = KAS remove_core_of = KHL }	
+	441 = { add_core_of = CHI add_core_of = PRC remove_core_of = KAS remove_core_of = KHL }	
+	442 = { add_core_of = CHI add_core_of = PRC remove_core_of = NWF  remove_core_of = KHL }	
+	537 = { add_core_of = SOV }	
+	730 = { add_core_of = CAN }	
+	101 = { add_core_of = CAN }	
+	116 = { remove_core_of = BLZ }	
+	every_state = {
+		limit = { is_core_of = KOR }
+		add_core_of = CHI 
+		add_core_of = PRC 
+		remove_core_of = KOR
 	}
 }
 
@@ -232,6 +265,14 @@ remove_useless_cores = {
     else_if = { limit = { is_core_of = SCO } remove_core_of = SCO }
     else_if = { limit = { is_core_of = VAN } remove_core_of = VAN }
     else_if = { limit = { is_core_of = SAM } remove_core_of = SAM }
+    else_if = { limit = { is_core_of = KUM } remove_core_of = KUM }
+    else_if = { limit = { is_core_of = SIK } remove_core_of = SIK }
+    else_if = { limit = { is_core_of = KHM } remove_core_of = KHM }
+    else_if = { limit = { is_core_of = XSM } remove_core_of = XSM }
+    else_if = { limit = { is_core_of = GSM } remove_core_of = GSM }
+    else_if = { limit = { is_core_of = NXM } remove_core_of = NXM }
+    else_if = { limit = { is_core_of = SIC } remove_core_of = SIC }
+    else_if = { limit = { is_core_of = YUN } remove_core_of = YUN }
 }
 
 add_resources_on_startup = {
