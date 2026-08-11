@@ -129,66 +129,30 @@ map_fixes = {
 	669 = { remove_core_of = NZL }	
 	604 = { remove_core_of = TIB }	
 	CHI = {
-		annex_country = {
-			target = YUN
-			transfer_troops = yes
-		}
-		annex_country = {
-			target = SIC
-			transfer_troops = yes
-		}
+		annex_country = { target = YUN }
+		annex_country = { target = SIC }
 	}
-	752 = {
-		add_extra_state_shared_building_slots = 5
+	606 = {
+		add_victory_points = {
+			province = 1083
+			value = 4
+		}
 		add_building_construction = {
-			type = arms_factory
-			level = 7
+			type = supply_node
+			province = 1083
+			level = 1
 			instant_build = yes
 		}
 	}
-	1041 = {
+	1036 = {
 		add_victory_points = {
-			province = 4925
-			value = 7
-		}
-	}
-	1037 = {
-		add_victory_points = {
-			province = 6999
-			value = 11
-		}
-	}
-	751 = {
-		add_victory_points = {
-			province = 10841
-			value = 2
-		}
-	}
-	325 = {
-		add_victory_points = {
-			province = 1319
-			value = 8
+			province = 4619
+			value = 5
 		}
 	}
 	ENG = {
 		annex_country = { target = BRM }
 		annex_country = { target = MAL }
-	}
-	PRC = {
-		annex_country = { target = NXM transfer_troops = yes }
-		annex_country = { target = GSM transfer_troops = yes }
-		annex_country = { target = XSM transfer_troops = yes }
-		annex_country = { target = KHM transfer_troops = yes }
-		annex_country = { target = SIK transfer_troops = yes }
-	}
-	every_state = {
-		limit = { is_core_of = XIC }
-		add_extra_state_shared_building_slots = 5
-		add_building_construction = {
-			type = arms_factory
-			level = 3
-			instant_build = yes
-		}
 	}
 	671 = { add_core_of = CHI add_core_of = PRC remove_core_of = VIN }	
 	998 = { add_core_of = CHI add_core_of = PRC remove_core_of = BRM }	
@@ -218,61 +182,65 @@ remove_every_guarantee = {
 
 remove_useless_cores = {
     if = { limit = { is_core_of = PRE } remove_core_of = PRE }
-    else_if = { limit = { is_core_of = KSH } remove_core_of = KSH }
-    else_if = { limit = { is_core_of = NAV } remove_core_of = NAV }
-    else_if = { limit = { is_core_of = CHM } remove_core_of = CHM }
-    else_if = { limit = { is_core_of = LAO } remove_core_of = LAO }
-    else_if = { limit = { is_core_of = CAM } remove_core_of = CAM }
-    else_if = { limit = { is_core_of = SNG } remove_core_of = SNG }
-    else_if = { limit = { is_core_of = FSM } remove_core_of = FSM }
-    else_if = { limit = { is_core_of = GUM } remove_core_of = GUM }
-    else_if = { limit = { is_core_of = PLU } remove_core_of = PLU }
-    else_if = { limit = { is_core_of = FIJ } remove_core_of = FIJ }
-    else_if = { limit = { is_core_of = TAH } remove_core_of = TAH }
-    else_if = { limit = { is_core_of = PNG } remove_core_of = PNG }
-    else_if = { limit = { is_core_of = SOL } remove_core_of = SOL }
-    else_if = { limit = { is_core_of = HAW } remove_core_of = HAW }
-    else_if = { limit = { is_core_of = JAM } remove_core_of = JAM }
-    else_if = { limit = { is_core_of = BLZ } remove_core_of = BLZ }
-    else_if = { limit = { is_core_of = RIG } remove_core_of = RIG }
-    else_if = { limit = { is_core_of = YUC } remove_core_of = YUC }
-    else_if = { limit = { is_core_of = GRN } remove_core_of = GRN }
-    else_if = { limit = { is_core_of = CAT } remove_core_of = CAT }
-    else_if = { limit = { is_core_of = PUE } remove_core_of = PUE }
-    else_if = { limit = { is_core_of = GDL } remove_core_of = GDL }
-    else_if = { limit = { is_core_of = BAS } remove_core_of = BAS }
-    else_if = { limit = { is_core_of = WPG } remove_core_of = WPG }
-    else_if = { limit = { is_core_of = TML } remove_core_of = TML }
-    else_if = { limit = { is_core_of = QUE } remove_core_of = QUE }
-    else_if = { limit = { is_core_of = EZO } remove_core_of = EZO }
-    else_if = { limit = { is_core_of = PAN } remove_core_of = PAN }
-    else_if = { limit = { is_core_of = TIG } remove_core_of = TIG }
-    else_if = { limit = { is_core_of = QEM } remove_core_of = QEM }
-    else_if = { limit = { is_core_of = BEG } remove_core_of = BEG }
-    else_if = { limit = { is_core_of = GBA } remove_core_of = GBA }
-    else_if = { limit = { is_core_of = FOR } remove_core_of = FOR }
-    else_if = { limit = { is_core_of = ANU } remove_core_of = ANU }
-    else_if = { limit = { is_core_of = GLC } remove_core_of = GLC }
-    else_if = { limit = { is_core_of = OCC } remove_core_of = OCC }
-    else_if = { limit = { is_core_of = BRI } remove_core_of = BRI }
-    else_if = { limit = { is_core_of = COR } remove_core_of = COR }
-    else_if = { limit = { is_core_of = SPM } remove_core_of = SPM }
-    else_if = { limit = { is_core_of = ASY } remove_core_of = ASY }
-    else_if = { limit = { is_core_of = LBV } remove_core_of = LBV }
-    else_if = { limit = { is_core_of = BOU } remove_core_of = BOU }
-    else_if = { limit = { is_core_of = WLS } remove_core_of = WLS }
-    else_if = { limit = { is_core_of = NIR } remove_core_of = NIR }
-    else_if = { limit = { is_core_of = SCO } remove_core_of = SCO }
-    else_if = { limit = { is_core_of = VAN } remove_core_of = VAN }
-    else_if = { limit = { is_core_of = SAM } remove_core_of = SAM }
-    else_if = { limit = { is_core_of = KUM } remove_core_of = KUM }
-    else_if = { limit = { is_core_of = SIK } remove_core_of = SIK }
-    else_if = { limit = { is_core_of = KHM } remove_core_of = KHM }
-    else_if = { limit = { is_core_of = XSM } remove_core_of = XSM }
-    else_if = { limit = { is_core_of = GSM } remove_core_of = GSM }
-    else_if = { limit = { is_core_of = NXM } remove_core_of = NXM }
-    else_if = { limit = { is_core_of = SIC } remove_core_of = SIC }
-    else_if = { limit = { is_core_of = YUN } remove_core_of = YUN }
+    if = { limit = { is_core_of = KSH } remove_core_of = KSH }
+    if = { limit = { is_core_of = NAV } remove_core_of = NAV }
+    if = { limit = { is_core_of = CHM } remove_core_of = CHM }
+    if = { limit = { is_core_of = LAO } remove_core_of = LAO }
+    if = { limit = { is_core_of = CAM } remove_core_of = CAM }
+    if = { limit = { is_core_of = SNG } remove_core_of = SNG }
+    if = { limit = { is_core_of = FSM } remove_core_of = FSM }
+    if = { limit = { is_core_of = GUM } remove_core_of = GUM }
+    if = { limit = { is_core_of = PLU } remove_core_of = PLU }
+    if = { limit = { is_core_of = FIJ } remove_core_of = FIJ }
+    if = { limit = { is_core_of = TAH } remove_core_of = TAH }
+    if = { limit = { is_core_of = PNG } remove_core_of = PNG }
+    if = { limit = { is_core_of = SOL } remove_core_of = SOL }
+    if = { limit = { is_core_of = HAW } remove_core_of = HAW }
+    if = { limit = { is_core_of = JAM } remove_core_of = JAM }
+    if = { limit = { is_core_of = BLZ } remove_core_of = BLZ }
+    if = { limit = { is_core_of = RIG } remove_core_of = RIG }
+    if = { limit = { is_core_of = YUC } remove_core_of = YUC }
+    if = { limit = { is_core_of = GRN } remove_core_of = GRN }
+    if = { limit = { is_core_of = CAT } remove_core_of = CAT }
+    if = { limit = { is_core_of = PUE } remove_core_of = PUE }
+    if = { limit = { is_core_of = GDL } remove_core_of = GDL }
+    if = { limit = { is_core_of = BAS } remove_core_of = BAS }
+    if = { limit = { is_core_of = WPG } remove_core_of = WPG }
+    if = { limit = { is_core_of = TML } remove_core_of = TML }
+    if = { limit = { is_core_of = QUE } remove_core_of = QUE }
+    if = { limit = { is_core_of = EZO } remove_core_of = EZO }
+    if = { limit = { is_core_of = PAN } remove_core_of = PAN }
+    if = { limit = { is_core_of = TIG } remove_core_of = TIG }
+    if = { limit = { is_core_of = QEM } remove_core_of = QEM }
+    if = { limit = { is_core_of = BEG } remove_core_of = BEG }
+    if = { limit = { is_core_of = GBA } remove_core_of = GBA }
+    if = { limit = { is_core_of = FOR } remove_core_of = FOR }
+    if = { limit = { is_core_of = ANU } remove_core_of = ANU }
+    if = { limit = { is_core_of = GLC } remove_core_of = GLC }
+    if = { limit = { is_core_of = OCC } remove_core_of = OCC }
+    if = { limit = { is_core_of = BRI } remove_core_of = BRI }
+    if = { limit = { is_core_of = COR } remove_core_of = COR }
+    if = { limit = { is_core_of = SPM } remove_core_of = SPM }
+    if = { limit = { is_core_of = ASY } remove_core_of = ASY }
+    if = { limit = { is_core_of = LBV } remove_core_of = LBV }
+    if = { limit = { is_core_of = BOU } remove_core_of = BOU }
+    if = { limit = { is_core_of = WLS } remove_core_of = WLS }
+    if = { limit = { is_core_of = NIR } remove_core_of = NIR }
+    if = { limit = { is_core_of = SCO } remove_core_of = SCO }
+    if = { limit = { is_core_of = VAN } remove_core_of = VAN }
+    if = { limit = { is_core_of = SAM } remove_core_of = SAM }
+    #if = { limit = { is_core_of = KUM } remove_core_of = KUM }
+    #if = { limit = { is_core_of = SIK } remove_core_of = SIK }
+    #if = { limit = { is_core_of = KHM } remove_core_of = KHM }
+    #if = { limit = { is_core_of = XSM } remove_core_of = XSM }
+    #if = { limit = { is_core_of = GSM } remove_core_of = GSM }
+    #if = { limit = { is_core_of = NXM } remove_core_of = NXM }
+    if = { limit = { is_core_of = SIC } remove_core_of = SIC }
+    if = { limit = { is_core_of = YUN } remove_core_of = YUN }
+    if = { limit = { is_core_of = YAK } remove_core_of = YAK }
+    if = { limit = { is_core_of = FER } remove_core_of = FER }
+    if = { limit = { is_core_of = VLA } remove_core_of = VLA }
+    if = { limit = { is_core_of = CKK } remove_core_of = CKK }
 }
 
 add_resources_on_startup = {

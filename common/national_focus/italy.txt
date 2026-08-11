@@ -9179,7 +9179,6 @@ focus_tree = {
 	focus = {
 		id = ITA_capo_supremo
 		icon = GFX_focus_ITA_capo_supremo
-		prerequisite = { focus = ITA_towards_a_greater_italy }
 		prerequisite = { focus = ITA_devotion }
 		mutually_exclusive = { focus = ITA_heroes_of_the_nation }
 		x = -2

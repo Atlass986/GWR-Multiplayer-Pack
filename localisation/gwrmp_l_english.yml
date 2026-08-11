@@ -214,6 +214,8 @@ GWRMP_CANT_JOIN_FACTION_WHILE_WARNING:"§RCan't join faction, when we have sent 
 GWRMP_CANT_INVITE_FACTION_TOO_MANY_POINTS:"§RCan't invite to a faction, this would exceed faction points limit§!"
 GWRMP_CANT_JOIN_FACTION_TOO_MANY_POINTS:"§RCan't join faction, this would exceed faction points limit§!"
 GWRMP_CANT_SEND_WARNING_TOO_MANY_POINTS:"§RCan't send warning to them, becouse we exceed faction limit§!"
+GWRMP_CANT_SEND_WARNING_WITHOUT_WARGOAL:"We need §Ywargoal§!!"
+GWRMP_CANT_SEND_WARNING_WITHOUT_WARGOAL_BEFORE_1940:"We need §Ywargoal§! before §Y01.01.1940§!"
 
 
 # AFRICA

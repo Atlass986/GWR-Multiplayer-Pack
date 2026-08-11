@@ -160,6 +160,54 @@ DIPLOMACY_WARNING_ENABLE_TRIGGER = {
 			}	
 		}
 	}
+	if = {
+		limit = { has_game_rule = { rule = gwr_warnings_wargoals option = GWR_BLOCK_NO_WARGOAL_DEFAULT } }
+		custom_trigger_tooltip = {
+			tooltip = GWRMP_CANT_SEND_WARNING_WITHOUT_WARGOAL
+			OR = {
+				ROOT = { has_wargoal_against = PREV }	
+				THIS = {
+					any_other_country = {
+						OR = { 
+							PREV = { is_in_faction_with = PREV }
+							AND = {
+								PREV = { is_subject = yes }
+								ROOT = { has_wargoal_against = PREV.PREV.overlord }
+							}
+						}
+						ROOT = { has_wargoal_against = PREV }	
+					} 
+				}
+			}
+		}
+	}
+	if = {
+		limit = { has_game_rule = { rule = gwr_warnings_wargoals option = GWR_ALLOW_AFTER_1940_NO_WARGOAL_DEFAULT } }
+		custom_trigger_tooltip = {
+			tooltip = GWRMP_CANT_SEND_WARNING_WITHOUT_WARGOAL_BEFORE_1940
+			OR = { 
+				date > 1940.01.01
+				AND = {
+					date < 1940.01.01
+					OR = {
+						ROOT = { has_wargoal_against = PREV }	
+						THIS = {
+							any_other_country = {
+								OR = { 
+									PREV = { is_in_faction_with = PREV }
+									AND = {
+										PREV = { is_subject = yes }
+										ROOT = { has_wargoal_against = PREV.PREV.overlord }
+									}
+								}
+								ROOT = { has_wargoal_against = PREV }	
+							} 
+						}
+					}
+				}
+			}			
+		}
+	}
 
 }
 

@@ -317,7 +317,7 @@ warning_category = {
                 }
                 var:ROOT.war_with = { 
                     remove_ideas = { warning_30d warning_60d } 
-                    set_truce = { target = PREV days = 60 }
+                    set_truce = { target = ROOT days = 60 }
                     add_timed_idea = { idea = warning_cooldown days = 5 }
                     clr_country_flag = warning_sender
                     clr_country_flag = warning_faction_sender
