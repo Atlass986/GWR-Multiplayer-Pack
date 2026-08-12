@@ -14,7 +14,7 @@ scripted_diplomatic_actions = {
 							}	
 						}
 					} 
-					is_ai = yes
+					is_ai = no
 				}
 			} 
 			ROOT = { OR = { is_faction_leader = yes AND = { is_in_faction = no NOT = { is_subject = yes } } } NOT = { has_idea = warning_30d } NOT = { has_idea = warning_60d } }

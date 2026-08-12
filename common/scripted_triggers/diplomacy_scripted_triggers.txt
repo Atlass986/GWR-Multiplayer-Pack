@@ -2099,6 +2099,41 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
+	FROM = { 
+		OR = {
+			is_ai = no 
+			AND = {
+				is_subject = yes
+				FROM.overlord = { is_ai = no }
+			}
+			AND = {
+				is_ai = yes
+				NOT = {
+					any_other_country = {
+						has_war_with = FROM 
+						is_ai = no					
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { date < 1939.01.01 }
+		FROM = { 
+			has_volunteers_amount_from = { tag = PREV count < 4 }
+			any_other_country = {
+				OR = {
+					AND = {
+						is_in_faction_with = FROM	
+						has_volunteers_amount_from = { tag = ROOT count < 1 }
+					}
+					is_in_faction = no
+				}
+				
+			}
+		}	
+	}
+	
 }
 
 game_weight_can_add_fascist = {

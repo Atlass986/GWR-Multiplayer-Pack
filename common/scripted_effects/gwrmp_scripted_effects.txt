@@ -3008,6 +3008,12 @@ set_si = {
 	set_variable = { global.si_ask_resources_pp_take = -5 }
 	set_variable = { global.si_move_capital_pp_required = 250 }
 	set_variable = { global.si_move_capital_pp_take = -250 }
+	set_variable = { global.gwrmp_max_volunteers_minor_1936 = 0 }
+	set_variable = { global.gwrmp_max_volunteers_minor_1936 = 2 }
+	set_variable = { global.gwrmp_max_volunteers_major_1936 = 3 }
+	set_variable = { global.gwrmp_max_volunteers_major_1939 = 8 }
+	set_variable = { global.gwrmp_max_volunteers_air_1936 = 4 }
+	set_variable = { global.gwrmp_max_volunteers_air_1939 = 9 }
 }
 
 always_volunteers_country = {
