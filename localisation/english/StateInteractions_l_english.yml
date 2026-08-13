@@ -12,14 +12,11 @@
 
  SI_state_ask_resources_button:0 "Ask for resource rights to §Y[FROM.GetName]§![FROM.owner.GetFlag] ([?global.si_ask_resources_pp_required] £GFX_pol_power )\n--------------------\n§YAdditional requirements§!\n- §Y[FROM.GetName]§! is §RNOT§! owned by you\n- §Y[FROM.GetName]§! is §RNOT§! having resource rights given to someone else\n- §Y[FROM.OWNER.GetName]§!§Y[FROM.OWNER.GetFlag]§! is §RNOT§! at war with You\n--------------------\nCooldown: §Y[?global.si_ask_resources_cooldown_days]§! days (§gOther interactions§!)"
 
-
  SI_state_transfer_menu_button:0 "Toggle §YState transfer§! menu"
 
  SI_major_demands_idea:0 "Major interaction"
  SI_minor_demands_idea:0 "Minor interaction"
  SI_else_demands_idea:0 "Other interaction"
- SI_AI_reluctance_idea:0 "Reluctance"
- SI_puppet_establishment_idea:0 "Puppet Government Stabilisation"
 
  SI_interaction_debug_button:0 "Debug\n--------------------\nToggle debugging mode."
 
@@ -68,43 +65,6 @@
  sievent.10.a:0 "What a pity!"
  sievent.10.desc:0 "Offer declined!"
 
- SI_STATE_TRANSFER_RULES:0 "State Transfer Rules"
- SI_AI_BEHAVIOUR_RULES:0 "AI Behaviour"
- SI_AI_REJECT_RULES:0 "AI Reject Behaviour"
- SI_CORE_COMPLIANCE_RULES:0 "Core Compliance Requirement"
- SI_COASTAL_CLAIM_RULES:0 "Coastal Claim Rules"
- SI_GENERAL_GROUP:0 "State Interactions Rules"
-
- SI_RULE_STATE_TRANSFER_DEFAULT:0 "Default (SP)"
- SI_RULE_STATE_TRANSFER_DEFAULT_DESC:0 "State transfer works without limitations."
- SI_RULE_STATE_TRANSFER_MP:0 "Multiplayer"
- SI_RULE_STATE_TRANSFER_MP_DESC:0 "State transfer works only for own and subject's states."
- SI_RULE_STATE_TRANSFER_DISABLED:0 "Disabled"
- SI_RULE_STATE_TRANSFER_DISABLED_DESC:0 "State transfer tool will be disabled."
-
- SI_RULE_AI_BEHAVIOUR_DEFAULT:0 "Default (Off)"
- SI_RULE_AI_BEHAVIOUR_DEFAULT_DESC:0 "AI will not demand states and/or vassalisation."
- SI_RULE_AI_ALLOWED_RULE:0 "Allowed"
- SI_RULE_AI_ALLOWED_RULE_DESC:0 "AI will demand states and/or vassalisation."
-
- SI_AI_REJECT_DEFAULT:0 "Default"
- SI_AI_REJECT_DEFAULT_DESC:0 "AI will reject demands and answer to rejections with default chances."
- SI_AI_REJECT_INCREASED_FOR_PLAYERS:0 "Increased for players"
- SI_AI_REJECT_INCREASED_FOR_PLAYERS_DESC:0 "AI will have increased chance of rejecting players demands and retaliation against players rejection.\n§YFor those, who enjoy aggressive conquests.§!"
- SI_AI_REJECT_DECREASED_FOR_PLAYERS:0 "Decreased for players"
- SI_AI_REJECT_DECREASED_FOR_PLAYERS_DESC:0 "AI will have a decreased chance of rejecting players demands and retaliation against players rejection."
-
- SI_CORE_REQUIRED_DEFAULT:0 "Default (80%)"
- SI_CORE_REQUIRED_DEFAULT_DESC:0 "Required Compliance for coring will be set to 80%."
- SI_CORE_REQUIRED_90:0 "90% Compliance"
- SI_CORE_REQUIRED_90_DESC:0 "Required Compliance for coring will be set to 90%."
- SI_CORE_REQUIRED_70:0 "70% Compliance"
- SI_CORE_REQUIRED_70_DESC:0 "Required Compliance for coring will be set to 70%."
- SI_CORE_REQUIRED_60:0 "60% Compliance"
- SI_CORE_REQUIRED_60_DESC:0 "Required Compliance for coring will be set to 60%."
- SI_CORE_REQUIRED_50:0 "50% Compliance"
- SI_CORE_REQUIRED_50_DESC:0 "Required Compliance for coring will be set to 50%."
-
  SI_COASTAL_CLAIM_DEFAULT:0 "Default (Allowed)"
  SI_COASTAL_CLAIM_DEFAULT_DESC:0 "You will be able to claim any coastal state as long as you have a coastal state yourself."
  SI_COASTAL_CLAIM_DISABLED:0 "Limited"
@@ -116,30 +76,13 @@
  SI_vassalisation_demanded_threat:0 "Demanded Vassalisation"
 
  SI_state_transfer_title:0 "[FROM.owner.GetFlag] [FROM.GetName]"
- SI_state_mark_button:0 "Mark State ([?global.si_mark_state_pp_required] £GFX_pol_power )"
+ SI_state_mark_button:0 "Mark State"
  SI_state_unmark_button:0 "§RUnmark State§!"
 
  SI_transfer_mark_state_tt:0 "Mark selected state."
  SI_transfer_unmark_state_tt:0 "Unmark selected state."
- SI_transfer_mark_all_tt:0 "Mark all states with same owner."
  SI_transfer_unmark_all_tt:0 "Unmark all states."
  SI_transfer_state_tt:0 "Transfer selected state(s)."
- SI_transfer_core_tt:0 "Core selected state(s) to selected owner's."
-
- SI_state_transfer_gamerule_sp:0 "Singleplayer"
- SI_state_transfer_gamerule_mp:0 "Multiplayer"
- SI_state_transfer_gamerule_none:0 "Disabled"
- SI_ai_behaviour_gamerule_no:0 "Disabled"
- SI_ai_behaviour_gamerule_yes:0 "Enabled"
- SI_ai_rejection_gamerule_default:0 "Default"
- SI_ai_rejection_gamerule_increase:0 "Increased for Players"
- SI_ai_rejection_gamerule_decrease:0 "Decreased for Players"
- SI_core_compliance_gamerule_80:0 "80%"
- SI_core_compliance_gamerule_90:0 "90%"
- SI_core_compliance_gamerule_70:0 "70%"
- SI_core_compliance_gamerule_60:0 "60%"
- SI_core_compliance_gamerule_50:0 "50%"
- SI_coastal_claim_gamerule_yes:0 "Enabled"
- SI_coastal_claim_gamerule_no:0 "Limited"
-
-#\n£GFX_demand_Int_texticon §YRequest Integration§! (350 £GFX_pol_power 100 £GFX_command_power )
+ GWRMP_SI_select_resources_tt:0 "Specialize resources You ask for from another nation."
+ GWRMP_SI_resource_no_tt:0 "Asking for this resource: §RDisabled§!\nClick to §GEnable§!"
+ GWRMP_SI_resource_yes_tt:0 "Asking for this resource: §GEnabled§!\nClick to §RDisable§!"

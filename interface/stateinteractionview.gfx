@@ -62,4 +62,30 @@ spriteTypes = {
 		textureFile = "gfx/interface/generic_box_smallest_0.dds"
 	}
 
+	spriteType = {
+		name = "GFX_SI_resources_strip"
+		textureFile = "gfx/interface/SI_resources_strip.dds"
+		noOfFrames = 8
+	}
+
+	spriteType = {
+		name = "GFX_SI_resource_transfer_menu"
+		textureFile = "gfx/interface/ResourceTransferMenuButton.dds"
+	}
+
+	spriteType = {
+		name = "GFX_SI_resources_strip_cancel"
+		textureFile = "gfx/interface/SI_resources_strip_cancel.dds"
+		noOfFrames = 8
+	}
+
+	spriteType = {
+		name = "GFX_SI_resource_divider"
+		textureFile = "gfx/interface/SI_resource_divider.dds"
+	}
+
+	spriteType = {
+		name = "GFX_SI_interaction_bg"
+		textureFile = "gfx/interface/sr_interaction_view.dds"
+	}
 }

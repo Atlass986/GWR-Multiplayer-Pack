@@ -204,7 +204,62 @@ country_event = { # X asks for resource rights
 	option = {
 		name = sievent.8.a		
 		ROOT = {
-			give_resource_rights = { receiver = FROM state = var:FROM.requested_resource_@ROOT }
+			if = { 
+				limit = { 
+					FROM = { has_country_flag = GWRMP_SI_OIL } 
+					NOT = { any_other_country = { has_resources_rights = { state = var:FROM.requested_resource_state resources = { oil } } } }
+					var:FROM.requested_resource_state = { oil > 0 }
+				}
+				give_resource_rights = { receiver = FROM state = var:FROM.requested_resource_state resources = { oil } }
+			}
+			if = { 
+				limit = { 
+					FROM = { has_country_flag = GWRMP_SI_ALUMINUM }
+					NOT = { any_other_country = { has_resources_rights = { state = var:FROM.requested_resource_state resources = { aluminium } } } }
+					var:FROM.requested_resource_state = { aluminium > 0 }
+				}
+				give_resource_rights = { receiver = FROM state = var:FROM.requested_resource_state resources = { aluminium } }
+			}
+			if = { 
+				limit = { 
+					FROM = { has_country_flag = GWRMP_SI_RUBBER } 
+					NOT = { any_other_country = { has_resources_rights = { state = var:FROM.requested_resource_state resources = { rubber } } } }
+					var:FROM.requested_resource_state = { rubber > 0 }
+				}
+				give_resource_rights = { receiver = FROM state = var:FROM.requested_resource_state resources = { rubber } }
+			}
+			if = { 
+				limit = { 
+					FROM = { has_country_flag = GWRMP_SI_TUNGSTEN }
+					NOT = { any_other_country = { has_resources_rights = { state = var:FROM.requested_resource_state resources = { tungsten } } } }
+					var:FROM.requested_resource_state = { tungsten > 0 }
+				}
+				give_resource_rights = { receiver = FROM state = var:FROM.requested_resource_state resources = { tungsten } }
+			}
+			if = { 
+				limit = { 
+					FROM = { has_country_flag = GWRMP_SI_STEEL }
+					NOT = { any_other_country = { has_resources_rights = { state = var:FROM.requested_resource_state resources = { steel } } } }
+					var:FROM.requested_resource_state = { steel > 0 }
+				}
+				give_resource_rights = { receiver = FROM state = var:FROM.requested_resource_state resources = { steel } }
+			}
+			if = { 
+				limit = { 
+					FROM = { has_country_flag = GWRMP_SI_CHROMIUM }
+					NOT = { any_other_country = { has_resources_rights = { state = var:FROM.requested_resource_state resources = { chromium } } } }
+					var:FROM.requested_resource_state = { chromium > 0 }
+				}
+				give_resource_rights = { receiver = FROM state = var:FROM.requested_resource_state resources = { chromium } }
+			}
+			if = { 
+				limit = {
+					FROM = { has_country_flag = GWRMP_SI_COAL }
+					NOT = { any_other_country = { has_resources_rights = { state = var:FROM.requested_resource_state resources = { coal } } } }
+					var:FROM.requested_resource_state = { coal > 0 }
+				}
+				give_resource_rights = { receiver = FROM state = var:FROM.requested_resource_state resources = { coal } }
+			}			
 		}
 		hidden_effect = {
 			FROM = {

@@ -172,7 +172,7 @@ scripted_gui = {
 			}
 
 			state_menu_ask_resources_button_click = {
-				set_variable = { ROOT.requested_resource_@FROM.owner = FROM }
+				set_variable = { ROOT.requested_resource_state = FROM }
 				if = {
 					limit = {
 						NOT = { has_global_flag = SI_debug_flag }
@@ -212,15 +212,27 @@ scripted_gui = {
 					array = ROOT.selected_states_array
 					if = { 
 						limit = { is_owned_and_controlled_by = ROOT }
-						ROOT = { add_political_power = var:global.si_demand_state_pp_take  } 
+						#ROOT = { add_political_power = var:global.si_demand_state_pp_take  } 
 						transfer_state_to = FROM.owner
 					}
 				}
 				ROOT = { clear_array = THIS.selected_states_array }
 			}
+			gwrmp_si_select_resources_button_click = {
+				if = {
+					limit = { ROOT = { has_country_flag = gwrmp_si_select_resources_visible } }
+					ROOT = { clr_country_flag = gwrmp_si_select_resources_visible }
+				}
+				else = {
+					ROOT = { set_country_flag = gwrmp_si_select_resources_visible }
+				}
+			}
 		}
 
 		triggers = {
+			sr_resources_entry_container_visible = {
+				has_country_flag = gwrmp_si_select_resources_visible
+			}
 			send_message_diplo_action_button_visible = {
 				ROOT = {
 					NOT = { check_variable = { selected_country_to_message = PREV.PREV.OWNER } }
@@ -369,26 +381,61 @@ scripted_gui = {
 						FROM = { 
 							NOT = { is_owned_by = ROOT } 
 							OR = {
-								steel > 0
-								aluminium > 0
-								rubber > 0
-								oil > 0
-								chromium > 0
-								tungsten > 0
-								coal > 0
+								AND = { 
+									oil > 0 
+									ROOT = { has_country_flag = GWRMP_SI_OIL } 
+									NOT = { FROM.OWNER = { any_other_country = { has_resources_rights = { state = FROM resources = { oil } } } } }
+								}
+								AND = { 
+									aluminium > 0 
+									ROOT = { has_country_flag = GWRMP_SI_ALUMINUM } 
+									NOT = { FROM.OWNER = { any_other_country = { has_resources_rights = { state = FROM resources = { aluminium } } } } } 
+								}
+								AND = { 
+									rubber > 0 
+									ROOT = { has_country_flag = GWRMP_SI_RUBBER } 
+									NOT = { FROM.OWNER = { any_other_country = { has_resources_rights = { state = FROM resources = { rubber } } } } } 
+								}
+								AND = { 
+									tungsten > 0 
+									ROOT = { has_country_flag = GWRMP_SI_TUNGSTEN } 
+									NOT = { FROM.OWNER = { any_other_country = { has_resources_rights = { state = FROM resources = { tungsten } } } } } 
+								}
+								AND = { 
+									steel > 0 
+									ROOT = { has_country_flag = GWRMP_SI_STEEL } 
+									NOT = { FROM.OWNER = { any_other_country = { has_resources_rights = { state = FROM resources = { steel } } } } } 
+								}
+								AND = { 
+									chromium > 0 
+									ROOT = { has_country_flag = GWRMP_SI_CHROMIUM } 
+									NOT = { FROM.OWNER = { any_other_country = { has_resources_rights = { state = FROM resources = { chromium } } } } } 
+								}
+								AND = { 
+									coal > 0 
+									ROOT = { has_country_flag = GWRMP_SI_COAL } 
+									NOT = { FROM.OWNER = { any_other_country = { has_resources_rights = { state = FROM resources = { coal } } } } } 
+								}
 							}
-						}
+						} 
 						FROM.OWNER = { 
 							NOT = { 
 								is_ai = yes
 								tag = GWR
 								has_war_with = ROOT 
-								any_other_country = {
-									has_resources_rights = { state = PREV.PREV }
-								}
+								any_other_country = { has_resources_rights = { state = PREV.PREV } }
 							} 
 						}
 						ROOT = {
+							OR = { 
+								has_country_flag = GWRMP_SI_OIL
+								has_country_flag = GWRMP_SI_ALUMINUM
+								has_country_flag = GWRMP_SI_RUBBER
+								has_country_flag = GWRMP_SI_TUNGSTEN
+								has_country_flag = GWRMP_SI_STEEL
+								has_country_flag = GWRMP_SI_CHROMIUM
+								has_country_flag = GWRMP_SI_COAL
+							} 
 							has_political_power > var:global.si_ask_resources_pp_required
 							NOT = {	has_idea = SI_else_demands_idea	}
 						}
@@ -398,6 +445,7 @@ scripted_gui = {
 
 			state_transfer_mark_button_visible = {
 				NOT = {
+					ROOT = { has_country_flag = gwrmp_si_select_resources_visible }
 					is_in_array = {
 						array = ROOT.selected_states_array
 						value = FROM.id
@@ -405,6 +453,7 @@ scripted_gui = {
 				}
 			}
 			state_transfer_unmark_button_visible = {
+				NOT = { ROOT = { has_country_flag = gwrmp_si_select_resources_visible } }
 				is_in_array = {
 					array = ROOT.selected_states_array
 					value = FROM.id
@@ -441,6 +490,63 @@ scripted_gui = {
 					NOT = { tag = GWR }
 				}
 			}
+		}
+	}
+	state_interactions_select_resources_gui = {
+
+		context_type = selected_state_context
+
+		window_name = "sr_resources_entry_container"
+
+		parent_window_name = "countrystateview"
+
+		visible = {
+			ROOT = { has_country_flag = SI_menu_2_flag has_country_flag = gwrmp_si_select_resources_visible is_ai = no }
+		}
+
+		effects = { 
+			sr_target_res_oil_no_button_click = { ROOT = { set_country_flag = GWRMP_SI_OIL } }
+			sr_target_res_oil_yes_button_click = { ROOT = { clr_country_flag = GWRMP_SI_OIL } }
+
+			sr_target_res_aluminum_no_button_click = { ROOT = { set_country_flag = GWRMP_SI_ALUMINUM } }
+			sr_target_res_aluminum_yes_button_click = { ROOT = { clr_country_flag = GWRMP_SI_ALUMINUM } }
+
+			sr_target_res_rubber_no_button_click = { ROOT = { set_country_flag = GWRMP_SI_RUBBER } }
+			sr_target_res_rubber_yes_button_click = { ROOT = { clr_country_flag = GWRMP_SI_RUBBER } }
+
+			sr_target_res_tungsten_no_button_click = { ROOT = { set_country_flag = GWRMP_SI_TUNGSTEN } }
+			sr_target_res_tungsten_yes_button_click = { ROOT = { clr_country_flag = GWRMP_SI_TUNGSTEN } }
+
+			sr_target_res_steel_no_button_click = { ROOT = { set_country_flag = GWRMP_SI_STEEL } }
+			sr_target_res_steel_yes_button_click = { ROOT = { clr_country_flag = GWRMP_SI_STEEL } }
+
+			sr_target_res_chromium_no_button_click = { ROOT = { set_country_flag = GWRMP_SI_CHROMIUM } }
+			sr_target_res_chromium_yes_button_click = { ROOT = { clr_country_flag = GWRMP_SI_CHROMIUM } }
+
+			sr_target_res_coal_no_button_click = { ROOT = { set_country_flag = GWRMP_SI_COAL } }
+			sr_target_res_coal_yes_button_click = { ROOT = { clr_country_flag = GWRMP_SI_COAL } }
+		}
+		triggers = { 
+			sr_target_res_oil_no_button_visible = { ROOT = { NOT = { has_country_flag = GWRMP_SI_OIL } } }
+			sr_target_res_oil_yes_button_visible = { ROOT = { has_country_flag = GWRMP_SI_OIL } }
+
+			sr_target_res_aluminum_no_button_visible = { ROOT = { NOT = { has_country_flag = GWRMP_SI_ALUMINUM } } }
+			sr_target_res_aluminum_yes_button_visible = { ROOT = { has_country_flag = GWRMP_SI_ALUMINUM } }
+
+			sr_target_res_rubber_no_button_visible = { ROOT = { NOT = { has_country_flag = GWRMP_SI_RUBBER } } }
+			sr_target_res_rubber_yes_button_visible = { ROOT = { has_country_flag = GWRMP_SI_RUBBER } }
+
+			sr_target_res_tungsten_no_button_visible = { ROOT = { NOT = { has_country_flag = GWRMP_SI_TUNGSTEN } } }
+			sr_target_res_tungsten_yes_button_visible = { ROOT = { has_country_flag = GWRMP_SI_TUNGSTEN } }
+
+			sr_target_res_steel_no_button_visible = { ROOT = { NOT = { has_country_flag = GWRMP_SI_STEEL } } }
+			sr_target_res_steel_yes_button_visible = { ROOT = { has_country_flag = GWRMP_SI_STEEL } }
+
+			sr_target_res_chromium_no_button_visible = { ROOT = { NOT = { has_country_flag = GWRMP_SI_CHROMIUM } } }
+			sr_target_res_chromium_yes_button_visible = { ROOT = { has_country_flag = GWRMP_SI_CHROMIUM } }
+
+			sr_target_res_coal_no_button_visible = { ROOT = { NOT = { has_country_flag = GWRMP_SI_COAL } } }
+			sr_target_res_coal_yes_button_visible = { ROOT = { has_country_flag = GWRMP_SI_COAL } }
 		}
 	}
 }

@@ -24,7 +24,7 @@ guiTypes = {
 
 			# size = { width = 34 height = 34 }
 
-			scale = 0.9
+			scale = 0.8
 
 			position = { x = 124 y = 12 }
 
@@ -125,7 +125,7 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "state_menu_ask_resources_button"
-			position = { x = 243 y = -11 }
+			position = { x = 332 y = -11 }
 			quadTextureSprite = "GFX_state_buttons_strip"
 			frame = 5
 			pdx_tooltip = "SI_state_ask_resources_button"
@@ -189,12 +189,140 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "state_transfer_transfer_button"
-			position = { x = 335 y = -11 }
+			position = { x = 243 y = -11 }
 			spriteType = "GFX_SI_state_transfer_transfer_button"
 			font = "hoi_18mbs"
 			shortcut = "ctrl+t"
 			clicksound = click_action
 			pdx_tooltip = "SI_transfer_state_tt"
+		}
+		buttonType = {
+			name = "gwrmp_si_select_resources_button"
+			position = { x = 367 y = -10 }
+			spriteType = "GFX_SI_resource_transfer_menu"
+			font = "hoi_18mbs"
+			clicksound = click_action
+			pdx_tooltip = "GWRMP_SI_select_resources_tt"
+			scale = 0.75
+		}
+	}
+	containerWindowType = {
+		name = "sr_resources_entry_container"
+		position = { x = 292 y = -24 }
+		size = { width = 337 height = 50 }
+		buttonType = {
+			name = "sr_target_res_oil_yes_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_SI_resources_strip"
+			frame = 1
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_yes_tt"
+		}
+		buttonType = {
+			name = "sr_target_res_oil_no_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_SI_resources_strip_cancel"
+			frame = 1
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_no_tt"
+		}
+		buttonType = {
+			name = "sr_target_res_aluminum_yes_button"
+			position = { x = 20 y = 0 }
+			spriteType = "GFX_SI_resources_strip"
+			frame = 2
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_yes_tt"
+		}
+		buttonType = {
+			name = "sr_target_res_aluminum_no_button"
+			position = { x = 20 y = 0 }
+			spriteType = "GFX_SI_resources_strip_cancel"
+			frame = 2
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_no_tt"
+		}
+		buttonType = {
+			name = "sr_target_res_rubber_yes_button"
+			position = { x = 40 y = 0 }
+			spriteType = "GFX_SI_resources_strip"
+			frame = 3
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_yes_tt"
+		}
+		buttonType = {
+			name = "sr_target_res_rubber_no_button"
+			position = { x = 40 y = 0 }
+			spriteType = "GFX_SI_resources_strip_cancel"
+			frame = 3
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_no_tt"
+		}
+
+		buttonType = {
+			name = "sr_target_res_tungsten_yes_button"
+			position = { x = 60 y = 0 }
+			spriteType = "GFX_SI_resources_strip"
+			frame = 4
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_yes_tt"
+		}
+		buttonType = {
+			name = "sr_target_res_tungsten_no_button"
+			position = { x = 60 y = 0 }
+			spriteType = "GFX_SI_resources_strip_cancel"
+			frame = 4
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_no_tt"
+		}
+
+		buttonType = {
+			name = "sr_target_res_steel_yes_button"
+			position = { x = 80 y = 0 }
+			spriteType = "GFX_SI_resources_strip"
+			frame = 5
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_yes_tt"
+		}
+		buttonType = {
+			name = "sr_target_res_steel_no_button"
+			position = { x = 80 y = 0 }
+			spriteType = "GFX_SI_resources_strip_cancel"
+			frame = 5
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_no_tt"
+		}
+		buttonType = {
+			name = "sr_target_res_chromium_yes_button"
+			position = { x = 100 y = 0 }
+			spriteType = "GFX_SI_resources_strip"
+			frame = 6
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_yes_tt"
+		}
+		buttonType = {
+			name = "sr_target_res_chromium_no_button"
+			position = { x = 100 y = 0 }
+			spriteType = "GFX_SI_resources_strip_cancel"
+			frame = 6
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_no_tt"
+		}
+		buttonType = {
+			name = "sr_target_res_coal_yes_button"
+			position = { x = 120 y = 0 }
+			spriteType = GFX_SI_resources_strip
+			frame = 7
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_yes_tt"
+		}
+		buttonType = {
+			name = "sr_target_res_coal_no_button"
+			position = { x = 120 y = 0 }
+			spriteType = "GFX_SI_resources_strip_cancel"
+			frame = 7
+			scale = 1
+			pdx_tooltip = "GWRMP_SI_resource_no_tt"
 		}
 	}
 }

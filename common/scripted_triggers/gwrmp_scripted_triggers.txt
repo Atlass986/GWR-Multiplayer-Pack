@@ -1,10 +1,20 @@
 # GWR Multiplayer Pack gwrmp_scripted_triggers.txt
 
+is_huge_major = {
+    AND = { num_of_factories > 650 }
+}
+
+
+is_mega_major = {
+    AND = { num_of_factories < 650 num_of_factories > 400 }
+}
+
 is_super_major = {
     OR = {
-        tag = SOV
-        tag = GER
-        tag = USA
+        AND = { num_of_factories < 400 num_of_factories > 275 }
+        AND = { tag = SOV date < 1940.01.01 }
+        AND = { tag = GER  date < 1940.01.01 }
+        AND = { tag = USA date < 1940.01.01 }
         AND = {tag = POL AND = {is_poland_super_major = yes}}
         AND = {tag = ENG AND = {is_england_super_major = yes}}
         AND = {is_part_of_mercosur = yes is_mercosur_major=yes is_mercosur_super_major = yes}
@@ -13,10 +23,10 @@ is_super_major = {
 
 is_major_country = {
     OR = {
-        AND = {num_of_factories > 185}
+        AND = { num_of_factories < 275 num_of_factories > 185 }
         AND = {tag = JAP AND = {is_japan_regional = no}}
-        tag = FRA
-        tag = ITA
+        AND = { tag = FRA date < 1940.01.01 }
+        AND = { tag = ITA date < 1940.01.01 }
         AND = {tag = ENG AND = {is_england_super_major = no}}
         AND = {tag = POL AND = {is_poland_major = yes is_poland_super_major = no}}
         AND = {tag = RAJ AND = {is_imperial_puppet = no is_raj_major = yes}}
@@ -29,7 +39,7 @@ is_major_country = {
 
 is_regional = {
     OR = {
-        AND = {num_of_factories < 184 num_of_factories > 57}
+        AND = {num_of_factories < 185 num_of_factories > 57}
         AND = {tag = JAP AND = {is_japan_regional = yes}}
         AND = {is_part_of_china = yes AND = {is_china_regional = yes is_china_major = no}}
         AND = {tag = POL AND = {is_poland_major = no is_poland_super_major = no}}
@@ -46,6 +56,7 @@ is_regional = {
 is_minor = {
     NOT = {
         OR = {
+            is_mega_major = yes
             is_super_major = yes
             is_major_country = yes
             is_regional = yes
@@ -112,7 +123,6 @@ is_poland_major = {
     OR = {
         has_completed_focus = POL_unite_west_slavia 
         has_completed_focus = POL_merge_internal_governments
-        has_completed_focus = POL_romanov
         has_completed_focus = POL_greater_commonwealth
     }
 }
@@ -346,13 +356,7 @@ is_part_of_scandinavia = {
 
 is_part_of_imperial_sphere = {
     OR = {
-        TAG = MAL
-        TAG = BRM
         TAG = RAJ
-        TAG = OMA
-        TAG = KUW
-        TAG = JOR
-        TAG = PAL
         TAG = SAF
         TAG = CAN
         TAG = AST
