@@ -3013,7 +3013,7 @@ set_si = {
 	set_variable = { global.si_claim_state_cp_required = 15 }
 	set_variable = { global.si_claim_state_cp_take = -15 }
 	set_variable = { global.si_ask_resources_pp_required = 5 }
-	set_variable = { global.si_ask_resources_pp_take = -5 }
+	set_variable = { global.si_ask_resources_pp_take = -3 }
 	set_variable = { global.si_move_capital_pp_required = 250 }
 	set_variable = { global.si_move_capital_pp_take = -250 }
 	set_variable = { global.gwrmp_max_volunteers_minor_1936 = 0 }
@@ -3023,6 +3023,8 @@ set_si = {
 	set_variable = { global.gwrmp_max_volunteers_air_1936 = 4 }
 	set_variable = { global.gwrmp_max_volunteers_air_1939 = 9 }
 }
+
+
 
 set_gwrmp_si_country = {
 	THIS = {
@@ -3034,6 +3036,23 @@ set_gwrmp_si_country = {
 		set_country_flag = GWRMP_SI_CHROMIUM
 		set_country_flag = GWRMP_SI_COAL
 	}
+}
+
+gwrmp_china_warlord_whitepeace_front = {
+	if = { limit = { has_war_with = CHI } white_peace = CHI }
+	if = { limit = { has_war_with = SHX } white_peace = SHX }
+	if = { limit = { has_war_with = XSM } white_peace = XSM }
+	if = { limit = { has_war_with = GDC } white_peace = GDC }
+	if = { limit = { has_war_with = KHM } white_peace = KHM }
+	if = { limit = { has_war_with = KUM } white_peace = KUM }
+	if = { limit = { has_war_with = NXM } white_peace = NXM }
+	if = { limit = { has_war_with = GSM } white_peace = GSM }
+	if = { limit = { has_war_with = SND } white_peace = SND }
+	if = { limit = { has_war_with = HBC } white_peace = HBC }
+	if = { limit = { has_war_with = XIC } white_peace = XIC }
+	if = { limit = { has_war_with = GXC } white_peace = GXC }
+	if = { limit = { has_war_with = SIK } white_peace = SIK }
+	if = { limit = { has_war_with = PRC } white_peace = PRC }
 }
 
 always_volunteers_country = {

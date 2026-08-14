@@ -1,15 +1,15 @@
-add_namespace = sievent
+add_namespace = GWRMP_SI_event
 
 country_event = { # TEST
-	id = sievent.1
+	id = GWRMP_SI_event.1
 	timeout_days = 14
 	is_triggered_only = yes
 
-	title = sievent.1.t
-	desc = sievent.1.desc
+	title = GWRMP_SI_event.1.t
+	desc = GWRMP_SI_event.1.desc
 
 	option = {
-		name = sievent.1.a
+		name = GWRMP_SI_event.1.a
 	}
 }
 
@@ -17,26 +17,26 @@ country_event = { # X demand state event
 	# ROOT -- Reciever
 	# FROM -- Sender
 
-	id = sievent.2
+	id = GWRMP_SI_event.2
 	timeout_days = 7
 	is_triggered_only = yes
 
-	title = sievent.2.t
-	desc = sievent.2.desc
+	title = GWRMP_SI_event.2.t
+	desc = GWRMP_SI_event.2.desc
 
 	option = { # Give up
-		name = sievent.2.a
+		name = GWRMP_SI_event.2.a
 		var:FROM.requested_state_@ROOT = { transfer_state_to = FROM }
 		hidden_effect = {
 			FROM = { clear_variable = FROM.requested_state_@FROM }
 		}
-		news_event = { id = sievent.6  hours = 12 random_hours = 12 }
+		news_event = { id = GWRMP_SI_event.6  hours = 12 random_hours = 12 }
 	}
 	option = { # Its ours.
-		name = sievent.2.b
+		name = GWRMP_SI_event.2.b
 		FROM = {
 			country_event = {
-				id = sievent.3
+				id = GWRMP_SI_event.3
 				days = 1
 				random_days = 6
 			}
@@ -48,22 +48,22 @@ country_event = { # X isnt giving up state
 	# ROOT -- Reciever
 	# FROM -- Sender
 
-	id = sievent.3
+	id = GWRMP_SI_event.3
 	timeout_days = 7
 	is_triggered_only = yes
 
-	title = sievent.3.t
-	desc = sievent.3.desc
+	title = GWRMP_SI_event.3.t
+	desc = GWRMP_SI_event.3.desc
 
 	option = { # Ok then
-		name = sievent.3.a
+		name = GWRMP_SI_event.3.a
 		add_stability = -0.05
 		add_political_power = -50
 
 		hidden_effect = { clear_variable = ROOT.requested_state_@FROM	}
 	}
 	option = { # WAR!
-		name = sievent.3.b
+		name = GWRMP_SI_event.3.b
 		if = {
 			limit = {
 				var:ROOT.requested_state_@FROM = {
@@ -85,15 +85,15 @@ country_event = { # X request vassalisation
 	# ROOT -- Reciever
 	# FROM -- Sender
 
-	id = sievent.4
+	id = GWRMP_SI_event.4
 	timeout_days = 7
 	is_triggered_only = yes
 
-	title = sievent.4.t
-	desc = sievent.4.desc
+	title = GWRMP_SI_event.4.t
+	desc = GWRMP_SI_event.4.desc
 
 	option = { # We cannot aford a war.
-		name = sievent.4.a
+		name = GWRMP_SI_event.4.a
 		FROM = {
 			set_autonomy = {
 				target = ROOT
@@ -102,14 +102,14 @@ country_event = { # X request vassalisation
 
 		}
 
-		news_event = { id = sievent.7 hours = 12 random_hours = 12 }
+		news_event = { id = GWRMP_SI_event.7 hours = 12 random_hours = 12 }
 	}
 
 	option = { # Come and take us!
-		name = sievent.4.b
+		name = GWRMP_SI_event.4.b
 		FROM = {
 			country_event = {
-				id = sievent.5
+				id = GWRMP_SI_event.5
 				days = 1
 				random_days = 6
 			}
@@ -121,15 +121,15 @@ country_event = { # X denies vassalisation
 	# ROOT -- Reciever
 	# FROM -- Sender
 
-	id = sievent.5
+	id = GWRMP_SI_event.5
 	timeout_days = 7
 	is_triggered_only = yes
 
-	title = sievent.5.t
-	desc = sievent.5.desc
+	title = GWRMP_SI_event.5.t
+	desc = GWRMP_SI_event.5.desc
 
 	option = { # We cannot aford a war.
-		name = sievent.5.a
+		name = GWRMP_SI_event.5.a
 		add_political_power = -50
 		add_stability = -0.05
 
@@ -139,7 +139,7 @@ country_event = { # X denies vassalisation
 	}
 
 	option = { # We'll take them anyway!
-		name = sievent.5.b
+		name = GWRMP_SI_event.5.b
 		add_war_support = 0.05
 		# create_wargoal = {
 		# 	target = FROM
@@ -156,34 +156,34 @@ country_event = { # X denies vassalisation
 ##################################################
 
 news_event = { # X gives up a state
-	id = sievent.6
+	id = GWRMP_SI_event.6
 
 	timeout_days = 7
 	is_triggered_only = yes
 	major = yes
 
-	title = sievent.6.t
-	desc = sievent.6.desc
+	title = GWRMP_SI_event.6.t
+	desc = GWRMP_SI_event.6.desc
 
 	option = { # Ok
-		name = sievent.6.a
+		name = GWRMP_SI_event.6.a
 		ai_chance = {
 			base = 1
 		}
 	}
 }
 news_event = { # X gets vassalised
-	id = sievent.7
+	id = GWRMP_SI_event.7
 
 	timeout_days = 7
 	is_triggered_only = yes
 	major = yes
 
-	title = sievent.7.t
-	desc = sievent.7.desc
+	title = GWRMP_SI_event.7.t
+	desc = GWRMP_SI_event.7.desc
 
 	option = { # Ok
-		name = sievent.7.a
+		name = GWRMP_SI_event.7.a
 		ai_chance = {
 			base = 1
 		}
@@ -194,15 +194,15 @@ country_event = { # X asks for resource rights
 	# ROOT -- Reciever
 	# FROM -- Sender
 
-	id = sievent.8
+	id = GWRMP_SI_event.8
 	timeout_days = 28
 	is_triggered_only = yes
 	picture = GFX_report_event_generic_read_write
-	title = sievent.8.t
-	desc = sievent.8.desc
+	title = GWRMP_SI_event.8.t
+	desc = GWRMP_SI_event.8.desc
 
 	option = {
-		name = sievent.8.a		
+		name = GWRMP_SI_event.8.a		
 		ROOT = {
 			if = { 
 				limit = { 
@@ -264,16 +264,16 @@ country_event = { # X asks for resource rights
 		hidden_effect = {
 			FROM = {
 				clear_variable = FROM.requested_resource_@FROM
-				country_event = { id = sievent.9 hours = 1 }
+				country_event = { id = GWRMP_SI_event.9 hours = 1 }
 			}
 		}
 	}
 	option = {
-		name = sievent.8.b	
+		name = GWRMP_SI_event.8.b	
 		hidden_effect = {
 			FROM = {
 				clear_variable = FROM.requested_resource_@FROM
-				country_event = { id = sievent.10 hours = 1 }
+				country_event = { id = GWRMP_SI_event.10 hours = 1 }
 			}
 		}
 	}
@@ -284,16 +284,16 @@ country_event = { # X accepts
 	# ROOT -- Reciever
 	# FROM -- Sender
 
-	id = sievent.9
-	desc = sievent.9.desc
+	id = GWRMP_SI_event.9
+	desc = GWRMP_SI_event.9.desc
 	timeout_days = 3
 	is_triggered_only = yes
 	picture = GFX_report_event_sanation_revolt
-	title = sievent.9.t
+	title = GWRMP_SI_event.9.t
 
 
 	option = {
-		name = sievent.9.a		
+		name = GWRMP_SI_event.9.a		
 	}
 }
 
@@ -301,14 +301,14 @@ country_event = { # X declines
 	# ROOT -- Reciever
 	# FROM -- Sender
 
-	id = sievent.10
-	desc = sievent.10.desc
+	id = GWRMP_SI_event.10
+	desc = GWRMP_SI_event.10.desc
 	timeout_days = 3
 	is_triggered_only = yes
 	picture = GFX_report_event_second_vienna_award_pact
-	title = sievent.10.t
+	title = GWRMP_SI_event.10.t
 
 	option = {
-		name = sievent.10.a		
+		name = GWRMP_SI_event.10.a		
 	}
 }

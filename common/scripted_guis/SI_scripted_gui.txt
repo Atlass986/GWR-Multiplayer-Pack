@@ -95,7 +95,7 @@ scripted_gui = {
 				}
 				FROM = {
 					set_state_flag = {
-						flag = SI_state_demand_subject_flag
+						flag = GWRMP_SI_state_demand_subject_flag
 						days = 21
 					}
 				}
@@ -288,7 +288,7 @@ scripted_gui = {
 									}
 								}
 							}
-							NOT = { has_state_flag = SI_state_demand_subject_flag }
+							NOT = { has_state_flag = GWRMP_SI_state_demand_subject_flag }
 						}
 					}
 				}
@@ -549,4 +549,13 @@ scripted_gui = {
 			sr_target_res_coal_yes_button_visible = { ROOT = { has_country_flag = GWRMP_SI_COAL } }
 		}
 	}
+	gwrmp_warning_messagebox = {
+		context_type = player_context
+		window_name = "gwrmp_warning_messagebox"
+		visible = { has_country_flag = GWRMP_WARNING_MESSAGEBOX_VISIBLE }
+		effects = {
+			gwrmp_warning_ok_button_click = { clr_country_flag = GWRMP_WARNING_MESSAGEBOX_VISIBLE }
+		}
+	}
+	
 }

@@ -12,9 +12,9 @@ guiTypes = {
 
 			scale = 0.88
 
-			quadTextureSprite = "GFX_SI_state_menu_button"
+			quadTextureSprite = "GFX_GWRMP_SI_state_menu_button"
 
-			pdx_tooltip = "SI_stateview_button"
+			pdx_tooltip = "GWRMP_SI_stateview_button"
 
 			shortcut = "ctrl+shift+s"
 		}
@@ -53,7 +53,7 @@ guiTypes = {
 		background = {
 			name = "Background"
 
-			spriteType = "GFX_SI_state_menu4"
+			spriteType = "GFX_GWRMP_SI_state_menu4"
 		}
 
 		
@@ -68,13 +68,13 @@ guiTypes = {
 
 			position = { x = 424 y = 9 }
 
-			quadTextureSprite = "GFX_SI_state_transfer_button"
+			quadTextureSprite = "GFX_GWRMP_SI_state_transfer_button"
 
 			shortcut = "ctrl+shift+t"
 
 			scale = 1
 
-			pdx_tooltip = "SI_state_transfer_menu_button"
+			pdx_tooltip = "GWRMP_SI_state_transfer_menu_button"
 		}
 	}
 	containerWindowType = {
@@ -93,42 +93,42 @@ guiTypes = {
 			position = { x = -50 y = -5 }
 			maxWidth = 520
 			font = "hoi_20bs"
-			text = "SI_state_transfer_title"
+			text = "GWRMP_SI_state_transfer_title"
 		}
 		buttonType = {
 			name = "state_menu_demand_state_button"
 			position = { x = 63 y = -11 }
 			quadTextureSprite = "GFX_state_buttons_strip"
 			frame = 2
-			pdx_tooltip = "SI_state_demand_button"
+			pdx_tooltip = "GWRMP_GWRMP_SI_state_demand_button"
 		}
 		buttonType = {
 			name = "state_menu_demand_vsl_button"
 			position = { x = 108 y = -11 }
 			quadTextureSprite = "GFX_state_buttons_strip"
 			frame = 3
-			pdx_tooltip = "SI_state_vsl_button"
+			pdx_tooltip = "GWRMP_SI_state_vsl_button"
 		}
 		buttonType = {
 			name = "state_menu_claim_state_button"
 			position = { x = 153 y = -11 }
 			quadTextureSprite = "GFX_state_buttons_strip"
 			frame = 4
-			pdx_tooltip = "SI_state_claim_button"
+			pdx_tooltip = "GWRMP_SI_state_claim_button"
 		}
 		buttonType = {
 			name = "state_menu_move_capital_button"
 			position = { x = 198 y = -11 }
 			quadTextureSprite = "GFX_state_buttons_strip"
 			frame = 6
-			pdx_tooltip = "SI_state_move_cap_button"
+			pdx_tooltip = "GWRMP_SI_state_move_cap_button"
 		}
 		buttonType = {
 			name = "state_menu_ask_resources_button"
 			position = { x = 332 y = -11 }
 			quadTextureSprite = "GFX_state_buttons_strip"
 			frame = 5
-			pdx_tooltip = "SI_state_ask_resources_button"
+			pdx_tooltip = "GWRMP_SI_state_ask_resources_button"
 		}
 		buttonType = {
 			name = "send_message_diplo_action_button"
@@ -162,7 +162,7 @@ guiTypes = {
 			quadTextureSprite = "GFX_sort_button_140x29"
 			frame = 1
 			font = "hoi_18mbs"
-			text = "SI_state_mark_button"
+			text = "GWRMP_SI_state_mark_button"
 			shortcut = "ctrl+z"
 			clicksound = click_action
 			pdx_tooltip = "SI_transfer_mark_state_tt"
@@ -173,7 +173,7 @@ guiTypes = {
 			quadTextureSprite = "GFX_sort_button_140x29"
 			frame = 2
 			font = "hoi_18mbs"
-			text = "SI_state_unmark_button"
+			text = "GWRMP_SI_state_unmark_button"
 			shortcut = "ctrl+z"
 			clicksound = click_action
 			pdx_tooltip = "SI_transfer_unmark_state_tt"
@@ -181,7 +181,7 @@ guiTypes = {
 		buttonType = {
 			name = "state_transfer_unmark_all_button"
 			position = { x = 290 y = -11 }
-			spriteType = "GFX_SI_state_transfer_deselect_all_button"
+			spriteType = "GFX_GWRMP_SI_state_transfer_deselect_all_button"
 			font = "hoi_18mbs"
 			shortcut = "ctrl+x"
 			clicksound = click_action
@@ -190,7 +190,7 @@ guiTypes = {
 		buttonType = {
 			name = "state_transfer_transfer_button"
 			position = { x = 243 y = -11 }
-			spriteType = "GFX_SI_state_transfer_transfer_button"
+			spriteType = "GFX_GWRMP_SI_state_transfer_transfer_button"
 			font = "hoi_18mbs"
 			shortcut = "ctrl+t"
 			clicksound = click_action
@@ -323,6 +323,35 @@ guiTypes = {
 			frame = 7
 			scale = 1
 			pdx_tooltip = "GWRMP_SI_resource_no_tt"
+		}
+	}
+	containerWindowType = {
+		name = "gwrmp_warning_messagebox"
+		position = { x = -264 y = -300 }
+		orientation = center
+		origo = center
+		IconType = {
+			name = "gwrmp_warning_background"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_two_row_container"
+			scale = 3
+		}
+		instantTextBoxType = {
+			name = "gwrmp_warning_title"
+			position = { x = 0 y = 25 }
+			font = "hoi_24header"
+			format = center
+			text = "GWRMP_WARNING_TITLE"
+			maxWidth = 528
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "gwrmp_warning_ok_button"
+			position = { x = 203 y = 120 }
+			quadTextureSprite = "GFX_button_123x34"
+			buttonText = "OK"
+			buttonFont = "hoi_18mbs"
 		}
 	}
 }

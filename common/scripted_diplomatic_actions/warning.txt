@@ -16,6 +16,7 @@ scripted_diplomatic_actions = {
 					} 
 					is_ai = no
 				}
+				NOT = { tag = GWR }
 			} 
 			ROOT = { OR = { is_faction_leader = yes AND = { is_in_faction = no NOT = { is_subject = yes } } } NOT = { has_idea = warning_30d } NOT = { has_idea = warning_60d } }
 			NOT = { any_country = { has_war_with = PREV } }
@@ -82,12 +83,20 @@ scripted_diplomatic_actions = {
 
 		complete_effect = {
 			THIS = {
+				if = { 
+					limit = { is_ai = no }
+					set_country_flag = GWRMP_WARNING_MESSAGEBOX_VISIBLE
+				}
 				every_country = {
 					limit = { is_in_faction_with = PREV }
 					add_timed_idea = { idea = warning_30d days = 35 } 
 					set_country_flag = warning_receiver
 					set_variable = { war_with = ROOT }
 					set_variable = { leader_war_with = PREV }
+					if = { 
+						limit = { is_ai = no }
+						set_country_flag = GWRMP_WARNING_MESSAGEBOX_VISIBLE
+					}
 				}
 				add_timed_idea = { idea = warning_30d days = 35 }  
 				set_country_flag = warning_receiver
@@ -112,11 +121,6 @@ scripted_diplomatic_actions = {
 		reject_effect = {}
 
 		send_description = warning_desc
-		receive_description = warning_receive_desc
-		accept_title = warning_accept_title
-		accept_description = warning_accept_desc
-		reject_title = warning_reject_title
-		reject_description = warning_reject_desc
 
 		ai_acceptance = {
 			condition = { base = 0 }
@@ -141,6 +145,7 @@ scripted_diplomatic_actions = {
 					} 
 					is_ai = no
 				}
+				NOT = { tag = GWR }
 			} 
 			ROOT = { OR = { is_faction_leader = yes AND = { is_in_faction = no NOT = { is_subject = yes } } } NOT = { has_idea = warning_30d } NOT = { has_idea = warning_60d } }
 			any_country = { has_war_with = PREV }
@@ -207,12 +212,20 @@ scripted_diplomatic_actions = {
 
 		complete_effect = {
 			THIS = {
+				if = { 
+					limit = { is_ai = no }
+					set_country_flag = GWRMP_WARNING_MESSAGEBOX_VISIBLE
+				}
 				every_country = {
 					limit = { is_in_faction_with = PREV }
 					add_timed_idea = { idea = warning_30d days = 35 } 
 					set_country_flag = warning_receiver
 					set_variable = { war_with = ROOT }
 					set_variable = { leader_war_with = PREV }
+					if = { 
+						limit = { is_ai = no }
+						set_country_flag = GWRMP_WARNING_MESSAGEBOX_VISIBLE
+					}
 				}
 				add_timed_idea = { idea = warning_30d days = 35 }  
 				set_country_flag = warning_receiver
@@ -237,11 +250,6 @@ scripted_diplomatic_actions = {
 		reject_effect = {}
 
 		send_description = warning_desc
-		receive_description = warning_receive_desc
-		accept_title = warning_accept_title
-		accept_description = warning_accept_desc
-		reject_title = warning_reject_title
-		reject_description = warning_reject_desc
 
 		ai_acceptance = {
 			condition = { base = 0 }

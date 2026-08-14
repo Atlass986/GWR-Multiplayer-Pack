@@ -115,12 +115,12 @@ warning_category = {
             }
             else_if = {
                 limit = { has_country_flag = warning_faction_sender }
-                
                 var:ROOT.leader_war_with = {
                     declare_war_on = {
                         target = ROOT.war_with
                         type = annex_everything
                     }
+                    custom_effect_tooltip = GWRMP_WARNING_CALL_TO_WAR
                     hidden_effect = {
                         var:THIS.war_with = {
                             add_timed_idea = { idea = warning_cooldown days = 120 }
@@ -147,8 +147,9 @@ warning_category = {
                         target = ROOT.leader_war_with
                         type = annex_everything
                     }
-                    add_timed_idea = { idea = warning_cooldown days = 30 }
+                    custom_effect_tooltip = GWRMP_WARNING_CALL_TO_WAR
                     hidden_effect = {
+                        add_timed_idea = { idea = warning_cooldown days = 30 }
                         every_other_country = {
                             limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
                             add_timed_idea = { idea = warning_cooldown days = 30 }
