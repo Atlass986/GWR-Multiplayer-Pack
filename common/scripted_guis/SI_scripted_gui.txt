@@ -89,7 +89,7 @@ scripted_gui = {
 				set_variable = { ROOT.requested_state_@FROM.owner = FROM }
 				FROM.owner = {
 					country_event = {
-						id = sievent.2
+						id = GWRMP_SI_event.2
 						hours = 1
 					}
 				}
@@ -116,8 +116,8 @@ scripted_gui = {
 			state_menu_demand_vsl_button_click = {
 				FROM.OWNER = {
 					country_event = {
-						id = sievent.4
-						hours = 1
+						id = GWRMP_SI_event.4
+						hours = 4
 					}
 				}
 				
@@ -186,7 +186,7 @@ scripted_gui = {
 					}
 				}
 				FROM.OWNER = {
-					country_event = { id = sievent.8 hours = 1 }
+					country_event = { id = GWRMP_SI_event.8 hours = 1 }
 				}
 			}
 
@@ -211,7 +211,7 @@ scripted_gui = {
 				for_each_scope_loop = {
 					array = ROOT.selected_states_array
 					if = { 
-						limit = { is_owned_and_controlled_by = ROOT }
+						limit = { OR = { is_owned_and_controlled_by = ROOT THIS.owner = { is_subject_of = ROOT } } }
 						#ROOT = { add_political_power = var:global.si_demand_state_pp_take  } 
 						transfer_state_to = FROM.owner
 					}

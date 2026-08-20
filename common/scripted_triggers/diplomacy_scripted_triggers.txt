@@ -375,7 +375,7 @@ DIPLOMACY_WAR_ENABLE_TRIGGER = {
 		else = { hidden_trigger = { always = yes } }
 	}
 
-	else = { always = no }
+	else = { always = yes }
 }
 
 # This specifically overrides the rule check as to whether or not you can guarantee other ideologies

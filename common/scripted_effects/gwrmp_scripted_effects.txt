@@ -169,7 +169,7 @@ map_fixes = {
 		limit = { is_core_of = KOR }
 		add_core_of = CHI 
 		add_core_of = PRC 
-		remove_core_of = KOR
+		#remove_core_of = KOR
 	}
 }
 
