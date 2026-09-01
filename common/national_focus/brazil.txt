@@ -5114,6 +5114,9 @@ focus_tree = {
 		completion_reward = {
 			set_cosmetic_tag = BRA_united_states_of_south_america_cos_tag
 			custom_effect_tooltip = BRA_united_states_of_south_america_tt
+			add_timed_idea = {
+				idea = unstable_government_1 days = 1825 
+			}
 		}	
 	}
 
@@ -6721,6 +6724,9 @@ focus_tree = {
 				}
 				add_core_of = ROOT
 			}
+			add_timed_idea = {
+				idea = unstable_government_1 days = 1825 
+			}
 		}
 	}
 
@@ -7907,6 +7913,9 @@ focus_tree = {
 		completion_reward = {
 			set_cosmetic_tag = BRA_america_do_sul
 			custom_effect_tooltip = BRA_unify_south_america_tt
+			add_timed_idea = {
+				idea = unstable_government_1 days = 1825 
+			}
 		}
 	}
 }

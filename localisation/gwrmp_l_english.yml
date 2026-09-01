@@ -355,6 +355,9 @@ GWRMP_SI_event.10.t:0 "§2[FROM.GetNameDefCap]§! declines!"
 GWRMP_SI_event.10.a:0 "What a pity!"
 GWRMP_SI_event.10.desc:0 "Offer declined!"
 
+### BRA idea
+unstable_government_1:"Unstable Government"
+
 ### FIX THIS SHIT LATER
 spain.25.t: "Dominicana Refuses"
 spain.25.d: "Our diplomats have returned from Santo Domingo empty-handed. The government of the Dominican Republic has firmly rejected our proposal, declaring that the nation's sovereignty is not for sale at any price. Despite our efforts and generous offers, Dominican officials remain determined to preserve their independence. Any further attempts to bring the country under Spanish influence may now require methods beyond diplomacy."

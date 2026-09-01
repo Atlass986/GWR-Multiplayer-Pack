@@ -1960,21 +1960,6 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-
-			every_state = {
-				limit = {
-					NOT = {
-						OR = {
-							is_claimed_by = ROOT
-							is_core_of = ROOT
-							is_owned_by = ROOT
-						}
-					}
-					is_core_of = POR
-				}
-				add_claim_by = ROOT
-			}
-
 			if = {
 				limit = {
 					POR = {
@@ -1998,7 +1983,7 @@ focus_tree = {
 				create_wargoal = {
 					type = take_state_focus
 					target = ENG
-					generator = { 118 }
+					generator = { state = 118 }
 					expire = 0
 				}
 			}
@@ -5440,9 +5425,11 @@ focus_tree = {
 		available = {
 		}
 		prerequisite = {
-			focus = SPA_italian_shipbuilding_expertise_focus
 			focus = SPA_demand_portugese
 		}
+		prerequisite = {			focus = SPA_italian_shipbuilding_expertise_focus
+		}
+		
 		x = 0
 		y = 1
 		relative_position_id = SPA_italian_shipbuilding_expertise_focus

@@ -143,9 +143,11 @@ warning_category = {
             }
             else = {
                 var:ROOT.war_with = {
-                    declare_war_on = {
-                        target = ROOT.leader_war_with
-                        type = annex_everything
+                    effect_tooltip = {
+                        declare_war_on = {
+                            target = ROOT.leader_war_with
+                            type = annex_everything
+                        }
                     }
                     custom_effect_tooltip = GWRMP_WARNING_CALL_TO_WAR
                     hidden_effect = {
@@ -272,9 +274,11 @@ warning_category = {
             }
             else = {
                 var:ROOT.war_with = {
-                    declare_war_on = {
-                        target = ROOT.leader_war_with
-                        type = annex_everything
+                    effect_tooltip = {
+                        declare_war_on = {
+                            target = ROOT.leader_war_with
+                            type = annex_everything
+                        }
                     }
                     hidden_effect = {
                         every_other_country = {

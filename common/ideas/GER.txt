@@ -6115,9 +6115,7 @@ ideas = {
 			modifier = {
 				# PP Cost
 				political_power_gain = -0.3
-
 				production_speed_buildings_factor = 0.05
-				fascism_drift = 0.01
 				industrial_capacity_factory = 0.1
 				industrial_capacity_dockyard = 0.1
 			}
@@ -6296,7 +6294,6 @@ ideas = {
 				political_power_gain = -0.3
 
 				war_support_factor = 0.05
-				fascism_drift = 0.2
 				party_popularity_stability_factor= 0.1
 
 				offensive_war_stability_factor = 0.1

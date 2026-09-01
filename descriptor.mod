@@ -1,4 +1,4 @@
-version="2.06"
+version="2.09"
 tags={
 	"Balance"
 	"Fixes"
@@ -7,3 +7,4 @@ tags={
 name="GWR Multiplayer Pack"
 supported_version="1.19.*"
 remote_file_id="3584237906"
+picture="thumbnail.png"

@@ -354,3 +354,6 @@ GWRMP_SI_event.9.desc:0 "Oferta przyjęta!"
 GWRMP_SI_event.10.t:0 "§2[FROM.GetNameDefCap]§! odmawia!"
 GWRMP_SI_event.10.a:0 "Jaka szkoda!"
 GWRMP_SI_event.10.desc:0 "Oferta odrzucona!"
+
+### BRA idea
+unstable_government_1:"Niestabilny Rząd"

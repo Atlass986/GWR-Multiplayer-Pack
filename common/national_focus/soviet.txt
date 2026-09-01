@@ -9181,10 +9181,8 @@ focus_tree = {
 
 		completion_reward = {
 			hidden_effect = {
-				if = {
-					retire_character = SOV_georgy_zhukov
-					retire_character = SOV_konstantin_rokossovsky
-				}
+				retire_character = SOV_georgy_zhukov
+				retire_character = SOV_konstantin_rokossovsky
 			}
 			SOV_opposition_support_medium_increase_effect = yes
 			custom_effect_tooltip = SOV_left_opposition_coup_tt
@@ -17351,6 +17349,16 @@ ai_will_do = {
 				}
 				
 				custom_effect_tooltip = generic_skip_one_line_tt
+				add_dynamic_modifier = {
+					modifier = SOV_capital_of_the_tsars
+				}
+			}
+			137 = { 
+				add_dynamic_modifier = {
+					modifier = SOV_capital_of_the_tsars
+				} 
+			}
+			217 = { 
 				add_dynamic_modifier = {
 					modifier = SOV_capital_of_the_tsars
 				}

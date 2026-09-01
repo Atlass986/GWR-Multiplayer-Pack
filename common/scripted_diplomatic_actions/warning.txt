@@ -218,7 +218,7 @@ scripted_diplomatic_actions = {
 				}
 				every_country = {
 					limit = { is_in_faction_with = PREV }
-					add_timed_idea = { idea = warning_30d days = 35 } 
+					add_timed_idea = { idea = warning_60d days = 65 } 
 					set_country_flag = warning_receiver
 					set_variable = { war_with = ROOT }
 					set_variable = { leader_war_with = PREV }
@@ -227,7 +227,7 @@ scripted_diplomatic_actions = {
 						set_country_flag = GWRMP_WARNING_MESSAGEBOX_VISIBLE
 					}
 				}
-				add_timed_idea = { idea = warning_30d days = 35 }  
+				add_timed_idea = { idea = warning_60d days = 65 }  
 				set_country_flag = warning_receiver
 				set_variable = { war_with = ROOT }
 				set_variable = { leader_war_with = THIS }
@@ -235,12 +235,12 @@ scripted_diplomatic_actions = {
 			ROOT = {
 				every_country = {
 					limit = { is_in_faction_with = ROOT }
-					add_timed_idea = { idea = warning_30d days = 35 } 
+					add_timed_idea = { idea = warning_60d days = 65 } 
 					set_variable = { war_with = PREV.PREV.THIS }
 					set_variable = { leader_war_with = ROOT }
 					set_country_flag = warning_faction_sender
 				}
-				add_timed_idea = { idea = warning_30d days = 35 } 
+				add_timed_idea = { idea = warning_60d days = 65 } 
 				set_country_flag = warning_sender
 				set_variable = { war_with = PREV.THIS }
 				set_variable = { leader_war_with = ROOT }
