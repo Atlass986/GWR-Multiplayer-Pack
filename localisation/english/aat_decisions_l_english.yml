@@ -1,4 +1,24 @@
 ﻿l_english:
+ ## ITA EVENTS
+ italy.18.a: "Prepare Troops"
+ italy.18.d: "Rome has renewed its demand for a joint invasion of Anatolia. Italian diplomats argue that a coordinated campaign would allow our nations to crush resistance swiftly and reshape the region in our favor. Italy insists that the time for hesitation has passed and calls upon its partners to commit their armies to the coming campaign."
+
+ italy.18.t: "Italy insist for Joint Invasion into Anatolya"
+ italy.17.t: "Italy proposes relocation of Yugoslav State "
+ italy.17.a: "Sure"
+ italy.17.d: "The Italian government has put forward a bold proposal concerning the future of Yugoslavia. Rome argues that the Yugoslav state has become increasingly difficult to govern in its current form and proposes relocating its political center under Italian supervision. The plan promises a new order in the Balkans, but its true purpose is to expand Italian influence and secure our strategic interests along the Adriatic."
+
+ italy.17.b: "Nahh , they deadass"
+ ## ITA
+ ITA_give_the_dodecanese_islands_to_greece:0 "Offer Dodecanese To Greece"
+ ITA_give_northern_epirus_to_greece:0 "Cede Northern Epirus To Greece"
+ ITA_partition_of_swiss:0 "Partition Alpine Terretories with Germany"
+ ITA_cede_slovenia_to_germany: "Cede Northern Slovenia To Germany"
+ ITA_take_over_cyprus: "Take over Cyprus"
+ ITA_take_over_suez: "take over Suez"
+ ITA_take_over_giblartar: "Take over Gibraltar"
+ ITA_take_over_malta: "Take over Malta"
+ ITA_teretorial_ambitions_dec_cat: "Mediterranean Ambitions"
 
   #### ICELAND ####
 

@@ -176,7 +176,7 @@ characters = {
 		}
 
 		advisor = {
-			cost = 150
+			cost = 100
 			slot = theorist
 			idea_token = rodolfo_graziani
 			ledger = army
@@ -184,7 +184,6 @@ characters = {
 				ITA_is_italian_tag = yes
 			}
 			available = {
-				has_government = fascism
 			}
 			traits = {
 				grand_battle_plan_expert
@@ -195,14 +194,13 @@ characters = {
 		}
 
 		field_marshal = {
-			traits = { trait_cautious politically_connected offensive_doctrine desert_fox }
-			skill = 2
-			attack_skill = 2
+			traits = { trait_cautious politically_connected offensive_doctrine desert_fox infantry_officer }
+			skill = 3
+			attack_skill = 3
 			defense_skill = 2
 			planning_skill = 2
-			logistics_skill = 1
+			logistics_skill = 3
 			legacy_id = 0
-			visible = { has_government = fascism }
 		}
 	}
 
@@ -267,11 +265,11 @@ characters = {
 		
 		field_marshal = {
 			traits = { old_guard trait_cautious politically_connected defensive_doctrine }
-			skill = 1
-			attack_skill = 1
-			defense_skill = 1
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
 			planning_skill = 1
-			logistics_skill = 1
+			logistics_skill = 2
 			legacy_id = 0
 		}
 	}
@@ -315,7 +313,7 @@ characters = {
 		field_marshal = {
 			traits = { career_officer politically_connected trait_reckless media_personality }
 			skill = 1
-			attack_skill = 1
+			attack_skill = 2
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
@@ -336,7 +334,7 @@ characters = {
 		}
 
 		advisor = {
-			cost = 150
+			cost = 100
 			slot = theorist
 			idea_token = giovanni_messe
 			ledger = army
@@ -346,10 +344,7 @@ characters = {
 			available = {
 				if = {
 					limit = { has_dlc = "By Blood Alone" }
-					OR = {
-						NOT = { has_government = communism }
-						has_completed_focus = ITA_common_ground
-					}
+
 				}
 			}
 			traits = {
@@ -358,7 +353,7 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { armor_officer war_hero }
+			traits = { war_hero hill_fighter }
 			skill = 4
 			attack_skill = 4
 			defense_skill = 3
@@ -384,7 +379,7 @@ characters = {
 				ITA_is_italian_tag = yes
 			}
 			traits = {
-				army_chief_organizational_1 # Was army_chief_maneuver_2 (replaced by Alberto Pariani)
+				army_chief_offensive_2 # Was army_chief_maneuver_2 (replaced by Alberto Pariani)
 			}
 			cost = 50
 			ai_will_do = {
@@ -393,7 +388,7 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { old_guard career_officer trait_cautious organisational_leader }
+			traits = { career_officer trait_cautious organisational_leader }
 			skill = 2
 			attack_skill = 1
 			defense_skill = 1
@@ -542,7 +537,6 @@ characters = {
 				ITA_is_italian_tag = yes
 			}
 			available = {
-				has_government = fascism
 			}
 			traits = {
 				army_infantry_2
@@ -842,14 +836,13 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { old_guard trait_engineer fortress_buster trait_reckless } # Infantry
+			traits = { trait_engineer fortress_buster trait_reckless } # Infantry
 			skill = 2
 			attack_skill = 2
 			defense_skill = 1
 			planning_skill = 2
 			logistics_skill = 2
 			legacy_id = 0
-			visible = { has_government = fascism }
 		}
 	}
 
@@ -1505,10 +1498,9 @@ characters = {
 				ITA_is_italian_tag = yes
 			}
 			available = {
-				has_government = fascism
 			}
 			traits = {
-				air_tactical_bombing_2
+				air_tactical_bombing_3
 			}
 			cost = 100
 			ai_will_do = {
@@ -1536,7 +1528,7 @@ characters = {
 				has_government = fascism
 			}
 			traits = {
-				air_air_combat_training_2
+				air_air_superiority_2
 			}
 			cost = 100
 			ai_will_do = {
@@ -1945,7 +1937,6 @@ characters = {
 				ITA_is_italian_tag = yes
 			}
 			available = {
-				ITA_government_is_somewhat_fascist = yes
 			}
 			traits = {
 				prince_of_terror
@@ -2085,16 +2076,7 @@ characters = {
 				ITA_is_italian_tag = yes
 			}
 			available = {
-				OR = {
-					has_government = fascism
-					has_government = neutrality
-					if = {
-						limit = {
-							has_dlc = "By Blood Alone"
-						}
-						has_completed_focus = ITA_cooperate_with_moderates
-					}
-				}
+
 			}
 			traits = {
 				captain_of_industry
@@ -2128,14 +2110,7 @@ characters = {
 				ITA_is_italian_tag = yes
 			}
 			available = {
-				has_government = fascism
-				NOT = { has_completed_focus = ITA_pact_of_steel }
-				if = {
-					limit = {
-						has_dlc = "By Blood Alone"
-					}
-					NOT = { has_completed_focus = ITA_revoke_the_acerbo_law }
-				}
+
 			}
 			traits = {
 				financial_expert
@@ -2172,7 +2147,6 @@ characters = {
 				ITA_is_italian_tag = yes
 			}
 			available = {
-				ITA_government_is_somewhat_fascist = yes
 			}
 			traits = {
 				silent_workhorse
@@ -2389,8 +2363,7 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					has_completed_focus = ITA_the_carabinieri
-					has_completed_focus = ITA_empower_the_carabinieri
+					has_completed_focus = ITA_common_ground
 					has_completed_focus = ITA_expand_the_royal_guard
 				}
 			}
@@ -2473,7 +2446,7 @@ characters = {
 			legacy_id = 0
 			visible = {
 				OR = {
-					has_completed_focus = ITA_italian_socialism
+					has_completed_focus = ITA_the_italian_republic
 					has_completed_focus = ITA_monarchia_d_italia
 				}
 			}
@@ -2499,8 +2472,7 @@ characters = {
 			legacy_id = 0
 			visible = { 
 				OR = {
-					has_completed_focus = ITA_the_carabinieri
-					has_completed_focus = ITA_empower_the_carabinieri
+					has_completed_focus = ITA_common_ground
 				}
 			}
 		}
@@ -2814,7 +2786,7 @@ characters = {
 			available = {
 				OR = {
 					has_completed_focus = ITA_cooperate_with_moderates
-					has_completed_focus = ITA_italian_socialism
+					has_completed_focus = ITA_the_italian_republic
 					AND = {
 						has_completed_focus = ITA_common_ground
 						has_government = communism
@@ -3040,10 +3012,9 @@ characters = {
 			available = {
 				OR = {
 					has_government = communism
-					AND = {
-						has_completed_focus = ITA_common_ground
-						has_government = democratic
-					}
+					has_completed_focus = ITA_common_ground
+					has_government = fascism
+					has_government = democratic
 				}
 			}
 			cost = 50
@@ -3137,13 +3108,7 @@ characters = {
 			}
 
 			available = {
-				OR = {
-					has_completed_focus = ITA_the_popular_front
-					AND = {
-						has_government = democratic
-						has_completed_focus = ITA_common_ground
-					}
-				}
+
 			}
 
 			traits = {
@@ -3154,22 +3119,19 @@ characters = {
 				base = 0.800
 				modifier = {
 					factor = 0.1
-					ITA_is_socialist_ai = yes
 				}
 			}
 		}
 
 		corps_commander = {
-			traits = { militias_officer infantry_officer } #SCW + Partisan Commander
+			traits = { invader infantry_officer } #SCW + Partisan Commander
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
 			legacy_id = 0
-			visible = {
-				has_government = communism
-			}
+
 		}
 	}
 

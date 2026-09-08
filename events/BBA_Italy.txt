@@ -13372,3 +13372,40 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	 id = BBA_italy_event.1
+	 title = BBA_italy_event.1.t
+	 desc = BBA_italy_event.1.t
+	 picture = GFX_report_event_yugoslavian_split
+
+	 is_triggered_only = yes
+
+	 option = {
+		name = BBA_italy_event.1.a
+
+		ITA = {
+			transfer_state = 853
+			transfer_state = 102
+			transfer_state = 103
+			transfer_state = 105
+			transfer_state = 804
+		}
+		853 = {
+			add_core_of = ITA
+		}
+		102 = {
+			add_core_of = ITA
+		}
+		103 = {
+			add_core_of = ITA
+		}
+		105 = {
+			add_core_of = ITA
+		}
+		804 = {
+			add_core_of = ITA
+		}
+										
+	 }
+}

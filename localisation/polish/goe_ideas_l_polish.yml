@@ -1,4 +1,26 @@
 ﻿l_polish:
+ ITA_focus_on_italy:0 "Włoski Przemysł Narodowy"
+ ITA_german_wunderwaffe:0 "Niemiecka Wunderwaffe"
+
+  ITA_balkan_integral_production_idea:0 "Zintegrowane bałkańskie linie produkcyjne"
+
+  ITA_balkan_joint_army_command_idea:0 "Wspólna struktura dowodzenia Bałkanami"
+
+  ITA_balkan_common_currency:0 "Wspólna waluta bałkańska"
+
+  ITA_italian_tankettes_military_industry2_tt: "$ITA_modify_regio_esercito_dynamic_modifier_ns_intro$ \n$modifier_army_sub_unit_infantry_attack_factor$: §G+10.0%§!\n"
+
+  ITA_inf_attack_05: "$ITA_modify_regio_esercito_dynamic_modifier_ns_intro$ \n$modifier_army_sub_unit_infantry_attack_factor$: §G+10.0%§!\n"
+
+  ITA_standardization_ra_tt_1:0 "Koszt produkcji wszystkich samolotów -10%"
+
+  king_for_our_people:0 "Król dla naszego ludu"
+
+  ITA_german_threat:0 "Niemieckie zagrożenie"
+
+  ITA_the_western_threat:0 "Zagrożenie ze strony Zachodu"
+
+  king_of_italy:0 "Król Włoch"
  ITA_recent_modernizations:0 "Niedawne Modernizacje"
  ITA_legacy_of_cesar_idea_3:0 "W cieniu Augustusa"
  ITA_lessons_of_history_idea:0 "Nauki Filozoficzne"

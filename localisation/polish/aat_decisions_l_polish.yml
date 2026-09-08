@@ -1,4 +1,37 @@
 ﻿l_polish:
+
+  italy.18.a: "Przygotować wojska"
+
+  italy.18.d: "Rzym ponowił swoje żądanie wspólnej inwazji na Anatolię. Włoscy dyplomaci twierdzą, że skoordynowana kampania pozwoli naszym narodom szybko złamać opór i ukształtować region zgodnie z naszymi interesami. Włochy nalegają, że czas na wahanie minął, i wzywają swoich partnerów do zaangażowania wojsk w nadchodzącą kampanię."
+
+  italy.18.t: "Włochy nalegają na wspólną inwazję Anatolii"
+
+  italy.17.t: "Włochy proponują relokację państwa jugosłowiańskiego"
+
+  italy.17.a: "Jasne"
+
+  italy.17.d: "Włoski rząd przedstawił śmiałą propozycję dotyczącą przyszłości Jugosławii. Rzym twierdzi, że państwo jugosłowiańskie staje się coraz trudniejsze do zarządzania w obecnym kształcie i proponuje przeniesienie jego centrum politycznego pod włoski nadzór. Plan ten obiecuje stworzenie nowego porządku na Bałkanach, lecz jego prawdziwym celem jest rozszerzenie włoskich wpływów i zabezpieczenie naszych strategicznych interesów nad Adriatykiem."
+
+   italy.17.b: "Nie, oni chyba żartują"
+
+
+  ITA_give_the_dodecanese_islands_to_greece:0 "Oddać Dodekanez Grecji"
+
+  ITA_give_northern_epirus_to_greece:0 "Oddać Epir Północny Grecji"
+
+  ITA_partition_of_swiss:0 "Podzielić terytoria alpejskie z Niemcami"
+
+  ITA_cede_slovenia_to_germany: "Oddać północną Słowenię Niemcom"
+
+  ITA_take_over_cyprus: "Przejąć Cypr"
+
+  ITA_take_over_suez: "Przejąć Kanał Sueski"
+
+  ITA_take_over_giblartar: "Przejąć Gibraltar"
+
+  ITA_take_over_malta: "Przejąć Maltę"
+
+  ITA_teretorial_ambitions_dec_cat: "Ambicje śródziemnomorskie"
  #### ICELAND ####
  ICE_drilling_for_oil_off_shore: "Wiercenia morskie w poszukiwaniu ropy i gazu."
  ICE_drilling_for_oil_off_shore_repeat_tt: "Tę decyzję można podjąć ponownie po §Y180§! dniach."
