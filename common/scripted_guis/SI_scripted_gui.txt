@@ -553,9 +553,12 @@ scripted_gui = {
 		context_type = player_context
 		window_name = "gwrmp_warning_messagebox"
 		visible = { has_country_flag = GWRMP_WARNING_MESSAGEBOX_VISIBLE }
-		effects = {
-			gwrmp_warning_ok_button_click = { clr_country_flag = GWRMP_WARNING_MESSAGEBOX_VISIBLE }
-		}
+		effects = { gwrmp_warning_ok_button_click = { clr_country_flag = GWRMP_WARNING_MESSAGEBOX_VISIBLE } }
 	}
-	
+	gwrmp_cancel_warning_messagebox = {
+		context_type = player_context
+		window_name = "gwrmp_cancel_warning_messagebox"
+		visible = { has_country_flag = GWRMP_CANCEL_WARNING_MESSAGEBOX_VISIBLE }
+		effects = { gwrmp_cancel_warning_ok_button_click = { clr_country_flag = GWRMP_CANCEL_WARNING_MESSAGEBOX_VISIBLE } }
+	}	
 }

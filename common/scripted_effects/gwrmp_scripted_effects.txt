@@ -3158,11 +3158,23 @@ create_gwr_agency = {
 		name = "Host State Intelligence Agency"
 		icon = "GFX_intelligence_agency_logo_generic"
 	}
-
 	upgrade_intelligence_agency = upgrade_economy_civilian
 	upgrade_intelligence_agency = upgrade_army_department
 	upgrade_intelligence_agency = upgrade_naval_department
 	upgrade_intelligence_agency = upgrade_airforce_department
+	GWR = {
+		every_other_country = {
+			GWR = { 
+				add_intel = {
+					target = PREV
+					civilian_intel = 100
+					army_intel = 100
+					navy_intel = 100
+					airforce_intel = 100
+				} 
+			}
+		}
+	}
 }
 
 

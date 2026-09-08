@@ -204,9 +204,13 @@ WARNING_PREREQUISITES_WARNING_SENT:"§Y[?ROOT.GetNameWithFlag]§! hasn't sent an
 WARNING_PREREQUISITES_WARNING_RECEIVED:"§Y[?THIS.GetNameWithFlag]§! hasn't received any other warnings"
 WARNING_PREREQUISITES_TRUCE:"We don't have truce with them"
 WARNING_PREREQUISITES_COOLDOWN:"Doesn't have warning cooldown"
+WARNING_LEADER_ONLY:"Is fully independent or is faction leader"
+WARNING_NON_AGGRESSION_PACT:"§RNot:§! Has non-aggression with them or their allies"
+WARNING_PREREQUISITES_COOLDOWN:"Doesn't have warning cooldown"
 GWRMP_WARNING_CALL_TO_WAR: "§RBoth sides will call all their allies to this conflict§!\n"
 GWRMP_USE_WARNING:"§RUse 30/60 day warning option!§!"
 GWRMP_WARNING_TITLE:"[?ROOT.war_with.GetNameWithFlag]:\n§RWe will declare war! Check decisions!§!"
+GWRMP_CANCEL_WARNING_TITLE:"[?ROOT.war_with.GetNameWithFlag]:\n§GWe are not declaring war! We retreat!§!"
 GWRMP_CANT_LEAVE_FACTION_WITH_WARNING:"§RCan't leave faction, that has sent war warning§!"
 GWRMP_CANT_LEAVE_KICK_WITH_WARNING:"§RCan't kick from faction, that has sent war warning§!"
 GWRMP_CANT_INVITE_FACTION_WITH_WARNING:"§RCan't invite to a faction, when we have sent war warning§!"
@@ -357,6 +361,9 @@ GWRMP_SI_event.10.desc:0 "Offer declined!"
 
 ### BRA idea
 unstable_government_1:"Unstable Government"
+
+### Sov
+SOV_mass_amnesty_programs:"Amnesty for generals"
 
 ### FIX THIS SHIT LATER
 spain.25.t: "Dominicana Refuses"

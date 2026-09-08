@@ -204,9 +204,12 @@ WARNING_PREREQUISITES_WARNING_SENT:"§Y[?ROOT.GetNameWithFlag]§! nie wysłało 
 WARNING_PREREQUISITES_WARNING_RECEIVED:"§Y[?THIS.GetNameWithFlag]§! nie otrzymało żadnych innych ostrzeżeń"
 WARNING_PREREQUISITES_TRUCE:"Nie mamy z nimi rozejmu"
 WARNING_PREREQUISITES_COOLDOWN:"Nie ma cooldownu ostrzeżenia"
+WARNING_LEADER_ONLY:"Jest niezależny lub jest liderem frakcji"
+WARNING_NON_AGGRESSION_PACT:"§RNie:§! posiada paktu o nieagresji z nimi lub ich sojusznikami"
 GWRMP_WARNING_CALL_TO_WAR:"§RObie strony wezwą do tego konfliktu wszystkich swoich sojuszników§!\n"
 GWRMP_USE_WARNING:"§RUżyj opcji ostrzeżenia 30/60-dniowego!§!"
 GWRMP_WARNING_TITLE:"[?ROOT.war_with.GetNameWithFlag]:\n§RWypowiemy wojnę! Sprawdź decyzje!§!"
+GWRMP_CANCEL_WARNING_TITLE:"[?ROOT.war_with.GetNameWithFlag]:\n§GJednak nie wypowiadamy wojny! Wycofujemy się!§!"
 GWRMP_CANT_LEAVE_FACTION_WITH_WARNING:"§RNie można opuścić frakcji, która wysłała ostrzeżenie wojenne§!"
 GWRMP_CANT_LEAVE_KICK_WITH_WARNING:"§RNie można wyrzucić z frakcji, która wysłała ostrzeżenie wojenne§!"
 GWRMP_CANT_INVITE_FACTION_WITH_WARNING:"§RNie można zaprosić do frakcji, gdy wysłaliśmy ostrzeżenie wojenne§!"
@@ -219,6 +222,7 @@ GWRMP_CANT_SEND_WARNING_TOO_MANY_POINTS:"§RNie można wysłać im ostrzeżenia,
 GWRMP_CANT_SEND_WARNING_WITHOUT_WARGOAL:"Potrzebujemy §Ycelu wojennego§!!"
 GWRMP_CANT_SEND_WARNING_WITHOUT_WARGOAL_BEFORE_1940:"Potrzebujemy §Ycelu wojennego§! przed §Y01.01.1940§!"
 GWRMP_CANT_SEND_VOLUNTEERS_AGAINST_PLAYER:"§RNie można wysłać ochotników przeciwko graczowi§!"
+
 
 
 # AFRICA
@@ -357,3 +361,6 @@ GWRMP_SI_event.10.desc:0 "Oferta odrzucona!"
 
 ### BRA idea
 unstable_government_1:"Niestabilny Rząd"
+
+### Sov
+SOV_mass_amnesty_programs:"Amnestia dla generałów"

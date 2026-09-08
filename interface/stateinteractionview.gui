@@ -354,4 +354,33 @@ guiTypes = {
 			buttonFont = "hoi_18mbs"
 		}
 	}
+	containerWindowType = {
+		name = "gwrmp_cancel_warning_messagebox"
+		position = { x = -264 y = -300 }
+		orientation = center
+		origo = center
+		IconType = {
+			name = "gwrmp_warning_background"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_two_row_container"
+			scale = 3
+		}
+		instantTextBoxType = {
+			name = "gwrmp_cancel_warning_title"
+			position = { x = 0 y = 25 }
+			font = "hoi_24header"
+			format = center
+			text = "GWRMP_CANCEL_WARNING_TITLE"
+			maxWidth = 528
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "gwrmp_cancel_warning_ok_button"
+			position = { x = 203 y = 120 }
+			quadTextureSprite = "GFX_button_123x34"
+			buttonText = "OK"
+			buttonFont = "hoi_18mbs"
+		}
+	}
 }

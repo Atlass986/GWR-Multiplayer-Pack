@@ -8,7 +8,7 @@ warning_category = {
         icon = mission_icon
         is_good = yes
         days_mission_timeout = 30
-        war_with_on_timeout = THIS.war_with
+        #war_with_on_timeout = THIS.war_with
         cancel_effect = {
             custom_effect_tooltip = warning_set_cooldown
             hidden_effect = {
@@ -60,34 +60,16 @@ warning_category = {
             hidden_effect = {
                 ROOT = { 
                     remove_ideas = { warning_30d warning_60d }
-                    clr_country_flag = warning_sender
-                    clr_country_flag = warning_faction_sender
-                    clr_country_flag = warning_receiver
                     every_country = {
                         limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
                         remove_ideas = { warning_30d warning_60d }
-                        clr_country_flag = warning_sender
-                        clr_country_flag = warning_faction_sender
-                        clr_country_flag = warning_receiver
-                    }
-                }
-                var:ROOT.war_with = { 
-                    remove_ideas = { warning_30d warning_60d } 
-                    clr_country_flag = warning_sender
-                    clr_country_flag = warning_faction_sender
-                    clr_country_flag = warning_receiver
-                    every_country = {
-                        limit = { OR = { is_in_faction_with = ROOT.war_with is_subject_of = ROOT.war_with } }
-                        remove_ideas = { warning_30d warning_60d }
-                        clr_country_flag = warning_sender
-                        clr_country_flag = warning_faction_sender
-                        clr_country_flag = warning_receiver
                     }
                 }
             }
             if = { 
                 limit = { has_country_flag = warning_sender }
                 ROOT = {
+                    log = "[GWRMP] - [?ROOT.GetName] declared war on [?THIS.war_with.GetName]"
                     declare_war_on = {
                         target = THIS.war_with
                         type = annex_everything
@@ -116,9 +98,11 @@ warning_category = {
             else_if = {
                 limit = { has_country_flag = warning_faction_sender }
                 var:ROOT.leader_war_with = {
-                    declare_war_on = {
-                        target = ROOT.war_with
-                        type = annex_everything
+                    effect_tooltip = {
+                        declare_war_on = {
+                            target = THIS.war_with
+                            type = annex_everything
+                        }
                     }
                     custom_effect_tooltip = GWRMP_WARNING_CALL_TO_WAR
                     hidden_effect = {
@@ -168,6 +152,19 @@ warning_category = {
                     }
                 }   
             }
+            hidden_effect = {
+                ROOT = { 
+                    clr_country_flag = warning_sender
+                    clr_country_flag = warning_faction_sender
+                    clr_country_flag = warning_receiver
+                    every_country = {
+                        limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
+                        clr_country_flag = warning_sender
+                        clr_country_flag = warning_faction_sender
+                        clr_country_flag = warning_receiver
+                    }
+                }
+            }
         }
     }
 
@@ -197,34 +194,16 @@ warning_category = {
             hidden_effect = {
                 ROOT = { 
                     remove_ideas = { warning_30d warning_60d }
-                    clr_country_flag = warning_sender
-                    clr_country_flag = warning_faction_sender
-                    clr_country_flag = warning_receiver
                     every_country = {
                         limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
                         remove_ideas = { warning_30d warning_60d }
-                        clr_country_flag = warning_sender
-                        clr_country_flag = warning_faction_sender
-                        clr_country_flag = warning_receiver
-                    }
-                }
-                var:ROOT.war_with = { 
-                    remove_ideas = { warning_30d warning_60d } 
-                    clr_country_flag = warning_sender
-                    clr_country_flag = warning_faction_sender
-                    clr_country_flag = warning_receiver
-                    every_country = {
-                        limit = { OR = { is_in_faction_with = ROOT.war_with is_subject_of = ROOT.war_with } }
-                        remove_ideas = { warning_30d warning_60d }
-                        clr_country_flag = warning_sender
-                        clr_country_flag = warning_faction_sender
-                        clr_country_flag = warning_receiver
                     }
                 }
             }
             if = { 
                 limit = { has_country_flag = warning_sender }
                 ROOT = {
+                    log = "[GWRMP] - [?ROOT.GetName] declared war on [?THIS.war_with.GetName]"
                     declare_war_on = {
                         target = THIS.war_with
                         type = annex_everything
@@ -252,9 +231,11 @@ warning_category = {
             else_if = {
                 limit = { has_country_flag = warning_faction_sender }
                 var:ROOT.leader_war_with = {
-                    declare_war_on = {
-                        target = ROOT.war_with
-                        type = annex_everything
+                    effect_tooltip = {
+                        declare_war_on = {
+                            target = ROOT.war_with
+                            type = annex_everything
+                        }
                     }
                     hidden_effect = {
                         var:THIS.war_with = {
@@ -294,6 +275,19 @@ warning_category = {
                     }
                 }   
             }
+            hidden_effect = {
+                ROOT = { 
+                    clr_country_flag = warning_sender
+                    clr_country_flag = warning_faction_sender
+                    clr_country_flag = warning_receiver
+                    every_country = {
+                        limit = { OR = { is_in_faction_with = PREV is_subject_of = PREV } }
+                        clr_country_flag = warning_sender
+                        clr_country_flag = warning_faction_sender
+                        clr_country_flag = warning_receiver
+                    }
+                }
+            }
         }
     }
     
@@ -329,6 +323,7 @@ warning_category = {
                     clr_country_flag = warning_receiver
                     every_country = {
                         limit = { is_in_faction_with = ROOT.war_with }
+                        set_country_flag = GWRMP_CANCEL_WARNING_MESSAGEBOX_VISIBLE
                         add_timed_idea = { idea = warning_cooldown days = 5 }
                         remove_ideas = { warning_30d warning_60d }
                         set_truce = { target = ROOT days = 60 }

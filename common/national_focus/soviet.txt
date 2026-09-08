@@ -6711,34 +6711,37 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
-			random_character = {
-				limit = { is_character = SOV_konstantin_rokossovsky }
-				set_nationality = SOV
-			}
-			recruit_character = SOV_konstantin_rokossovsky
-			if = {
-				limit = {
-					SOV_konstantin_rokossovsky = {
-						NOT = { has_character_flag = SOV_character_purged_flag }
-						is_corps_commander = yes
-					}
+			SOV = {
+				random_character = {
+					limit = { is_character = SOV_konstantin_rokossovsky }
+					set_nationality = SOV
 				}
-				
-				SOV_konstantin_rokossovsky = {
-					promote_leader = yes
-				}
-			}
-			else = {
-				random_army_leader = {
+				recruit_character = SOV_konstantin_rokossovsky
+				if = {
 					limit = {
-						NOT = { has_character_flag = SOV_potential_target_flag }
-						is_corps_commander = yes
-						NOT = { is_character = SOV_georgy_zhukov }
-						NOT = { is_character = SOV_ivan_konev }
+						SOV_konstantin_rokossovsky = {
+							NOT = { has_character_flag = SOV_character_purged_flag }
+							is_corps_commander = yes
+						}
 					}
-					promote_leader = yes
+					
+					SOV_konstantin_rokossovsky = {
+						promote_leader = yes
+					}
+				}
+				else = {
+					random_army_leader = {
+						limit = {
+							NOT = { has_character_flag = SOV_potential_target_flag }
+							is_corps_commander = yes
+							NOT = { is_character = SOV_georgy_zhukov }
+							NOT = { is_character = SOV_ivan_konev }
+						}
+						promote_leader = yes
+					}
 				}
 			}
+			
 			add_to_variable = { SOV_the_red_army_army_org_regain = 0.1 }
 			custom_effect_tooltip = SOV_barrier_troops_ns_tt
 			custom_effect_tooltip = available_military_high_command
@@ -6763,35 +6766,38 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
-			random_character = {
-				limit = { is_character = SOV_georgy_zhukov }
-				set_nationality = SOV
-			}
-			recruit_character = SOV_georgy_zhukov
-			if = {
-				
-				limit = {
-					SOV_georgy_zhukov = {
-						NOT = { has_character_flag = SOV_character_purged_flag }
-						is_corps_commander = yes
-					}
+			SOV = {
+				random_character = {
+					limit = { is_character = SOV_georgy_zhukov }
+					set_nationality = SOV
 				}
-				
-				SOV_georgy_zhukov = {
-					promote_leader = yes
-				}
-			}
-			else = {
-				random_army_leader = {
+				recruit_character = SOV_georgy_zhukov
+				if = {
+					
 					limit = {
-						NOT = { has_character_flag = SOV_potential_target_flag }
-						is_corps_commander = yes
-						NOT = { is_character = SOV_konstantin_rokossovsky }
-						NOT = { is_character = SOV_ivan_konev }
+						SOV_georgy_zhukov = {
+							NOT = { has_character_flag = SOV_character_purged_flag }
+							is_corps_commander = yes
+						}
 					}
-					promote_leader = yes
+					
+					SOV_georgy_zhukov = {
+						promote_leader = yes
+					}
+				}
+				else = {
+					random_army_leader = {
+						limit = {
+							NOT = { has_character_flag = SOV_potential_target_flag }
+							is_corps_commander = yes
+							NOT = { is_character = SOV_konstantin_rokossovsky }
+							NOT = { is_character = SOV_ivan_konev }
+						}
+						promote_leader = yes
+					}
 				}
 			}
+			
 			custom_effect_tooltip = available_theorist
 			show_ideas_tooltip = georgy_zhukov
 			
@@ -16711,6 +16717,30 @@ ai_will_do = {
 	}
 
 	focus = {
+        id = SOV_mass_amnesty_programs
+        icon = GFX_SOV_the_glory_of_the_red_army_alt_ccp_2d_sov_compatibility
+        prerequisite = {
+            focus = SOV_rebuild_the_nation
+        }
+        x = 2
+        y = 1
+        relative_position_id = SOV_rebuild_the_nation
+        cost = 5
+        completion_reward = {
+            SOV = {
+				recruit_character = SOV_aleksandr_vasilevsky
+				recruit_character = SOV_semyon_timoshenko
+				recruit_character = SOV_aleksandr_yegorov
+				recruit_character = SOV_mikhail_tukhachevsky
+				recruit_character = SOV_markian_popov
+				recruit_character = SOV_nikolay_vatutin
+				recruit_character = SOV_issa_pliyev
+				recruit_character = SOV_georgy_zakharov
+			}
+        }
+    }
+
+	focus = {
 		id = SOV_bringing_breakaways_back_to_the_fold
 		icon = GFX_SOV_bringing_breakaways_back_to_the_fold_ccp_2d_sov_compatibility
 		prerequisite = { focus = SOV_consolidate_power }
@@ -16831,6 +16861,18 @@ ai_will_do = {
 
 		completion_reward = {
 			add_ideas = SOV_church_power_1
+			hidden_effect = {
+				retire_character = SOV_aleksandr_vasilevsky
+				retire_character = SOV_semyon_timoshenko
+				retire_character = SOV_aleksandr_yegorov
+				retire_character = SOV_mikhail_tukhachevsky
+				retire_character = SOV_markian_popov 
+				retire_character = SOV_nikolay_vatutin
+				retire_character = SOV_issa_pliyev
+				retire_character = SOV_georgy_zakharov
+				retire_character = SOV_georgy_zhukov
+				retire_character = SOV_konstantin_rokossovsky
+            }
 		}
 	}
 
