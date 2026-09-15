@@ -2945,6 +2945,8 @@ focus = {
 		OR = {
 			has_completed_focus = USA_america_first 
 			has_completed_focus = USA_suspend_the_presecution
+			has_completed_focus = USA_limited_intervention
+			has_completed_focus = USA_neutrality_act
 		}
 		
 	}

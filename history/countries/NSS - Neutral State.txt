@@ -1,0 +1,20 @@
+capital = 123
+
+set_research_slots = 0
+set_stability = 1
+set_war_support = 1
+set_convoys = 0
+
+set_politics = {
+    ruling_party = neutrality
+    elections_allowed = no
+}
+
+set_popularities = {
+    neutrality = 100
+    democratic = 0
+    fascism = 0
+    communism = 0
+}
+
+add_ideas = { neutral_state_idea }

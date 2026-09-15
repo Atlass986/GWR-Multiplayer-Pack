@@ -14,7 +14,7 @@ scripted_diplomatic_actions = {
 							}	
 						}
 					} 
-					is_ai = yes
+					is_ai = no
 				}
 				NOT = { tag = GWR }
 			} 

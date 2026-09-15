@@ -1,4 +1,5 @@
 GWR = "countries/GWRHost.txt"
+NSS = "countries/Neutral_State.txt"
 CPA = "countries/Colony_Spanish_Africa.txt"
 CFA = "countries/Colony_French_Africa.txt"
 CEA = "countries/Colony_British_Africa.txt"

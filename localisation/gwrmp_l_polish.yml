@@ -32,6 +32,9 @@ GWR_atlass: "Wielki Atłass"
 GWR_host_boost: "§RHOST§!"
 
 # GAME RULES
+GWRMP_MAP_GROUP: "Zmiany mapy"
+GWRMP_MORE_RESOURCES_RULE: "Więcej surowców"
+
 GWRMP_PATHS_GROUP: "Ścieżki państw"
 GWRMP_BLOCK_GERMAN_PATH_RULE: "Niemiecka ścieżka historyczna"
 GWRMP_BLOCK_FUHRERPRINZIP_RULE: "Niemiecki Führerprinzip"

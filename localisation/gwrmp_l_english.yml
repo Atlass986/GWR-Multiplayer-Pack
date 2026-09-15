@@ -32,6 +32,10 @@ GWR_atlass: "The great Atłass"
 GWR_host_boost: "§RHOST§!"
 
 # GAME RULES
+GWRMP_MAP_GROUP: "Map changes"
+GWRMP_MORE_RESOURCES_RULE: "Add more resources"
+GWRMP_NEUTRAL_STATE_RULE: "Create Neutral State"
+
 GWRMP_PATHS_GROUP: "Country Paths"
 GWRMP_BLOCK_GERMAN_PATH_RULE: "German Historical Path"
 GWRMP_BLOCK_FUHRERPRINZIP_RULE: "German Fuhrerprinzip"
@@ -401,8 +405,10 @@ spain.14.a: "Great"
 spain.13.t: "Spain wants to buy Gibraltar from us !"
 spain.13.d: "Spain has approached us with a proposal to purchase Gibraltar. This would significantly impact our strategic position in the region."
 
-
-
+# GWR HIST
+NSS:0"Neutral State"
+NSS_DEF:0"Neutral State"
+NSS_ADJ:0"Neutral State"
 
 
 

@@ -1269,6 +1269,11 @@ GWR = {
 	color_ui = rgb { 254 254 254 }
 }
 
+NSS = {
+	color = rgb { 1 1 1 }
+	color_ui = rgb { 1 1 1 }
+}
+
 CEA = {
 	color = rgb { 206 56 93 }
 	color_ui = rgb { 255 73 121 }

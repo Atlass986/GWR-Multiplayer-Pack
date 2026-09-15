@@ -23,6 +23,19 @@ ideas = {
 				}
 			}
     	}
+		neutral_state_idea = {
+        	picture = HUN_secret_rearmament
+        	allowed = { always = yes }
+        	modifier = {
+				hidden_modifier = {
+					army_intel_to_others = -200
+					navy_intel_to_others = -200
+					airforce_intel_to_others = -200
+					civilian_intel_to_others = -200
+					enemy_justify_war_goal_time = 50
+				}
+			}
+    	}
 		always_volunteers_min_1936 = {
 			picture = HUN_secret_rearmament
 			modifier = {

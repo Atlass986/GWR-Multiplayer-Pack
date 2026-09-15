@@ -1,43 +1,38 @@
 state=
 {
-	id=319
-	name="STATE_319"
-	manpower = 1256000
-	
-	state_category = town
-	
+	id=314
+	name="STATE_314"
+	manpower = 1437611
 	resources={
 		chromium=1 # was: 1
 	}
+	
+	state_category = town
+	
 	history=
 	{
-		owner = DOM
+		owner = ELS
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
-			industrial_complex = 3
+			industrial_complex = 2 
 			air_base = 1
-			7660 = {
-				naval_base = 2
+			12823 = {
+				naval_base = 1
 			}
 		}
-		add_core_of = DOM
+		add_core_of = ELS
 		victory_points = {
-			7660 5 
+			12823 3
 		}
-		victory_points = {
-			4598 1 
-		}
-
 		1936.01.02 = {
 			owner = NSS
 			add_core_of = NSS
 			remove_core_of = DOM
 		}
-
 	}
 	provinces={
-		4598 7632 7660 10484
+		12823 13093 
 	}
 
 	local_supplies=0.0 

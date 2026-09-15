@@ -27,7 +27,11 @@ state={
 		victory_points = {
 			2075 1
 		}
-
+		1936.01.02 = {
+			owner = NSS
+			add_core_of = NSS
+			remove_core_of = DOM
+		}
 	}
 
 	provinces={

@@ -20,6 +20,36 @@
 #		...
 #	}
 # }
+gwr_more_resources = {
+	name = "GWRMP_MORE_RESOURCES_RULE"
+	group = "GWRMP_MAP_GROUP"
+
+	default = {
+		name = GWR_ALLOW_RESOURCES_DEFAULT
+		text = "GWR_ALLOW_DEFAULT"
+		desc = "GWR_ALLOW_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_BLOCK_RESOURCES_DEFAULT
+		text = "GWR_BLOCK_DEFAULT"
+		desc = "GWR_BLOCK_DEFAULT_DESC"
+	}
+}
+gwr_neutral_state = {
+	name = "GWRMP_NEUTRAL_STATE_RULE"
+	group = "GWRMP_MAP_GROUP"
+
+	default = {
+		name = GWR_BLOCK_NEUTRAL_STATE_DEFAULT
+		text = "GWR_BLOCK_DEFAULT"
+		desc = "GWR_BLOCK_DEFAULT_DESC"
+	}
+	option = {
+		name = GWR_ALLOW_NEUTRAL_STATE_DEFAULT
+		text = "GWR_ALLOW_DEFAULT"
+		desc = "GWR_ALLOW_DEFAULT_DESC"
+	}
+}
 gwr_block_fuhrerprinzip_path = {
 	name = "GWRMP_BLOCK_FUHRERPRINZIP_RULE"
 	group = "GWRMP_PATHS_GROUP"
