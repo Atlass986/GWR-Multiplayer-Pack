@@ -6,7 +6,7 @@ NDefines.NGame.MESSAGE_TIMEOUT_DAYS = 14
 NDefines.NGame.MAX_SCRIPTED_LOC_RECURSION = 1001			
 NDefines.NGame.COMBAT_LOG_MAX_MONTHS = 6			
 NDefines.NGame.MUSIC_PLAYER_RECENTLY_PLAYED_SIZE = 1				
---NDefines.NGame.GAME_SPEED_SECONDS = { 0.5, 0.21, 0.14, 0.07, 0.0 } -- { 2.0, 0.5, 0.2, 0.1, 0.0 }		
+NDefines.NGame.GAME_SPEED_SECONDS = { 999.0, 0.5, 0.2, 0.1, 0.0 }	--	{ 0.5, 0.21, 0.14, 0.07, 0.0 } 
 
 -- FOCUS
 NDefines.NFocus.MAX_SAVED_FOCUS_PROGRESS = 30

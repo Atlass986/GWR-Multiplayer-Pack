@@ -25,6 +25,11 @@ gwr_more_resources = {
 	group = "GWRMP_MAP_GROUP"
 
 	default = {
+		name = GWR_IMPROVED_RESOURCES_DEFAULT
+		text = "GWR_IMPROVED_DEFAULT"
+		desc = "GWR_IMPROVED_DEFAULT_DESC"
+	}
+	option = {
 		name = GWR_ALLOW_RESOURCES_DEFAULT
 		text = "GWR_ALLOW_DEFAULT"
 		desc = "GWR_ALLOW_DEFAULT_DESC"

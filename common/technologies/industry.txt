@@ -627,7 +627,7 @@ technologies = {
 		industry_air_damage_factor = -0.10
 		global_building_slots_factor = 0.15
 		factory_energy_consumption = -0.03
-		production_factory_efficiency_gain_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.035
 		#global_building_slots = 1
 		
 		path = {
@@ -674,7 +674,7 @@ technologies = {
 		industry_air_damage_factor = -0.10
 		global_building_slots_factor = 0.2
 		factory_energy_consumption = -0.03
-		production_factory_efficiency_gain_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.035
 		
 		path = {
 			leads_to_tech = dispersed_industry4 
@@ -720,7 +720,7 @@ technologies = {
 		industry_air_damage_factor = -0.10
 		global_building_slots_factor = 0.25
 		factory_energy_consumption = -0.03
-		production_factory_efficiency_gain_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.035
 		
 		path = {
 			leads_to_tech = dispersed_industry5 
@@ -766,7 +766,7 @@ technologies = {
 		industry_free_repair_factor = 0.15
 		global_building_slots_factor = 0.25
 		factory_energy_consumption = -0.03
-		production_factory_efficiency_gain_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.035
 		
 		
 		research_cost = 2
